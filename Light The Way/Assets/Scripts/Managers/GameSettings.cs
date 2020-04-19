@@ -16,6 +16,11 @@ public class GameSettings : ScriptableObject
 
     private string PLAYER_PREFS_NICKNAME = "nickName";
 
+    public Dictionary<string, KeyCode> keybinds = new Dictionary<string, KeyCode>{
+        {"muteMic", KeyCode.M},
+        {"muteSpeaker", KeyCode.N}
+    };
+
     public string FirstNickName
     {
         get

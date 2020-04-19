@@ -24,14 +24,20 @@ public class MasterManager : SingletonScriptableObject<MasterManager>
         {
             if (networkedPrefab.Prefab == obj)
             {
-                GameObject result = PhotonNetwork.Instantiate(networkedPrefab.Path, position, rotation);
-                return result;
+
+                if (networkedPrefab.Path != string.Empty)
+                {
+                    GameObject result = PhotonNetwork.Instantiate(networkedPrefab.Path, position, rotation);
+                    return result;
+                }
+                else
+                {
+                    Debug.LogError("Path is empty for gameobject name " + networkedPrefab.Prefab);
+                    return null;
+                }
+
             }
-            else
-            {
-                Debug.LogError("Path is empty for gameobject name " + networkedPrefab.Prefab);
-                return null;
-            }
+
         }
 
         return null;

@@ -1,17 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Voice.Unity;
+using Photon.Voice.PUN;
 
 public class QuickInstantiate : MonoBehaviour
 {
     [SerializeField]
     private GameObject _prefab;
 
+    public Recorder recorder;
+
+    private float volumeBeforeMute;
+
     private void Awake()
     {
         Vector2 offset = Random.insideUnitCircle * 3f;
         Vector3 position = new Vector3(transform.position.x + offset.x, transform.position.y + offset.y, transform.position.z);
- 
+
         MasterManager.NetworkInstantiate(_prefab, position, Quaternion.identity);
+    }
+
+    private void Update()
+    {
+        Dictionary<string, KeyCode> keybinds = MasterManager.GameSettings.keybinds;
+
+        if (Input.GetKeyDown(keybinds["muteMic"]))
+        {
+            recorder.TransmitEnabled = !recorder.TransmitEnabled;
+        }
+        else if (Input.GetKeyDown(keybinds["muteSpeaker"]))
+        {
+            if (AudioListener.volume != 0f)
+            {
+                volumeBeforeMute = AudioListener.volume;
+                AudioListener.volume = 0f;
+            }
+            else
+            {
+                AudioListener.volume = volumeBeforeMute;
+                volumeBeforeMute = 0f;
+            }
+        }
     }
 }
