@@ -22,7 +22,11 @@ public class CameraCollision : MonoBehaviour
         Vector3 target = transform.parent.TransformPoint(direction * maxDistance);        
         RaycastHit hit;
 
-        if(Physics.Linecast(transform.parent.position, target, out hit))
+        // mask to avoid collision with player model
+        int layerMask = 1 << 8;
+        layerMask = ~layerMask;
+
+        if(Physics.Linecast(transform.parent.position, target, out hit, layerMask))
         {
             distance = Mathf.Clamp((hit.distance * 0.9f), minDistance, maxDistance);
         }
