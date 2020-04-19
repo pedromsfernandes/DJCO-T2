@@ -252,6 +252,7 @@ MonoBehaviour:
   inputSensitivity: 150
   clampAngle: 80
   follow: {fileID: 1847750444}
+  player: {fileID: 1837282802}
 --- !u!1 &1010206712
 GameObject:
   m_ObjectHideFlags: 0

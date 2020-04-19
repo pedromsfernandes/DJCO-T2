@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
     public float inputSensitivity = 150.0f;
     public float clampAngle = 80.0f;
     public GameObject follow;
+    public GameObject player;
 
     void Start()
     {
@@ -33,6 +34,7 @@ public class CameraController : MonoBehaviour
 
         Quaternion localRotation = Quaternion.Euler(rotX, rotY, 0.0f);
         transform.rotation = localRotation;
+        player.transform.rotation = Quaternion.Euler(0, rotY, 0);
     }
 
     void LateUpdate()
