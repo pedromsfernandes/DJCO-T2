@@ -16,6 +16,7 @@ public class CameraController : MonoBehaviour
     public float animTime = 0.5f;
     public GameObject follow;
     public GameObject player;
+    public LightBeam beam;
 
     void Start()
     {
@@ -53,9 +54,13 @@ public class CameraController : MonoBehaviour
 
     void GetMouseInputs()
     {
-        if (Input.GetMouseButtonDown(1)) SwitchCameraAim();
+        if(Input.GetMouseButtonDown(1)) SwitchCameraAim();
 
-        if (Input.GetMouseButtonUp(1)) SwitchCameraNormal();
+        if(Input.GetMouseButtonUp(1)) SwitchCameraNormal();
+
+        if(GameState.Instance.aiming && Input.GetMouseButtonDown(0)) beam.Enable(true);
+
+        if(GameState.Instance.aiming && Input.GetMouseButtonUp(0)) beam.Enable(false);
     }
 
     void SwitchCameraAim()
@@ -70,6 +75,7 @@ public class CameraController : MonoBehaviour
         if(cameraMovement != null)
             StopCoroutine(cameraMovement);
         cameraMovement = StartCoroutine(CameraMovementAnim(transform.Find("Main Camera"), new Vector3(0, 0, -4f), false));
+        beam.Enable(false);
     }
 
     IEnumerator CameraMovementAnim(Transform camera, Vector3 target, bool aiming)
