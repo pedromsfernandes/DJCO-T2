@@ -14,27 +14,30 @@ public class CameraCollision : MonoBehaviour
     void Start()
     {
         direction = transform.localPosition.normalized;
-        distance = transform.localPosition.magnitude;        
+        distance = transform.localPosition.magnitude;
     }
 
     void Update()
     {
-        Vector3 target = transform.parent.TransformPoint(direction * maxDistance);        
-        RaycastHit hit;
-
-        // mask to avoid collision with player model
-        int layerMask = 1 << 8;
-        layerMask = ~layerMask;
-
-        if(Physics.Linecast(transform.parent.position, target, out hit, layerMask))
+        if (!GameState.Instance.aiming)
         {
-            distance = Mathf.Clamp((hit.distance * 0.9f), minDistance, maxDistance);
-        }
-        else
-        {
-            distance = maxDistance;
-        }
+            Vector3 target = transform.parent.TransformPoint(direction * maxDistance);
+            RaycastHit hit;
 
-        transform.localPosition = Vector3.Lerp(transform.localPosition, direction * distance, Time.deltaTime * smooth);
+            // mask to avoid collision with player model
+            int layerMask = 1 << 8;
+            layerMask = ~layerMask;
+
+            if (Physics.Linecast(transform.parent.position, target, out hit, layerMask))
+            {
+                distance = Mathf.Clamp((hit.distance * 0.9f), minDistance, maxDistance);
+            }
+            else
+            {
+                distance = maxDistance;
+            }
+
+            transform.localPosition = Vector3.Lerp(transform.localPosition, direction * distance, Time.deltaTime * smooth);
+        }
     }
 }

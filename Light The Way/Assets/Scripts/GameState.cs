@@ -9,7 +9,7 @@ using System.Collections;
         get { return instance; }
     }
 
-    bool aiming = false;
+    public bool aiming = false;
 
     void Awake()
     {

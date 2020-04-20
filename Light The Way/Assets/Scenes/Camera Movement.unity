@@ -280,6 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01355b081f6753b48981470dd8308bfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aiming: 0
 --- !u!4 &893460987
 Transform:
   m_ObjectHideFlags: 0
@@ -341,6 +342,8 @@ MonoBehaviour:
   speed: 120
   inputSensitivity: 150
   clampAngle: 80
+  smooth: 20
+  animTime: 0.1
   follow: {fileID: 1847750444}
   player: {fileID: 1837282802}
 --- !u!1 &1010206712

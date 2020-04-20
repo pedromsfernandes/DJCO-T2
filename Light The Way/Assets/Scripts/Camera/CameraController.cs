@@ -7,9 +7,13 @@ public class CameraController : MonoBehaviour
     float rotX = 0.0f;
     float rotY = 0.0f;
 
+    Coroutine cameraMovement = null;
+
     public float speed = 120.0f;
     public float inputSensitivity = 150.0f;
     public float clampAngle = 80.0f;
+    public int smooth = 10;
+    public float animTime = 0.5f;
     public GameObject follow;
     public GameObject player;
 
@@ -24,6 +28,8 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+        GetMouseInputs();
+
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
@@ -43,5 +49,43 @@ public class CameraController : MonoBehaviour
 
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+    }
+
+    void GetMouseInputs()
+    {
+        if (Input.GetMouseButtonDown(1)) SwitchCameraAim();
+
+        if (Input.GetMouseButtonUp(1)) SwitchCameraNormal();
+    }
+
+    void SwitchCameraAim()
+    {
+        if(cameraMovement != null)
+            StopCoroutine(cameraMovement);
+        cameraMovement = StartCoroutine(CameraMovementAnim(transform.Find("Main Camera"), new Vector3(1f, 0, -1.5f), true));
+    }
+
+    void SwitchCameraNormal()
+    {
+        if(cameraMovement != null)
+            StopCoroutine(cameraMovement);
+        cameraMovement = StartCoroutine(CameraMovementAnim(transform.Find("Main Camera"), new Vector3(0, 0, -4f), false));
+    }
+
+    IEnumerator CameraMovementAnim(Transform camera, Vector3 target, bool aiming)
+    {
+        if(aiming)
+            GameState.Instance.aiming = aiming;
+
+        Vector3 step = (target - camera.localPosition) / smooth;
+
+        for(int i = 0; i < smooth; i++)
+        {
+            camera.localPosition += step;
+            yield return new WaitForSeconds(animTime / smooth);
+        }
+
+        if(!aiming)
+            GameState.Instance.aiming = aiming;
     }
 }
