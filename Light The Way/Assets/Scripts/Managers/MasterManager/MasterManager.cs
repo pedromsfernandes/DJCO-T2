@@ -17,6 +17,15 @@ public class MasterManager : SingletonScriptableObject<MasterManager>
     [SerializeField]
     private List<NetworkedPrefab> _networkedPrefabs = new List<NetworkedPrefab>();
 
+    private Dictionary<string, bool> _talkingPlayers = new Dictionary<string, bool>();
+
+    public static Dictionary<string, bool> TalkingPlayers { get { return Instance._talkingPlayers; } }
+
+    public static void UpdatePlayer(string player, bool talking)
+    {
+        Instance._talkingPlayers[player] = talking;
+    }
+
     public static GameObject NetworkInstantiate(GameObject obj, Vector3 position, Quaternion rotation)
     {
 

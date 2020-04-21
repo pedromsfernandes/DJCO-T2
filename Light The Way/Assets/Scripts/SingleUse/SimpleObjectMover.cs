@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Voice.Unity;
+using Photon.Voice.PUN;
 
 public class SimpleObjectMover : MonoBehaviourPun
 {
@@ -10,9 +12,16 @@ public class SimpleObjectMover : MonoBehaviourPun
     [SerializeField]
     private float _moveSpeed = 1f;
 
+    private PhotonVoiceView _photonVoiceView;
+
+    private string value;
+
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _photonVoiceView = GetComponentInParent<PhotonVoiceView>();
+        value = "player" + Random.Range(0, 9999);
     }
 
     // Update is called once per frame
@@ -26,6 +35,9 @@ public class SimpleObjectMover : MonoBehaviourPun
 
             UpdateMovingBoolean((x != 0f || y != 0f));
         }
+
+        Debug.Log(_photonVoiceView.IsSpeaking);
+        MasterManager.UpdatePlayer(value, _photonVoiceView.IsSpeaking);
     }
 
     private void UpdateMovingBoolean(bool moving)

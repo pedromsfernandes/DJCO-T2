@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Voice.Unity;
 using Photon.Voice.PUN;
+using Photon.Pun;
 
 public class QuickInstantiate : MonoBehaviour
 {
@@ -13,15 +14,17 @@ public class QuickInstantiate : MonoBehaviour
 
     private float volumeBeforeMute;
 
+
     private void Awake()
     {
         Vector2 offset = Random.insideUnitCircle * 3f;
         Vector3 position = new Vector3(transform.position.x + offset.x, transform.position.y + offset.y, transform.position.z);
 
         MasterManager.NetworkInstantiate(_prefab, position, Quaternion.identity);
+
     }
 
-    private void Update()
+    private void UpdateKeyBinds()
     {
         Dictionary<string, KeyCode> keybinds = MasterManager.GameSettings.keybinds;
 
@@ -42,5 +45,10 @@ public class QuickInstantiate : MonoBehaviour
                 volumeBeforeMute = 0f;
             }
         }
+    }
+
+    private void Update()
+    {
+        UpdateKeyBinds();
     }
 }
