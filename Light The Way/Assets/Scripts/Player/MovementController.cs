@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 2f;
+    [SerializeField] private float movementSpeed = 5f;
     private float currentSpeed = 0f;
     private float speedSmoothVelocity = 0f;
     private float speedSmoothTime = 0.1f;
     private float rotationSpeed = 0.1f;
-    private float gravity = 3f;
+    private float gravity = 10f;
 
     private Transform mainCameraTransform;
 
@@ -29,6 +29,9 @@ public class MovementController : MonoBehaviour
 
     private void Move()
     {
+        float targetSpeed = 0f;
+        bool isWalkingSlow = Input.GetKey(KeyCode.LeftControl);
+        bool isRunning = Input.GetKey(KeyCode.LeftShift);
         Vector2 movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         Vector3 forward = mainCameraTransform.forward;
@@ -43,24 +46,34 @@ public class MovementController : MonoBehaviour
         Vector3 desiredMoveDirection = (forward * movementInput.y + right * movementInput.x).normalized;
 
         //Gravity
-        /*Vector3 gravityVector = Vector3.zero;
+        Vector3 gravityVector = Vector3.zero;
 
         if (!controller.isGrounded)
         {
             gravityVector.y -= gravity;
         }
-
-        controller.Move(gravityVector * Time.deltaTime);*/
-
+        
         if(desiredMoveDirection != Vector3.zero)
         {
             //Rotate player in the desired direction
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), rotationSpeed);
         }
 
-        float targetSpeed = movementSpeed * movementInput.magnitude;
+        targetSpeed = movementSpeed * movementInput.magnitude;
+
+        if (isWalkingSlow)
+        {
+            targetSpeed /= 2;
+        }
+
+        if (isRunning)
+        {
+            targetSpeed *= 2;
+        }
+
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
 
         controller.Move(desiredMoveDirection * currentSpeed * Time.deltaTime);
+        controller.Move(gravityVector * Time.deltaTime);
     }
 }
