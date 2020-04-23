@@ -17,11 +17,11 @@ public class LightBeam : MonoBehaviour
 
     void Update()
     {
-        if(active)
+        if (active)
         {
             lr.SetPosition(0, source.transform.position);
             RaycastHit hit;
-            if(Physics.Raycast(camera.transform.position, camera.transform.forward, out hit))
+            if (Physics.Raycast(source.transform.position, camera.transform.forward, out hit))
             {
                 if(hit.collider)
                 {
@@ -30,7 +30,7 @@ public class LightBeam : MonoBehaviour
             }
             else
             {
-                lr.SetPosition(1, camera.transform.forward*5000);
+                lr.SetPosition(1, camera.transform.forward * 5000);
             }
         }
     }
