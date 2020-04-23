@@ -9,7 +9,12 @@ using System.Collections;
         get { return instance; }
     }
 
+    //Light Beam
     public bool aiming = false;
+
+    //Movement
+    public bool running = false;
+    public bool walkingSlow = false;
 
     void Awake()
     {

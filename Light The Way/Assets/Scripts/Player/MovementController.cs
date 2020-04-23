@@ -29,11 +29,16 @@ public class MovementController : MonoBehaviour
 
     private void Move()
     {
-        float targetSpeed = 0f;
         bool isWalkingSlow = Input.GetKey(KeyCode.LeftControl);
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         Vector2 movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        float targetSpeed;
 
+        //Update GameState
+        GameState.Instance.walkingSlow = isWalkingSlow;
+        GameState.Instance.running = isRunning;
+
+        //Get Direction
         Vector3 forward = mainCameraTransform.forward;
         Vector3 right = mainCameraTransform.right;
 
@@ -59,6 +64,7 @@ public class MovementController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), rotationSpeed);
         }
 
+        //Velocity
         targetSpeed = movementSpeed * movementInput.magnitude;
 
         if (isWalkingSlow)
@@ -66,13 +72,14 @@ public class MovementController : MonoBehaviour
             targetSpeed /= 2;
         }
 
-        if (isRunning)
+        if (isRunning && !GameState.Instance.aiming)
         {
             targetSpeed *= 2;
         }
 
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
 
+        //Apply changes
         controller.Move(desiredMoveDirection * currentSpeed * Time.deltaTime);
         controller.Move(gravityVector * Time.deltaTime);
     }
