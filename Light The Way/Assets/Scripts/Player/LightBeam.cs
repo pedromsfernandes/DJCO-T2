@@ -26,6 +26,7 @@ public class LightBeam : MonoBehaviour
                 if(hit.collider)
                 {
                     lr.SetPosition(1, hit.point);
+                    GameState.Instance.lastBeamHit = hit.point;
                 }
             }
             else

@@ -11,6 +11,7 @@ using System.Collections;
 
     //Light Beam
     public bool aiming = false;
+    public Vector3 lastBeamHit;
 
     //Movement
     public bool running = false;
