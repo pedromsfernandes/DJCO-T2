@@ -28,7 +28,7 @@ public class LightBeam : MonoBehaviour
                     lr.SetPosition(1, hit.point);
                     GameState.Instance.lastBeamHit = hit.point;
                     if (hit.transform.gameObject.layer == LayerMask.NameToLayer("LightHit"))
-                        hit.transform.gameObject.SendMessage("Hit", new object[] {this, hit});
+                        hit.transform.gameObject.SendMessage("Hit", new object[] {this, hit, camera.transform.forward});
                 }
             }
             else
