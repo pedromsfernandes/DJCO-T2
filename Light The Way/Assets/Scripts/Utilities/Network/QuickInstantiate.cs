@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Voice.Unity;
@@ -14,11 +15,13 @@ public class QuickInstantiate : MonoBehaviour
 
     private float volumeBeforeMute;
 
+    private Vector3[] positions = new Vector3[] { new Vector3(0, 0, 0), new Vector3(10, 0, 0), new Vector3(20, 0, 0) };
 
     private void Awake()
     {
-        Vector2 offset = Random.insideUnitCircle * 3f;
-        Vector3 position = new Vector3(transform.position.x + offset.x, transform.position.y + offset.y, transform.position.z);
+        int index = Array.FindIndex(PhotonNetwork.PlayerList, x => x == PhotonNetwork.LocalPlayer);
+
+        Vector3 position = positions[index];
 
         MasterManager.NetworkInstantiate(_prefab, position, Quaternion.identity);
 
