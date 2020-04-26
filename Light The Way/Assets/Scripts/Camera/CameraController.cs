@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class CameraController : MonoBehaviour
+public class CameraController : MonoBehaviourPun
 {
     float rotX = 0.0f;
     float rotY = 0.0f;
@@ -20,6 +21,12 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
+        if (!GetComponentInParent<PhotonView>().IsMine)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
         Vector3 rot = transform.localRotation.eulerAngles;
         rotX = rot.x;
         rotY = rot.y;

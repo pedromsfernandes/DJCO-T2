@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class MovementController : MonoBehaviour
+public class MovementController : MonoBehaviourPun
 {
     [SerializeField] private float movementSpeed = 5f;
     private float currentSpeed = 0f;
@@ -24,7 +25,8 @@ public class MovementController : MonoBehaviour
 
     void Update()
     {
-        Move();
+        if (GetComponentInParent<PhotonView>().IsMine)
+            Move();
     }
 
     private void Move()
@@ -57,8 +59,8 @@ public class MovementController : MonoBehaviour
         {
             gravityVector.y -= gravity;
         }
-        
-        if(desiredMoveDirection != Vector3.zero)
+
+        if (desiredMoveDirection != Vector3.zero)
         {
             //Rotate player in the desired direction
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), rotationSpeed);
