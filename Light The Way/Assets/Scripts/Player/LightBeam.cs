@@ -13,6 +13,9 @@ public class LightBeam : MonoBehaviour
     void Start()
     {
         lr = GetComponent<LineRenderer>();
+        lr.gameObject.AddComponent<LightColor>();
+        lr.gameObject.GetComponent<LightColor>().SetColor(false, false, true);
+        lr.SetColors(lr.gameObject.GetComponent<LightColor>().GetColor(), lr.gameObject.GetComponent<LightColor>().GetColor());
     }
 
     void Update()

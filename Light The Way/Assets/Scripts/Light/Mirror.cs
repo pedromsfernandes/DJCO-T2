@@ -12,6 +12,11 @@ public class Mirror : MonoBehaviour
 
     bool reflecting = false;
 
+    void Start()
+    {
+        lr.gameObject.AddComponent<LightColor>();
+    }
+
     void Hit(object[] args)
     {
         beam = (LightBeam)args[0];
@@ -20,6 +25,7 @@ public class Mirror : MonoBehaviour
 
         origin = h.point;
         direction = Vector3.Reflect(dir, h.normal);
+        lr.gameObject.GetComponent<LightColor>().SetColor(beam.GetComponent<LightColor>());
         reflecting = true;
         UpdateBeam();
     }
@@ -28,7 +34,6 @@ public class Mirror : MonoBehaviour
     {
         if (reflecting)
         {
-            Debug.Log(this.gameObject.name);
             lr.SetPosition(0, origin);
             RaycastHit hit;
             if (Physics.Raycast(origin, direction, out hit))
