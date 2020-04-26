@@ -23,10 +23,12 @@ public class LightBeam : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(source.transform.position, camera.transform.forward, out hit))
             {
-                if(hit.collider)
+                if (hit.collider)
                 {
                     lr.SetPosition(1, hit.point);
                     GameState.Instance.lastBeamHit = hit.point;
+                    if (hit.transform.gameObject.layer == LayerMask.NameToLayer("LightHit"))
+                        hit.transform.gameObject.SendMessage("Hit", new object[] {this, hit});
                 }
             }
             else
