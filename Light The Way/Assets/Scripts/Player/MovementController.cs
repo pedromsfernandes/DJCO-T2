@@ -20,12 +20,12 @@ public class MovementController : MonoBehaviourPun
     {
         controller = GetComponent<CharacterController>();
 
-        mainCameraTransform = Camera.main.transform;
+        mainCameraTransform = transform.Find("CameraBase").Find("Main Camera");
     }
 
     void Update()
     {
-        if (GetComponentInParent<PhotonView>().IsMine)
+        if (GetComponentInParent<PhotonView>() != null && GetComponentInParent<PhotonView>().IsMine)
             Move();
     }
 

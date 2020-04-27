@@ -21,11 +21,8 @@ public class CameraController : MonoBehaviourPun
 
     void Start()
     {
-        if (!GetComponentInParent<PhotonView>().IsMine)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
+        if (GetComponentInParent<PhotonView>() != null && !GetComponentInParent<PhotonView>().IsMine)
+            this.gameObject.SetActive(false);
 
         Vector3 rot = transform.localRotation.eulerAngles;
         rotX = rot.x;
@@ -61,25 +58,25 @@ public class CameraController : MonoBehaviourPun
 
     void GetMouseInputs()
     {
-        if(Input.GetMouseButtonDown(1)) SwitchCameraAim();
+        if (Input.GetMouseButtonDown(1)) SwitchCameraAim();
 
-        if(Input.GetMouseButtonUp(1)) SwitchCameraNormal();
+        if (Input.GetMouseButtonUp(1)) SwitchCameraNormal();
 
-        if(GameState.Instance.aiming && Input.GetMouseButtonDown(0)) beam.Enable(true);
+        if (GameState.Instance.aiming && Input.GetMouseButtonDown(0)) beam.Enable(true);
 
-        if(GameState.Instance.aiming && Input.GetMouseButtonUp(0)) beam.Enable(false);
+        if (GameState.Instance.aiming && Input.GetMouseButtonUp(0)) beam.Enable(false);
     }
 
     void SwitchCameraAim()
     {
-        if(cameraMovement != null)
+        if (cameraMovement != null)
             StopCoroutine(cameraMovement);
         cameraMovement = StartCoroutine(CameraMovementAnim(transform.Find("Main Camera"), new Vector3(1f, 0, -1.5f), true));
     }
 
     void SwitchCameraNormal()
     {
-        if(cameraMovement != null)
+        if (cameraMovement != null)
             StopCoroutine(cameraMovement);
         cameraMovement = StartCoroutine(CameraMovementAnim(transform.Find("Main Camera"), new Vector3(0, 0, -4f), false));
         beam.Enable(false);
@@ -87,18 +84,18 @@ public class CameraController : MonoBehaviourPun
 
     IEnumerator CameraMovementAnim(Transform camera, Vector3 target, bool aiming)
     {
-        if(aiming)
+        if (aiming)
             GameState.Instance.aiming = aiming;
 
         Vector3 step = (target - camera.localPosition) / smooth;
 
-        for(int i = 0; i < smooth; i++)
+        for (int i = 0; i < smooth; i++)
         {
             camera.localPosition += step;
             yield return new WaitForSeconds(animTime / smooth);
         }
 
-        if(!aiming)
+        if (!aiming)
             GameState.Instance.aiming = aiming;
     }
 }
