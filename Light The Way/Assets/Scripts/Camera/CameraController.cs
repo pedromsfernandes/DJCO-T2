@@ -43,6 +43,7 @@ public class CameraController : MonoBehaviourPun
         Quaternion localRotation = Quaternion.Euler(rotX, rotY, 0.0f);
         transform.rotation = localRotation;
         player.transform.rotation = Quaternion.Euler(0, rotY, 0);
+        player.transform.Find("Model").Find("CameraSource").rotation = Quaternion.Euler(rotX, rotY, 0);
     }
 
     void LateUpdate()
