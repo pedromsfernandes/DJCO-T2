@@ -4,64 +4,66 @@ using UnityEngine;
 
 public class Mirror : MonoBehaviour
 {
-    public LineRenderer lr;
+    public GameObject beamModel;
 
-    LightBeam beam;
-    Vector3 origin;
-    Vector3 direction;
-
-    bool reflecting = false;
-
-    void Start()
-    {
-        lr.gameObject.AddComponent<LightColor>();
-    }
+    int beamCnt = 0;
 
     void Hit(object[] args)
     {
-        beam = (LightBeam)args[0];
+        LightBeam beam = (LightBeam)args[0];
         RaycastHit h = (RaycastHit)args[1];
         Vector3 dir = (Vector3)args[2];
 
-        origin = h.point;
-        direction = Vector3.Reflect(dir, h.normal);
-        lr.gameObject.GetComponent<LightColor>().SetColor(beam.GetComponent<LightColor>());
-        reflecting = true;
-        UpdateBeam();
+        Vector3 origin = h.point;
+        Vector3 direction = Vector3.Reflect(dir, h.normal);
+
+        UpdateBeam(beam, origin, direction);
     }
 
-    void UpdateBeam()
+    void UpdateBeam(LightBeam beam, Vector3 origin, Vector3 direction)
     {
-        if (reflecting)
+        LineRenderer lr;
+
+        beamCnt++;
+
+        if (transform.Find("laserPool").childCount < beamCnt)
         {
-            lr.SetPosition(0, origin);
-            RaycastHit hit;
-            if (Physics.Raycast(origin, direction, out hit))
+            GameObject newBeam = (GameObject)Instantiate(beamModel);
+            newBeam.transform.parent = transform.Find("laserPool");
+            newBeam.AddComponent<LightColor>();
+            lr = newBeam.GetComponent<LineRenderer>();
+        }
+        else
+        {
+            lr = transform.Find("laserPool").GetChild(beamCnt - 1).gameObject.GetComponent<LineRenderer>();
+        }
+
+        lr.gameObject.GetComponent<LightColor>().SetColor(beam.GetComponent<LightColor>());
+        lr.SetPosition(0, origin);
+        RaycastHit hit;
+        if (Physics.Raycast(origin, direction, out hit))
+        {
+            if (hit.collider)
             {
-                if (hit.collider)
-                {
-                    lr.SetPosition(1, hit.point);
-                    if (hit.transform.gameObject.layer == LayerMask.NameToLayer("LightHit"))
-                        hit.transform.gameObject.SendMessage("Hit", new object[] { beam, hit, direction });
-                }
-            }
-            else
-            {
-                lr.SetPosition(1, direction * 5000);
+                lr.SetPosition(1, hit.point);
+                if (hit.transform.gameObject.layer == LayerMask.NameToLayer("LightHit"))
+                    hit.transform.gameObject.SendMessage("Hit", new object[] { beam, hit, direction });
             }
         }
+        else
+        {
+            lr.SetPosition(1, direction * 5000);
+        }
+
+        lr.gameObject.SetActive(true);
     }
 
     void LateUpdate()
     {
-        if(reflecting)
+        for (int i = beamCnt; i < transform.Find("laserPool").childCount; i++)
         {
-            reflecting = false;
-            lr.gameObject.SetActive(true);
+            transform.Find("laserPool").GetChild(i).gameObject.SetActive(false);
         }
-        else
-        {
-            lr.gameObject.SetActive(false);
-        }
+        beamCnt = 0;
     }
 }
