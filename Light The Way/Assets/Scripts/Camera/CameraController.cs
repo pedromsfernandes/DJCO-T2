@@ -21,9 +21,6 @@ public class CameraController : MonoBehaviourPun
 
     void Start()
     {
-        if (GetComponentInParent<PhotonView>() != null && !GetComponentInParent<PhotonView>().IsMine)
-            this.gameObject.SetActive(false);
-
         Vector3 rot = transform.localRotation.eulerAngles;
         rotX = rot.x;
         rotY = rot.y;

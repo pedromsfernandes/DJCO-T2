@@ -20,12 +20,19 @@ public class MovementController : MonoBehaviourPun
     {
         controller = GetComponent<CharacterController>();
 
-        mainCameraTransform = transform.Find("CameraBase").Find("Main Camera");
+        mainCameraTransform = Camera.main.transform;
+        if (GetComponent<PhotonView>() == null || GetComponent<PhotonView>().IsMine)
+        {
+            transform.Find("Laser").gameObject.GetComponent<LightBeam>().camera = mainCameraTransform.gameObject;
+            mainCameraTransform.gameObject.GetComponentInParent<CameraController>().follow = transform.Find("Model").Find("CameraFollow").gameObject;
+            mainCameraTransform.gameObject.GetComponentInParent<CameraController>().player = this.gameObject;
+            mainCameraTransform.gameObject.GetComponentInParent<CameraController>().beam = transform.Find("Laser").gameObject.GetComponent<LightBeam>();
+        }
     }
 
     void Update()
     {
-        if (GetComponentInParent<PhotonView>() != null && GetComponentInParent<PhotonView>().IsMine)
+        if (GetComponent<PhotonView>() == null || GetComponent<PhotonView>().IsMine)
             Move();
     }
 
