@@ -20,18 +20,20 @@ public class Destroyable : MonoBehaviour
 
     void Update()
     {
+        if (timeSinceLastHit > TIMEOUT)
+            return;
+
         timeSinceLastHit += Time.deltaTime;
         timeWithHit += Time.deltaTime;
 
         if (timeSinceLastHit > TIMEOUT)
         {
             timeWithHit = 0;
+            return;
         }
 
         if (timeWithHit > TIME_TO_DESTROY)
-        {
             this.Destroy();
-        }
     }
 
 
