@@ -13,10 +13,8 @@ public class Destroyable : MonoBehaviour
 
     public float TIME_TO_DESTROY = 5f;
 
-    private bool hit = false;
     void Hit(object[] args)
     {
-        hit = true;
         timeSinceLastHit = 0;
     }
 
@@ -45,6 +43,6 @@ public class Destroyable : MonoBehaviour
     [PunRPC]
     void DestroySelf()
     {
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
     }
 }
