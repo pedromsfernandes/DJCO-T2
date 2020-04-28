@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Mirrors and Endpoints.unity
     guid: 0c731708af543ed489a527db25d9e498
+  - enabled: 1
+    path: Assets/Scenes/Destroy Objects.unity
+    guid: d7bcce2acd6c6ba72b31cf88b61f6566
   m_configObjects: {}
