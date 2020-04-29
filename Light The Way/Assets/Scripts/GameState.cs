@@ -6,6 +6,7 @@ public class GameState : MonoBehaviour
     public static GameState Instance { get; private set; }
     //Light Beam
     public bool aiming = false;
+    public bool castingRay = false;
     public Vector3 lastBeamHit;
 
     //Movement
@@ -14,7 +15,8 @@ public class GameState : MonoBehaviour
 
     //Ability Unlocks
     public bool canRotateSun = true;
-    
+    public bool canCreateLightBridges = true;    
+
     void Awake()
     {
         DontDestroyOnLoad(gameObject);

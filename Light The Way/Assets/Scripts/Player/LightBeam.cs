@@ -38,6 +38,7 @@ public class LightBeam : MonoBehaviour
             else
             {
                 lr.SetPosition(1, camera.transform.forward * 5000);
+                GameState.Instance.lastBeamHit = camera.transform.forward * 5000;
             }
         }
     }
@@ -50,6 +51,7 @@ public class LightBeam : MonoBehaviour
     [PunRPC]
     void EnableSelf(bool op)
     {
+        GameState.Instance.castingRay = op;
         this.active = op;
         this.gameObject.SetActive(op);
     }
