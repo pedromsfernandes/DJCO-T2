@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 679962872}
   - component: {fileID: 679962871}
   - component: {fileID: 679962875}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Endpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1379,4 +1379,4 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
