@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TIMEOUT: 1
   TIME_TO_DESTROY: 3
+  TOOL_COLOR: BLUE
 --- !u!114 &6114907376554181158
 MonoBehaviour:
   m_ObjectHideFlags: 0
