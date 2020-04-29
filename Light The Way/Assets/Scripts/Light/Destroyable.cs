@@ -13,9 +13,14 @@ public class Destroyable : MonoBehaviour
 
     public float TIME_TO_DESTROY = 5f;
 
+    public Color TOOL_COLOR = new Color(0, 0, 0.5f, 1);
     void Hit(object[] args)
     {
-        timeSinceLastHit = 0;
+        LightBeam beam = (LightBeam)args[0];
+
+        Color color = beam.GetComponent<LightColor>().GetColor();
+        if (color == TOOL_COLOR)
+            timeSinceLastHit = 0;
     }
 
     void Update()
