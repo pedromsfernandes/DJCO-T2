@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class LightBeam : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class LightBeam : MonoBehaviour
     void Start()
     {
         lr = GetComponent<LineRenderer>();
+        lr.gameObject.AddComponent<LightColor>();
+        lr.gameObject.GetComponent<LightColor>().SetColor(false, false, true);
+        lr.SetColors(lr.gameObject.GetComponent<LightColor>().GetColor(), lr.gameObject.GetComponent<LightColor>().GetColor());
     }
 
     void Update()
@@ -23,10 +27,12 @@ public class LightBeam : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(source.transform.position, camera.transform.forward, out hit))
             {
-                if(hit.collider)
+                if (hit.collider)
                 {
                     lr.SetPosition(1, hit.point);
                     GameState.Instance.lastBeamHit = hit.point;
+                    if (hit.transform.gameObject.layer == LayerMask.NameToLayer("LightHit"))
+                        hit.transform.gameObject.SendMessage("Hit", new object[] { this, hit, camera.transform.forward });
                 }
             }
             else
@@ -37,6 +43,12 @@ public class LightBeam : MonoBehaviour
     }
 
     public void Enable(bool op)
+    {
+        this.GetComponent<PhotonView>().RPC("EnableSelf", RpcTarget.All, op);
+    }
+
+    [PunRPC]
+    void EnableSelf(bool op)
     {
         this.active = op;
         this.gameObject.SetActive(op);

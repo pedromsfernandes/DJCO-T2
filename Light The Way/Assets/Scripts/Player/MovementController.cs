@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class MovementController : MonoBehaviour
+public class MovementController : MonoBehaviourPun
 {
     [SerializeField] private float movementSpeed = 5f;
     private float currentSpeed = 0f;
@@ -20,11 +21,19 @@ public class MovementController : MonoBehaviour
         controller = GetComponent<CharacterController>();
 
         mainCameraTransform = Camera.main.transform;
+        transform.Find("Laser").gameObject.GetComponent<LightBeam>().camera = transform.Find("Model").Find("CameraSource").gameObject;
+        if (GetComponent<PhotonView>() == null || GetComponent<PhotonView>().IsMine)
+        {
+            mainCameraTransform.gameObject.GetComponentInParent<CameraController>().follow = transform.Find("Model").Find("CameraFollow").gameObject;
+            mainCameraTransform.gameObject.GetComponentInParent<CameraController>().player = this.gameObject;
+            mainCameraTransform.gameObject.GetComponentInParent<CameraController>().beam = transform.Find("Laser").gameObject.GetComponent<LightBeam>();
+        }
     }
 
     void Update()
     {
-        Move();
+        if (GetComponent<PhotonView>() == null || GetComponent<PhotonView>().IsMine)
+            Move();
     }
 
     private void Move()
@@ -57,8 +66,8 @@ public class MovementController : MonoBehaviour
         {
             gravityVector.y -= gravity;
         }
-        
-        if(desiredMoveDirection != Vector3.zero)
+
+        if (desiredMoveDirection != Vector3.zero)
         {
             //Rotate player in the desired direction
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), rotationSpeed);

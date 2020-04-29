@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class CameraController : MonoBehaviour
+public class CameraController : MonoBehaviourPun
 {
     float rotX = 0.0f;
     float rotY = 0.0f;
@@ -42,6 +43,7 @@ public class CameraController : MonoBehaviour
         Quaternion localRotation = Quaternion.Euler(rotX, rotY, 0.0f);
         transform.rotation = localRotation;
         player.transform.rotation = Quaternion.Euler(0, rotY, 0);
+        player.transform.Find("Model").Find("CameraSource").rotation = Quaternion.Euler(rotX, rotY, 0);
     }
 
     void LateUpdate()
@@ -54,25 +56,25 @@ public class CameraController : MonoBehaviour
 
     void GetMouseInputs()
     {
-        if(Input.GetMouseButtonDown(1)) SwitchCameraAim();
+        if (Input.GetMouseButtonDown(1)) SwitchCameraAim();
 
-        if(Input.GetMouseButtonUp(1)) SwitchCameraNormal();
+        if (Input.GetMouseButtonUp(1)) SwitchCameraNormal();
 
-        if(GameState.Instance.aiming && Input.GetMouseButtonDown(0)) beam.Enable(true);
+        if (GameState.Instance.aiming && Input.GetMouseButtonDown(0)) beam.Enable(true);
 
-        if(GameState.Instance.aiming && Input.GetMouseButtonUp(0)) beam.Enable(false);
+        if (GameState.Instance.aiming && Input.GetMouseButtonUp(0)) beam.Enable(false);
     }
 
     void SwitchCameraAim()
     {
-        if(cameraMovement != null)
+        if (cameraMovement != null)
             StopCoroutine(cameraMovement);
         cameraMovement = StartCoroutine(CameraMovementAnim(transform.Find("Main Camera"), new Vector3(1f, 0, -1.5f), true));
     }
 
     void SwitchCameraNormal()
     {
-        if(cameraMovement != null)
+        if (cameraMovement != null)
             StopCoroutine(cameraMovement);
         cameraMovement = StartCoroutine(CameraMovementAnim(transform.Find("Main Camera"), new Vector3(0, 0, -4f), false));
         beam.Enable(false);
@@ -80,18 +82,18 @@ public class CameraController : MonoBehaviour
 
     IEnumerator CameraMovementAnim(Transform camera, Vector3 target, bool aiming)
     {
-        if(aiming)
+        if (aiming)
             GameState.Instance.aiming = aiming;
 
         Vector3 step = (target - camera.localPosition) / smooth;
 
-        for(int i = 0; i < smooth; i++)
+        for (int i = 0; i < smooth; i++)
         {
             camera.localPosition += step;
             yield return new WaitForSeconds(animTime / smooth);
         }
 
-        if(!aiming)
+        if (!aiming)
             GameState.Instance.aiming = aiming;
     }
 }
