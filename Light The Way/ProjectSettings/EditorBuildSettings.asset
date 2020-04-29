@@ -8,13 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rooms.unity
     guid: 333345a692231efd6b02d4cc8ff20bbf
+  - enabled: 1
+    path: Assets/Scenes/LightBridges.unity
+    guid: 17d583411043fbb4e9f8bab073d63437
+  - enabled: 0
+    path: Assets/Scenes/Mirrors and Endpoints.unity
+    guid: 0c731708af543ed489a527db25d9e498
   - enabled: 0
     path: Assets/Scenes/Game.unity
     guid: 1757e520867eede8f9275fc99947dec7
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Mirrors and Endpoints.unity
-    guid: 0c731708af543ed489a527db25d9e498
   m_configObjects: {}
