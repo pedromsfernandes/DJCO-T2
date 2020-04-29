@@ -36,6 +36,7 @@ MonoBehaviour:
   - RPC_ChangeReadyState
   - EnableSelf
   - RotateSelf
+  - UpdateColorSelf
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
