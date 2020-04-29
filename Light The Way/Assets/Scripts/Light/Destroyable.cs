@@ -18,8 +18,7 @@ public class Destroyable : MonoBehaviour
     {
         LightBeam beam = (LightBeam)args[0];
 
-        Color color = beam.GetComponent<LightColor>().GetColor();
-        if (color == TOOL_COLOR)
+        if(beam.GetComponent<LightColor>().IsColorEqual(TOOL_COLOR))
             timeSinceLastHit = 0;
     }
 

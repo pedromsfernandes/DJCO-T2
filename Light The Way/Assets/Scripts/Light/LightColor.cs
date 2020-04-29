@@ -41,4 +41,9 @@ public class LightColor : MonoBehaviour
         else if (b) return LightColor.blue;
         else return LightColor.white;
     }
+
+    public bool IsColorEqual(Color color)
+    {
+        return this.GetColor() == color;
+    }
 }
