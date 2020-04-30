@@ -13,6 +13,12 @@ public class LightColor : MonoBehaviour
     static Color white = new Color(1, 1, 1, 1);
     static Color none = new Color(0, 0, 0, 0);
 
+    static Dictionary<string, Color> colors = new Dictionary<string, Color> {
+        {"BLUE", LightColor.blue},
+        {"RED", LightColor.red},
+        {"GREEN", LightColor.green}
+    };
+
     public bool r = false;
     public bool g = false;
     public bool b = false;
@@ -55,5 +61,10 @@ public class LightColor : MonoBehaviour
         else if (g) return LightColor.green;
         else if (b) return LightColor.blue;
         else return LightColor.none;
+    }
+
+    public bool IsColorEqual(string color)
+    {
+        return this.GetColor() == LightColor.colors[color];
     }
 }

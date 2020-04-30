@@ -35,6 +35,7 @@ MonoBehaviour:
   - DestroyRpc
   - RPC_ChangeReadyState
   - EnableSelf
+  - DestroySelf
   - RotateSelf
   - UpdateColorSelf
   DisableAutoOpenWizard: 1
