@@ -11,6 +11,7 @@ public class LightColor : MonoBehaviour
     static Color yellow = new Color(1, 1, 0, 1);
     static Color magenta = new Color(1, 0, 0.6f, 1);
     static Color white = new Color(1, 1, 1, 1);
+    static Color none = new Color(0, 0, 0, 0);
 
     static Dictionary<string, Color> colors = new Dictionary<string, Color> {
         {"BLUE", LightColor.blue},
@@ -36,6 +37,20 @@ public class LightColor : MonoBehaviour
         b = c.b;
     }
 
+    public void AddColor(bool red, bool green, bool blue)
+    {
+        r = r || red;
+        g = g || green;
+        b = b || blue;
+    }
+
+    public void AddColor(LightColor c)
+    {
+        r = r || c.r;
+        g = g || c.g;
+        b = b || c.b;
+    }
+
     public Color GetColor()
     {
         if (r && g && b) return LightColor.white;
@@ -45,7 +60,7 @@ public class LightColor : MonoBehaviour
         else if (r) return LightColor.red;
         else if (g) return LightColor.green;
         else if (b) return LightColor.blue;
-        else return LightColor.white;
+        else return LightColor.none;
     }
 
     public bool IsColorEqual(string color)

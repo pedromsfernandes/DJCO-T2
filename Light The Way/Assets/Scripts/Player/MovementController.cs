@@ -38,6 +38,21 @@ public class MovementController : MonoBehaviourPun
 
     private void Move()
     {
+        // change laser color - temporary
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            transform.Find("Laser").gameObject.GetComponent<LightBeam>().UpdateColor(true, false, false);
+        }
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            transform.Find("Laser").gameObject.GetComponent<LightBeam>().UpdateColor(false, true, false);
+        }
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            transform.Find("Laser").gameObject.GetComponent<LightBeam>().UpdateColor(false, false, true);
+        }
+
         bool isWalkingSlow = Input.GetKey(KeyCode.LeftControl);
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         Vector2 movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
