@@ -42,6 +42,18 @@ public class LightBeam : MonoBehaviour
         }
     }
 
+    public void UpdateColor(bool red, bool green, bool blue)
+    {
+        this.GetComponent<PhotonView>().RPC("UpdateColorSelf", RpcTarget.All, red, green, blue);
+    }
+
+    [PunRPC]
+    void UpdateColorSelf(bool red, bool green, bool blue)
+    {
+        lr.gameObject.GetComponent<LightColor>().SetColor(red, green, blue);
+        lr.SetColors(lr.gameObject.GetComponent<LightColor>().GetColor(), lr.gameObject.GetComponent<LightColor>().GetColor());
+    }
+
     public void Enable(bool op)
     {
         this.GetComponent<PhotonView>().RPC("EnableSelf", RpcTarget.All, op);

@@ -39,6 +39,7 @@ public class Mirror : MonoBehaviour
         }
 
         lr.gameObject.GetComponent<LightColor>().SetColor(beam.GetComponent<LightColor>());
+        lr.SetColors(lr.gameObject.GetComponent<LightColor>().GetColor(), lr.gameObject.GetComponent<LightColor>().GetColor());
         lr.SetPosition(0, origin);
         RaycastHit hit;
         if (Physics.Raycast(origin, direction, out hit))
