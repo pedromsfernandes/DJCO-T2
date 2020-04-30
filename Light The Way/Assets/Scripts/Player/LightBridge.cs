@@ -5,8 +5,8 @@ using Photon.Pun;
 
 public class LightBridge : MonoBehaviour
 {
-    const float maxBridgeLength = 10;
-    const float maxDistanceBetweenPlayerAndLightBridgePoint = 100;
+    public float maxBridgeLength = 10;
+    public float maxDistanceBetweenPlayerAndLightBridgePoint = 100;
 
     bool LightBridgeFirstPointFixed = false;
     Vector3 firstPoint;
@@ -32,7 +32,7 @@ public class LightBridge : MonoBehaviour
                 {
                     if (isBridgePossible(firstPoint, GameState.Instance.lastBeamHit))
                     {
-                        deleteLightBridgeSelf();
+                        deleteLightBridge();
                         createLightBridge(firstPoint, GameState.Instance.lastBeamHit);
                     }
 
@@ -52,7 +52,6 @@ public class LightBridge : MonoBehaviour
 
     private void fixateFirstPoint()
     {
-        Debug.Log("Fixating 1nd point");
         LightBridgeFirstPointFixed = true;
         firstPoint = GameState.Instance.lastBeamHit;
         Debug.Log(firstPoint);
@@ -63,17 +62,14 @@ public class LightBridge : MonoBehaviour
         float distance = Vector3.Distance(p1, p2);
         if(distance <= maxBridgeLength)
         {
-            Debug.Log("Distance is less than maxBridgeLength");
             return true;
         }
-        Debug.Log("Distance is NOT less than maxBridgeLength");
         return false;
     }
 
     private void returnToIdle()
     {
         LightBridgeFirstPointFixed = false;
-        Debug.Log("Returning to Idle");
     }
 
     private bool isPointValid()
@@ -82,10 +78,8 @@ public class LightBridge : MonoBehaviour
         float distance = Vector3.Distance(playerPosition, GameState.Instance.lastBeamHit);
         if (distance <= maxDistanceBetweenPlayerAndLightBridgePoint)
         {
-            Debug.Log("Distance is less than maxDistanceBetweenPlayerAndLightBridgePoint");
             return true;
         }
-        Debug.Log("Distance is NOT less than maxDistanceBetweenPlayerAndLightBridgePoint");
         return false;
     }
 
@@ -97,7 +91,6 @@ public class LightBridge : MonoBehaviour
     [PunRPC]
     void createLightBridgeSelf(Vector3 p1, Vector3 p2)
     {
-        Debug.Log("Creating Light Bridge between: " + p1 + " and " + p2);
         float distance = Vector3.Distance(p1, p2);
         Vector3 direction = p2 - p1;
         Vector2 dirYX = new Vector2(direction.y, direction.x);
@@ -124,6 +117,12 @@ public class LightBridge : MonoBehaviour
         activeLightBridge = Instantiate(lightBridge);
     }
 
+    public void deleteLightBridge()
+    {
+        this.GetComponent<PhotonView>().RPC("deleteLightBridgeSelf", RpcTarget.All);
+    }
+
+    [PunRPC]
     void deleteLightBridgeSelf()
     {
         Destroy(activeLightBridge);
