@@ -125,6 +125,10 @@ public class LightBridge : MonoBehaviour
     [PunRPC]
     void deleteLightBridgeSelf()
     {
-        Destroy(activeLightBridge);
+        if (activeLightBridge != null)
+        {
+            activeLightBridge.SetActive(false);
+            Destroy(activeLightBridge);
+        }
     }
 }
