@@ -181,10 +181,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiming: 0
+  castingRay: 0
   lastBeamHit: {x: 0, y: 0, z: 0}
   running: 0
   walkingSlow: 0
   canRotateSun: 1
+  canCreateLightBridges: 1
 --- !u!4 &145426241
 Transform:
   m_ObjectHideFlags: 0

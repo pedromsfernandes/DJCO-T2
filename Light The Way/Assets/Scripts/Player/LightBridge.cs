@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class LightBridge : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class LightBridge : MonoBehaviour
 
     bool LightBridgeFirstPointFixed = false;
     Vector3 firstPoint;
+
+    GameObject activeLightBridge;
 
     // Start is called before the first frame update
     void Start()
@@ -29,8 +32,7 @@ public class LightBridge : MonoBehaviour
                 {
                     if (isBridgePossible(firstPoint, GameState.Instance.lastBeamHit))
                     {
-                        //Create Bridge
-                        Debug.Log("Creating Bridge");
+                        createLightBridge(firstPoint, GameState.Instance.lastBeamHit);
                     }
 
                     returnToIdle();
@@ -84,5 +86,25 @@ public class LightBridge : MonoBehaviour
         }
         Debug.Log("Distance is NOT less than maxDistanceBetweenPlayerAndLightBridgePoint");
         return false;
+    }
+
+    public void createLightBridge(Vector3 p1, Vector3 p2)
+    {
+        this.GetComponent<PhotonView>().RPC("createLightBridgeSelf", RpcTarget.All, p1, p2);
+    }
+
+    [PunRPC]
+    void createLightBridgeSelf(Vector3 p1, Vector3 p2)
+    {
+
+        Debug.Log("Creating Light Bridge between: " + p1 + " and " + p2);
+        float distance = Vector3.Distance(p1, p2);
+        GameObject lightBridge = Resources.Load<GameObject>("Light Bridge");
+        
+        lightBridge.transform.position = (p1 + p2) / 2;
+        lightBridge.transform.localScale = new Vector3(distance, lightBridge.transform.localScale.y, lightBridge.transform.localScale.z);
+
+        
+        activeLightBridge = Instantiate(lightBridge);
     }
 }
