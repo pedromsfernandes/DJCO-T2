@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LightColor : MonoBehaviour
 {
@@ -16,18 +14,20 @@ public class LightColor : MonoBehaviour
     public bool g = false;
     public bool b = false;
 
-    public void SetColor(bool red, bool green, bool blue)
+    public LightColor SetColor(bool red, bool green, bool blue)
     {
         r = red;
         g = green;
         b = blue;
+        return this;
     }
 
-    public void SetColor(LightColor c)
+    public LightColor SetColor(LightColor c)
     {
         r = c.r;
         g = c.g;
         b = c.b;
+        return this;
     }
 
     public Color GetColor()

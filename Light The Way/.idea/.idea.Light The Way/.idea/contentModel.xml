@@ -309,6 +309,12 @@
             <e p="CameraController.cs" t="Include" />
           </e>
           <e p="GameState.cs" t="Include" />
+          <e p="Light" t="Include">
+            <e p="LightBeam.cs" t="Include" />
+            <e p="LightColor.cs" t="Include" />
+            <e p="Mirror.cs" t="Include" />
+            <e p="PlayerBeam.cs" t="Include" />
+          </e>
           <e p="Lighting" t="Include">
             <e p="SunController.cs" t="Include" />
           </e>
@@ -321,7 +327,6 @@
             <e p="SingletonScriptableObject.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
-            <e p="LightBeam.cs" t="Include" />
             <e p="MovementController.cs" t="Include" />
           </e>
           <e p="SingletonReferences.cs" t="Include" />
