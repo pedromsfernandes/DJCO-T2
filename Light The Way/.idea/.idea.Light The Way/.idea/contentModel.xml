@@ -310,6 +310,8 @@
           </e>
           <e p="GameState.cs" t="Include" />
           <e p="Light" t="Include">
+            <e p="BeamEmitter.cs" t="Include" />
+            <e p="BeamSensor.cs" t="Include" />
             <e p="LightBeam.cs" t="Include" />
             <e p="LightColor.cs" t="Include" />
             <e p="Mirror.cs" t="Include" />
