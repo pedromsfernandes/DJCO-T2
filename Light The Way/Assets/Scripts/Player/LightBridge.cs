@@ -32,6 +32,7 @@ public class LightBridge : MonoBehaviour
                 {
                     if (isBridgePossible(firstPoint, GameState.Instance.lastBeamHit))
                     {
+                        deleteLightBridgeSelf();
                         createLightBridge(firstPoint, GameState.Instance.lastBeamHit);
                     }
 
@@ -96,15 +97,35 @@ public class LightBridge : MonoBehaviour
     [PunRPC]
     void createLightBridgeSelf(Vector3 p1, Vector3 p2)
     {
-
         Debug.Log("Creating Light Bridge between: " + p1 + " and " + p2);
         float distance = Vector3.Distance(p1, p2);
+        Vector3 direction = p2 - p1;
+        Vector2 dirYX = new Vector2(direction.y, direction.x);
+        Vector2 dirYZ = new Vector2(direction.y, direction.z);
+        float angleOfSlope;
+
+        if (dirYX.magnitude > dirYZ.magnitude)
+        {
+            angleOfSlope = Mathf.Atan2(direction.y, direction.x);
+        }
+        else
+        {
+            angleOfSlope = Mathf.Atan2(direction.y, direction.z);
+        }
+
+        float xRotationAngle = -Mathf.Sin(angleOfSlope) * Mathf.Rad2Deg;
+        float yRotationAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
         GameObject lightBridge = Resources.Load<GameObject>("Light Bridge");
         
         lightBridge.transform.position = (p1 + p2) / 2;
-        lightBridge.transform.localScale = new Vector3(distance, lightBridge.transform.localScale.y, lightBridge.transform.localScale.z);
+        lightBridge.transform.localScale = new Vector3(lightBridge.transform.localScale.x, lightBridge.transform.localScale.y, distance);
+        lightBridge.transform.rotation = Quaternion.Euler(xRotationAngle, yRotationAngle, 0);
 
-        
         activeLightBridge = Instantiate(lightBridge);
+    }
+
+    void deleteLightBridgeSelf()
+    {
+        Destroy(activeLightBridge);
     }
 }
