@@ -18,6 +18,7 @@ public class Endpoint : MonoBehaviour
         lr.SetColors(target.GetColor(), target.GetColor());
         lr.SetPosition(0, new Vector3(transform.position.x, transform.position.y, transform.position.z));
         lr.SetPosition(1, new Vector3(transform.position.x, transform.position.y + 50000, transform.position.z));
+        lr.gameObject.SetActive(true);
     }
 
     void Hit(object[] args)
