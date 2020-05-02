@@ -7,13 +7,13 @@ namespace Light
         private Transform _laserPool;
         private int _beamCount = 0;
 
-        private void Start()
+        protected void Awake()
         { 
             _laserPool = transform.Find("laserPool");
-            if (!_laserPool) _laserPool = Instantiate(new GameObject("laserPool"), transform).transform;
+            if (!_laserPool) _laserPool = transform;
         }
 
-        protected void EmitBeam(LightColor color, Vector3 origin, Vector3 direction)
+        protected LightBeam EmitBeam(LightColor color, Vector3 origin, Vector3 direction)
         {
             _beamCount++;
             
@@ -22,6 +22,7 @@ namespace Light
                 : LightBeam.UpdateLightBeam(_laserPool.GetChild(_beamCount - 1).gameObject, color, origin, direction);
         
             newBeam.Enable(true);
+            return newBeam;
         }
 
         private void LateUpdate()

@@ -16,11 +16,8 @@ namespace Light
         
         private void Start()
         {
-            _lightColor = gameObject.AddComponent<LightColor>().SetColor(false, false, true);
-            _lr = GetComponent<LineRenderer>();
-        
-            _lr.startColor = _lightColor.GetColor();
-            _lr.endColor = _lightColor.GetColor();
+            Lr = GetComponent<LineRenderer>();
+            UpdateColor(LightColor.Of(LightType.Blue));
         }
 
         protected override void Update()
@@ -39,11 +36,5 @@ namespace Light
         {
             GetComponent<PhotonView>().RPC("Enable", RpcTarget.All, op);
         }
-        
-        // public void Enable(bool op, Vector3 origin, Vector3 direction)
-        // {
-        //     _active = op;
-        //     gameObject.SetActive(op);
-        // }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Photon.Pun;
+﻿using System;
+using Photon.Pun;
 using UnityEngine;
 
 namespace Light
@@ -7,13 +8,13 @@ namespace Light
     {
         protected static GameObject BeamModel;
 
-        protected LightColor _lightColor;
-        protected LineRenderer _lr;
-
         protected bool Active = false;
         protected Vector3 Origin { private get; set; }
         protected Vector3 Direction { private get; set; }
-        
+
+        protected LineRenderer Lr;
+        public LightColor LightColor { get; private set; }
+
         public static LightBeam CreateLightBeam(Transform parent, LightColor lightColor, Vector3 origin, Vector3 direction)
         {
             var newBeam = Instantiate(BeamModel, parent, true);
@@ -21,21 +22,26 @@ namespace Light
         }
         
         public static LightBeam UpdateLightBeam(GameObject gameObject, LightColor lightColor, Vector3 origin, Vector3 direction)
-        { 
+        {
             return gameObject.GetComponent<LightBeam>().SetupBeam(lightColor, origin, direction);
+        }
+
+        public LightBeam UpdateColor(LightColor lightColor)
+        {
+            LightColor = lightColor;
+            Lr.startColor = lightColor.GetColor();
+            Lr.endColor = lightColor.GetColor();
+            
+            return this;
         }
 
         private LightBeam SetupBeam(LightColor lightColor, Vector3 origin, Vector3 direction)
         {
-            _lightColor = gameObject.AddComponent<LightColor>().SetColor(lightColor);
-            _lr = GetComponent<LineRenderer>();
-        
-            _lr.startColor = _lightColor.GetColor();
-            _lr.endColor = _lightColor.GetColor();
-            
+            Lr = GetComponent<LineRenderer>();
             Origin = origin;
             Direction = direction;
-            return this;
+            
+            return UpdateColor(lightColor);
         }
 
         protected virtual void Update()
@@ -48,12 +54,12 @@ namespace Light
 
         protected void ProcessRayBeam()
         {
-            _lr.SetPosition(0, Origin);
+            Lr.SetPosition(0, Origin);
             if (Physics.Raycast(Origin, Direction, out RaycastHit hit))
             {
                 if (hit.collider)
                 {
-                    _lr.SetPosition(1, hit.point);
+                    Lr.SetPosition(1, hit.point);
                     GameState.Instance.lastBeamHit = hit.point;
                     if (hit.transform.gameObject.layer == LayerMask.NameToLayer("LightHit"))
                         hit.transform.gameObject.SendMessage("Hit", new object[] {this, hit, Direction});
@@ -61,7 +67,7 @@ namespace Light
             }
             else
             {
-                _lr.SetPosition(1, Direction * 5000);
+                Lr.SetPosition(1, Direction * 5000);
             }
         }
 

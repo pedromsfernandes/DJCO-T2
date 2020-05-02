@@ -1,44 +1,114 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
-public class LightColor : MonoBehaviour
+namespace Light
 {
-    static Color red = new Color(1, 0, 0, 1);
-    static Color green = new Color(0, 0.5f, 0, 1);
-    static Color blue = new Color(0, 0, 0.5f, 1);
-    static Color cyan = new Color(0, 1, 1, 1);
-    static Color yellow = new Color(1, 1, 0, 1);
-    static Color magenta = new Color(1, 0, 0.6f, 1);
-    static Color white = new Color(1, 1, 1, 1);
-
-    public bool r = false;
-    public bool g = false;
-    public bool b = false;
-
-    public LightColor SetColor(bool red, bool green, bool blue)
+    public enum LightType
     {
-        r = red;
-        g = green;
-        b = blue;
-        return this;
+        None    = 0b000,
+        Red     = 0b100,
+        Green   = 0b010,
+        Blue    = 0b001
     }
-
-    public LightColor SetColor(LightColor c)
+    public class LightColor
     {
-        r = c.r;
-        g = c.g;
-        b = c.b;
-        return this;
-    }
+        private static readonly Color[][][] Colors = 
+        {
+            // No Red
+            new[]
+            {
+                // No Green
+                new[]
+                {
+                    // No Blue
+                    new Color(0, 0, 0, 0),
+                    // Blue
+                    new Color(0, 0, 0.5f, 1)
+                    
+                },
+                // Green
+                new[] 
+                {
+                    // No Blue
+                    new Color(0, 0.5f, 0, 1),
+                    // Blue
+                    new Color(0, 1, 1, 1)
+                }
+            },
+            // Red
+            new[]
+            {
+                // No Green
+                new[] 
+                {
+                    // No Blue
+                    new Color(0.5f, 0, 0, 1),
+                    // Blue
+                    new Color(1, 0, 0.7f, 1)
+                },
+                // Green
+                new[] 
+                {
+                    // No Blue
+                    new Color(1, 1, 0, 1),
+                    // Blue
+                    new Color(1, 1, 1, 1)
+                }
+            }
+        };
 
-    public Color GetColor()
-    {
-        if (r && g && b) return LightColor.white;
-        else if (r && g) return LightColor.yellow;
-        else if (r && b) return LightColor.magenta;
-        else if (b && g) return LightColor.cyan;
-        else if (r) return LightColor.red;
-        else if (g) return LightColor.green;
-        else if (b) return LightColor.blue;
-        else return LightColor.white;
+        private readonly List<int> _accumulatedTypes = new List<int>();
+        internal int _type;
+
+        public static LightColor Of(LightType type)
+        {
+            return new LightColor((int) type);
+        }
+
+        private LightColor(int type)
+        {
+            _type = type;
+        }
+ 
+        public LightColor AddColor(LightColor color)
+        {
+            _accumulatedTypes.Add(color._type);
+            _type |= color._type;
+            return this;
+        }
+        
+        public LightColor RemoveColor(LightColor color)
+        {
+            _accumulatedTypes.Remove(color._type);
+            _type = _accumulatedTypes.Aggregate(0, (acc, type) => acc | type);
+            return this;
+        }
+
+        public Color GetColor()
+        {
+            return Colors[(_type & 0b100) >> 2][(_type & 0b010) >> 1][_type & 0b001];
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+
+            switch (obj)
+            {
+                case LightColor lightColor :
+                    return _type == lightColor._type;
+                case LightType lightType:
+                    return _type == (int) lightType;
+                default:
+                    return false;
+            } 
+        }
+        
+        public override int GetHashCode()
+        {
+            return _type;
+        }
     }
 }

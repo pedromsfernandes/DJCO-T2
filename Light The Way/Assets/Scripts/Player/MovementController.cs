@@ -1,6 +1,7 @@
 ﻿using Light;
 using UnityEngine;
 using Photon.Pun;
+using LightType = Light.LightType;
 
 public class MovementController : MonoBehaviourPun
 {
@@ -37,6 +38,21 @@ public class MovementController : MonoBehaviourPun
 
     private void Move()
     {
+        // change laser color - temporary
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            transform.Find("Laser").gameObject.GetComponent<PlayerBeam>().UpdateColor(LightColor.Of(LightType.Red));
+        }
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            transform.Find("Laser").gameObject.GetComponent<PlayerBeam>().UpdateColor(LightColor.Of(LightType.Green));
+        }
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            transform.Find("Laser").gameObject.GetComponent<PlayerBeam>().UpdateColor(LightColor.Of(LightType.Blue));
+        }
+
         bool isWalkingSlow = Input.GetKey(KeyCode.LeftControl);
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         Vector2 movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));

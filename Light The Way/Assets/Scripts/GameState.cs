@@ -1,10 +1,13 @@
+using UnityEditor;
 using UnityEngine;
-using System.Collections;
 
 public class GameState : MonoBehaviour
 {
     public static GameState Instance { get; private set; }
+    
     //Light Beam
+    public GameObject beamModel;
+    
     public bool aiming = false;
     public Vector3 lastBeamHit;
 
@@ -14,8 +17,8 @@ public class GameState : MonoBehaviour
 
     //Ability Unlocks
     public bool canRotateSun = true;
-    
-    void Awake()
+
+    private void Awake()
     {
         DontDestroyOnLoad(gameObject);
         Instance = this;
