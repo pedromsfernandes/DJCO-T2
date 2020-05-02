@@ -9,14 +9,13 @@ public class ToolsController : MonoBehaviour
     GameObject tool2;
     GameObject tool3;
 
-    // Start is called before the first frame update
     void Start()
     {
+        //TEMP - Setting up 1 instance of each tool when the player is created
         tool1 = Resources.Load<GameObject>("Tools/Tool1");
         tool2 = Resources.Load<GameObject>("Tools/Tool2");
         tool3 = Resources.Load<GameObject>("Tools/Tool3");
 
-        //Setting up 1 instance of each tool when the player is created
         tool1.transform.position = new Vector3(this.transform.position.x - 2, this.transform.position.y, this.transform.position.z + 2);
         tool2.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + 2);
         tool3.transform.position = new Vector3(this.transform.position.x + 2, this.transform.position.y, this.transform.position.z + 2);
@@ -25,13 +24,14 @@ public class ToolsController : MonoBehaviour
         Instantiate(tool2);
         Instantiate(tool3);
 
+        GameState.Instance.hasTool1 = false;
+        GameState.Instance.hasTool2 = false;
+        GameState.Instance.hasTool3 = false;
 
-        /*GameState.Instance.hasTool1 = true;
-        GameState.Instance.hasTool2 = true;
-        GameState.Instance.hasTool3 = true;*/
+        GameState.Instance.canCreateLightBridges = true;
+        GameState.Instance.canRotateSun = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         chooseTool();

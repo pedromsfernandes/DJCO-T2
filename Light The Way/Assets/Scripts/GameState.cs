@@ -17,13 +17,13 @@ public class GameState : MonoBehaviour
     public int currentTool = 0;
 
     //Tools Picked Up
-    public bool hasTool1 = true;
-    public bool hasTool2 = true;
-    public bool hasTool3 = true;
+    public bool hasTool1;
+    public bool hasTool2;
+    public bool hasTool3;
 
     //Ability Unlocks
-    public bool canRotateSun = false;
-    public bool canCreateLightBridges = false;
+    public bool canRotateSun;
+    public bool canCreateLightBridges;
 
     void Awake()
     {
