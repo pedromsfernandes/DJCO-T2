@@ -20,7 +20,7 @@ namespace Lighting
         {
             float scrollAxis = Input.GetAxis("Mouse ScrollWheel");
 
-            if (GameState.Instance.canRotateSun && Math.Abs(scrollAxis) > 0.01)
+            if (GameState.Instance.canRotateSun && GameState.Instance.hasTool2 && GameState.Instance.currentTool == 2 && Math.Abs(scrollAxis) > 0.01)
             {
                 Rotate(scrollAxis, Time.deltaTime, rotationSpeed);
             }

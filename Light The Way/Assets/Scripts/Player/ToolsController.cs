@@ -78,7 +78,6 @@ public class ToolsController : MonoBehaviour
 
             else if (toolId == 3)
             {
-
                 Debug.Log("hasTool3 = false");
                 GameState.Instance.hasTool3 = false;
             }
@@ -150,21 +149,18 @@ public class ToolsController : MonoBehaviour
         if (toolId == 1)
         {
             tool1.transform.position = position;
-            //tool1.SetActive(true);
             Instantiate(tool1);
             Debug.Log("Tool 1 set active on - " + position);
         }
         else if (toolId == 2)
         {
             tool2.transform.position = position;
-            //tool2.SetActive(true);
             Instantiate(tool2);
             Debug.Log("Tool 2 set active on - " + position);
         }
         else if (toolId == 3)
         {
             tool3.transform.position = position;
-            //tool3.SetActive(true);
             Instantiate(tool3);
             Debug.Log("Tool 3 set active on - " + position);
         }
@@ -181,6 +177,6 @@ public class ToolsController : MonoBehaviour
     {
         Debug.Log("Destroying Tool " + toolName);
         GameObject tool = GameObject.Find(toolName);
-        tool.SetActive(false);
+        Destroy(tool);
     }
 }
