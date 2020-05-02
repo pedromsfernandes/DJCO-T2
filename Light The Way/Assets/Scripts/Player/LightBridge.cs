@@ -54,7 +54,6 @@ public class LightBridge : MonoBehaviour
     {
         LightBridgeFirstPointFixed = true;
         firstPoint = GameState.Instance.lastBeamHit;
-        Debug.Log(firstPoint);
     }
 
     private bool isBridgePossible(Vector3 p1, Vector3 p2)
