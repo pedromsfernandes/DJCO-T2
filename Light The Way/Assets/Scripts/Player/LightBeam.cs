@@ -7,7 +7,6 @@ public class LightBeam : MonoBehaviour
 {
     public GameObject source;
     public GameObject camera;
-    public LightBeam lightBeam;
 
     LineRenderer lr;
     bool active = false;
@@ -18,25 +17,12 @@ public class LightBeam : MonoBehaviour
         lr.gameObject.AddComponent<LightColor>();
         lr.gameObject.GetComponent<LightColor>().SetColor(false, false, true);
         lr.SetColors(lr.gameObject.GetComponent<LightColor>().GetColor(), lr.gameObject.GetComponent<LightColor>().GetColor());
-        lightBeam = this.GetComponent<LightBeam>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            lightBeam.UpdateColor(true, false, false);
-        }
-        else if (Input.GetKeyDown(KeyCode.G))
-        {
-            lightBeam.UpdateColor(false, true, false);
-        }
-        else if (Input.GetKeyDown(KeyCode.B))
-        {
-            lightBeam.UpdateColor(false, false, true);
-        }
 
-        if (active)
+        if (GameState.Instance.currentTool != 0 && active)
         {
             lr.SetPosition(0, source.transform.position);
             RaycastHit hit;
@@ -56,6 +42,10 @@ public class LightBeam : MonoBehaviour
                 GameState.Instance.lastBeamHit = camera.transform.forward * 5000;
             }
         }
+        /*else
+        {
+            Enable(false);
+        }*/
     }
 
     public void UpdateColor(bool red, bool green, bool blue)
