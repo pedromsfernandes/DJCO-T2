@@ -5,8 +5,6 @@ using Photon.Pun;
 
 public class ToolsController : MonoBehaviour
 {
-    public LightBeam lightBeam;
-
     GameObject tool1;
     GameObject tool2;
     GameObject tool3;
@@ -14,12 +12,11 @@ public class ToolsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lightBeam = transform.Find("Laser").gameObject.GetComponent<LightBeam>();
-
         tool1 = Resources.Load<GameObject>("Tools/Tool1");
         tool2 = Resources.Load<GameObject>("Tools/Tool2");
         tool3 = Resources.Load<GameObject>("Tools/Tool3");
 
+        //Setting up 1 instance of each tool when the player is created
         tool1.transform.position = new Vector3(this.transform.position.x - 2, this.transform.position.y, this.transform.position.z + 2);
         tool2.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + 2);
         tool3.transform.position = new Vector3(this.transform.position.x + 2, this.transform.position.y, this.transform.position.z + 2);
@@ -44,18 +41,32 @@ public class ToolsController : MonoBehaviour
     {
         if (GameState.Instance.hasTool1 && Input.GetKeyDown(KeyCode.R))
         {
-            GameState.Instance.currentTool = 1;
-            lightBeam.UpdateColor(true, false, false);
+            takeOutTool(1);
         }
         else if (GameState.Instance.hasTool2 && Input.GetKeyDown(KeyCode.G))
         {
-            GameState.Instance.currentTool = 2;
-            lightBeam.UpdateColor(false, true, false);
+            takeOutTool(2);
         }
         else if (GameState.Instance.hasTool3 && Input.GetKeyDown(KeyCode.B))
         {
-            GameState.Instance.currentTool = 3;
-            lightBeam.UpdateColor(false, false, true);
+            takeOutTool(3);
+        }
+    }
+
+    private void takeOutTool(int toolId)
+    {
+        GameState.Instance.currentTool = toolId;
+        if(toolId == 1)
+        {
+            transform.Find("Laser").gameObject.GetComponent<LightBeam>().UpdateColor(true, false, false);
+        }
+        else if (toolId == 2)
+        {
+            transform.Find("Laser").gameObject.GetComponent<LightBeam>().UpdateColor(false, true, false);
+        }
+        else if (toolId == 3)
+        {
+            transform.Find("Laser").gameObject.GetComponent<LightBeam>().UpdateColor(false, false, true);
         }
     }
 
@@ -70,14 +81,20 @@ public class ToolsController : MonoBehaviour
             if(toolName == "Tool1(Clone)")
             {
                 Debug.Log("Activating Tool 1 Power");
+                GameState.Instance.hasTool1 = true;
+                //takeOutTool(1);
             }
             else if (toolName == "Tool2(Clone)")
             {
                 Debug.Log("Activating Tool 2 Power");
+                GameState.Instance.hasTool2 = true;
+                //takeOutTool(2);
             }
             else if (toolName == "Tool3(Clone)")
             {
                 Debug.Log("Activating Tool 3 Power");
+                GameState.Instance.hasTool3 = true;
+                //takeOutTool(3);
             }
             
 
