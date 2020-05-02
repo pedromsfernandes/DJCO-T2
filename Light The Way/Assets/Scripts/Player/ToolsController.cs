@@ -35,6 +35,12 @@ public class ToolsController : MonoBehaviour
     void Update()
     {
         chooseTool();
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            dropCurrentTool();
+        }
+        
     }
 
     private void chooseTool()
@@ -50,6 +56,35 @@ public class ToolsController : MonoBehaviour
         else if (GameState.Instance.hasTool3 && Input.GetKeyDown(KeyCode.B))
         {
             takeOutTool(3);
+        }
+    }
+
+    void dropCurrentTool()
+    {
+        int toolId = GameState.Instance.currentTool;
+        Debug.Log("Going to drop current tool - " + toolId);
+        if (toolId != 0)
+        {
+            if(toolId == 1)
+            {
+                Debug.Log("hasTool1 = false");
+                GameState.Instance.hasTool1 = false;
+            }
+            else if(toolId == 2)
+            {
+                Debug.Log("hasTool2 = false");
+                GameState.Instance.hasTool2 = false;
+            }
+
+            else if (toolId == 3)
+            {
+
+                Debug.Log("hasTool3 = false");
+                GameState.Instance.hasTool3 = false;
+            }
+
+            GameState.Instance.currentTool = 0;
+            createDroppedTool(toolId);
         }
     }
 
@@ -96,10 +131,42 @@ public class ToolsController : MonoBehaviour
                 GameState.Instance.hasTool3 = true;
                 //takeOutTool(3);
             }
-            
-
 
             deletePickedUpTool(toolName);
+        }
+    }
+
+    public void createDroppedTool(int toolId)
+    {
+        Debug.Log("Going to create Droped Tool Photon - " + toolId);
+        Vector3 toolposition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + 1);
+        this.GetComponent<PhotonView>().RPC("createDroppedToolSelf", RpcTarget.All, toolId, toolposition);
+    }
+
+    [PunRPC]
+    void createDroppedToolSelf(int toolId, Vector3 position)
+    {
+        Debug.Log("Going to create Droped Tool - " + toolId);
+        if (toolId == 1)
+        {
+            tool1.transform.position = position;
+            //tool1.SetActive(true);
+            Instantiate(tool1);
+            Debug.Log("Tool 1 set active on - " + position);
+        }
+        else if (toolId == 2)
+        {
+            tool2.transform.position = position;
+            //tool2.SetActive(true);
+            Instantiate(tool2);
+            Debug.Log("Tool 2 set active on - " + position);
+        }
+        else if (toolId == 3)
+        {
+            tool3.transform.position = position;
+            //tool3.SetActive(true);
+            Instantiate(tool3);
+            Debug.Log("Tool 3 set active on - " + position);
         }
     }
 
