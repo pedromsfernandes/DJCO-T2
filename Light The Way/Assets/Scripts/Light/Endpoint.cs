@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Endpoint : MonoBehaviour
 {
+    public LightColor target;
+    public GameObject door;
+
     LineRenderer lr;
     LightColor lc;
 
@@ -12,9 +15,9 @@ public class Endpoint : MonoBehaviour
         lr = transform.Find("Laser").GetComponent<LineRenderer>();
         lc = lr.gameObject.AddComponent<LightColor>();
         lc.SetColor(false, false, false);
-        lr.SetColors(lc.GetColor(), lc.GetColor());
-        lr.SetPosition(0, new Vector3(transform.position.x, 0, transform.position.z));
-        lr.SetPosition(1, new Vector3(transform.position.x, 50000, transform.position.z));
+        lr.SetColors(target.GetColor(), target.GetColor());
+        lr.SetPosition(0, new Vector3(transform.position.x, transform.position.y, transform.position.z));
+        lr.SetPosition(1, new Vector3(transform.position.x, transform.position.y + 50000, transform.position.z));
     }
 
     void Hit(object[] args)
@@ -28,14 +31,10 @@ public class Endpoint : MonoBehaviour
 
     void LateUpdate()
     {
-        if(lc.GetColor().a == 0)
+        if(lc.GetColor() == target.GetColor())
         {
             lr.gameObject.SetActive(false);
-        }
-        else
-        {
-            lr.SetColors(lc.GetColor(), lc.GetColor());
-            lr.gameObject.SetActive(true);
+            door.SetActive(false);
         }
 
         lc.SetColor(false, false, false);
