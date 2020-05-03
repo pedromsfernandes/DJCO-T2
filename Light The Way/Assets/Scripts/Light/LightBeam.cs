@@ -1,5 +1,4 @@
-﻿using System;
-using Photon.Pun;
+﻿using Photon.Pun;
 using UnityEngine;
 
 namespace Light
@@ -26,6 +25,28 @@ namespace Light
             return gameObject.GetComponent<LightBeam>().SetupBeam(lightColor, origin, direction);
         }
 
+        public void AddColorRpc(LightColor lightColor)
+        {
+            GetComponent<PhotonView>().RPC("AddColorSelf", RpcTarget.All, lightColor.Type);
+        }
+        
+        public void RemoveColorRpc(LightColor lightColor)
+        {
+            GetComponent<PhotonView>().RPC("RemoveColorSelf", RpcTarget.All, lightColor.Type);
+        }
+
+        [PunRPC]
+        private void AddColorSelf(int colorType)
+        {
+            UpdateColor(LightColor.AddColor(LightColor.Of((LightType) colorType)));
+        }
+        
+        [PunRPC]
+        private void RemoveColorSelf(int colorType)
+        {
+            UpdateColor(LightColor.RemoveColor(LightColor.Of((LightType) colorType)));
+        }
+        
         public LightBeam UpdateColor(LightColor lightColor)
         {
             LightColor = lightColor;

@@ -17,13 +17,12 @@ namespace Light
 
         protected override void OnBeamSenseStart(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
         {
-            _endpointBeam.UpdateColor(_endpointBeam.LightColor.AddColor(beam.LightColor));
-            Debug.Log(_endpointBeam.LightColor._type);
+            _endpointBeam.AddColorRpc(beam.LightColor);
         }
     
         protected override void OnBeamSenseEnd(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
         {
-            _endpointBeam.UpdateColor(_endpointBeam.LightColor.RemoveColor(beam.LightColor));
+            _endpointBeam.RemoveColorRpc(beam.LightColor);
         }
     }
 }

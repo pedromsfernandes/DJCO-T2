@@ -59,7 +59,7 @@ namespace Light
         };
 
         private readonly List<int> _accumulatedTypes = new List<int>();
-        internal int _type;
+        internal int Type { get; private set; }
 
         public static LightColor Of(LightType type)
         {
@@ -68,26 +68,26 @@ namespace Light
 
         private LightColor(int type)
         {
-            _type = type;
+            Type = type;
         }
  
         public LightColor AddColor(LightColor color)
         {
-            _accumulatedTypes.Add(color._type);
-            _type |= color._type;
+            _accumulatedTypes.Add(color.Type);
+            Type |= color.Type;
             return this;
         }
         
         public LightColor RemoveColor(LightColor color)
         {
-            _accumulatedTypes.Remove(color._type);
-            _type = _accumulatedTypes.Aggregate(0, (acc, type) => acc | type);
+            _accumulatedTypes.Remove(color.Type);
+            Type = _accumulatedTypes.Aggregate(0, (acc, type) => acc | type);
             return this;
         }
 
         public Color GetColor()
         {
-            return Colors[(_type & 0b100) >> 2][(_type & 0b010) >> 1][_type & 0b001];
+            return Colors[(Type & 0b100) >> 2][(Type & 0b010) >> 1][Type & 0b001];
         }
 
         public override bool Equals(object obj)
@@ -98,9 +98,9 @@ namespace Light
             switch (obj)
             {
                 case LightColor lightColor :
-                    return _type == lightColor._type;
+                    return Type == lightColor.Type;
                 case LightType lightType:
-                    return _type == (int) lightType;
+                    return Type == (int) lightType;
                 default:
                     return false;
             } 
@@ -108,7 +108,7 @@ namespace Light
         
         public override int GetHashCode()
         {
-            return _type;
+            return Type;
         }
     }
 }
