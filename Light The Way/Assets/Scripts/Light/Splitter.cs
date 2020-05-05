@@ -13,6 +13,7 @@ namespace Light
 
             Vector3 direction1 = Quaternion.AngleAxis(120, Vector3.up) * diff;
             Vector3 direction2 = Quaternion.AngleAxis(-120, Vector3.up) * diff;
+            
             Vector3 start1 = direction1 + transform.position;
             start1.y = hit.point.y;
             Vector3 start2 = direction2 + transform.position;
