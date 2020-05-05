@@ -46,11 +46,11 @@ public class ToolsManager : MonoBehaviour
         }
         else if (GameState.Instance.hasTool2 && Input.GetKeyDown(KeyCode.G))
         {
-            takeOutTool(1);
+            takeOutTool(2);
         }
         else if (GameState.Instance.hasTool3 && Input.GetKeyDown(KeyCode.B))
         {
-            takeOutTool(1);
+            takeOutTool(3);
         }
     }
 
