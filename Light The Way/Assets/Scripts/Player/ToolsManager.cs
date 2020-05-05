@@ -12,7 +12,6 @@ public class ToolsManager : MonoBehaviour
     GameObject tool2;
     GameObject tool3;
 
-    // Start is called before the first frame update 
     void Start()
     {
         lightBeam = transform.Find("Laser").gameObject.GetComponent<PlayerBeam>();
@@ -26,13 +25,19 @@ public class ToolsManager : MonoBehaviour
         tool2.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + 2);
         tool3.transform.position = new Vector3(this.transform.position.x + 2, this.transform.position.y, this.transform.position.z + 2);
 
+        GameState.Instance.hasTool1 = false;
+        GameState.Instance.hasTool2 = false;
+        GameState.Instance.hasTool3 = false;
+
+        GameState.Instance.canCreateLightBridges = true;
+        GameState.Instance.canRotateSun = true;
+
         Instantiate(tool1);
         Instantiate(tool2);
         Instantiate(tool3);
 
     }
 
-    // Update is called once per frame 
     void Update()
     {
         chooseTool();
