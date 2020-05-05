@@ -89,6 +89,7 @@ namespace Light
             else
             {
                 Lr.SetPosition(1, Direction * 5000);
+                GameState.Instance.lastBeamHit = Direction * 5000;
             }
         }
 

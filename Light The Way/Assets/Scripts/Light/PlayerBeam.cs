@@ -45,6 +45,7 @@ namespace Light
         // Enables the LightBeam for all Clients (Used when starting a chain of LightBeams
         public void EnableSelf(bool op)
         {
+            GameState.Instance.castingRay = op;
             GetComponent<PhotonView>().RPC("Enable", RpcTarget.All, op);
         }
     }
