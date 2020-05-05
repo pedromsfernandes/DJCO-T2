@@ -13,16 +13,9 @@ public class LightBridge : MonoBehaviour
 
     GameObject activeLightBridge;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (GameState.Instance.canCreateLightBridges && GameState.Instance.castingRay)
+        if (GameState.Instance.canCreateLightBridges && GameState.Instance.hasTool3 && GameState.Instance.currentTool == 3 && GameState.Instance.castingRay)
         {
             bool isFixatingPoint = Input.GetKeyDown("e");
 
@@ -44,9 +37,7 @@ public class LightBridge : MonoBehaviour
                     fixateFirstPoint();
                 }
             }
-
         }
-
     }
 
 
