@@ -21,6 +21,7 @@ public class ToolsManager : MonoBehaviour
         tool2 = Resources.Load<GameObject>("Tools/Tool2");
         tool3 = Resources.Load<GameObject>("Tools/Tool3");
 
+        //Setting up 1 instance of each tool when the player is created 
         tool1.transform.position = new Vector3(this.transform.position.x - 2, this.transform.position.y, this.transform.position.z + 2);
         tool2.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + 2);
         tool3.transform.position = new Vector3(this.transform.position.x + 2, this.transform.position.y, this.transform.position.z + 2);
@@ -41,17 +42,31 @@ public class ToolsManager : MonoBehaviour
     {
         if (GameState.Instance.hasTool1 && Input.GetKeyDown(KeyCode.R))
         {
-            GameState.Instance.currentTool = 1;
-            lightBeam.UpdateColor(LightColor.Of(Light.LightType.Red));
+            takeOutTool(1);
         }
         else if (GameState.Instance.hasTool2 && Input.GetKeyDown(KeyCode.G))
         {
-            GameState.Instance.currentTool = 2;
-            lightBeam.UpdateColor(LightColor.Of(Light.LightType.Green));
+            takeOutTool(1);
         }
         else if (GameState.Instance.hasTool3 && Input.GetKeyDown(KeyCode.B))
         {
-            GameState.Instance.currentTool = 3;
+            takeOutTool(1);
+        }
+    }
+
+    private void takeOutTool(int toolId)
+    {
+        GameState.Instance.currentTool = toolId;
+        if (toolId == 1)
+        {
+            lightBeam.UpdateColor(LightColor.Of(Light.LightType.Red));
+        }
+        else if (toolId == 2)
+        {
+            lightBeam.UpdateColor(LightColor.Of(Light.LightType.Green));
+        }
+        else if (toolId == 3)
+        {
             lightBeam.UpdateColor(LightColor.Of(Light.LightType.Blue));
         }
     }
@@ -68,14 +83,17 @@ public class ToolsManager : MonoBehaviour
             if (toolName == "Tool1(Clone)")
             {
                 Debug.Log("Activating Tool 1 Power");
+                GameState.Instance.hasTool1 = true;
             }
             else if (toolName == "Tool2(Clone)")
             {
                 Debug.Log("Activating Tool 2 Power");
+                GameState.Instance.hasTool2 = true;
             }
             else if (toolName == "Tool3(Clone)")
             {
                 Debug.Log("Activating Tool 3 Power");
+                GameState.Instance.hasTool3 = true;
             }
 
 
