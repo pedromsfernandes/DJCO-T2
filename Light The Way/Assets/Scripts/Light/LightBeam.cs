@@ -1,4 +1,5 @@
-﻿using Photon.Pun;
+﻿using System;
+using Photon.Pun;
 using UnityEngine;
 
 namespace Light
@@ -14,6 +15,7 @@ namespace Light
         protected LineRenderer Lr;
         
         public LightColor LightColor { get; private set; }
+        private LightColor _stageColor = LightColor.Of(LightType.None);
         private bool _stage;
 
         public static LightBeam CreateLightBeam(Transform parent, LightColor lightColor, Vector3 origin, Vector3 direction)
@@ -36,12 +38,17 @@ namespace Light
             return this;
         }
 
-        public void StageColor(LightColor lightColor)
+        public void StageAddColor(LightColor lightColor)
+        {
+            StageColor(_stageColor.AddColor(lightColor));
+        }
+        
+        private void StageColor(LightColor lightColor)
         {
             _stage = true;
-            LightColor = lightColor;
+            _stageColor = lightColor;
         }
-
+        
         private LightBeam SetupBeam(LightColor lightColor, Vector3 origin, Vector3 direction)
         {
             Lr = GetComponent<LineRenderer>();
@@ -63,13 +70,15 @@ namespace Light
         {
             if (_stage)
             {
-                UpdateColor(LightColor);
+                UpdateColor(_stageColor);
                 
                 var emptyColor = LightColor.Of(LightType.None);
                 if (LightColor.Equals(emptyColor))
                     _stage = false;
                 else
                     StageColor(emptyColor);
+
+                Active = _stage;
             }
         }
 
