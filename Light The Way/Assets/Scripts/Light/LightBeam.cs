@@ -12,7 +12,9 @@ namespace Light
         protected Vector3 Direction { private get; set; }
 
         protected LineRenderer Lr;
+        
         public LightColor LightColor { get; private set; }
+        private bool _stage;
 
         public static LightBeam CreateLightBeam(Transform parent, LightColor lightColor, Vector3 origin, Vector3 direction)
         {
@@ -25,35 +27,19 @@ namespace Light
             return gameObject.GetComponent<LightBeam>().SetupBeam(lightColor, origin, direction);
         }
 
-        public void AddColorRpc(LightColor lightColor)
-        {
-            GetComponent<PhotonView>().RPC("AddColorSelf", RpcTarget.All, lightColor.Type);
-        }
-        
-        public void RemoveColorRpc(LightColor lightColor)
-        {
-            GetComponent<PhotonView>().RPC("RemoveColorSelf", RpcTarget.All, lightColor.Type);
-        }
-
-        [PunRPC]
-        private void AddColorSelf(int colorType)
-        {
-            UpdateColor(LightColor.AddColor(LightColor.Of((LightType) colorType)));
-        }
-        
-        [PunRPC]
-        private void RemoveColorSelf(int colorType)
-        {
-            UpdateColor(LightColor.RemoveColor(LightColor.Of((LightType) colorType)));
-        }
-        
-        public LightBeam UpdateColor(LightColor lightColor)
+        public virtual LightBeam UpdateColor(LightColor lightColor)
         {
             LightColor = lightColor;
             Lr.startColor = lightColor.GetColor();
             Lr.endColor = lightColor.GetColor();
             
             return this;
+        }
+
+        public void StageColor(LightColor lightColor)
+        {
+            _stage = true;
+            LightColor = lightColor;
         }
 
         private LightBeam SetupBeam(LightColor lightColor, Vector3 origin, Vector3 direction)
@@ -70,6 +56,20 @@ namespace Light
             if (Active)
             {
                 ProcessRayBeam();
+            }
+        }
+
+        protected virtual void LateUpdate()
+        {
+            if (_stage)
+            {
+                UpdateColor(LightColor);
+                
+                var emptyColor = LightColor.Of(LightType.None);
+                if (LightColor.Equals(emptyColor))
+                    _stage = false;
+                else
+                    StageColor(emptyColor);
             }
         }
 

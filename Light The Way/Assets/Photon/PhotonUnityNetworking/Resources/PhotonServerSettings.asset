@@ -38,6 +38,10 @@ MonoBehaviour:
   - Enable
   - DestroySelf
   - RotateSelf
+  - UpdateColorSelf
+  - AddColorSelf
+  - RemoveColorSelf
+  - UpdateColor
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

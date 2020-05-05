@@ -15,14 +15,9 @@ namespace Light
             _endpointBeam.Enable(true);
         }
 
-        protected override void OnBeamSenseStart(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
+        protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
         {
-            _endpointBeam.AddColorRpc(beam.LightColor);
-        }
-    
-        protected override void OnBeamSenseEnd(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
-        {
-            _endpointBeam.RemoveColorRpc(beam.LightColor);
+            _endpointBeam.StageColor(_endpointBeam.LightColor.AddColor(beam.LightColor));
         }
     }
 }

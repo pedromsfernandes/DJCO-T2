@@ -57,8 +57,7 @@ namespace Light
                 }
             }
         };
-
-        private readonly List<int> _accumulatedTypes = new List<int>();
+        
         internal int Type { get; private set; }
 
         public static LightColor Of(LightType type)
@@ -73,15 +72,7 @@ namespace Light
  
         public LightColor AddColor(LightColor color)
         {
-            _accumulatedTypes.Add(color.Type);
             Type |= color.Type;
-            return this;
-        }
-        
-        public LightColor RemoveColor(LightColor color)
-        {
-            _accumulatedTypes.Remove(color.Type);
-            Type = _accumulatedTypes.Aggregate(0, (acc, type) => acc | type);
             return this;
         }
 
@@ -106,6 +97,11 @@ namespace Light
             } 
         }
         
+        public override string ToString()
+        {
+            return $"{nameof(Type)}: {(LightType) Type}";
+        }
+
         public override int GetHashCode()
         {
             return Type;

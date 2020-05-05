@@ -29,7 +29,18 @@ namespace Light
                 ProcessRayBeam();
             }
         }
-        
+
+        public override LightBeam UpdateColor(LightColor color)
+        {
+            GetComponent<PhotonView>().RPC("UpdateColorSelf", RpcTarget.All, color.Type);
+            return this;
+        }
+
+        [PunRPC]
+        private void UpdateColorSelf(int colorType)
+        {
+            base.UpdateColor(LightColor.Of((LightType) colorType));
+        }
         
         // Enables the LightBeam for all Clients (Used when starting a chain of LightBeams
         public void EnableSelf(bool op)
