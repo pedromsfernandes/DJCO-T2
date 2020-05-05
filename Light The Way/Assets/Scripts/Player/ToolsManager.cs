@@ -122,19 +122,39 @@ public class ToolsManager : MonoBehaviour
             {
                 Debug.Log("Activating Tool 1 Power");
                 GameState.Instance.hasTool1 = true;
+                GameState.Instance.currentTool = 1;
             }
             else if (toolName == "Tool2(Clone)")
             {
                 Debug.Log("Activating Tool 2 Power");
                 GameState.Instance.hasTool2 = true;
+                GameState.Instance.currentTool = 2;
             }
             else if (toolName == "Tool3(Clone)")
             {
                 Debug.Log("Activating Tool 3 Power");
                 GameState.Instance.hasTool3 = true;
+                GameState.Instance.currentTool = 3;
             }
 
             deletePickedUpTool(toolName);
+            Invoke("UpdateColor", Time.deltaTime);
+        }
+    }
+
+    private void UpdateColor()
+    {
+        if (GameState.Instance.currentTool == 1)
+        {
+            lightBeam.UpdateColor(LightColor.Of(Light.LightType.Red));
+        }
+        else if (GameState.Instance.currentTool == 2)
+        {
+            lightBeam.UpdateColor(LightColor.Of(Light.LightType.Green));
+        }
+        else if (GameState.Instance.currentTool == 3)
+        {
+            lightBeam.UpdateColor(LightColor.Of(Light.LightType.Blue));
         }
     }
 
