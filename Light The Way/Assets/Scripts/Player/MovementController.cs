@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Light;
 using UnityEngine;
 using Photon.Pun;
+using LightType = Light.LightType;
 
 public class MovementController : MonoBehaviourPun
 {
@@ -21,12 +21,12 @@ public class MovementController : MonoBehaviourPun
         controller = GetComponent<CharacterController>();
 
         mainCameraTransform = Camera.main.transform;
-        transform.Find("Laser").gameObject.GetComponent<LightBeam>().camera = transform.Find("Model").Find("CameraSource").gameObject;
+        transform.Find("Laser").gameObject.GetComponent<PlayerBeam>().camera = transform.Find("Model").Find("CameraSource").gameObject;
         if (GetComponent<PhotonView>() == null || GetComponent<PhotonView>().IsMine)
         {
             mainCameraTransform.gameObject.GetComponentInParent<CameraController>().follow = transform.Find("Model").Find("CameraFollow").gameObject;
             mainCameraTransform.gameObject.GetComponentInParent<CameraController>().player = this.gameObject;
-            mainCameraTransform.gameObject.GetComponentInParent<CameraController>().beam = transform.Find("Laser").gameObject.GetComponent<LightBeam>();
+            mainCameraTransform.gameObject.GetComponentInParent<CameraController>().beam = transform.Find("Laser").gameObject.GetComponent<PlayerBeam>();
         }
     }
 
@@ -38,6 +38,21 @@ public class MovementController : MonoBehaviourPun
 
     private void Move()
     {
+        // change laser color - temporary
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            transform.Find("Laser").gameObject.GetComponent<PlayerBeam>().UpdateColor(LightColor.Of(LightType.Red));
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            transform.Find("Laser").gameObject.GetComponent<PlayerBeam>().UpdateColor(LightColor.Of(LightType.Green));
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            transform.Find("Laser").gameObject.GetComponent<PlayerBeam>().UpdateColor(LightColor.Of(LightType.Blue));
+        }
+
         bool isWalkingSlow = Input.GetKey(KeyCode.LeftControl);
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         Vector2 movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -89,7 +104,7 @@ public class MovementController : MonoBehaviourPun
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
 
         //Apply changes
-        controller.Move(desiredMoveDirection * currentSpeed * Time.deltaTime);
+        controller.Move(desiredMoveDirection * (currentSpeed * Time.deltaTime));
         controller.Move(gravityVector * Time.deltaTime);
     }
 }

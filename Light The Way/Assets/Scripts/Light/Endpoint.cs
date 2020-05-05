@@ -1,43 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Endpoint : MonoBehaviour
+namespace Light
 {
-    LineRenderer lr;
-    LightColor lc;
-
-    void Start()
+    public class Endpoint : BeamSensor
     {
-        lr = transform.Find("Laser").GetComponent<LineRenderer>();
-        lc = lr.gameObject.AddComponent<LightColor>();
-        lc.SetColor(false, false, false);
-        lr.SetColors(lc.GetColor(), lc.GetColor());
-        lr.SetPosition(0, new Vector3(transform.position.x, 0, transform.position.z));
-        lr.SetPosition(1, new Vector3(transform.position.x, 50000, transform.position.z));
-    }
+        private LightBeam _endpointBeam;
 
-    void Hit(object[] args)
-    {
-        LightBeam beam = (LightBeam)args[0];
-        RaycastHit h = (RaycastHit)args[1];
-        Vector3 dir = (Vector3)args[2];
-
-        lc.AddColor(beam.gameObject.GetComponent<LightColor>());
-    }
-
-    void LateUpdate()
-    {
-        if(lc.GetColor().a == 0)
+        private void Start()
         {
-            lr.gameObject.SetActive(false);
-        }
-        else
-        {
-            lr.SetColors(lc.GetColor(), lc.GetColor());
-            lr.gameObject.SetActive(true);
+            _endpointBeam = transform.GetChild(0).GetComponent<LightBeam>();
+            LightBeam.UpdateLightBeam(_endpointBeam.gameObject, LightColor.Of(LightType.None), 
+                transform.position, Vector3.up);
+            
+            _endpointBeam.Enable(true);
         }
 
-        lc.SetColor(false, false, false);
+        protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
+        {
+            _endpointBeam.StageColor(_endpointBeam.LightColor.AddColor(beam.LightColor));
+        }
     }
 }

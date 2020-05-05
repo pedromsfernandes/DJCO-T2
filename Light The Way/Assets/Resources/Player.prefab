@@ -307,8 +307,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7841573970049697345}
   - component: {fileID: 7841573970049697347}
-  - component: {fileID: 7841573970049697344}
   - component: {fileID: 5586642122034835986}
+  - component: {fileID: 1251940025102925172}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -427,21 +427,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &7841573970049697344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7841573970049697350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4000f65802b50234f852bd9d5f790811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source: {fileID: 7841573969688292905}
-  camera: {fileID: 0}
-  lightBeam: {fileID: 0}
 --- !u!114 &5586642122034835986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,6 +449,22 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &1251940025102925172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7841573970049697350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f446e4a09d048f7b9c8f55eecc75bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beamModel: {fileID: 4967240469331649494, guid: edeffa3e530a14a4c851dd72fadc0388,
+    type: 3}
+  source: {fileID: 7841573969688292905}
+  camera: {fileID: 0}
 --- !u!1 &7841573970210663685
 GameObject:
   m_ObjectHideFlags: 0

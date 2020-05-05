@@ -4,6 +4,7 @@ using System.Collections;
 public class GameState : MonoBehaviour
 {
     public static GameState Instance { get; private set; }
+    
     //Light Beam
     public bool aiming = false;
     public bool castingRay = false;

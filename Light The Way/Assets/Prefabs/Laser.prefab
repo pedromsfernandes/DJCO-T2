@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4967240469331649497}
   - component: {fileID: 4967240469331649499}
-  - component: {fileID: 4967240469331649496}
+  - component: {fileID: 1730828776218143933}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -129,7 +129,7 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &4967240469331649496
+--- !u!114 &1730828776218143933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,5 +141,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4000f65802b50234f852bd9d5f790811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 0}
-  camera: {fileID: 0}
+  beamModel: {fileID: 4967240469331649494}

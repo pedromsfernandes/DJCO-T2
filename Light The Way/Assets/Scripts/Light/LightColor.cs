@@ -1,70 +1,110 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class LightColor : MonoBehaviour
+namespace Light
 {
-    static Color red = new Color(1, 0, 0, 1);
-    static Color green = new Color(0, 0.5f, 0, 1);
-    static Color blue = new Color(0, 0, 0.5f, 1);
-    static Color cyan = new Color(0, 1, 1, 1);
-    static Color yellow = new Color(1, 1, 0, 1);
-    static Color magenta = new Color(1, 0, 0.6f, 1);
-    static Color white = new Color(1, 1, 1, 1);
-    static Color none = new Color(0, 0, 0, 0);
-
-    static Dictionary<string, Color> colors = new Dictionary<string, Color> {
-        {"BLUE", LightColor.blue},
-        {"RED", LightColor.red},
-        {"GREEN", LightColor.green}
-    };
-
-    public bool r = false;
-    public bool g = false;
-    public bool b = false;
-
-    public void SetColor(bool red, bool green, bool blue)
+    public enum LightType
     {
-        r = red;
-        g = green;
-        b = blue;
+        None    = 0b000,
+        Red     = 0b100,
+        Green   = 0b010,
+        Blue    = 0b001
     }
-
-    public void SetColor(LightColor c)
+    public class LightColor
     {
-        r = c.r;
-        g = c.g;
-        b = c.b;
-    }
+        private static readonly Color[][][] Colors = 
+        {
+            // No Red
+            new[]
+            {
+                // No Green
+                new[]
+                {
+                    // No Blue
+                    new Color(0, 0, 0, 0),
+                    // Blue
+                    new Color(0, 0, 0.5f, 1)
+                    
+                },
+                // Green
+                new[] 
+                {
+                    // No Blue
+                    new Color(0, 0.5f, 0, 1),
+                    // Blue
+                    new Color(0, 1, 1, 1)
+                }
+            },
+            // Red
+            new[]
+            {
+                // No Green
+                new[] 
+                {
+                    // No Blue
+                    new Color(0.5f, 0, 0, 1),
+                    // Blue
+                    new Color(1, 0, 0.7f, 1)
+                },
+                // Green
+                new[] 
+                {
+                    // No Blue
+                    new Color(1, 1, 0, 1),
+                    // Blue
+                    new Color(1, 1, 1, 1)
+                }
+            }
+        };
+        
+        internal int Type { get; private set; }
 
-    public void AddColor(bool red, bool green, bool blue)
-    {
-        r = r || red;
-        g = g || green;
-        b = b || blue;
-    }
+        public static LightColor Of(LightType type)
+        {
+            return new LightColor((int) type);
+        }
 
-    public void AddColor(LightColor c)
-    {
-        r = r || c.r;
-        g = g || c.g;
-        b = b || c.b;
-    }
+        private LightColor(int type)
+        {
+            Type = type;
+        }
+ 
+        public LightColor AddColor(LightColor color)
+        {
+            Type |= color.Type;
+            return this;
+        }
 
-    public Color GetColor()
-    {
-        if (r && g && b) return LightColor.white;
-        else if (r && g) return LightColor.yellow;
-        else if (r && b) return LightColor.magenta;
-        else if (b && g) return LightColor.cyan;
-        else if (r) return LightColor.red;
-        else if (g) return LightColor.green;
-        else if (b) return LightColor.blue;
-        else return LightColor.none;
-    }
+        public Color GetColor()
+        {
+            return Colors[(Type & 0b100) >> 2][(Type & 0b010) >> 1][Type & 0b001];
+        }
 
-    public bool IsColorEqual(string color)
-    {
-        return this.GetColor() == LightColor.colors[color];
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+
+            switch (obj)
+            {
+                case LightColor lightColor :
+                    return Type == lightColor.Type;
+                case LightType lightType:
+                    return Type == (int) lightType;
+                default:
+                    return false;
+            } 
+        }
+        
+        public override string ToString()
+        {
+            return $"{nameof(Type)}: {(LightType) Type}";
+        }
+
+        public override int GetHashCode()
+        {
+            return Type;
+        }
     }
 }

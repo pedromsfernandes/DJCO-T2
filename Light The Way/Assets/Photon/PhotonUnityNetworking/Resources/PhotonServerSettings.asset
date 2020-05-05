@@ -33,12 +33,15 @@ MonoBehaviour:
   RpcList:
   - ClickRpc
   - DestroyRpc
-  - EnableSelf
   - RPC_ChangeReadyState
   - EnableSelf
+  - Enable
   - DestroySelf
   - RotateSelf
   - UpdateColorSelf
+  - AddColorSelf
+  - RemoveColorSelf
+  - UpdateColor
   - createLightBridgeSelf
   - deleteLightBridgeSelf
   DisableAutoOpenWizard: 1

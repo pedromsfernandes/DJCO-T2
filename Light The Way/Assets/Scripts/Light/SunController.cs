@@ -6,7 +6,7 @@ namespace Lighting
 {
     public class SunController : MonoBehaviour
     {
-        public float rotationSpeed = 400;
+        public float rotationSpeed = 100;
 
         private Transform _transform;
 
