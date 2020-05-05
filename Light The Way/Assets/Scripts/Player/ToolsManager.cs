@@ -24,7 +24,7 @@ public class ToolsManager : MonoBehaviour
 
     private void chooseTool()
     {
-        /*if (GameState.Instance.hasTool1 && Input.GetKeyDown(KeyCode.R))
+        if (GameState.Instance.hasTool1 && Input.GetKeyDown(KeyCode.R))
         {
             GameState.Instance.currentTool = 1;
             lightBeam.UpdateColor(LightColor.Of(Light.LightType.Red));
@@ -39,18 +39,5 @@ public class ToolsManager : MonoBehaviour
             GameState.Instance.currentTool = 3;
             lightBeam.UpdateColor(LightColor.Of(Light.LightType.Blue));
         }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            transform.Find("Laser").gameObject.GetComponent<PlayerBeam>().UpdateColor(LightColor.Of(Light.LightType.Red));
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            transform.Find("Laser").gameObject.GetComponent<PlayerBeam>().UpdateColor(LightColor.Of(Light.LightType.Green));
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            transform.Find("Laser").gameObject.GetComponent<PlayerBeam>().UpdateColor(LightColor.Of(Light.LightType.Blue));
-        }*/
     }
 }

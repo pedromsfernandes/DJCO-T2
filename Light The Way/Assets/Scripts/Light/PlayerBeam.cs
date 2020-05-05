@@ -16,13 +16,26 @@ namespace Light
         
         private void Start()
         {
+            int currentTool = GameState.Instance.currentTool;
             Lr = GetComponent<LineRenderer>();
-            UpdateColor(LightColor.Of(LightType.Blue));
+
+            if(currentTool == 1)
+            {
+                UpdateColor(LightColor.Of(LightType.Red));
+            }
+            else if(currentTool == 2)
+            {
+                UpdateColor(LightColor.Of(LightType.Green));
+            }
+            else if (currentTool == 3)
+            {
+                UpdateColor(LightColor.Of(LightType.Blue));
+            }
         }
 
         protected override void Update()
         {
-            if (Active /*&& GameState.Instance.currentTool != 0*/)
+            if (Active && GameState.Instance.currentTool != 0)
             {
                 Origin = source.transform.position;
                 Direction = camera.transform.forward;
