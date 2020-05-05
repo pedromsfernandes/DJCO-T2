@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 6081742546225610452}
   - component: {fileID: 5433141087288154195}
   - component: {fileID: 5388757762036589008}
-  - component: {fileID: 6911880019283668849}
+  - component: {fileID: 7128227768393452341}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
---- !u!114 &6911880019283668849
+--- !u!114 &7128227768393452341
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,11 +183,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7841573969275939898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 293d7c7af6381f9449444a981f6acf60, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ccc58ea98e4e8c47815459e8ed2d359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBridgeLength: 10
-  maxDistanceBetweenPlayerAndLightBridgePoint: 100
+  lightBeam: {fileID: 0}
 --- !u!1 &7841573969688292905
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +308,7 @@ GameObject:
   - component: {fileID: 7841573970049697347}
   - component: {fileID: 5586642122034835986}
   - component: {fileID: 1251940025102925172}
+  - component: {fileID: 6804794064448822751}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -465,6 +465,20 @@ MonoBehaviour:
     type: 3}
   source: {fileID: 7841573969688292905}
   camera: {fileID: 0}
+--- !u!114 &6804794064448822751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7841573970049697350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293d7c7af6381f9449444a981f6acf60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxBridgeLength: 10
+  maxDistanceBetweenPlayerAndLightBridgePoint: 100
 --- !u!1 &7841573970210663685
 GameObject:
   m_ObjectHideFlags: 0

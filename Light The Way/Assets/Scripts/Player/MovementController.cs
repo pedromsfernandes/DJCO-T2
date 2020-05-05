@@ -40,6 +40,7 @@ public class MovementController : MonoBehaviourPun
     {
         // change laser color - temporary
 
+        //To do
         if (Input.GetKeyDown(KeyCode.R))
         {
             transform.Find("Laser").gameObject.GetComponent<PlayerBeam>().UpdateColor(LightColor.Of(LightType.Red));
