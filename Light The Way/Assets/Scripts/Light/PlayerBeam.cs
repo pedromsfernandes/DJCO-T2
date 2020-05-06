@@ -52,6 +52,7 @@ namespace Light
         [PunRPC]
         private void UpdateColorSelf(int colorType)
         {
+            Debug.Log("Updating Color Self: " + colorType);
             base.UpdateColor(LightColor.Of((LightType) colorType));
         }
         

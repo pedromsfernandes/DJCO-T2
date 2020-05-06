@@ -45,6 +45,7 @@ MonoBehaviour:
   - createLightBridgeSelf
   - deleteLightBridgeSelf
   - deletePickedUpToolSelf
+  - createDroppedToolSelf
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

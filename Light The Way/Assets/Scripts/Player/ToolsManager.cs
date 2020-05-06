@@ -16,26 +16,16 @@ public class ToolsManager : MonoBehaviour
     {
         lightBeam = transform.Find("Laser").gameObject.GetComponent<PlayerBeam>();
 
-        tool1 = Resources.Load<GameObject>("Tools/Tool1");
-        tool2 = Resources.Load<GameObject>("Tools/Tool2");
-        tool3 = Resources.Load<GameObject>("Tools/Tool3");
-
-        //Setting up 1 instance of each tool when the player is created 
-        tool1.transform.position = new Vector3(this.transform.position.x - 2, this.transform.position.y, this.transform.position.z + 2);
-        tool2.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + 2);
-        tool3.transform.position = new Vector3(this.transform.position.x + 2, this.transform.position.y, this.transform.position.z + 2);
-
+        tool1 = GameObject.Find("Tool1");
+        tool2 = GameObject.Find("Tool2");
+        tool3 = GameObject.Find("Tool3");
+        
         GameState.Instance.hasTool1 = false;
         GameState.Instance.hasTool2 = false;
         GameState.Instance.hasTool3 = false;
 
         GameState.Instance.canCreateLightBridges = true;
         GameState.Instance.canRotateSun = true;
-
-        Instantiate(tool1);
-        Instantiate(tool2);
-        Instantiate(tool3);
-
     }
 
     void Update()
@@ -84,7 +74,7 @@ public class ToolsManager : MonoBehaviour
     void dropCurrentTool()
     {
         int toolId = GameState.Instance.currentTool;
-        Debug.Log("Going to drop current tool - " + toolId);
+        Debug.Log("Going to drop current tool: " + toolId);
         if (toolId != 0)
         {
             if (toolId == 1)
@@ -118,19 +108,19 @@ public class ToolsManager : MonoBehaviour
             string toolName = other.gameObject.name;
             Debug.Log("Collision with Tool " + toolName);
 
-            if (toolName == "Tool1(Clone)")
+            if (toolName == "Tool1(Clone)" || toolName == "Tool1")
             {
                 Debug.Log("Activating Tool 1 Power");
                 GameState.Instance.hasTool1 = true;
                 GameState.Instance.currentTool = 1;
             }
-            else if (toolName == "Tool2(Clone)")
+            else if (toolName == "Tool2(Clone)" || toolName == "Tool2")
             {
                 Debug.Log("Activating Tool 2 Power");
                 GameState.Instance.hasTool2 = true;
                 GameState.Instance.currentTool = 2;
             }
-            else if (toolName == "Tool3(Clone)")
+            else if (toolName == "Tool3(Clone)" || toolName == "Tool3")
             {
                 Debug.Log("Activating Tool 3 Power");
                 GameState.Instance.hasTool3 = true;
@@ -171,18 +161,21 @@ public class ToolsManager : MonoBehaviour
         Debug.Log("Going to create Droped Tool - " + toolId);
         if (toolId == 1)
         {
+            tool1 = Resources.Load<GameObject>("Tools/Tool1");
             tool1.transform.position = position;
             Instantiate(tool1);
             Debug.Log("Tool 1 set active on - " + position);
         }
         else if (toolId == 2)
         {
+            tool2 = Resources.Load<GameObject>("Tools/Tool2");
             tool2.transform.position = position;
             Instantiate(tool2);
             Debug.Log("Tool 2 set active on - " + position);
         }
         else if (toolId == 3)
         {
+            tool3 = Resources.Load<GameObject>("Tools/Tool3");
             tool3.transform.position = position;
             Instantiate(tool3);
             Debug.Log("Tool 3 set active on - " + position);
