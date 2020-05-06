@@ -74,24 +74,23 @@ public class ToolsManager : MonoBehaviour
     void dropCurrentTool()
     {
         int toolId = GameState.Instance.currentTool;
-        Debug.Log("Going to drop current tool: " + toolId);
+        //Debug.Log("Going to drop current tool: " + toolId);
         if (toolId != 0)
         {
             if (toolId == 1)
             {
-                Debug.Log("hasTool1 = false");
+                //Debug.Log("hasTool1 = false");
                 GameState.Instance.hasTool1 = false;
             }
             else if (toolId == 2)
             {
-                Debug.Log("hasTool2 = false");
+                //Debug.Log("hasTool2 = false");
                 GameState.Instance.hasTool2 = false;
             }
 
             else if (toolId == 3)
             {
-
-                Debug.Log("hasTool3 = false");
+                //Debug.Log("hasTool3 = false");
                 GameState.Instance.hasTool3 = false;
             }
 
@@ -102,7 +101,7 @@ public class ToolsManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision");
+        //Debug.Log("Collision");
         if (other.gameObject.CompareTag("Tool"))
         {
             string toolName = other.gameObject.name;
@@ -110,19 +109,19 @@ public class ToolsManager : MonoBehaviour
 
             if (toolName == "Tool1(Clone)" || toolName == "Tool1")
             {
-                Debug.Log("Activating Tool 1 Power");
+                //Debug.Log("Activating Tool 1 Power");
                 GameState.Instance.hasTool1 = true;
                 GameState.Instance.currentTool = 1;
             }
             else if (toolName == "Tool2(Clone)" || toolName == "Tool2")
             {
-                Debug.Log("Activating Tool 2 Power");
+                //Debug.Log("Activating Tool 2 Power");
                 GameState.Instance.hasTool2 = true;
                 GameState.Instance.currentTool = 2;
             }
             else if (toolName == "Tool3(Clone)" || toolName == "Tool3")
             {
-                Debug.Log("Activating Tool 3 Power");
+                //Debug.Log("Activating Tool 3 Power");
                 GameState.Instance.hasTool3 = true;
                 GameState.Instance.currentTool = 3;
             }
@@ -150,7 +149,7 @@ public class ToolsManager : MonoBehaviour
 
     public void createDroppedTool(int toolId)
     {
-        Debug.Log("Going to create Droped Tool Photon - " + toolId);
+        //Debug.Log("Going to create Droped Tool Photon - " + toolId);
         Vector3 toolposition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + 1);
         this.GetComponent<PhotonView>().RPC("createDroppedToolSelf", RpcTarget.All, toolId, toolposition);
     }
@@ -158,40 +157,40 @@ public class ToolsManager : MonoBehaviour
     [PunRPC]
     void createDroppedToolSelf(int toolId, Vector3 position)
     {
-        Debug.Log("Going to create Droped Tool - " + toolId);
+        //Debug.Log("Going to create Droped Tool - " + toolId);
         if (toolId == 1)
         {
             tool1 = Resources.Load<GameObject>("Tools/Tool1");
             tool1.transform.position = position;
             Instantiate(tool1);
-            Debug.Log("Tool 1 set active on - " + position);
+            //Debug.Log("Tool 1 set active on - " + position);
         }
         else if (toolId == 2)
         {
             tool2 = Resources.Load<GameObject>("Tools/Tool2");
             tool2.transform.position = position;
             Instantiate(tool2);
-            Debug.Log("Tool 2 set active on - " + position);
+            //Debug.Log("Tool 2 set active on - " + position);
         }
         else if (toolId == 3)
         {
             tool3 = Resources.Load<GameObject>("Tools/Tool3");
             tool3.transform.position = position;
             Instantiate(tool3);
-            Debug.Log("Tool 3 set active on - " + position);
+            //Debug.Log("Tool 3 set active on - " + position);
         }
     }
 
     public void deletePickedUpTool(string toolName)
     {
-        Debug.Log("Photon destroy tool " + toolName);
+        //Debug.Log("Photon destroy tool " + toolName);
         this.GetComponent<PhotonView>().RPC("deletePickedUpToolSelf", RpcTarget.All, toolName);
     }
 
     [PunRPC]
     void deletePickedUpToolSelf(string toolName)
     {
-        Debug.Log("Destroying Tool " + toolName);
+        //Debug.Log("Destroying Tool " + toolName);
         GameObject tool = GameObject.Find(toolName);
         Destroy(tool);
     }
