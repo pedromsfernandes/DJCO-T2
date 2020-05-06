@@ -314,6 +314,7 @@
             <e p="BeamSensor.cs" t="Include" />
             <e p="Combiner.cs" t="Include" />
             <e p="Destroyable.cs" t="Include" />
+            <e p="Divider.cs" t="Include" />
             <e p="Endpoint.cs" t="Include" />
             <e p="LightBeam.cs" t="Include" />
             <e p="LightColor.cs" t="Include" />
