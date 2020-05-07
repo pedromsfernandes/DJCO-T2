@@ -23,7 +23,7 @@ public class ToolsManager : MonoBehaviour
         tool1 = GameObject.Find("Tool1");
         tool2 = GameObject.Find("Tool2");
         tool3 = GameObject.Find("Tool3");
-        
+
         GameState.Instance.hasTool1 = false;
         GameState.Instance.hasTool2 = false;
         GameState.Instance.hasTool3 = false;
@@ -155,8 +155,12 @@ public class ToolsManager : MonoBehaviour
     public void createDroppedTool(int toolId)
     {
         //Debug.Log("Going to create Droped Tool Photon - " + toolId);
-        // Vector3 toolposition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + 1);
-        Vector3 toolPosition = this.transform.position + mainCameraTransform.forward * 2;
+        Vector3 direction = mainCameraTransform.forward;
+        direction.y = 0;
+        direction.Normalize();
+        direction *= 2;
+
+        Vector3 toolPosition = this.transform.position + direction;
         this.GetComponent<PhotonView>().RPC("createDroppedToolSelf", RpcTarget.All, toolId, toolPosition);
     }
 
