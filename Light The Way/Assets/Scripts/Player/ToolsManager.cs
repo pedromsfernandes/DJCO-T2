@@ -12,9 +12,13 @@ public class ToolsManager : MonoBehaviour
     GameObject tool2;
     GameObject tool3;
 
+    private Transform mainCameraTransform;
+
     void Start()
     {
         lightBeam = transform.Find("Laser").gameObject.GetComponent<PlayerBeam>();
+
+        mainCameraTransform = Camera.main.transform;
 
         tool1 = GameObject.Find("Tool1");
         tool2 = GameObject.Find("Tool2");
@@ -26,6 +30,7 @@ public class ToolsManager : MonoBehaviour
 
         GameState.Instance.canCreateLightBridges = true;
         GameState.Instance.canRotateSun = true;
+        GameState.Instance.canDestroyObjects = true;
     }
 
     void Update()
@@ -150,8 +155,9 @@ public class ToolsManager : MonoBehaviour
     public void createDroppedTool(int toolId)
     {
         //Debug.Log("Going to create Droped Tool Photon - " + toolId);
-        Vector3 toolposition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + 1);
-        this.GetComponent<PhotonView>().RPC("createDroppedToolSelf", RpcTarget.All, toolId, toolposition);
+        // Vector3 toolposition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + 1);
+        Vector3 toolPosition = this.transform.position + mainCameraTransform.forward * 2;
+        this.GetComponent<PhotonView>().RPC("createDroppedToolSelf", RpcTarget.All, toolId, toolPosition);
     }
 
     [PunRPC]
