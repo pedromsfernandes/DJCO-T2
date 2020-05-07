@@ -35,7 +35,7 @@ namespace Light
 
         protected override void Update()
         {
-            if (Active && GameState.Instance.currentTool != 0)
+            if (Active)
             {
                 Origin = source.transform.position;
                 Direction = camera.transform.forward;
