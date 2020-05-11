@@ -12,7 +12,7 @@ namespace Light
         protected Vector3 Direction { private get; set; }
 
         protected LineRenderer Lr;
-        
+
         public LightColor LightColor { get; private set; }
         private bool _stage;
 
@@ -21,7 +21,7 @@ namespace Light
             var newBeam = Instantiate(BeamModel, parent, true);
             return UpdateLightBeam(newBeam, lightColor, origin, direction);
         }
-        
+
         public static LightBeam UpdateLightBeam(GameObject gameObject, LightColor lightColor, Vector3 origin, Vector3 direction)
         {
             return gameObject.GetComponent<LightBeam>().SetupBeam(lightColor, origin, direction);
@@ -30,9 +30,13 @@ namespace Light
         public virtual LightBeam UpdateColor(LightColor lightColor)
         {
             LightColor = lightColor;
+
+            if (Lr == null)
+                Lr = GetComponent<LineRenderer>();
+           
             Lr.startColor = lightColor.GetColor();
             Lr.endColor = lightColor.GetColor();
-            
+
             return this;
         }
 
@@ -47,7 +51,7 @@ namespace Light
             Lr = GetComponent<LineRenderer>();
             Origin = origin;
             Direction = direction;
-            
+
             return UpdateColor(lightColor);
         }
 
@@ -64,7 +68,7 @@ namespace Light
             if (_stage)
             {
                 UpdateColor(LightColor);
-                
+
                 var emptyColor = LightColor.Of(LightType.None);
                 if (LightColor.Equals(emptyColor))
                     _stage = false;
@@ -83,7 +87,7 @@ namespace Light
                     Lr.SetPosition(1, hit.point);
                     GameState.Instance.lastBeamHit = hit.point;
                     if (hit.transform.gameObject.layer == LayerMask.NameToLayer("LightHit"))
-                        hit.transform.gameObject.SendMessage("Hit", new object[] {this, hit, Direction});
+                        hit.transform.gameObject.SendMessage("Hit", new object[] { this, hit, Direction });
                 }
             }
             else

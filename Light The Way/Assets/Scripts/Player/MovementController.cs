@@ -69,12 +69,6 @@ public class MovementController : MonoBehaviourPun
             gravityVector.y -= gravity;
         }
 
-        if (desiredMoveDirection != Vector3.zero)
-        {
-            //Rotate player in the desired direction
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), rotationSpeed);
-        }
-
         //Velocity
         targetSpeed = movementSpeed * movementInput.magnitude;
 

@@ -76,12 +76,33 @@ public class ToolsManager : MonoBehaviour
         }
     }
 
+    bool isObjectHere(Vector3 position)
+    {
+        Collider[] intersecting = Physics.OverlapSphere(position, 1f);
+
+        return intersecting.Length != 0;
+    }
+
     void dropCurrentTool()
     {
         int toolId = GameState.Instance.currentTool;
         //Debug.Log("Going to drop current tool: " + toolId);
+
         if (toolId != 0)
         {
+
+            Vector3 direction = mainCameraTransform.forward;
+            direction.y = 0;
+            direction.Normalize();
+            direction *= 2;
+
+            Vector3 toolPosition = this.transform.position + direction;
+
+            if (this.isObjectHere(toolPosition))
+            {
+                return;
+            }
+
             if (toolId == 1)
             {
                 //Debug.Log("hasTool1 = false");
@@ -100,7 +121,7 @@ public class ToolsManager : MonoBehaviour
             }
 
             GameState.Instance.currentTool = 0;
-            createDroppedTool(toolId);
+            createDroppedTool(toolId, toolPosition);
 
             if (!(GameState.Instance.hasTool1 || GameState.Instance.hasTool2 || GameState.Instance.hasTool3))
                 lightBeam.EnableSelf(false);
@@ -155,16 +176,9 @@ public class ToolsManager : MonoBehaviour
         }
     }
 
-    public void createDroppedTool(int toolId)
+    public void createDroppedTool(int toolId, Vector3 position)
     {
-        //Debug.Log("Going to create Droped Tool Photon - " + toolId);
-        Vector3 direction = mainCameraTransform.forward;
-        direction.y = 0;
-        direction.Normalize();
-        direction *= 2;
-
-        Vector3 toolPosition = this.transform.position + direction;
-        this.GetComponent<PhotonView>().RPC("createDroppedToolSelf", RpcTarget.All, toolId, toolPosition);
+        this.GetComponent<PhotonView>().RPC("createDroppedToolSelf", RpcTarget.All, toolId, position);
     }
 
     [PunRPC]

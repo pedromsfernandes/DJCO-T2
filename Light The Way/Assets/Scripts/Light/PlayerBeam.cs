@@ -8,29 +8,49 @@ namespace Light
         public GameObject beamModel;
         public GameObject source;
         public GameObject camera;
-        
+
         private void Awake()
         {
             BeamModel = beamModel;
         }
-        
+
         private void Start()
         {
             int currentTool = GameState.Instance.currentTool;
             Lr = GetComponent<LineRenderer>();
 
-            if(currentTool == 1)
+            if (GetComponent<PhotonView>().IsMine)
             {
-                UpdateColor(LightColor.Of(LightType.Red));
+                if (currentTool == 1)
+                {
+                    UpdateColor(LightColor.Of(LightType.Red));
+                }
+                else if (currentTool == 2)
+                {
+                    UpdateColor(LightColor.Of(LightType.Green));
+                }
+                else if (currentTool == 3)
+                {
+                    UpdateColor(LightColor.Of(LightType.Blue));
+                }
             }
-            else if(currentTool == 2)
+            else
             {
-                UpdateColor(LightColor.Of(LightType.Green));
+                if (currentTool == 1)
+                {
+                    base.UpdateColor(LightColor.Of(LightType.Red));
+                }
+                else if (currentTool == 2)
+                {
+                    base.UpdateColor(LightColor.Of(LightType.Green));
+                }
+                else if (currentTool == 3)
+                {
+                    base.UpdateColor(LightColor.Of(LightType.Blue));
+                }
             }
-            else if (currentTool == 3)
-            {
-                UpdateColor(LightColor.Of(LightType.Blue));
-            }
+
+
         }
 
         protected override void Update()
@@ -52,10 +72,10 @@ namespace Light
         [PunRPC]
         private void UpdateColorSelf(int colorType)
         {
-            Debug.Log("Updating Color Self: " + colorType);
-            base.UpdateColor(LightColor.Of((LightType) colorType));
+            Debug.Log("Updating Color Self: " + colorType + "-" + GetComponent<PhotonView>().IsMine);
+            base.UpdateColor(LightColor.Of((LightType)colorType));
         }
-        
+
         // Enables the LightBeam for all Clients (Used when starting a chain of LightBeams
         public void EnableSelf(bool op)
         {
