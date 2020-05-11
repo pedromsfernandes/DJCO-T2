@@ -24,16 +24,16 @@ namespace Light
                     // No Blue
                     new Color(0, 0, 0, 0),
                     // Blue
-                    new Color(0, 0, 0.5f, 1)
+                    new Color(0, 0, 1f, 1)
                     
                 },
                 // Green
                 new[] 
                 {
                     // No Blue
-                    new Color(0, 0.5f, 0, 1),
+                    new Color(0, 1f, 0, 1),
                     // Blue
-                    new Color(0, 1, 1, 1)
+                    new Color(0, 1f, 1f, 1)
                 }
             },
             // Red
@@ -43,9 +43,9 @@ namespace Light
                 new[] 
                 {
                     // No Blue
-                    new Color(0.5f, 0, 0, 1),
+                    new Color(1f, 0, 0, 1),
                     // Blue
-                    new Color(1, 0, 0.7f, 1)
+                    new Color(1f, 0, 1f, 1)
                 },
                 // Green
                 new[] 
@@ -69,7 +69,17 @@ namespace Light
         {
             Type = type;
         }
- 
+        
+        public IEnumerable<LightColor> DivideColors()
+        {
+            if ((Type & 0b100) != 0)
+                yield return LightColor.Of(LightType.Red);
+            if ((Type & 0b010) != 0)
+                yield return LightColor.Of(LightType.Green);
+            if ((Type & 0b001) != 0)
+                yield return LightColor.Of(LightType.Blue);
+        }
+        
         public LightColor AddColor(LightColor color)
         {
             Type |= color.Type;

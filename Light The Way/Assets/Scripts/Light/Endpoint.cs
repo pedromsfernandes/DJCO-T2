@@ -12,12 +12,12 @@ namespace Light
             LightBeam.UpdateLightBeam(_endpointBeam.gameObject, LightColor.Of(LightType.None), 
                 transform.position, Vector3.up);
             
-            _endpointBeam.Enable(true);
+            _endpointBeam.gameObject.SetActive(true);
         }
 
         protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
         {
-            _endpointBeam.StageColor(_endpointBeam.LightColor.AddColor(beam.LightColor));
+            _endpointBeam.StageAddColor(beam.LightColor);
         }
     }
 }

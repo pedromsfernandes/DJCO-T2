@@ -312,12 +312,15 @@
           <e p="Light" t="Include">
             <e p="BeamEmitter.cs" t="Include" />
             <e p="BeamSensor.cs" t="Include" />
+            <e p="Combiner.cs" t="Include" />
             <e p="Destroyable.cs" t="Include" />
+            <e p="Divider.cs" t="Include" />
             <e p="Endpoint.cs" t="Include" />
             <e p="LightBeam.cs" t="Include" />
             <e p="LightColor.cs" t="Include" />
             <e p="Mirror.cs" t="Include" />
             <e p="PlayerBeam.cs" t="Include" />
+            <e p="Splitter.cs" t="Include" />
             <e p="SunController.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
