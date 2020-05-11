@@ -11,9 +11,11 @@ namespace Light
         public float timeout = 1f;
         public float timeToDestroy = 5f;
 
+        public LightType toolColor;
+
         protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
         {
-            if (GameState.Instance.canDestroyObjects && GameState.Instance.hasTool1 && GameState.Instance.currentTool == 1)
+            if (GameState.Instance.canDestroyObjects && beam.LightColor.Equals(toolColor))
             {
                 _timeSinceLastHit = 0;
             }

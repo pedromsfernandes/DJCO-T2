@@ -34,23 +34,6 @@ namespace Light
                     UpdateColor(LightColor.Of(LightType.Blue));
                 }
             }
-            else
-            {
-                if (currentTool == 1)
-                {
-                    base.UpdateColor(LightColor.Of(LightType.Red));
-                }
-                else if (currentTool == 2)
-                {
-                    base.UpdateColor(LightColor.Of(LightType.Green));
-                }
-                else if (currentTool == 3)
-                {
-                    base.UpdateColor(LightColor.Of(LightType.Blue));
-                }
-            }
-
-
         }
 
         protected override void Update()
@@ -72,7 +55,6 @@ namespace Light
         [PunRPC]
         private void UpdateColorSelf(int colorType)
         {
-            Debug.Log("Updating Color Self: " + colorType + "-" + GetComponent<PhotonView>().IsMine);
             base.UpdateColor(LightColor.Of((LightType)colorType));
         }
 
