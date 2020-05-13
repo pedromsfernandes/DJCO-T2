@@ -1,4 +1,6 @@
-﻿using Photon.Pun;
+﻿using System;
+using System.Linq;
+using Photon.Pun;
 using UnityEngine;
 
 namespace Light
@@ -9,6 +11,8 @@ namespace Light
         public GameObject source;
         public GameObject camera;
 
+        private LineRenderer _sunLr;
+        
         private void Awake()
         {
             BeamModel = beamModel;
@@ -16,9 +20,13 @@ namespace Light
 
         private void Start()
         {
-            int currentTool = GameState.Instance.currentTool;
             Lr = GetComponent<LineRenderer>();
+            _sunLr = transform.GetComponentsInChildren<LineRenderer>()
+                .First(lr => lr.gameObject != this.gameObject);
+            
+            _sunLr.startColor = _sunLr.endColor = Color.white;
 
+            int currentTool = GameState.Instance.currentTool;
             if (GetComponent<PhotonView>().IsMine)
             {
                 if (currentTool == 1)
@@ -38,12 +46,29 @@ namespace Light
 
         protected override void Update()
         {
-            if (Active)
+            if (!Active) return;
+            
+            Origin = source.transform.position;
+            Direction = camera.transform.forward;
+
+            if (InShadow())
             {
-                Origin = source.transform.position;
-                Direction = camera.transform.forward;
-                ProcessRayBeam();
+                _sunLr.startColor = _sunLr.endColor = new Color(0, 0, 0, 0);
+                Lr.SetPositions(new []{Vector3.zero, Vector3.zero});
+            } 
+            else
+            {
+                _sunLr.startColor = _sunLr.endColor = Color.white;
+                _sunLr.SetPositions(new []{Origin, Origin - 1000 * GameState.Instance.sunDirection});
+                ProcessRayBeam();   
             }
+        }
+        
+        private bool InShadow()
+        {
+            var inShadow = Physics.Raycast(Origin, -GameState.Instance.sunDirection);
+            Debug.Log(inShadow);
+            return inShadow;
         }
 
         public override LightBeam UpdateColor(LightColor color)
@@ -59,10 +84,10 @@ namespace Light
         }
 
         // Enables the LightBeam for all Clients (Used when starting a chain of LightBeams
-        public void EnableSelf(bool op)
+        public void Enable(bool op)
         {
             GameState.Instance.castingRay = op;
-            GetComponent<PhotonView>().RPC("Enable", RpcTarget.All, op);
+            GetComponent<PhotonView>().RPC("EnableSelf", RpcTarget.All, op);
         }
     }
 }

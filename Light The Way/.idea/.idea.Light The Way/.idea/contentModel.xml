@@ -334,6 +334,7 @@
           <e p="Player" t="Include">
             <e p="LightBridge.cs" t="Include" />
             <e p="MovementController.cs" t="Include" />
+            <e p="ToolsManager.cs" t="Include" />
           </e>
           <e p="SingletonReferences.cs" t="Include" />
           <e p="SingleUse" t="Include">

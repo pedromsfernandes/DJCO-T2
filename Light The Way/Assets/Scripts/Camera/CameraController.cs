@@ -60,9 +60,9 @@ public class CameraController : MonoBehaviourPun
 
         else if (Input.GetMouseButtonUp(1)) SwitchCameraNormal();
 
-        if (GameState.Instance.currentTool != 0 && GameState.Instance.aiming && Input.GetMouseButtonDown(0)) beam.EnableSelf(true);
+        if (GameState.Instance.currentTool != 0 && GameState.Instance.aiming && Input.GetMouseButtonDown(0)) beam.Enable(true);
 
-        else if (GameState.Instance.aiming && Input.GetMouseButtonUp(0)) beam.EnableSelf(false);
+        else if (GameState.Instance.aiming && Input.GetMouseButtonUp(0)) beam.Enable(false);
     }
 
     void SwitchCameraAim()
@@ -77,7 +77,7 @@ public class CameraController : MonoBehaviourPun
         if (cameraMovement != null)
             StopCoroutine(cameraMovement);
         cameraMovement = StartCoroutine(CameraMovementAnim(transform.Find("Main Camera"), new Vector3(0, 0, -4f), false));
-        beam.EnableSelf(false);
+        beam.Enable(false);
     }
 
     IEnumerator CameraMovementAnim(Transform camera, Vector3 target, bool aiming)

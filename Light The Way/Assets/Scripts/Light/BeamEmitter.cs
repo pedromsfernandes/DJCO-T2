@@ -21,7 +21,7 @@ namespace Light
                 ? LightBeam.CreateLightBeam(_laserPool, color, origin, direction)
                 : LightBeam.UpdateLightBeam(_laserPool.GetChild(_beamCount - 1).gameObject, color, origin, direction);
         
-            newBeam.Enable(true);
+            newBeam.EnableSelf(true);
             return newBeam;
         }
 
