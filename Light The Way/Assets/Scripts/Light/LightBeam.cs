@@ -92,7 +92,7 @@ namespace Light
 
         protected void ProcessRayBeam()
         {
-            emitCrystalSound();
+            //emitCrystalSound();
 
             Lr.SetPosition(0, Origin);
             if (Physics.Raycast(Origin, Direction, out RaycastHit hit))
