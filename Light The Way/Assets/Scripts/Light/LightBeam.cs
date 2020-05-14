@@ -6,6 +6,10 @@ namespace Light
 {
     public class LightBeam : MonoBehaviour
     {
+        [FMODUnity.EventRef]
+        public string lightBeamSound;
+        public AudioSource crystalAudioSource;
+
         protected static GameObject BeamModel;
 
         protected bool Active = false;
@@ -88,6 +92,8 @@ namespace Light
 
         protected void ProcessRayBeam()
         {
+            emitCrystalSound();
+
             Lr.SetPosition(0, Origin);
             if (Physics.Raycast(Origin, Direction, out RaycastHit hit))
             {
@@ -104,6 +110,14 @@ namespace Light
                 Lr.SetPosition(1, Direction * 5000);
                 GameState.Instance.lastBeamHit = Direction * 5000;
             }
+
+
+        }
+
+        protected void emitCrystalSound()
+        {
+            Debug.Log("Emiting Crystal Sound");
+            FMODUnity.RuntimeManager.PlayOneShot(lightBeamSound, GetComponent<Transform>().position);
         }
 
         [PunRPC]
