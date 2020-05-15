@@ -5,19 +5,29 @@ using UnityEngine;
 public class PlayerAudioController : MonoBehaviour
 {
     [FMODUnity.EventRef]
-    public string selectedSound;
-    FMOD.Studio.EventInstance soundEvent;
+    public string selectedRedBeamSound;
+    [FMODUnity.EventRef]
+    public string selectedGreenBeamSound;
+    [FMODUnity.EventRef]
+    public string selectedBlueBeamSound;
+    FMOD.Studio.EventInstance redBeamSoundEvent;
+    FMOD.Studio.EventInstance greenBeamSoundEvent;
+    FMOD.Studio.EventInstance blueBeamSoundEvent;
 
     // Start is called before the first frame update
     void Start()
     {
-        soundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedSound);
+        redBeamSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedRedBeamSound);
+        greenBeamSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedGreenBeamSound);
+        blueBeamSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedBlueBeamSound);
     }
 
     // Update is called once per frame
     void Update()
     {
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEvent, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(redBeamSoundEvent, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(greenBeamSoundEvent, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(blueBeamSoundEvent, GetComponent<Transform>(), GetComponent<Rigidbody>());
         PlayBeamSound();
         
     }
@@ -27,17 +37,39 @@ public class PlayerAudioController : MonoBehaviour
 
         if (GameState.Instance.castingRay)
         {
-            Debug.Log("Casting Ray");
-            FMOD.Studio.PLAYBACK_STATE fmodPBState;
-            soundEvent.getPlaybackState(out fmodPBState);
-            if (fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            if (GameState.Instance.currentTool == 1)
             {
-                soundEvent.start();
+                FMOD.Studio.PLAYBACK_STATE fmodPBState;
+                redBeamSoundEvent.getPlaybackState(out fmodPBState);
+                if (fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                {
+                    redBeamSoundEvent.start();
+                }
+            }
+            else if (GameState.Instance.currentTool == 2)
+            {
+                FMOD.Studio.PLAYBACK_STATE fmodPBState;
+                greenBeamSoundEvent.getPlaybackState(out fmodPBState);
+                if (fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                {
+                    greenBeamSoundEvent.start();
+                }
+            }
+            else if (GameState.Instance.currentTool == 3)
+            {
+                FMOD.Studio.PLAYBACK_STATE fmodPBState;
+                blueBeamSoundEvent.getPlaybackState(out fmodPBState);
+                if (fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                {
+                    blueBeamSoundEvent.start();
+                }
             }
         }
         else
         {
-            soundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            redBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            greenBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            blueBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
 }
