@@ -13,8 +13,8 @@ namespace Light
         protected static GameObject BeamModel;
 
         protected bool Active = false;
-        protected Vector3 Origin { private get; set; }
-        protected Vector3 Direction { private get; set; }
+        protected Vector3 Origin { get; set; }
+        protected Vector3 Direction { get; set; }
 
         protected LineRenderer Lr;
 
@@ -121,7 +121,7 @@ namespace Light
         }
 
         [PunRPC]
-        public void Enable(bool op)
+        public void EnableSelf(bool op)
         {
             Active = op;
             gameObject.SetActive(op);

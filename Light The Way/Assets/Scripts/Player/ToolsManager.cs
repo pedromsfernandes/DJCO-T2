@@ -124,7 +124,7 @@ public class ToolsManager : MonoBehaviour
             createDroppedTool(toolId, toolPosition);
 
             if (!(GameState.Instance.hasTool1 || GameState.Instance.hasTool2 || GameState.Instance.hasTool3))
-                lightBeam.EnableSelf(false);
+                lightBeam.Enable(false);
         }
     }
 
