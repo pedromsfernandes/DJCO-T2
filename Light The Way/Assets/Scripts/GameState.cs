@@ -26,6 +26,8 @@ public class GameState : MonoBehaviour
     public bool canRotateSun = false;
     public bool canCreateLightBridges = false;
 
+    public bool canDestroyObjects = false;
+
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
