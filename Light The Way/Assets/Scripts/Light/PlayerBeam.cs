@@ -67,7 +67,7 @@ namespace Light
         private bool InShadow()
         {
             var inShadow = Physics.Raycast(Origin, -GameState.Instance.sunDirection);
-            Debug.Log(inShadow);
+            GameState.Instance.castingRay = !inShadow;
             return inShadow;
         }
 
