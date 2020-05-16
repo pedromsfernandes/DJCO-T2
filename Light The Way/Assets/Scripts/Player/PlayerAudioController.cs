@@ -43,9 +43,9 @@ public class PlayerAudioController : MonoBehaviour
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(greenBeamSoundEvent, playerTransform, playerRigidbody);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(blueBeamSoundEvent, playerTransform, playerRigidbody);
 
-        if (GameState.Instance.castingRay)
+        if(GameState.Instance.currentTool == 1)
         {
-            if (GameState.Instance.currentTool == 1)
+            if (GameState.Instance.castingRay)
             {
                 FMOD.Studio.PLAYBACK_STATE fmodPBState;
                 redBeamSoundEvent.getPlaybackState(out fmodPBState);
@@ -54,7 +54,14 @@ public class PlayerAudioController : MonoBehaviour
                     redBeamSoundEvent.start();
                 }
             }
-            else if (GameState.Instance.currentTool == 2)
+            else
+            {
+                redBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
+        }
+        else if (GameState.Instance.currentTool == 2)
+        {
+            if (GameState.Instance.castingRay)
             {
                 FMOD.Studio.PLAYBACK_STATE fmodPBState;
                 greenBeamSoundEvent.getPlaybackState(out fmodPBState);
@@ -63,7 +70,14 @@ public class PlayerAudioController : MonoBehaviour
                     greenBeamSoundEvent.start();
                 }
             }
-            else if (GameState.Instance.currentTool == 3)
+            else
+            {
+                greenBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
+        }
+        else if (GameState.Instance.currentTool == 3)
+        {
+            if (GameState.Instance.castingRay)
             {
                 FMOD.Studio.PLAYBACK_STATE fmodPBState;
                 blueBeamSoundEvent.getPlaybackState(out fmodPBState);
@@ -72,13 +86,14 @@ public class PlayerAudioController : MonoBehaviour
                     blueBeamSoundEvent.start();
                 }
             }
+            else
+            {
+                blueBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
         }
-        else
-        {
-            redBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            greenBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            blueBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        }
+
+
+
     }
 
     /*public void playBeamSound(string toolName)
