@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerAudioController : MonoBehaviour
 {
@@ -14,26 +15,33 @@ public class PlayerAudioController : MonoBehaviour
     FMOD.Studio.EventInstance greenBeamSoundEvent;
     FMOD.Studio.EventInstance blueBeamSoundEvent;
 
+    Transform playerTransform;
+    Rigidbody playerRigidbody;
+
     // Start is called before the first frame update
     void Start()
     {
         redBeamSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedRedBeamSound);
         greenBeamSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedGreenBeamSound);
         blueBeamSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedBlueBeamSound);
+
+        playerTransform = GetComponent<Transform>();
+        playerRigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(redBeamSoundEvent, GetComponent<Transform>(), GetComponent<Rigidbody>());
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(greenBeamSoundEvent, GetComponent<Transform>(), GetComponent<Rigidbody>());
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(blueBeamSoundEvent, GetComponent<Transform>(), GetComponent<Rigidbody>());
-        PlayBeamSound();
+       
+        PlayBeamSoundSelf(playerTransform, playerRigidbody);
         
     }
 
-    void PlayBeamSound()
+    void PlayBeamSoundSelf(Transform playerTransform, Rigidbody playerRigidbody)
     {
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(redBeamSoundEvent, playerTransform, playerRigidbody);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(greenBeamSoundEvent, playerTransform, playerRigidbody);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(blueBeamSoundEvent, playerTransform, playerRigidbody);
 
         if (GameState.Instance.castingRay)
         {
@@ -72,4 +80,18 @@ public class PlayerAudioController : MonoBehaviour
             blueBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
+
+    /*public void playBeamSound(string toolName)
+    {
+        //Debug.Log("Photon destroy tool " + toolName);
+        //this.GetComponent<PhotonView>().RPC("deletePickedUpToolSelf", RpcTarget.All, toolName);
+    }
+
+    [PunRPC]
+    void deletePickedUpToolSelf(string toolName)
+    {
+        //Debug.Log("Destroying Tool " + toolName);
+        //GameObject tool = GameObject.Find(toolName);
+        //Destroy(tool);
+    }*/
 }
