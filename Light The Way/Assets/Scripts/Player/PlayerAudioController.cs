@@ -25,14 +25,15 @@ public class PlayerAudioController : MonoBehaviour
         greenBeamSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedGreenBeamSound);
         blueBeamSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedBlueBeamSound);
 
-        playerTransform = GetComponent<Transform>();
-        playerRigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+
+        playerTransform = GetComponent<Transform>();
+        playerRigidbody = GetComponentInChildren<Rigidbody>();
+
         PlayBeamSoundSelf(playerTransform, playerRigidbody);
         
     }
