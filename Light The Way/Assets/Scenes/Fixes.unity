@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01355b081f6753b48981470dd8308bfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sunDirection: {x: 0, y: 0, z: 0}
   aiming: 0
   castingRay: 0
   lastBeamHit: {x: 0, y: 0, z: 0}
@@ -1275,6 +1276,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7841573969275939898, guid: 20f3506190c57654c8c5e2dde512775d, type: 3}
   recorder: {fileID: 0}
+  prefabs:
+  - {fileID: 7841573969275939898, guid: 20f3506190c57654c8c5e2dde512775d, type: 3}
+  - {fileID: 7841573969275939898, guid: 3dcc549edfd0e1218975a9afa9abd5c7, type: 3}
+  - {fileID: 7841573969275939898, guid: 84df8114213b6b35a916bd503b49643d, type: 3}
 --- !u!4 &1799754927
 Transform:
   m_ObjectHideFlags: 0

@@ -17,13 +17,17 @@ public class QuickInstantiate : MonoBehaviour
 
     private Vector3[] positions = { new Vector3(0, 0, 0), new Vector3(10, 0, 0), new Vector3(20, 0, 0) };
 
+    [SerializeField]
+    private GameObject[] prefabs;
+
     private void Awake()
     {
         int index = Array.FindIndex(PhotonNetwork.PlayerList, x => x == PhotonNetwork.LocalPlayer);
 
         Vector3 position = positions[index];
+        GameObject prefab = prefabs[index];
 
-        MasterManager.NetworkInstantiate(_prefab, position, Quaternion.identity);
+        MasterManager.NetworkInstantiate(prefab, position, Quaternion.identity);
 
     }
 
