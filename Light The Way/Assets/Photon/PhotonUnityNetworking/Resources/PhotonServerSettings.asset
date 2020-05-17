@@ -47,6 +47,8 @@ MonoBehaviour:
   - deletePickedUpToolSelf
   - createDroppedToolSelf
   - PlayBeamSoundSelf
+  - PlayRed
+  - PlayRedBeamSoundSelf
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

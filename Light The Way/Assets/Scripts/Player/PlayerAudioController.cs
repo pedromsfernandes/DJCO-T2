@@ -34,17 +34,48 @@ public class PlayerAudioController : MonoBehaviour
         playerTransform = GetComponent<Transform>();
         playerRigidbody = GetComponentInChildren<Rigidbody>();
 
-        PlayBeamSoundSelf(playerTransform, playerRigidbody);
-        
+        PlayBeamSound(playerTransform, playerRigidbody);
     }
 
-    void PlayBeamSoundSelf(Transform playerTransform, Rigidbody playerRigidbody)
+
+    [PunRPC]
+    void PlayRedBeamSoundSelf(bool play, string originalPlayerName)
     {
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(redBeamSoundEvent, playerTransform, playerRigidbody);
+
+
+        if(playerTransform.name != originalPlayerName)
+            return;
+
+        Debug.Log("Play Red Beam Sound: " + play + " / On + " + originalPlayerName + " == " + playerTransform.name);
+
+        GameObject originalPlayer = GameObject.Find(originalPlayerName);
+        Transform originalTransform = originalPlayer.GetComponent<Transform>();
+        Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(redBeamSoundEvent, playerTransform, playerRigidbody);
+
+        Debug.Log("Position = " + originalTransform.position);
+        Debug.Log("Velocity = " + originalRigidbody.velocity);
+
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(redBeamSoundEvent, originalTransform, originalRigidbody);
+
+        if (play)
+        {
+            redBeamSoundEvent.start();
+        }
+        else
+        {
+            redBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
+    }
+
+
+    void PlayBeamSound(Transform playerTransform, Rigidbody playerRigidbody)
+    {
+        
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(greenBeamSoundEvent, playerTransform, playerRigidbody);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(blueBeamSoundEvent, playerTransform, playerRigidbody);
 
-        if(GameState.Instance.currentTool == 1)
+        if (GameState.Instance.currentTool == 1)
         {
             if (GameState.Instance.castingRay)
             {
@@ -52,14 +83,39 @@ public class PlayerAudioController : MonoBehaviour
                 redBeamSoundEvent.getPlaybackState(out fmodPBState);
                 if (fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
                 {
-                    redBeamSoundEvent.start();
+                    //redBeamSoundEvent.start();
+                    if(GetComponent<PhotonView>().IsMine){
+                        GetComponent<PhotonView>().RPC("PlayRedBeamSoundSelf", RpcTarget.All, true,  playerTransform.name);
+                    }
                 }
             }
             else
             {
-                redBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                FMOD.Studio.PLAYBACK_STATE fmodPBState;
+                redBeamSoundEvent.getPlaybackState(out fmodPBState);
+                if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                {
+                    //redBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                     if(GetComponent<PhotonView>().IsMine){
+                        GetComponent<PhotonView>().RPC("PlayRedBeamSoundSelf", RpcTarget.All, false,  playerTransform.name);
+                     }
+                }
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         else if (GameState.Instance.currentTool == 2)
         {
             if (GameState.Instance.castingRay)
@@ -97,17 +153,5 @@ public class PlayerAudioController : MonoBehaviour
 
     }
 
-    /*public void playBeamSound(string toolName)
-    {
-        //Debug.Log("Photon destroy tool " + toolName);
-        //this.GetComponent<PhotonView>().RPC("deletePickedUpToolSelf", RpcTarget.All, toolName);
-    }
 
-    [PunRPC]
-    void deletePickedUpToolSelf(string toolName)
-    {
-        //Debug.Log("Destroying Tool " + toolName);
-        //GameObject tool = GameObject.Find(toolName);
-        //Destroy(tool);
-    }*/
 }
