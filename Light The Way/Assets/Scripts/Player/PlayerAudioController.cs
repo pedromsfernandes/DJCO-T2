@@ -41,7 +41,8 @@ public class PlayerAudioController : MonoBehaviour
     [PunRPC]
     void PlayRedBeamSoundSelf(bool play, string originalPlayerName)
     {
-       
+        if (playerTransform.name != originalPlayerName)
+            return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
@@ -63,7 +64,7 @@ public class PlayerAudioController : MonoBehaviour
 
     void PlayBeamSound(Transform playerTransform, Rigidbody playerRigidbody)
     {
-        
+
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(greenBeamSoundEvent, playerTransform, playerRigidbody);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(blueBeamSoundEvent, playerTransform, playerRigidbody);
 
@@ -76,8 +77,9 @@ public class PlayerAudioController : MonoBehaviour
                 if (fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
                 {
                     //redBeamSoundEvent.start();
-                    if(GetComponent<PhotonView>().IsMine){
-                        GetComponent<PhotonView>().RPC("PlayRedBeamSoundSelf", RpcTarget.All, true,  playerTransform.name);
+                    if (GetComponent<PhotonView>().IsMine)
+                    {
+                        GetComponent<PhotonView>().RPC("PlayRedBeamSoundSelf", RpcTarget.All, true, playerTransform.name);
                     }
                 }
             }
@@ -88,9 +90,10 @@ public class PlayerAudioController : MonoBehaviour
                 if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
                 {
                     //redBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                     if(GetComponent<PhotonView>().IsMine){
-                        GetComponent<PhotonView>().RPC("PlayRedBeamSoundSelf", RpcTarget.All, false,  playerTransform.name);
-                     }
+                    if (GetComponent<PhotonView>().IsMine)
+                    {
+                        GetComponent<PhotonView>().RPC("PlayRedBeamSoundSelf", RpcTarget.All, false, playerTransform.name);
+                    }
                 }
             }
         }
@@ -107,7 +110,7 @@ public class PlayerAudioController : MonoBehaviour
 
 
 
-        
+
         else if (GameState.Instance.currentTool == 2)
         {
             if (GameState.Instance.castingRay)

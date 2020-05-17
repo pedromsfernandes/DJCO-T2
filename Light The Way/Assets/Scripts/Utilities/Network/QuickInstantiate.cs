@@ -15,7 +15,7 @@ public class QuickInstantiate : MonoBehaviour
 
     private float volumeBeforeMute;
 
-    private Vector3[] positions = { new Vector3(0, 0, 0), new Vector3(10, 0, 0), new Vector3(20, 0, 0) };
+    private Vector3[] positions = { new Vector3(0, 0, 0), new Vector3(5, 0, 0), new Vector3(10, 0, 0) };
 
     [SerializeField]
     private GameObject[] prefabs;
