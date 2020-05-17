@@ -41,17 +41,14 @@ public class PlayerAudioController : MonoBehaviour
     [PunRPC]
     void PlayRedBeamSoundSelf(bool play, string originalPlayerName)
     {
-        Debug.Log("Play Red Beam Sound: " + play);
-
+       
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(redBeamSoundEvent, originalTransform, originalRigidbody);
 
-        Debug.Log(playerTransform.name + " player position: " + playerTransform.position);
-        Debug.Log(originalPlayerName + " emiting sound on position: " + originalTransform.position);
-        Debug.Log("Distance: " + Vector3.Distance(originalTransform.position, playerTransform.position));
+        Debug.Log("Reproducing Red Beam Sound here" + playerTransform.position + " on player: " + playerTransform.name + ". Sound emited there " + originalTransform.position + " from " + originalPlayerName + " / active: " + play);
 
         if (play)
         {
