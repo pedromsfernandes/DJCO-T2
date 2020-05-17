@@ -47,7 +47,7 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
     {
         _ready = state;
 
-        _readyUpText.text = _ready ? "R" : "N";
+        _readyUpText.text = _ready ? "Ready!" : "Not Ready";
     }
 
     private void GetCurrentRoomPlayers()
@@ -125,12 +125,9 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
     public void OnClick_ReadyUp()
     {
-        if (!PhotonNetwork.IsMasterClient)
-        {
-            SetReadyUp(!_ready);
-            base.photonView.RPC("RPC_ChangeReadyState", RpcTarget.MasterClient, PhotonNetwork.LocalPlayer, _ready);
 
-        }
+        SetReadyUp(!_ready);
+        base.photonView.RPC("RPC_ChangeReadyState", RpcTarget.MasterClient, PhotonNetwork.LocalPlayer, _ready);
     }
 
     [PunRPC]
