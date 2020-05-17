@@ -18,7 +18,6 @@ public class PlayerAudioController : MonoBehaviour
     Transform playerTransform;
     Rigidbody playerRigidbody;
 
-    // Start is called before the first frame update
     void Start()
     {
         redBeamSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedRedBeamSound);
@@ -27,7 +26,6 @@ public class PlayerAudioController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -36,6 +34,114 @@ public class PlayerAudioController : MonoBehaviour
 
         PlayBeamSound(playerTransform, playerRigidbody);
     }
+
+    void PlayBeamSound(Transform playerTransform, Rigidbody playerRigidbody)
+    {
+        if (GameState.Instance.currentTool == 1)
+        {
+            if (GameState.Instance.castingRay)
+            {
+                playRedBeamSound(true);
+            }
+            else
+            {
+                playRedBeamSound(false);
+            }
+        }
+
+        else if (GameState.Instance.currentTool == 2)
+        {
+            if (GameState.Instance.castingRay)
+            {
+                playGreenBeamSound(true);
+            }
+            else
+            {
+                playGreenBeamSound(false);
+            }
+        }
+
+
+        else if (GameState.Instance.currentTool == 3)
+        {
+            if (GameState.Instance.castingRay)
+            {
+                playBlueBeamSound(true);
+            }
+            else
+            {
+                playBlueBeamSound(false);
+            }
+        }
+    }
+
+
+    
+
+    void playRedBeamSound(bool active)
+    {
+        FMOD.Studio.PLAYBACK_STATE fmodPBState;
+        redBeamSoundEvent.getPlaybackState(out fmodPBState);
+
+        if (active)
+        {
+            if (fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
+            {
+                GetComponent<PhotonView>().RPC("PlayRedBeamSoundSelf", RpcTarget.All, true, playerTransform.name);
+            }
+        }
+        else
+        {
+            if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
+            {
+                GetComponent<PhotonView>().RPC("PlayRedBeamSoundSelf", RpcTarget.All, false, playerTransform.name);
+            }
+        }
+    }
+
+    void playGreenBeamSound(bool active)
+    {
+        FMOD.Studio.PLAYBACK_STATE fmodPBState;
+        greenBeamSoundEvent.getPlaybackState(out fmodPBState);
+
+        if (active)
+        {
+            if (fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
+            {
+                GetComponent<PhotonView>().RPC("PlayGreenBeamSoundSelf", RpcTarget.All, true, playerTransform.name);
+            }
+        }
+        else
+        {
+            if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
+            {
+                GetComponent<PhotonView>().RPC("PlayGreenBeamSoundSelf", RpcTarget.All, false, playerTransform.name);
+            }
+        }
+    }
+
+    void playBlueBeamSound(bool active)
+    {
+        FMOD.Studio.PLAYBACK_STATE fmodPBState;
+        blueBeamSoundEvent.getPlaybackState(out fmodPBState);
+
+        if (active)
+        {
+            if (fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
+            {
+                GetComponent<PhotonView>().RPC("PlayBlueBeamSoundSelf", RpcTarget.All, true, playerTransform.name);
+            }
+        }
+        else
+        {
+            if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
+            {
+                GetComponent<PhotonView>().RPC("PlayBlueBeamSoundSelf", RpcTarget.All, false, playerTransform.name);
+            }
+        }
+    }
+
+
 
 
     [PunRPC]
@@ -49,7 +155,7 @@ public class PlayerAudioController : MonoBehaviour
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(redBeamSoundEvent, originalTransform, originalRigidbody);
 
-        Debug.Log("Reproducing Red Beam Sound here" + playerTransform.position + " on player: " + playerTransform.name + ". Sound emited there " + originalTransform.position + " from " + originalPlayerName + " / active: " + play);
+        Debug.Log("Red Beam Sound " + originalTransform.position + " from " + originalPlayerName + " / active: " + play);
 
         if (play)
         {
@@ -60,93 +166,51 @@ public class PlayerAudioController : MonoBehaviour
             redBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
-
-
-    void PlayBeamSound(Transform playerTransform, Rigidbody playerRigidbody)
+    
+    [PunRPC]
+    void PlayGreenBeamSoundSelf(bool play, string originalPlayerName)
     {
+        if (playerTransform.name != originalPlayerName)
+            return;
+        GameObject originalPlayer = GameObject.Find(originalPlayerName);
+        Transform originalTransform = originalPlayer.GetComponent<Transform>();
+        Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(greenBeamSoundEvent, playerTransform, playerRigidbody);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(blueBeamSoundEvent, playerTransform, playerRigidbody);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(greenBeamSoundEvent, originalTransform, originalRigidbody);
 
-        if (GameState.Instance.currentTool == 1)
+        Debug.Log("Reproducing Green Beam Sound here" + playerTransform.position + " on player: " + playerTransform.name + ". Sound emited there " + originalTransform.position + " from " + originalPlayerName + " / active: " + play);
+
+        if (play)
         {
-            if (GameState.Instance.castingRay)
-            {
-                FMOD.Studio.PLAYBACK_STATE fmodPBState;
-                redBeamSoundEvent.getPlaybackState(out fmodPBState);
-                if (fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
-                {
-                    //redBeamSoundEvent.start();
-                    if (GetComponent<PhotonView>().IsMine)
-                    {
-                        GetComponent<PhotonView>().RPC("PlayRedBeamSoundSelf", RpcTarget.All, true, playerTransform.name);
-                    }
-                }
-            }
-            else
-            {
-                FMOD.Studio.PLAYBACK_STATE fmodPBState;
-                redBeamSoundEvent.getPlaybackState(out fmodPBState);
-                if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
-                {
-                    //redBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                    if (GetComponent<PhotonView>().IsMine)
-                    {
-                        GetComponent<PhotonView>().RPC("PlayRedBeamSoundSelf", RpcTarget.All, false, playerTransform.name);
-                    }
-                }
-            }
+            greenBeamSoundEvent.start();
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        else if (GameState.Instance.currentTool == 2)
+        else
         {
-            if (GameState.Instance.castingRay)
-            {
-                FMOD.Studio.PLAYBACK_STATE fmodPBState;
-                greenBeamSoundEvent.getPlaybackState(out fmodPBState);
-                if (fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
-                {
-                    greenBeamSoundEvent.start();
-                }
-            }
-            else
-            {
-                greenBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            }
+            greenBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
-        else if (GameState.Instance.currentTool == 3)
-        {
-            if (GameState.Instance.castingRay)
-            {
-                FMOD.Studio.PLAYBACK_STATE fmodPBState;
-                blueBeamSoundEvent.getPlaybackState(out fmodPBState);
-                if (fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
-                {
-                    blueBeamSoundEvent.start();
-                }
-            }
-            else
-            {
-                blueBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            }
-        }
-
-
-
     }
 
+    [PunRPC]
+    void PlayBlueBeamSoundSelf(bool play, string originalPlayerName)
+    {
+        if (playerTransform.name != originalPlayerName)
+            return;
+        GameObject originalPlayer = GameObject.Find(originalPlayerName);
+        Transform originalTransform = originalPlayer.GetComponent<Transform>();
+        Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
+
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(blueBeamSoundEvent, originalTransform, originalRigidbody);
+
+        Debug.Log("Reproducing Blue Beam Sound here" + playerTransform.position + " on player: " + playerTransform.name + ". Sound emited there " + originalTransform.position + " from " + originalPlayerName + " / active: " + play);
+
+        if (play)
+        {
+            blueBeamSoundEvent.start();
+        }
+        else
+        {
+            blueBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
+    }
 
 }

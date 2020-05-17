@@ -211,7 +211,6 @@ GameObject:
   - component: {fileID: 5433141087288154195}
   - component: {fileID: 5388757762036589008}
   - component: {fileID: 7128227768393452341}
-  - component: {fileID: 1100602981301994547}
   - component: {fileID: 4234245922186530580}
   m_Layer: 0
   m_Name: Player2
@@ -317,19 +316,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightBeam: {fileID: 0}
---- !u!114 &1100602981301994547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7841573969275939898}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListenerNumber: -1
 --- !u!114 &4234245922186530580
 MonoBehaviour:
   m_ObjectHideFlags: 0
