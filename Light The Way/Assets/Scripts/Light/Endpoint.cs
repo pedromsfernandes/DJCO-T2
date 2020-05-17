@@ -5,16 +5,23 @@ namespace Light
     public class Endpoint : BeamSensor
     {
         private LightBeam _endpointBeam;
-        public LightColor target;
+
+        [SerializeField]
+        private LightColor target;
+
+        public LightType targetColor;
+
         public GameObject door;
 
-        private LightColor currentColor = new LightColor(LightType.None);
+        private LightColor currentColor = LightColor.Of(LightType.None);
 
         private void Start()
         {
             _endpointBeam = transform.GetChild(0).GetComponent<LightBeam>();
+            target = LightColor.Of(targetColor);
             LightBeam.UpdateLightBeam(_endpointBeam.gameObject, target,
                 transform.position, Vector3.up);
+            _endpointBeam.EnableSelf(true);
 
             _endpointBeam.gameObject.SetActive(true);
 
@@ -33,7 +40,7 @@ namespace Light
                 door.SetActive(false);
             }
 
-            currentColor.SetColor(LightType.None);
+            currentColor = LightColor.Of(LightType.None);
         }
     }
 }

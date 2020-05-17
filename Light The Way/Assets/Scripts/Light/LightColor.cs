@@ -6,14 +6,18 @@ namespace Light
 {
     public enum LightType
     {
-        None    = 0b000,
-        Red     = 0b100,
-        Green   = 0b010,
-        Blue    = 0b001
+        None = 0b000,
+        Red = 0b100,
+        Green = 0b010,
+        Blue = 0b001,
+        Yellow = 0b110,
+        Magenta = 0b101,
+        Cyan = 0b011,
+        White = 0b111
     }
     public class LightColor
     {
-        private static readonly Color[][][] Colors = 
+        private static readonly Color[][][] Colors =
         {
             // No Red
             new[]
@@ -25,10 +29,10 @@ namespace Light
                     new Color(0, 0, 0, 0),
                     // Blue
                     new Color(0, 0, 1f, 1)
-                    
+
                 },
                 // Green
-                new[] 
+                new[]
                 {
                     // No Blue
                     new Color(0, 1f, 0, 1),
@@ -40,7 +44,7 @@ namespace Light
             new[]
             {
                 // No Green
-                new[] 
+                new[]
                 {
                     // No Blue
                     new Color(1f, 0, 0, 1),
@@ -48,7 +52,7 @@ namespace Light
                     new Color(1f, 0, 1f, 1)
                 },
                 // Green
-                new[] 
+                new[]
                 {
                     // No Blue
                     new Color(1, 1, 0, 1),
@@ -57,19 +61,19 @@ namespace Light
                 }
             }
         };
-        
+
         internal int Type { get; private set; }
 
         public static LightColor Of(LightType type)
         {
-            return new LightColor((int) type);
+            return new LightColor((int)type);
         }
 
         private LightColor(int type)
         {
             Type = type;
         }
-        
+
         public IEnumerable<LightColor> DivideColors()
         {
             if ((Type & 0b100) != 0)
@@ -79,7 +83,7 @@ namespace Light
             if ((Type & 0b001) != 0)
                 yield return LightColor.Of(LightType.Blue);
         }
-        
+
         public LightColor AddColor(LightColor color)
         {
             Type |= color.Type;
@@ -98,18 +102,18 @@ namespace Light
 
             switch (obj)
             {
-                case LightColor lightColor :
+                case LightColor lightColor:
                     return Type == lightColor.Type;
                 case LightType lightType:
-                    return Type == (int) lightType;
+                    return Type == (int)lightType;
                 default:
                     return false;
-            } 
+            }
         }
-        
+
         public override string ToString()
         {
-            return $"{nameof(Type)}: {(LightType) Type}";
+            return $"{nameof(Type)}: {(LightType)Type}";
         }
 
         public override int GetHashCode()
