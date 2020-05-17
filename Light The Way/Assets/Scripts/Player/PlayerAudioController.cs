@@ -42,6 +42,8 @@ public class PlayerAudioController : MonoBehaviour
             if (GameState.Instance.castingRay)
             {
                 playRedBeamSound(true);
+                playGreenBeamSound(false);
+                playBlueBeamSound(false);
             }
             else
             {
@@ -54,6 +56,8 @@ public class PlayerAudioController : MonoBehaviour
             if (GameState.Instance.castingRay)
             {
                 playGreenBeamSound(true);
+                playRedBeamSound(false);
+                playBlueBeamSound(false);
             }
             else
             {
@@ -67,11 +71,20 @@ public class PlayerAudioController : MonoBehaviour
             if (GameState.Instance.castingRay)
             {
                 playBlueBeamSound(true);
+                playRedBeamSound(false);
+                playGreenBeamSound(false);
             }
             else
             {
                 playBlueBeamSound(false);
             }
+        }
+
+        else
+        {
+            playBlueBeamSound(false);
+            playRedBeamSound(false);
+            playGreenBeamSound(false);
         }
     }
 
