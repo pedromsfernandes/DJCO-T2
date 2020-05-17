@@ -1,54 +1,53 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Photon.Pun;
 using UnityEngine;
-using Photon.Pun;
 
-public class Destroyable : MonoBehaviour
+namespace Light
 {
-    private float timeWithHit = 0f;
-
-    private float timeSinceLastHit = 0f;
-
-    public float TIMEOUT = 1f;
-
-    public float TIME_TO_DESTROY = 5f;
-
-    public string TOOL_COLOR = "BLUE";
-    void Hit(object[] args)
+    public class Destroyable : BeamSensor
     {
-        LightBeam beam = (LightBeam)args[0];
+        private float _timeWithHit = 0f;
+        private float _timeSinceLastHit = 0f;
 
-        if (beam.GetComponent<LightColor>().IsColorEqual(TOOL_COLOR))
-            timeSinceLastHit = 0;
-    }
+        public float timeout = 1f;
+        public float timeToDestroy = 5f;
 
-    void Update()
-    {
-        if (timeSinceLastHit > TIMEOUT)
-            return;
+        public LightType toolColor;
 
-        timeSinceLastHit += Time.deltaTime;
-        timeWithHit += Time.deltaTime;
-
-        if (timeSinceLastHit > TIMEOUT)
+        protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
         {
-            timeWithHit = 0;
-            return;
+            if (GameState.Instance.canDestroyObjects && beam.LightColor.Equals(toolColor))
+            {
+                _timeSinceLastHit = 0;
+            }
         }
 
-        if (timeWithHit > TIME_TO_DESTROY)
-            this.Destroy();
-    }
+        private void Update()
+        {
+            if (_timeSinceLastHit > timeout)
+                return;
 
+            _timeSinceLastHit += Time.deltaTime;
+            _timeWithHit += Time.deltaTime;
 
-    public void Destroy()
-    {
-        this.GetComponent<PhotonView>().RPC("DestroySelf", RpcTarget.All);
-    }
+            if (_timeSinceLastHit > timeout)
+            {
+                _timeWithHit = 0;
+                return;
+            }
 
-    [PunRPC]
-    void DestroySelf()
-    {
-        this.gameObject.SetActive(false);
+            if (_timeWithHit > timeToDestroy)
+                Destroy();
+        }
+
+        private void Destroy()
+        {
+            GetComponent<PhotonView>().RPC("DestroySelf", RpcTarget.All);
+        }
+
+        [PunRPC]
+        void DestroySelf()
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 }

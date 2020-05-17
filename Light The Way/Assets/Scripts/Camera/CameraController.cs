@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using Light;
 using UnityEngine;
 using Photon.Pun;
 
@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviourPun
     public float animTime = 0.5f;
     public GameObject follow;
     public GameObject player;
-    public LightBeam beam;
+    public PlayerBeam beam;
 
     void Start()
     {
@@ -58,11 +58,11 @@ public class CameraController : MonoBehaviourPun
     {
         if (Input.GetMouseButtonDown(1)) SwitchCameraAim();
 
-        if (Input.GetMouseButtonUp(1)) SwitchCameraNormal();
+        else if (Input.GetMouseButtonUp(1)) SwitchCameraNormal();
 
-        if (GameState.Instance.aiming && Input.GetMouseButtonDown(0)) beam.Enable(true);
+        if (GameState.Instance.currentTool != 0 && GameState.Instance.aiming && Input.GetMouseButtonDown(0)) beam.Enable(true);
 
-        if (GameState.Instance.aiming && Input.GetMouseButtonUp(0)) beam.Enable(false);
+        else if (GameState.Instance.aiming && Input.GetMouseButtonUp(0)) beam.Enable(false);
     }
 
     void SwitchCameraAim()

@@ -107,9 +107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25bcfc342ca181ac48c1fbfcd1620a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TIMEOUT: 1
-  TIME_TO_DESTROY: 3
-  TOOL_COLOR: BLUE
+  timeout: 1
+  timeToDestroy: 5
+  toolColor: 4
 --- !u!114 &6114907376554181158
 MonoBehaviour:
   m_ObjectHideFlags: 0

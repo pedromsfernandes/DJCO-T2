@@ -1,43 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Endpoint : MonoBehaviour
+namespace Light
 {
-    public LightColor target;
-    public GameObject door;
-
-    LineRenderer lr;
-    LightColor lc;
-
-    void Start()
+    public class Endpoint : BeamSensor
     {
-        lr = transform.Find("Laser").GetComponent<LineRenderer>();
-        lc = lr.gameObject.AddComponent<LightColor>();
-        lc.SetColor(false, false, false);
-        lr.SetColors(target.GetColor(), target.GetColor());
-        lr.SetPosition(0, new Vector3(transform.position.x, transform.position.y, transform.position.z));
-        lr.SetPosition(1, new Vector3(transform.position.x, transform.position.y + 50000, transform.position.z));
-        lr.gameObject.SetActive(true);
-    }
+        private LightBeam _endpointBeam;
+        public LightColor target;
+        public GameObject door;
 
-    void Hit(object[] args)
-    {
-        LightBeam beam = (LightBeam)args[0];
-        RaycastHit h = (RaycastHit)args[1];
-        Vector3 dir = (Vector3)args[2];
+        private LightColor currentColor = new LightColor(LightType.None);
 
-        lc.AddColor(beam.gameObject.GetComponent<LightColor>());
-    }
-
-    void LateUpdate()
-    {
-        if(lc.GetColor() == target.GetColor())
+        private void Start()
         {
-            lr.gameObject.SetActive(false);
-            door.SetActive(false);
+            _endpointBeam = transform.GetChild(0).GetComponent<LightBeam>();
+            LightBeam.UpdateLightBeam(_endpointBeam.gameObject, target,
+                transform.position, Vector3.up);
+
+            _endpointBeam.gameObject.SetActive(true);
+
         }
 
-        lc.SetColor(false, false, false);
+        protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
+        {
+            currentColor.AddColor(beam.LightColor);
+        }
+
+        void LateUpdate()
+        {
+            if (currentColor.GetColor() == target.GetColor())
+            {
+                _endpointBeam.gameObject.SetActive(false);
+                door.SetActive(false);
+            }
+
+            currentColor.SetColor(LightType.None);
+        }
     }
 }
