@@ -1,0 +1,104 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class MainMenuController : MonoBehaviour
+{
+    static bool first = true;
+
+    public GameObject canvas;
+    public GameObject[] altCanvas;
+    public GameObject[] btns;
+    public GameObject[] subBtns;
+
+    Vector2 screenSize;
+
+    void Start()
+    {
+        //Generate world space point information for position and scale calculations
+        screenSize.x = canvas.GetComponent<RectTransform>().sizeDelta.x;
+        screenSize.y = canvas.GetComponent<RectTransform>().sizeDelta.y;
+
+        float delta = 4.5f * screenSize.y / 9f;
+
+        for (int i = 0; i < btns.Length; i++)
+        {
+            btns[i].GetComponent<RectTransform>().sizeDelta = new Vector2(screenSize.y / 2.5f, screenSize.y / 9f);
+            btns[i].GetComponent<RectTransform>().localPosition = new Vector3(0, (-screenSize.y / 2f) - (screenSize.y / 9f) * (i + 1), 0);
+            btns[i].transform.Find("Text").GetComponent<Text>().fontSize = (int)(btns[i].GetComponent<RectTransform>().sizeDelta.y / 2f);
+        }
+
+        for (int i = 0; i < subBtns.Length; i++)
+        {
+            subBtns[i].GetComponent<RectTransform>().sizeDelta = new Vector2(screenSize.y / 2.5f, screenSize.y / 9f);
+            subBtns[i].GetComponent<RectTransform>().localPosition = new Vector3(0, delta + (-screenSize.y / 2f) - (screenSize.y / 9f) * 4, 0);
+            subBtns[i].transform.Find("Text").GetComponent<Text>().fontSize = (int)(subBtns[i].GetComponent<RectTransform>().sizeDelta.y / 2f);
+        }
+
+        if (first)
+        {
+            StartCoroutine(FirstMenuAnim(delta));
+            first = false;
+        }
+        else
+        {
+            foreach (GameObject btn in btns)
+                btn.transform.localPosition = new Vector3(btn.transform.localPosition.x, btn.transform.localPosition.y + delta, btn.transform.localPosition.z);
+        }
+    }
+
+    public void JoinRoom()
+    {
+        canvas.SetActive(false);
+        altCanvas[0].SetActive(true);
+    }
+
+    public void CreateRoom()
+    {
+        canvas.SetActive(false);
+        altCanvas[1].SetActive(true);
+    }
+
+    public void Settings()
+    {
+        canvas.SetActive(false);
+        altCanvas[2].SetActive(true);
+    }
+
+    public void Back()
+    {
+        canvas.SetActive(true);
+        altCanvas[0].SetActive(false);
+        altCanvas[1].SetActive(false);
+        altCanvas[2].SetActive(false);
+    }
+    
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
+    IEnumerator FirstMenuAnim(float delta)
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        for (int i = 0; i < btns.Length; i++)
+        {
+            StartCoroutine(ShowBtn(btns[i], delta));
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    IEnumerator ShowBtn(GameObject btn, float delta)
+    {
+        float step = delta / 20f;
+
+        for (int i = 0; i < 20; i++)
+        {
+            btn.transform.localPosition = new Vector3(btn.transform.localPosition.x, btn.transform.localPosition.y + step, btn.transform.localPosition.z);
+            yield return new WaitForSeconds(0.02f);
+        }
+    }
+}
