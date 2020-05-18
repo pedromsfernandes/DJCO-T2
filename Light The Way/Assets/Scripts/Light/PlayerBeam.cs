@@ -12,7 +12,7 @@ namespace Light
         public GameObject camera;
 
         private LineRenderer _sunLr;
-        
+
         private void Awake()
         {
             BeamModel = beamModel;
@@ -23,7 +23,7 @@ namespace Light
             Lr = GetComponent<LineRenderer>();
             _sunLr = transform.GetComponentsInChildren<LineRenderer>()
                 .First(lr => lr.gameObject != this.gameObject);
-            
+
             _sunLr.startColor = _sunLr.endColor = Color.white;
 
             int currentTool = GameState.Instance.currentTool;
@@ -47,23 +47,23 @@ namespace Light
         protected override void Update()
         {
             if (!Active) return;
-            
+
             Origin = source.transform.position;
             Direction = camera.transform.forward;
 
             if (InShadow())
             {
                 _sunLr.startColor = _sunLr.endColor = new Color(0, 0, 0, 0);
-                Lr.SetPositions(new []{Vector3.zero, Vector3.zero});
-            } 
+                Lr.SetPositions(new[] { Vector3.zero, Vector3.zero });
+            }
             else
             {
                 _sunLr.startColor = _sunLr.endColor = Color.white;
-                _sunLr.SetPositions(new []{Origin, Origin - 1000 * GameState.Instance.sunDirection});
-                ProcessRayBeam();   
+                _sunLr.SetPositions(new[] { Origin, Origin - 1000 * GameState.Instance.sunDirection });
+                ProcessRayBeam();
             }
         }
-        
+
         private bool InShadow()
         {
             var inShadow = Physics.Raycast(Origin, -GameState.Instance.sunDirection);
@@ -73,14 +73,16 @@ namespace Light
 
         public override LightBeam UpdateColor(LightColor color)
         {
-            GetComponent<PhotonView>().RPC("UpdateColorSelf", RpcTarget.All, color.Type);
+            if (GetComponent<PhotonView>().IsMine)
+                GetComponent<PhotonView>().RPC("UpdateColorSelf", RpcTarget.All, color.Type, transform.parent.transform.name);
             return this;
         }
 
         [PunRPC]
-        private void UpdateColorSelf(int colorType)
+        private void UpdateColorSelf(int colorType, string name)
         {
-            base.UpdateColor(LightColor.Of((LightType)colorType));
+            if (transform.parent.transform.name == name)
+                base.UpdateColor(LightColor.Of((LightType)colorType));
         }
 
         // Enables the LightBeam for all Clients (Used when starting a chain of LightBeams

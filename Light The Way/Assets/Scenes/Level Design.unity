@@ -449,6 +449,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 7841573969275939898, guid: 20f3506190c57654c8c5e2dde512775d, type: 3}
   recorder: {fileID: 0}
+  positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 5, y: 0, z: 0}
+  - {x: 10, y: 0, z: 0}
 --- !u!4 &91107417
 Transform:
   m_ObjectHideFlags: 0
