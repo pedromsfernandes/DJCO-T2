@@ -67,7 +67,13 @@ namespace Light
         private bool InShadow()
         {
             var inShadow = Physics.Raycast(Origin, -GameState.Instance.sunDirection);
-            GameState.Instance.castingRay = !inShadow;
+            if (inShadow)
+            {
+
+                GameState.Instance.castingRay = false;
+
+            }
+
             return inShadow;
         }
 
@@ -86,7 +92,9 @@ namespace Light
         // Enables the LightBeam for all Clients (Used when starting a chain of LightBeams
         public void Enable(bool op)
         {
+
             GameState.Instance.castingRay = op;
+
             GetComponent<PhotonView>().RPC("EnableSelf", RpcTarget.All, op);
         }
     }

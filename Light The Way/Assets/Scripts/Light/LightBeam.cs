@@ -92,8 +92,6 @@ namespace Light
 
         protected void ProcessRayBeam()
         {
-            //emitCrystalSound();
-
             Lr.SetPosition(0, Origin);
             if (Physics.Raycast(Origin, Direction, out RaycastHit hit))
             {
@@ -114,17 +112,13 @@ namespace Light
 
         }
 
-        protected void emitCrystalSound()
-        {
-            Debug.Log("Emiting Crystal Sound");
-            FMODUnity.RuntimeManager.PlayOneShot(lightBeamSound, GetComponent<Transform>().position);
-        }
-
+       
         [PunRPC]
         public void EnableSelf(bool op)
         {
             Active = op;
             gameObject.SetActive(op);
+
         }
     }
 }

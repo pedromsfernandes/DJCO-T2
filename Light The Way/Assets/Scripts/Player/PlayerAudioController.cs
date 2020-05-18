@@ -37,6 +37,8 @@ public class PlayerAudioController : MonoBehaviour
 
     void PlayBeamSound(Transform playerTransform, Rigidbody playerRigidbody)
     {
+        Debug.Log("Casting Ray? " + GameState.Instance.castingRay);
+
         if (GameState.Instance.currentTool == 1)
         {
             if (GameState.Instance.castingRay)
@@ -191,7 +193,7 @@ public class PlayerAudioController : MonoBehaviour
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(greenBeamSoundEvent, originalTransform, originalRigidbody);
 
-        Debug.Log("Reproducing Green Beam Sound here" + playerTransform.position + " on player: " + playerTransform.name + ". Sound emited there " + originalTransform.position + " from " + originalPlayerName + " / active: " + play);
+        Debug.Log("Green Beam Sound " + originalTransform.position + " from " + originalPlayerName + " / active: " + play);
 
         if (play)
         {
@@ -214,7 +216,7 @@ public class PlayerAudioController : MonoBehaviour
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(blueBeamSoundEvent, originalTransform, originalRigidbody);
 
-        Debug.Log("Reproducing Blue Beam Sound here" + playerTransform.position + " on player: " + playerTransform.name + ". Sound emited there " + originalTransform.position + " from " + originalPlayerName + " / active: " + play);
+        Debug.Log("Blue Beam Sound " + originalTransform.position + " from " + originalPlayerName + " / active: " + play);
 
         if (play)
         {
