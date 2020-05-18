@@ -16,8 +16,12 @@ public class MovementController : MonoBehaviourPun
 
     private CharacterController controller;
 
+    private Rigidbody playerRigidbody;
+
     void Start()
     {
+        playerRigidbody = GetComponentInChildren<Rigidbody>();
+
         controller = GetComponent<CharacterController>();
 
         mainCameraTransform = Camera.main.transform;
@@ -85,7 +89,13 @@ public class MovementController : MonoBehaviourPun
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
 
         //Apply changes
-        controller.Move(desiredMoveDirection * (currentSpeed * Time.deltaTime));
-        controller.Move(gravityVector * Time.deltaTime);
+        Vector3 desiredMove = desiredMoveDirection * (currentSpeed * Time.deltaTime);
+        Vector3 gravityMove = gravityVector * Time.deltaTime;
+
+        controller.Move(desiredMove);
+        controller.Move(gravityMove);
+
+        //Update Rigidbody Velocity
+        playerRigidbody.velocity = desiredMove;
     }
 }

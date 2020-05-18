@@ -46,6 +46,11 @@ MonoBehaviour:
   - deleteLightBridgeSelf
   - deletePickedUpToolSelf
   - createDroppedToolSelf
+  - PlayBeamSoundSelf
+  - PlayRed
+  - PlayRedBeamSoundSelf
+  - PlayGreenBeamSoundSelf
+  - PlayBlueBeamSoundSelf
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
