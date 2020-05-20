@@ -1176,7 +1176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc67709d20a0794693f684e4cf057e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: 5
+  targetColor: 1
   open: 0
   active: 1
 --- !u!136 &213223777
@@ -1380,7 +1380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc67709d20a0794693f684e4cf057e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: 6
+  targetColor: 1
   open: 0
   active: 1
 --- !u!136 &256663092
@@ -5171,7 +5171,7 @@ PrefabInstance:
     - target: {fileID: 1736621380253644451, guid: 35e22cd92b3f11c99b09b15d80dd8596,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.51
+      value: 1.73
       objectReference: {fileID: 0}
     - target: {fileID: 1736621380253644451, guid: 35e22cd92b3f11c99b09b15d80dd8596,
         type: 3}
@@ -5221,7 +5221,7 @@ PrefabInstance:
     - target: {fileID: 1736621380253644451, guid: 35e22cd92b3f11c99b09b15d80dd8596,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 7.95
       objectReference: {fileID: 0}
     - target: {fileID: 1736621380253644451, guid: 35e22cd92b3f11c99b09b15d80dd8596,
         type: 3}
@@ -5237,6 +5237,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Splitter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657699929743660166, guid: 35e22cd92b3f11c99b09b15d80dd8596,
+        type: 3}
+      propertyPath: angle
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35e22cd92b3f11c99b09b15d80dd8596, type: 3}
