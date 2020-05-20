@@ -20,7 +20,7 @@ namespace Light
             _endpointBeam = transform.GetChild(0).GetComponent<LightBeam>();
             target = LightColor.Of(targetColor);
             LightBeam.UpdateLightBeam(_endpointBeam.gameObject, target,
-                transform.position, Vector3.up);
+                transform.position, transform.up);
             _endpointBeam.EnableSelf(true);
 
             _endpointBeam.gameObject.SetActive(true);
