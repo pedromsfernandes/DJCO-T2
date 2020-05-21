@@ -91,7 +91,7 @@ namespace Light
 
         private void SyncRayBeam()
         {
-            GetComponent<PhotonView>().RPC("SyncRayBeamSelf", RpcTarget.Others, Lr.SetPosition(0), Lr.SetPosition(1));
+            GetComponent<PhotonView>().RPC("SyncRayBeamSelf", RpcTarget.Others, Lr.GetPosition(0), Lr.GetPosition(1));
         }
 
         [PunRPC]
@@ -105,7 +105,7 @@ namespace Light
         public void Enable(bool op)
         {
             GameState.Instance.castingRay = op;
-            GetComponent<PhotonView>().RPC("EnableSelf", RpcTarget.All, ops);
+            GetComponent<PhotonView>().RPC("EnableSelf", RpcTarget.All, op);
         }
     }
 }
