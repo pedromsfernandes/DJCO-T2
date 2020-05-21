@@ -32,7 +32,7 @@ public class MovementController : MonoBehaviourPun
 
     void Update()
     {
-        if (GetComponent<PhotonView>() == null || GetComponent<PhotonView>().IsMine)
+        if ((GetComponent<PhotonView>() == null || GetComponent<PhotonView>().IsMine) && !GameState.Instance.pause)
             Move();
     }
 
