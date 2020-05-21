@@ -60,11 +60,7 @@ namespace Light
             {
                 _sunLr.startColor = _sunLr.endColor = Color.white;
                 _sunLr.SetPositions(new[] { Origin, Origin - 1000 * GameState.Instance.sunDirection });
-                if (GetComponent<PhotonView>().IsMine)
-                {
-                    ProcessRayBeam();
-                    SyncRayBeam();
-                }
+                ProcessRayBeam();
             }
         }
 
@@ -80,18 +76,6 @@ namespace Light
             if (GetComponent<PhotonView>().IsMine)
                 GetComponent<PhotonView>().RPC("UpdateColorSelf", RpcTarget.All, color.Type, transform.parent.transform.name);
             return this;
-        }
-
-        [PunRPC]
-        private void SyncRayBeamSelf(Vector3 pos1, Vector3 pos2)
-        {
-            Lr.SetPosition(0, pos1);
-            Lr.SetPosition(1, pos2);
-        }
-
-        private void SyncRayBeam()
-        {
-            GetComponent<PhotonView>().RPC("SyncRayBeamSelf", RpcTarget.Others, Lr.GetPosition(0), Lr.GetPosition(1));
         }
 
         [PunRPC]
