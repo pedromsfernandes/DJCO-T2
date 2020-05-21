@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace Light
 {
@@ -48,6 +50,19 @@ namespace Light
                 _endpointBeam.gameObject.SetActive(true);
                 open = false;
             }
+
+            IEnumerable<LightColor> current = currentColor.DivideColors();
+            LightColor beamColor = LightColor.Of(LightType.None);
+
+            if(!current.Contains(LightColor.Of(LightType.Red)))
+                beamColor.AddColor(LightColor.Of(LightType.Red));
+            if(!current.Contains(LightColor.Of(LightType.Green)))
+                beamColor.AddColor(LightColor.Of(LightType.Green));
+            if(!current.Contains(LightColor.Of(LightType.Blue)))
+                beamColor.AddColor(LightColor.Of(LightType.Blue));
+
+            LightBeam.UpdateLightBeam(_endpointBeam.gameObject, beamColor,
+                transform.position, transform.up);
 
             currentColor = LightColor.Of(LightType.None);
         }
