@@ -11,7 +11,8 @@ namespace Light
 
         public LightType targetColor;
 
-        public GameObject door;
+        public bool open = false;
+        public bool active = true;
 
         private LightColor currentColor = LightColor.Of(LightType.None);
 
@@ -20,7 +21,7 @@ namespace Light
             _endpointBeam = transform.GetChild(0).GetComponent<LightBeam>();
             target = LightColor.Of(targetColor);
             LightBeam.UpdateLightBeam(_endpointBeam.gameObject, target,
-                transform.position, Vector3.up);
+                transform.position, transform.up);
             _endpointBeam.EnableSelf(true);
 
             _endpointBeam.gameObject.SetActive(true);
@@ -34,13 +35,27 @@ namespace Light
 
         void LateUpdate()
         {
+            if(!active)
+                return;
+
             if (currentColor.GetColor() == target.GetColor())
             {
                 _endpointBeam.gameObject.SetActive(false);
-                door.SetActive(false);
+                open = true;
+            }
+            else
+            {
+                _endpointBeam.gameObject.SetActive(true);
+                open = false;
             }
 
             currentColor = LightColor.Of(LightType.None);
+        }
+
+        public void Deactivate()
+        {
+            _endpointBeam.gameObject.SetActive(false);
+            active = false;
         }
     }
 }
