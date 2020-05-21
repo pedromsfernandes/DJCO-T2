@@ -10,6 +10,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Editor" t="Include">
+          <e p="Object2Terrain.cs" t="Include" />
           <e p="ResourcesPrefabPathBuilder.cs" t="Include" />
         </e>
         <e p="Map" t="Include">
