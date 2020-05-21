@@ -10787,8 +10787,8 @@ MonoBehaviour:
   recorder: {fileID: 0}
   positions:
   - {x: 308, y: 25, z: 1343}
-  - {x: 308, y: 25, z: 1343}
-  - {x: 10, y: 0, z: 0}
+  - {x: 310, y: 25, z: 1343}
+  - {x: 312, y: 25, z: 1343}
 --- !u!4 &1799754927
 Transform:
   m_ObjectHideFlags: 0
