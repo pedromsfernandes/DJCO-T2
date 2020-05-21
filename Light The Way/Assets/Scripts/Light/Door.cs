@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class Door : MonoBehaviour
@@ -8,12 +9,18 @@ public class Door : MonoBehaviour
 
     void Update()
     {
-        for(int i = 0; i < endpoints.Length; i++)
+        for (int i = 0; i < endpoints.Length; i++)
         {
-            if(!endpoints[i].open)
+            if (!endpoints[i].open)
                 return;
         }
 
+        GetComponent<PhotonView>().RPC("OpenDoorSelf", RpcTarget.All);
+    }
+
+    [PunRPC]
+    public void OpenDoorSelf()
+    {
         foreach (var ep in endpoints)
         {
             ep.Deactivate();
