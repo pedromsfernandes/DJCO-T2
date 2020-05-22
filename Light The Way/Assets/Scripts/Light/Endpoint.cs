@@ -52,13 +52,14 @@ namespace Light
             }
 
             IEnumerable<LightColor> current = currentColor.DivideColors();
+            IEnumerable<LightColor> targetDiv = target.DivideColors();
             LightColor beamColor = LightColor.Of(LightType.None);
 
-            if(!current.Contains(LightColor.Of(LightType.Red)))
+            if(!current.Contains(LightColor.Of(LightType.Red)) && targetDiv.Contains(LightColor.Of(LightType.Red)))
                 beamColor.AddColor(LightColor.Of(LightType.Red));
-            if(!current.Contains(LightColor.Of(LightType.Green)))
+            if(!current.Contains(LightColor.Of(LightType.Green)) && targetDiv.Contains(LightColor.Of(LightType.Green)))
                 beamColor.AddColor(LightColor.Of(LightType.Green));
-            if(!current.Contains(LightColor.Of(LightType.Blue)))
+            if(!current.Contains(LightColor.Of(LightType.Blue)) && targetDiv.Contains(LightColor.Of(LightType.Blue)))
                 beamColor.AddColor(LightColor.Of(LightType.Blue));
 
             LightBeam.UpdateLightBeam(_endpointBeam.gameObject, beamColor,
