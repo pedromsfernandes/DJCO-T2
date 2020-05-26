@@ -890,6 +890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 603446254}
   - component: {fileID: 603446253}
+  - component: {fileID: 603446255}
   m_Layer: 0
   m_Name: CameraBase
   m_TagString: Untagged
@@ -932,6 +933,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &603446255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603446252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!1 &1676077524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,9 +1054,9 @@ MonoBehaviour:
   _prefab: {fileID: 7841573969275939898, guid: 20f3506190c57654c8c5e2dde512775d, type: 3}
   recorder: {fileID: 0}
   positions:
-  - {x: 2100, y: 7, z: 3589}
+  - {x: 2100, y: 10, z: 3590}
+  - {x: 2105, y: 10, z: 3590}
   - {x: 2110, y: 10, z: 3590}
-  - {x: 2090, y: 5, z: 3590}
   prefabs:
   - {fileID: 7841573969275939898, guid: 20f3506190c57654c8c5e2dde512775d, type: 3}
   - {fileID: 7841573969275939898, guid: 3dcc549edfd0e1218975a9afa9abd5c7, type: 3}
