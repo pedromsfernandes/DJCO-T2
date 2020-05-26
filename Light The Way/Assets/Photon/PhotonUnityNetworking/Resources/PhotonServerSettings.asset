@@ -25,34 +25,27 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: 
+  DevRegion: usw
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
   RpcList:
   - ClickRpc
+  - DestroyRpc
   - createDroppedToolSelf
   - createLightBridgeSelf
   - deleteLightBridgeSelf
   - deletePickedUpToolSelf
-  - DestroyRpc
   - DestroySelf
   - EnableSelf
+  - OpenDoorSelf
   - PlayBlueBeamSoundSelf
   - PlayGreenBeamSoundSelf
   - PlayRedBeamSoundSelf
   - RotateSelf
   - RPC_ChangeReadyState
   - UpdateColorSelf
-  - AddColorSelf
-  - RemoveColorSelf
-  - UpdateColor
-  - createLightBridgeSelf
-  - deleteLightBridgeSelf
-  - deletePickedUpToolSelf
-  - createDroppedToolSelf
-  - OpenDoorSelf
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

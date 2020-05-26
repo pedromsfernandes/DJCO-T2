@@ -47,7 +47,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Intro Levels.unity
     guid: 6ea6c2bd56097094d87096fdb4677769
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Red Temple.unity
     guid: afb5b9feca8e25d45afb16d304a1f6f1
   m_configObjects: {}

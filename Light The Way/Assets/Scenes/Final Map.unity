@@ -164,6 +164,7 @@ MonoBehaviour:
   canRotateSun: 1
   canCreateLightBridges: 1
   canDestroyObjects: 0
+  pause: 0
 --- !u!4 &145426241
 Transform:
   m_ObjectHideFlags: 0
@@ -1042,6 +1043,10 @@ MonoBehaviour:
   - {x: 2100, y: 7, z: 3589}
   - {x: 2110, y: 10, z: 3590}
   - {x: 2090, y: 5, z: 3590}
+  prefabs:
+  - {fileID: 7841573969275939898, guid: 20f3506190c57654c8c5e2dde512775d, type: 3}
+  - {fileID: 7841573969275939898, guid: 3dcc549edfd0e1218975a9afa9abd5c7, type: 3}
+  - {fileID: 7841573969275939898, guid: 84df8114213b6b35a916bd503b49643d, type: 3}
 --- !u!4 &1799754927
 Transform:
   m_ObjectHideFlags: 0

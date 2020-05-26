@@ -1893,6 +1893,7 @@ MonoBehaviour:
   canRotateSun: 1
   canCreateLightBridges: 1
   canDestroyObjects: 0
+  pause: 0
 --- !u!4 &145426241
 Transform:
   m_ObjectHideFlags: 0
@@ -14138,6 +14139,10 @@ MonoBehaviour:
   - {x: 385, y: 58, z: 1218}
   - {x: 387, y: 58, z: 1218}
   - {x: 312, y: 25, z: 1343}
+  prefabs:
+  - {fileID: 7841573969275939898, guid: 20f3506190c57654c8c5e2dde512775d, type: 3}
+  - {fileID: 7841573969275939898, guid: 3dcc549edfd0e1218975a9afa9abd5c7, type: 3}
+  - {fileID: 7841573969275939898, guid: 84df8114213b6b35a916bd503b49643d, type: 3}
 --- !u!4 &1799754927
 Transform:
   m_ObjectHideFlags: 0
@@ -16479,7 +16484,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3931546471491194837, guid: 3c78bf45493934141a59a1b52feee0f7, type: 3}
