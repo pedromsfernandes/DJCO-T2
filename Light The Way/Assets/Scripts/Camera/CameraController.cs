@@ -30,6 +30,9 @@ public class CameraController : MonoBehaviourPun
 
     void Update()
     {
+        if (GameState.Instance.pause)
+            return;
+
         GetMouseInputs();
 
         float mouseX = Input.GetAxis("Mouse X");

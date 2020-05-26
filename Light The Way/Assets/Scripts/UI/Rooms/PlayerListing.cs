@@ -26,7 +26,7 @@ public class PlayerListing : MonoBehaviourPunCallbacks
         if (player.CustomProperties.ContainsKey("RandomNumber"))
             result = (int)player.CustomProperties["RandomNumber"];
 
-        _text.text = result.ToString() + ", " + player.NickName;
+        _text.text = player.NickName;
     }
 
     public override void OnPlayerPropertiesUpdate(Player target, ExitGames.Client.Photon.Hashtable changedProps)

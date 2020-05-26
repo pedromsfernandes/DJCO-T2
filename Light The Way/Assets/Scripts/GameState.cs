@@ -29,6 +29,8 @@ public class GameState : MonoBehaviour
     public bool canCreateLightBridges = false;
     public bool canDestroyObjects = false;
 
+    public bool pause = false;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
