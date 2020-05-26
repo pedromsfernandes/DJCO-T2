@@ -32,25 +32,19 @@ MonoBehaviour:
   StartInOfflineMode: 0
   RpcList:
   - ClickRpc
-  - DestroyRpc
-  - RPC_ChangeReadyState
-  - EnableSelf
-  - Enable
-  - DestroySelf
-  - RotateSelf
-  - UpdateColorSelf
-  - AddColorSelf
-  - RemoveColorSelf
-  - UpdateColor
+  - createDroppedToolSelf
   - createLightBridgeSelf
   - deleteLightBridgeSelf
   - deletePickedUpToolSelf
-  - createDroppedToolSelf
-  - PlayBeamSoundSelf
-  - PlayRed
-  - PlayRedBeamSoundSelf
-  - PlayGreenBeamSoundSelf
+  - DestroyRpc
+  - DestroySelf
+  - EnableSelf
   - PlayBlueBeamSoundSelf
+  - PlayGreenBeamSoundSelf
+  - PlayRedBeamSoundSelf
+  - RotateSelf
+  - RPC_ChangeReadyState
+  - UpdateColorSelf
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
