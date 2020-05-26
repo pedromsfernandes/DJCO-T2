@@ -27,8 +27,8 @@ namespace Light
             {
                 angle += angleDelta;
                 
-                var originDiff = Quaternion.AngleAxis(angle, Vector3.up) * diff;
-                var direction = Vector3.ProjectOnPlane(originDiff, Vector3.up);
+                var originDiff = Quaternion.AngleAxis(angle, transform.up) * diff;
+                var direction = Vector3.ProjectOnPlane(originDiff, transform.up);
                 EmitBeam(color, transform.position + originDiff, direction);
             }
         }

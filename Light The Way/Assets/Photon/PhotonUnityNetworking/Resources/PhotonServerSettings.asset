@@ -45,6 +45,14 @@ MonoBehaviour:
   - RotateSelf
   - RPC_ChangeReadyState
   - UpdateColorSelf
+  - AddColorSelf
+  - RemoveColorSelf
+  - UpdateColor
+  - createLightBridgeSelf
+  - deleteLightBridgeSelf
+  - deletePickedUpToolSelf
+  - createDroppedToolSelf
+  - OpenDoorSelf
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

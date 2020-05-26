@@ -16,7 +16,6 @@ MonoBehaviour:
   guid: eafd7b889e7df043b529ce86573020a8
   Banks:
   - {fileID: 1978398016341711546}
-  - {fileID: 569586596812107999}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -97,7 +96,7 @@ MonoBehaviour:
   Path: event:/FX/Player/Tools/Red/RedFireBeam
   guid: ea1b3968ddc26e4887249fbbf909a4f3
   Banks:
-  - {fileID: 569586596812107999}
+  - {fileID: 7674597343811837366}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -249,6 +248,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-1479833884255277150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637254297745382610
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-1297694986331297333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637261090798202659
+  lastModified: 637251026309189951
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -337,17 +354,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -124772968094246045}
-  - {fileID: 569586596812107999}
+  - {fileID: 7674597343811837366}
   EditorEvents:
   - {fileID: -7224986738756129460}
   - {fileID: 1504371525753220961}
   - {fileID: -7609544526419231774}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 569586596812107999}
+  - {fileID: 7674597343811837366}
   StringsBanks:
   - {fileID: -124772968094246045}
-  stringsBankWriteTime: 637261090798202659
+  stringsBankWriteTime: 637251026309189951
   cacheVersion: 3
 --- !u!114 &569586596812107999
 MonoBehaviour:
@@ -407,24 +424,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &1415427206357083870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../FMOD/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637253424474084941
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
 --- !u!114 &1471400631476537787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,7 +457,7 @@ MonoBehaviour:
   Path: event:/FX/Player/Tools/Blue/BlueFireBeam
   guid: 9939333fd356fa439094ab9185123d4c
   Banks:
-  - {fileID: 569586596812107999}
+  - {fileID: 7674597343811837366}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -628,6 +627,42 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &7275864464701186751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637254297745382610
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &7484619609249930037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637255190728577813
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &7555237353846842546
 MonoBehaviour:
   m_ObjectHideFlags: 0

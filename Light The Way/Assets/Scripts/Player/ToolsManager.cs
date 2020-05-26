@@ -131,7 +131,7 @@ public class ToolsManager : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Collision");
-        if (other.gameObject.CompareTag("Tool"))
+        if (GetComponent<PhotonView>().IsMine && other.gameObject.CompareTag("Tool"))
         {
             string toolName = other.gameObject.name;
             Debug.Log("Collision with Tool " + toolName);

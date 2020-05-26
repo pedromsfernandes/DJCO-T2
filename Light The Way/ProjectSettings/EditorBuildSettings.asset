@@ -29,10 +29,25 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Lighting.unity
     guid: c07eac827f89aa340a359a69b097af66
-  - enabled: 1
+  - enabled: 0
+    path: Assets/Scenes/Level Design.unity
+    guid: b779158f2dd753e498b2ab2647619372
+  - enabled: 0
     path: Assets/Scenes/Fixes.unity
     guid: 1e56c3f011e2e33188d80c52116a74d2
   - enabled: 0
     path: Assets/Scenes/Splitters.unity
     guid: e2df521211b67de4e90175458d82b816
+  - enabled: 0
+    path: Assets/Scenes/Map.unity
+    guid: 3f1e6c2121596b3429a547abadd52c4d
+  - enabled: 1
+    path: Assets/Scenes/Final Map.unity
+    guid: 1be35977244bdce4d989036455adbf32
+  - enabled: 0
+    path: Assets/Scenes/Intro Levels.unity
+    guid: 6ea6c2bd56097094d87096fdb4677769
+  - enabled: 1
+    path: Assets/Scenes/Red Temple.unity
+    guid: afb5b9feca8e25d45afb16d304a1f6f1
   m_configObjects: {}

@@ -32,6 +32,8 @@ public class MovementController : MonoBehaviourPun
             mainCameraTransform.gameObject.GetComponentInParent<CameraController>().player = this.gameObject;
             mainCameraTransform.gameObject.GetComponentInParent<CameraController>().beam = transform.Find("Laser").gameObject.GetComponent<PlayerBeam>();
         }
+
+        mainCameraTransform.parent.transform.position = transform.position;
     }
 
     void Update()

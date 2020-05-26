@@ -76,14 +76,16 @@ namespace Light
 
         public override LightBeam UpdateColor(LightColor color)
         {
-            GetComponent<PhotonView>().RPC("UpdateColorSelf", RpcTarget.All, color.Type);
+            if (GetComponent<PhotonView>().IsMine)
+                GetComponent<PhotonView>().RPC("UpdateColorSelf", RpcTarget.All, color.Type, transform.parent.transform.name);
             return this;
         }
 
         [PunRPC]
-        private void UpdateColorSelf(int colorType)
+        private void UpdateColorSelf(int colorType, string name)
         {
-            base.UpdateColor(LightColor.Of((LightType)colorType));
+            if (transform.parent.transform.name == name)
+                base.UpdateColor(LightColor.Of((LightType)colorType));
         }
 
         // Enables the LightBeam for all Clients (Used when starting a chain of LightBeams
