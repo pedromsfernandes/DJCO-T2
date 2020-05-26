@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3200105830436285728}
   - component: {fileID: 1710308718509565965}
   - component: {fileID: 7657699929743660166}
-  - component: {fileID: 6335008253461811571}
+  - component: {fileID: 6665928142501438397}
   m_Layer: 9
   m_Name: Splitter
   m_TagString: Untagged
@@ -124,7 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f568d72bb35bda9594f601a50b8e4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &6335008253461811571
+  angle: 0
+--- !u!136 &6665928142501438397
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
