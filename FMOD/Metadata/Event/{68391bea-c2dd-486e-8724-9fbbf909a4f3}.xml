@@ -5,7 +5,7 @@
 			<value>RedFireBeam</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{8b3ba305-f8de-4a05-bfbd-be5461519d0c}</destination>
@@ -145,7 +145,14 @@
 			<destination>{6aee38e0-c9cb-4359-8f0a-6143788db69a}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{27aaff32-3365-4691-871a-479894b083a0}" />
+	<object class="MixerBusPanner" id="{27aaff32-3365-4691-871a-479894b083a0}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+		<property name="outputFormatOverridden">
+			<value>true</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{dece2a91-0187-4a2f-8b80-037554d9b1de}" />
 	<object class="RandomizerModulator" id="{e34df103-0ae7-49d6-bb21-d24b20e2cc88}">
 		<property name="nameOfPropertyBeingModulated">
