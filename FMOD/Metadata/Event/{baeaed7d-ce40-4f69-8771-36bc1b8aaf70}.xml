@@ -126,6 +126,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{b86cec57-d629-4cc8-838c-e5986bfaf211}">
+		<property name="volume">
+			<value>10</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{a22269ad-d317-4a6c-82fb-4dddb1c2dfdd}</destination>
 		</relationship>
@@ -225,7 +228,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{b5d95c35-4b73-4465-ba58-eb05d049e0a7}">
 		<property name="volume">
-			<value>-2</value>
+			<value>10</value>
 		</property>
 		<property name="name">
 			<value>Birds</value>
@@ -280,7 +283,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{d35b9dd2-50e2-4e94-854d-0fed181bfb4e}">
 		<property name="volume">
-			<value>0.5</value>
+			<value>10</value>
 		</property>
 		<property name="name">
 			<value>Crickets</value>
@@ -326,7 +329,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{22e86836-715f-41a4-8319-3c00749fd756}">
 		<property name="volume">
-			<value>-4</value>
+			<value>10</value>
 		</property>
 		<property name="name">
 			<value>Misc. Animals</value>
@@ -348,7 +351,6 @@
 		<property name="length">
 			<value>16</value>
 		</property>
-		<property name="name" />
 		<relationship name="fadeInCurve">
 			<destination>{52c77e96-2ed9-43c4-a487-a1742df7a2ab}</destination>
 		</relationship>
@@ -361,7 +363,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{7ec0917f-1098-4eb9-ae39-6192a2c82a49}">
 		<property name="volume">
-			<value>-46</value>
+			<value>-20.5</value>
 		</property>
 		<property name="name">
 			<value>Foliage</value>
