@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/Ambient/Beach/Beach
   guid: 05fa5dd7b8fb8e4cbf69ae4a7ffbdb75
   Banks:
-  - {fileID: -8428872833703275651}
+  - {fileID: -874427384201950499}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
   lastModified: 637261784181466956
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8361072486387929193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   guid: eafd7b889e7df043b529ce86573020a8
   Banks:
   - {fileID: 1978398016341711546}
-  - {fileID: -8428872833703275651}
+  - {fileID: -874427384201950499}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
   Path: event:/FX/Player/Tools/Red/RedFireBeam
   guid: ea1b3968ddc26e4887249fbbf909a4f3
   Banks:
-  - {fileID: -8428872833703275651}
+  - {fileID: -874427384201950499}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -336,7 +336,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5931752752619785636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,15 +352,32 @@ MonoBehaviour:
   Path: event:/Ambient/Forest/Forest
   guid: 7dedeaba40ce694f877136bc1b8aaf70
   Banks:
-  - {fileID: -8428872833703275651}
+  - {fileID: -874427384201950499}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -6074947522730107018}
+  - {fileID: 5829707515261138476}
   MinDistance: 1
   MaxDistance: 20
   Length: 16000
+--- !u!114 &-5729078546121765166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &-5524569760279410738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,7 +393,7 @@ MonoBehaviour:
   Path: event:/Ambient/Mountain/Mountain
   guid: 99a0ae118c8f2640931801385906aae2
   Banks:
-  - {fileID: -8428872833703275651}
+  - {fileID: -874427384201950499}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -470,7 +487,7 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3597648713479875327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,6 +752,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-874427384201950499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637262018999634275
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-740735628025844079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,7 +820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637261784181526788
+  lastModified: 637262018999703870
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -805,7 +840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -124772968094246045}
-  - {fileID: -8428872833703275651}
+  - {fileID: -874427384201950499}
   EditorEvents:
   - {fileID: -7224986738756129460}
   - {fileID: 1504371525753220961}
@@ -817,10 +852,10 @@ MonoBehaviour:
   - {fileID: 5628648694021357613}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -8428872833703275651}
+  - {fileID: -874427384201950499}
   StringsBanks:
   - {fileID: -124772968094246045}
-  stringsBankWriteTime: 637261784181526788
+  stringsBankWriteTime: 637262018999703870
   cacheVersion: 3
 --- !u!114 &126220599643814404
 MonoBehaviour:
@@ -1000,7 +1035,7 @@ MonoBehaviour:
   Path: event:/FX/Player/Tools/Blue/BlueFireBeam
   guid: 9939333fd356fa439094ab9185123d4c
   Banks:
-  - {fileID: -8428872833703275651}
+  - {fileID: -874427384201950499}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -1130,12 +1165,12 @@ MonoBehaviour:
   Path: event:/FX/Player/Footsteps/Walk
   guid: 9a3677bebb8a734ca8eb852fad47c14f
   Banks:
-  - {fileID: -8428872833703275651}
+  - {fileID: -874427384201950499}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -3750491025080478194}
+  - {fileID: -5729078546121765166}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -1173,6 +1208,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &4032405136656461021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &4194378592161568560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1277,12 +1329,12 @@ MonoBehaviour:
   Path: event:/FX/Player/Footsteps/Run
   guid: c3e59f6c7532dd4cbca35edf7dea3981
   Banks:
-  - {fileID: -8428872833703275651}
+  - {fileID: -874427384201950499}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 8102692721924853062}
+  - {fileID: 4032405136656461021}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -1303,6 +1355,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &5829707515261138476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &5938745809658517842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1496,7 +1565,7 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &8253771378421863891
 MonoBehaviour:
   m_ObjectHideFlags: 0
