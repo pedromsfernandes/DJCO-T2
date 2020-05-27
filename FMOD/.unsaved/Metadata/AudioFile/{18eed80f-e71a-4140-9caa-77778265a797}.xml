@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{18eed80f-e71a-4140-9caa-77778265a797}">
+		<property name="assetPath">
+			<value>Ambient/Forest/Crickets/cricket3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>2.7486621315192745</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a8dec8fc-f55f-4b37-bc22-9050a356ad50}</destination>
+		</relationship>
+	</object>
+</objects>
