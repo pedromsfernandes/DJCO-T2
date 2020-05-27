@@ -343,6 +343,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{60876c5c-444e-4e45-b1e8-f46f6dbf902f}">
+		<property name="volume">
+			<value>10</value>
+		</property>
 		<property name="name">
 			<value>Sea Crashes</value>
 		</property>
@@ -396,6 +399,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{798dc0de-8a02-47fa-b7ca-3c0da2112e82}">
+		<property name="volume">
+			<value>10</value>
+		</property>
 		<property name="name">
 			<value>Seagulls</value>
 		</property>
@@ -697,7 +703,7 @@
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>40</value>
+			<value>440</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{c5f2ba64-b9b1-478e-8e32-b211ff3e2965}">
