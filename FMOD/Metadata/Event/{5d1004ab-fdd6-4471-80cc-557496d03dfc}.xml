@@ -5,7 +5,7 @@
 			<value>BridgeCreate</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{d73ce3d8-ae4b-42fb-b2fe-8d3b62af638b}</destination>
@@ -122,7 +122,14 @@
 			<destination>{0ce82051-cd83-4e6a-a703-a837be136e28}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{9c8fdfbc-8207-47c5-8a7a-6155880e3682}" />
+	<object class="MixerBusPanner" id="{9c8fdfbc-8207-47c5-8a7a-6155880e3682}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+		<property name="outputFormatOverridden">
+			<value>true</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{ad8acd51-0497-4aeb-9a33-da2e9320e31d}" />
 	<object class="FadeCurve" id="{cbee4b18-b0f8-4e68-b4fe-00edb94e525b}">
 		<relationship name="startPoint">
