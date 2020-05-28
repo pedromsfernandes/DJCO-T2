@@ -17,9 +17,9 @@ public class PlayerAudioController : MonoBehaviour
 
     [FMODUnity.EventRef]
     public string selectedWalkingSound;
-    FMOD.Studio.EventInstance walkingSoundEvent;
-    FMOD.Studio.EventInstance walkingSoundEventPlayerClone1;
-    FMOD.Studio.EventInstance walkingSoundEventPlayerClone2;
+    FMOD.Studio.EventInstance walkingSoundEventPlayer1;
+    FMOD.Studio.EventInstance walkingSoundEventPlayer2;
+    FMOD.Studio.EventInstance walkingSoundEventPlayer3;
 
     Transform playerTransform;
     Rigidbody playerRigidbody;
@@ -30,9 +30,9 @@ public class PlayerAudioController : MonoBehaviour
         greenBeamSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedGreenBeamSound);
         blueBeamSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedBlueBeamSound);
 
-        walkingSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedWalkingSound);
-        walkingSoundEventPlayerClone1 = FMODUnity.RuntimeManager.CreateInstance(selectedWalkingSound);
-        walkingSoundEventPlayerClone2 = FMODUnity.RuntimeManager.CreateInstance(selectedWalkingSound);
+        walkingSoundEventPlayer1 = FMODUnity.RuntimeManager.CreateInstance(selectedWalkingSound);
+        walkingSoundEventPlayer2 = FMODUnity.RuntimeManager.CreateInstance(selectedWalkingSound);
+        walkingSoundEventPlayer3 = FMODUnity.RuntimeManager.CreateInstance(selectedWalkingSound);
     }
 
     void Update()
@@ -245,8 +245,19 @@ public class PlayerAudioController : MonoBehaviour
     void PlayWalkingSound()
     {
         FMOD.Studio.PLAYBACK_STATE fmodPBState;
-        walkingSoundEvent.getPlaybackState(out fmodPBState);
-        
+        if(playerTransform.name == "Player(Clone)")
+        {
+            walkingSoundEventPlayer1.getPlaybackState(out fmodPBState);
+        }
+        else if (playerTransform.name == "Player2(Clone)")
+        {
+            walkingSoundEventPlayer2.getPlaybackState(out fmodPBState);
+        }
+        else
+        {
+            walkingSoundEventPlayer3.getPlaybackState(out fmodPBState);
+        }
+
         if (GameState.Instance.moving)
         {
             if(fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
@@ -274,17 +285,46 @@ public class PlayerAudioController : MonoBehaviour
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEvent, originalTransform, originalRigidbody);
-
         Debug.Log("Moving Sound " + originalTransform.position + " from " + originalPlayerName + " / active: " + play);
 
-        if (play)
+        if (playerTransform.name == "Player(Clone)")
         {
-            walkingSoundEvent.start();
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEventPlayer1, originalTransform, originalRigidbody);
+
+            if (play)
+            {
+                walkingSoundEventPlayer1.start();
+            }
+            else
+            {
+                walkingSoundEventPlayer1.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
+        }
+        else if (playerTransform.name == "Player2(Clone)")
+        {
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEventPlayer2, originalTransform, originalRigidbody);
+
+            if (play)
+            {
+                walkingSoundEventPlayer2.start();
+            }
+            else
+            {
+                walkingSoundEventPlayer2.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
         }
         else
         {
-            walkingSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEventPlayer3, originalTransform, originalRigidbody);
+
+            if (play)
+            {
+                walkingSoundEventPlayer3.start();
+            }
+            else
+            {
+                walkingSoundEventPlayer3.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
         }
     }
     #endregion
