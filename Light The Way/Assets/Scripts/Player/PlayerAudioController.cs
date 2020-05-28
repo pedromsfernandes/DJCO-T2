@@ -256,6 +256,8 @@ public class PlayerAudioController : MonoBehaviour
             walkingSoundEventPlayer1.getParameterByName("Material", out setFloorType);
         }
 
+        UpdateCurrentSurfaceUnderPlayer();
+
         if (GameState.Instance.moving)
         {
             Debug.Log("CheckFloorType = " + setFloorType + "; CurrentSurface = " + GameState.Instance.currentSurface);
@@ -328,6 +330,29 @@ public class PlayerAudioController : MonoBehaviour
             {
                 walkingSoundEventPlayer3.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
+        }
+    }
+
+    private void UpdateCurrentSurfaceUnderPlayer()
+    {
+        RaycastHit hit;
+
+        Physics.Raycast(playerTransform.position, Vector3.down, out hit);
+
+        if (hit.transform.tag == "Grass")
+        {
+            Debug.Log("Grass");
+            GameState.Instance.currentSurface = 0;
+        }
+        else if (hit.transform.tag == "Sand")
+        {
+            Debug.Log("Sand");
+            GameState.Instance.currentSurface = 1;
+        }
+        else if (hit.transform.tag == "Stone")
+        {
+            Debug.Log("Stone");
+            GameState.Instance.currentSurface = 2;
         }
     }
     #endregion

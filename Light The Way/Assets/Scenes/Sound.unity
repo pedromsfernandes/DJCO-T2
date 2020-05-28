@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 3419889}
   m_Layer: 0
   m_Name: Floor (3)
-  m_TagString: Untagged
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,6 +247,7 @@ MonoBehaviour:
   aiming: 0
   castingRay: 0
   lastBeamHit: {x: 0, y: 0, z: 0}
+  currentSurface: 0
   moving: 0
   running: 0
   walkingSlow: 0
@@ -444,8 +445,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 800
-  OverrideMaxDistance: 1000
+  OverrideMinDistance: 100
+  OverrideMaxDistance: 650
 --- !u!1 &941506812
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,8 +499,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 500
-  OverrideMaxDistance: 700
+  OverrideMinDistance: 100
+  OverrideMaxDistance: 650
 --- !u!1 &1035050463
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,7 +667,7 @@ GameObject:
   - component: {fileID: 1202570338}
   m_Layer: 0
   m_Name: Map
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1383,8 +1384,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 1000
-  OverrideMaxDistance: 1200
+  OverrideMinDistance: 100
+  OverrideMaxDistance: 650
 --- !u!1 &1417366545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,7 +1400,7 @@ GameObject:
   - component: {fileID: 1417366546}
   m_Layer: 0
   m_Name: Floor (5)
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1545,7 +1546,7 @@ GameObject:
   - component: {fileID: 1848333536}
   m_Layer: 0
   m_Name: Floor (4)
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1769,7 +1770,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 1
   OverrideMinDistance: 100
-  OverrideMaxDistance: 450
+  OverrideMaxDistance: 650
 --- !u!1 &2109853320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1823,4 +1824,4 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 1
   OverrideMinDistance: 100
-  OverrideMaxDistance: 500
+  OverrideMaxDistance: 650
