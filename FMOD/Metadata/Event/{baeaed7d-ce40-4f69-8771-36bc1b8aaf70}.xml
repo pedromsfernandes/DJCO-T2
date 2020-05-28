@@ -178,7 +178,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{932ced1f-9b1f-4f87-8f2b-3092809da3e5}">
 		<property name="volume">
-			<value>-9.5</value>
+			<value>-2</value>
 		</property>
 		<property name="name">
 			<value>Bushes</value>
@@ -236,7 +236,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{b5d95c35-4b73-4465-ba58-eb05d049e0a7}">
 		<property name="volume">
-			<value>10</value>
+			<value>-2</value>
 		</property>
 		<property name="name">
 			<value>Birds</value>
@@ -291,7 +291,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{d35b9dd2-50e2-4e94-854d-0fed181bfb4e}">
 		<property name="volume">
-			<value>10</value>
+			<value>2</value>
 		</property>
 		<property name="name">
 			<value>Crickets</value>
@@ -337,7 +337,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{22e86836-715f-41a4-8319-3c00749fd756}">
 		<property name="volume">
-			<value>10</value>
+			<value>-3</value>
 		</property>
 		<property name="name">
 			<value>Misc. Animals</value>
@@ -371,7 +371,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{7ec0917f-1098-4eb9-ae39-6192a2c82a49}">
 		<property name="volume">
-			<value>-23.5</value>
+			<value>-39</value>
 		</property>
 		<property name="name">
 			<value>Foliage</value>
@@ -764,7 +764,7 @@
 	</object>
 	<object class="SingleSound" id="{fb2a48e9-c98f-4a8a-84e9-6d50cfa5ab16}">
 		<property name="volume">
-			<value>-4.5</value>
+			<value>-7</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{4f44fa80-3b68-4984-9e36-3ab8df581d2e}</destination>

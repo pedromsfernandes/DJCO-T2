@@ -294,6 +294,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{6fed81c2-3255-4de8-b8ae-5aa5eea58085}">
+		<property name="volume">
+			<value>-10</value>
+		</property>
 		<property name="name">
 			<value>Sea Base</value>
 		</property>
@@ -346,9 +349,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{60876c5c-444e-4e45-b1e8-f46f6dbf902f}">
-		<property name="volume">
-			<value>10</value>
-		</property>
 		<property name="name">
 			<value>Sea Crashes</value>
 		</property>
@@ -402,9 +402,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{798dc0de-8a02-47fa-b7ca-3c0da2112e82}">
-		<property name="volume">
-			<value>10</value>
-		</property>
 		<property name="name">
 			<value>Seagulls</value>
 		</property>
