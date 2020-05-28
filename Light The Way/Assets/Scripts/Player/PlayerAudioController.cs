@@ -18,6 +18,8 @@ public class PlayerAudioController : MonoBehaviour
     [FMODUnity.EventRef]
     public string selectedWalkingSound;
     FMOD.Studio.EventInstance walkingSoundEvent;
+    FMOD.Studio.EventInstance walkingSoundEventPlayerClone1;
+    FMOD.Studio.EventInstance walkingSoundEventPlayerClone2;
 
     Transform playerTransform;
     Rigidbody playerRigidbody;
@@ -29,6 +31,8 @@ public class PlayerAudioController : MonoBehaviour
         blueBeamSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedBlueBeamSound);
 
         walkingSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedWalkingSound);
+        walkingSoundEventPlayerClone1 = FMODUnity.RuntimeManager.CreateInstance(selectedWalkingSound);
+        walkingSoundEventPlayerClone2 = FMODUnity.RuntimeManager.CreateInstance(selectedWalkingSound);
     }
 
     void Update()
@@ -242,16 +246,13 @@ public class PlayerAudioController : MonoBehaviour
     {
         FMOD.Studio.PLAYBACK_STATE fmodPBState;
         walkingSoundEvent.getPlaybackState(out fmodPBState);
-
-        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEvent, playerTransform, playerRigidbody);
-
+        
         if (GameState.Instance.moving)
         {
             if(fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
             {
                 Debug.Log("Moving");
                 GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, true, playerTransform.name);
-                //walkingSoundEvent.start();
             }
         }
         else
@@ -260,7 +261,6 @@ public class PlayerAudioController : MonoBehaviour
             {
                 Debug.Log("STOP Moving");
                 GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, false, playerTransform.name);
-                //walkingSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
         }
     }
