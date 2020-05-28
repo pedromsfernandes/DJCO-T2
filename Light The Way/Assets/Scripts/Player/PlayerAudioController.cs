@@ -39,7 +39,7 @@ public class PlayerAudioController : MonoBehaviour
 
         PlayBeamSound(playerTransform, playerRigidbody);
 
-        PlayWalkingSound(playerTransform, playerRigidbody);
+        PlayWalkingSound();
     }
 
     #region BeamSound
@@ -238,30 +238,53 @@ public class PlayerAudioController : MonoBehaviour
     #endregion
 
     #region Footsteps
-    void PlayWalkingSound(Transform playerTransform, Rigidbody playerRigidbody)
+    void PlayWalkingSound()
     {
         FMOD.Studio.PLAYBACK_STATE fmodPBState;
         walkingSoundEvent.getPlaybackState(out fmodPBState);
 
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEvent, playerTransform, playerRigidbody);
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEvent, playerTransform, playerRigidbody);
 
         if (GameState.Instance.moving)
         {
-            if(fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            if(fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
             {
-
                 Debug.Log("Moving");
-                walkingSoundEvent.start();
+                GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, true, playerTransform.name);
+                //walkingSoundEvent.start();
             }
         }
         else
         {
-            if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
             {
                 Debug.Log("STOP Moving");
-                walkingSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, false, playerTransform.name);
+                //walkingSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
+        }
+    }
 
+    [PunRPC]
+    void PlayWalkingSoundSelf(bool play, string originalPlayerName)
+    {
+        if (playerTransform.name != originalPlayerName)
+            return;
+        GameObject originalPlayer = GameObject.Find(originalPlayerName);
+        Transform originalTransform = originalPlayer.GetComponent<Transform>();
+        Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
+
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEvent, originalTransform, originalRigidbody);
+
+        Debug.Log("Moving Sound " + originalTransform.position + " from " + originalPlayerName + " / active: " + play);
+
+        if (play)
+        {
+            walkingSoundEvent.start();
+        }
+        else
+        {
+            walkingSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
     #endregion
