@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{50f8ca44-9324-4da4-81a3-27a2165d2a59}">
+		<property name="assetPath">
+			<value>Ambient/Forest/foliage.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>43.050666666666665</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a8dec8fc-f55f-4b37-bc22-9050a356ad50}</destination>
+		</relationship>
+	</object>
+</objects>

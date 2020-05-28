@@ -78,6 +78,16 @@ public class MovementController : MonoBehaviourPun
         //Velocity
         targetSpeed = movementSpeed * movementInput.magnitude;
 
+        if(targetSpeed != 0)
+        {
+            GameState.Instance.moving = true;
+        }
+        else
+        {
+            GameState.Instance.moving = false;
+        }
+
+
         if (isWalkingSlow)
         {
             targetSpeed /= 2;

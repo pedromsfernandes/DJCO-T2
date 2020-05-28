@@ -1,5 +1,134 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8727710503418904664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambient/Beach/Beach
+  m_EditorClassIdentifier: 
+  Path: event:/Ambient/Beach/Beach
+  guid: 05fa5dd7b8fb8e4cbf69ae4a7ffbdb75
+  Banks:
+  - {fileID: 8069877651577796396}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20000
+--- !u!114 &-8693965901395584003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637261751146597098
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-8656707771601469016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &-8428872833703275651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637261784181466956
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-8361072486387929193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637261713907704491
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-7714699711273684225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
+--- !u!114 &-7675749774666631609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637262612306729768
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-7609544526419231774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,7 +145,7 @@ MonoBehaviour:
   guid: eafd7b889e7df043b529ce86573020a8
   Banks:
   - {fileID: 1978398016341711546}
-  - {fileID: 3070888663661551677}
+  - {fileID: 8069877651577796396}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -24,6 +153,23 @@ MonoBehaviour:
   MinDistance: 3
   MaxDistance: 20
   Length: 11500
+--- !u!114 &-7501093819320592968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &-7470797899284859309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,6 +187,23 @@ MonoBehaviour:
   lastModified: 637251010403827871
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &-7463639445561282009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
   Exists: 0
 --- !u!114 &-7446405405495408774
 MonoBehaviour:
@@ -64,6 +227,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 11500
+--- !u!114 &-7418024206436188576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Player/Bridge/BridgeCreate
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Player/Bridge/BridgeCreate
+  guid: ab04105dd6fd714480cc557496d03dfc
+  Banks:
+  - {fileID: 8069877651577796396}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3500
 --- !u!114 &-7388888158154661265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +283,7 @@ MonoBehaviour:
   Path: event:/FX/Player/Tools/Red/RedFireBeam
   guid: ea1b3968ddc26e4887249fbbf909a4f3
   Banks:
-  - {fileID: 3070888663661551677}
+  - {fileID: 8069877651577796396}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -105,6 +291,74 @@ MonoBehaviour:
   MinDistance: 3
   MaxDistance: 20
   Length: 20500
+--- !u!114 &-6976057461811395029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &-6903035149811742278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-6849490597465233420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &-6651384004785472929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &-6634405498777541613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +395,127 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-6255803803805411198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-6074947522730107018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-6007148486840803477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Crystal/CrystalHit
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Crystal/CrystalHit
+  guid: c351f08e29ae09419d720f7cb2e21b3e
+  Banks:
+  - {fileID: 8069877651577796396}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3500
+--- !u!114 &-5931752752619785636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambient/Forest/Forest
+  m_EditorClassIdentifier: 
+  Path: event:/Ambient/Forest/Forest
+  guid: 7dedeaba40ce694f877136bc1b8aaf70
+  Banks:
+  - {fileID: 8069877651577796396}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -384712435998219920}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16000
+--- !u!114 &-5729078546121765166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &-5524569760279410738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambient/Mountain/Mountain
+  m_EditorClassIdentifier: 
+  Path: event:/Ambient/Mountain/Mountain
+  guid: 99a0ae118c8f2640931801385906aae2
+  Banks:
+  - {fileID: 8069877651577796396}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20000
 --- !u!114 &-4816213540585725800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +533,127 @@ MonoBehaviour:
   lastModified: 637253424947182901
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &-4776961320958568586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637262572717576740
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-3968847250359773029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637261655535983304
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-3882343835524310300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-3826595200250824881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-3750491025080478194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &-3597648713479875327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &-3490751056302048696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
   Exists: 0
 --- !u!114 &-3316572691243034814
 MonoBehaviour:
@@ -194,6 +690,110 @@ MonoBehaviour:
   lastModified: 637250690143796290
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &-3202948530737292201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-3093372253018266574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637262608130377318
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-3090671287431088179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &-3053146753147092193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637261742902462401
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-2805678744608231106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &-2539080647999043645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
   Exists: 0
 --- !u!114 &-2397918425990019997
 MonoBehaviour:
@@ -267,6 +867,58 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-1449317421209387861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-1446021999866041872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &-1411564996096666466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637261731218377111
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-1297694986331297333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +934,47 @@ MonoBehaviour:
   Path: ../FMOD/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637250915679580691
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-1011862020667244744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Player/Tools/Green/Shadow Missfire/GreenShadowMissfire
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Player/Tools/Green/Shadow Missfire/GreenShadowMissfire
+  guid: 8a20c3e5f8c8ce4d9c174a671fcd563a
+  Banks:
+  - {fileID: 8069877651577796396}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 600
+  Length: 1804
+--- !u!114 &-874427384201950499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637262018999634275
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -321,6 +1014,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-384712435998219920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-124772968094246045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,11 +1045,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637261090798202659
+  lastModified: 637262612711198379
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 866
+    Value: 1672
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -355,18 +1065,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -124772968094246045}
-  - {fileID: 3070888663661551677}
+  - {fileID: 8069877651577796396}
   EditorEvents:
   - {fileID: -7224986738756129460}
   - {fileID: 1504371525753220961}
   - {fileID: -7609544526419231774}
+  - {fileID: -8727710503418904664}
+  - {fileID: -5931752752619785636}
+  - {fileID: -5524569760279410738}
+  - {fileID: 3828431420908359921}
+  - {fileID: 5628648694021357613}
+  - {fileID: 4463862695241873744}
+  - {fileID: 6036727720977913251}
+  - {fileID: -1011862020667244744}
+  - {fileID: 926959075368081805}
+  - {fileID: -7418024206436188576}
+  - {fileID: -6007148486840803477}
+  - {fileID: 79798637910570263}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 3070888663661551677}
+  - {fileID: 8069877651577796396}
   StringsBanks:
   - {fileID: -124772968094246045}
-  stringsBankWriteTime: 637261090798202659
+  stringsBankWriteTime: 637262612711198379
   cacheVersion: 3
+--- !u!114 &79798637910570263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Crystal/CrystalReflect
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Crystal/CrystalReflect
+  guid: f484f497bdcc0e458c50368037942207
+  Banks:
+  - {fileID: 8069877651577796396}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12000
+--- !u!114 &126220599643814404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &569586596812107999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,6 +1187,116 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &863033776640952800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &897761461780584890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637261729091510944
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &926959075368081805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Player/Tools/Red/Shadow Missfire/RedShadowMissfire
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Player/Tools/Red/Shadow Missfire/RedShadowMissfire
+  guid: 95a8649a0f6c664ba7687d4b0a8e2bef
+  Banks:
+  - {fileID: 8069877651577796396}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 600
+  Length: 1804
+--- !u!114 &936361871985037528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &1114524996261039690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637261744633113160
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &1116435095199032763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &1471400631476537787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,7 +1330,7 @@ MonoBehaviour:
   Path: event:/FX/Player/Tools/Blue/BlueFireBeam
   guid: 9939333fd356fa439094ab9185123d4c
   Banks:
-  - {fileID: 3070888663661551677}
+  - {fileID: 8069877651577796396}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -520,6 +1392,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &3023995848534222268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637261749160061111
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &3070888663661551677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,6 +1427,223 @@ MonoBehaviour:
   lastModified: 637261143172860614
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &3119580184018507971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &3248258148042446171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &3647676781634700962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &3689872228658613946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &3828431420908359921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Player/Footsteps/Walk
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Player/Footsteps/Walk
+  guid: 9a3677bebb8a734ca8eb852fad47c14f
+  Banks:
+  - {fileID: 8069877651577796396}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 4486818118353380474}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3907961842983645685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &3915015391298085369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &4032405136656461021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &4194378592161568560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &4214014810141032150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &4463862695241873744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Door/DoorOpen
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Door/DoorOpen
+  guid: 595a22288833814eae3c510badc8c877
+  Banks:
+  - {fileID: 8069877651577796396}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 600
+  Length: 3500
+--- !u!114 &4486818118353380474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
   Exists: 1
 --- !u!114 &4534071889399770492
 MonoBehaviour:
@@ -574,6 +1681,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &4986856431550889687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &5016686071061761645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,6 +1734,104 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &5628648694021357613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Player/Footsteps/Run
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Player/Footsteps/Run
+  guid: c3e59f6c7532dd4cbca35edf7dea3981
+  Banks:
+  - {fileID: 8069877651577796396}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -7714699711273684225}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5766910712222314671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &5829707515261138476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &5938745809658517842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &6036727720977913251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Player/Tools/Blue/Shadow Missfire/BlueShadowMissfire
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Player/Tools/Blue/Shadow Missfire/BlueShadowMissfire
+  guid: 779994ddff1bfa4b972ae59a5f9c5331
+  Banks:
+  - {fileID: 8069877651577796396}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 600
+  Length: 1804
 --- !u!114 &6559865680267333311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,6 +1847,24 @@ MonoBehaviour:
   Path: ../FMOD/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637253604602430866
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &6848253117877658029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637262612017613947
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -645,6 +1885,40 @@ MonoBehaviour:
   lastModified: 637250847935120455
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &6995593619108068370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &7011902739788789080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
   Exists: 0
 --- !u!114 &7275864464701186751
 MonoBehaviour:
@@ -736,6 +2010,110 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &7714569067927625769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &8069877651577796396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637262612710988944
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &8102692721924853062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &8253771378421863891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &8728824512927213544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637261739498037114
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &8799158783093583342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &8860754946243002279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,4 +2131,21 @@ MonoBehaviour:
   lastModified: 637251012387361994
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &8893614014989932817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
   Exists: 0

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="EncodableAsset" id="{72f19e9f-7014-4604-9745-86ddfa7b3ab7}">
+		<property name="assetPath">
+			<value>Player/Footsteps/Running/Dirt/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a8dec8fc-f55f-4b37-bc22-9050a356ad50}</destination>
+		</relationship>
+	</object>
+</objects>

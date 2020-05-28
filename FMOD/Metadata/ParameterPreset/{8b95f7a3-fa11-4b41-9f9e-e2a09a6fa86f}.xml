@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{8b95f7a3-fa11-4b41-9f9e-e2a09a6fa86f}">
+		<property name="name">
+			<value>PitchUp</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1ea526e5-5e3a-4631-a483-e3371e5b82ef}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{07e711a6-cfae-4c91-aa43-afc15c7cd05d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{07e711a6-cfae-4c91-aa43-afc15c7cd05d}">
+		<property name="isHeld">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{fdd60089-61f2-43b5-a7c8-faa217691843}</destination>
+		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{fdd60089-61f2-43b5-a7c8-faa217691843}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
+		</property>
+		<property name="amount">
+			<value>100</value>
+		</property>
+	</object>
+</objects>

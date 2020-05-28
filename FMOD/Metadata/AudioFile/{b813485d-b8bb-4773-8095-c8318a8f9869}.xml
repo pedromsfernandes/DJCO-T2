@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{b813485d-b8bb-4773-8095-c8318a8f9869}">
+		<property name="assetPath">
+			<value>Player/Tools/Red/Shadow Missfire/redmissfire-shadow.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.8041043083900228</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a8dec8fc-f55f-4b37-bc22-9050a356ad50}</destination>
+		</relationship>
+	</object>
+</objects>
