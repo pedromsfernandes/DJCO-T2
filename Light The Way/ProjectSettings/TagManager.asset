@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Sun
   - Tool
+  - Grass
+  - Sand
+  - Stone
   layers:
   - Default
   - TransparentFX

@@ -33,6 +33,8 @@ public class PlayerAudioController : MonoBehaviour
         walkingSoundEventPlayer1 = FMODUnity.RuntimeManager.CreateInstance(selectedWalkingSound);
         walkingSoundEventPlayer2 = FMODUnity.RuntimeManager.CreateInstance(selectedWalkingSound);
         walkingSoundEventPlayer3 = FMODUnity.RuntimeManager.CreateInstance(selectedWalkingSound);
+
+        
     }
 
     void Update()
@@ -236,38 +238,44 @@ public class PlayerAudioController : MonoBehaviour
     #region Footsteps
     void PlayWalkingSound()
     {
+        float setFloorType;
         FMOD.Studio.PLAYBACK_STATE fmodPBState;
         if(playerTransform.name == "Player(Clone)")
         {
             walkingSoundEventPlayer1.getPlaybackState(out fmodPBState);
+            walkingSoundEventPlayer1.getParameterByName("Material", out setFloorType);
         }
         else if (playerTransform.name == "Player2(Clone)")
         {
             walkingSoundEventPlayer2.getPlaybackState(out fmodPBState);
+            walkingSoundEventPlayer1.getParameterByName("Material", out setFloorType);
         }
         else
         {
             walkingSoundEventPlayer3.getPlaybackState(out fmodPBState);
+            walkingSoundEventPlayer1.getParameterByName("Material", out setFloorType);
         }
+
+        UpdateCurrentSurfaceUnderPlayer();
 
         if (GameState.Instance.moving)
         {
-            if(fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
+            if ((fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING || setFloorType != GameState.Instance.currentSurface) && GetComponent<PhotonView>().IsMine)
             {
-                GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, true, playerTransform.name);
+                GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, true, GameState.Instance.currentSurface, playerTransform.name);
             }
         }
         else
         {
             if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
             {
-                GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, false, playerTransform.name);
+                GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, false, GameState.Instance.currentSurface, playerTransform.name);
             }
         }
     }
 
     [PunRPC]
-    void PlayWalkingSoundSelf(bool play, string originalPlayerName)
+    void PlayWalkingSoundSelf(bool play, float floorType, string originalPlayerName)
     {
         if (playerTransform.name != originalPlayerName)
             return;
@@ -281,6 +289,8 @@ public class PlayerAudioController : MonoBehaviour
 
             if (play)
             {
+                walkingSoundEventPlayer1.setParameterByName("Material", floorType);
+                
                 walkingSoundEventPlayer1.start();
             }
             else
@@ -294,6 +304,8 @@ public class PlayerAudioController : MonoBehaviour
 
             if (play)
             {
+                walkingSoundEventPlayer1.setParameterByName("Material", floorType);
+                
                 walkingSoundEventPlayer2.start();
             }
             else
@@ -307,12 +319,34 @@ public class PlayerAudioController : MonoBehaviour
 
             if (play)
             {
+                walkingSoundEventPlayer1.setParameterByName("Material", floorType);
+                
                 walkingSoundEventPlayer3.start();
             }
             else
             {
                 walkingSoundEventPlayer3.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
+        }
+    }
+
+    private void UpdateCurrentSurfaceUnderPlayer()
+    {
+        RaycastHit hit;
+
+        Physics.Raycast(playerTransform.position, Vector3.down, out hit);
+
+        if (hit.transform.tag == "Grass")
+        {
+            GameState.Instance.currentSurface = 0;
+        }
+        else if (hit.transform.tag == "Sand")
+        {
+            GameState.Instance.currentSurface = 1;
+        }
+        else if (hit.transform.tag == "Stone")
+        {
+            GameState.Instance.currentSurface = 2;
         }
     }
     #endregion
