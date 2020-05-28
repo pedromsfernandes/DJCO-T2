@@ -256,10 +256,12 @@ public class PlayerAudioController : MonoBehaviour
             walkingSoundEventPlayer1.getParameterByName("Material", out setFloorType);
         }
 
-        UpdateCurrentSurfaceUnderPlayer();
+        
 
         if (GameState.Instance.moving)
         {
+            UpdateCurrentSurfaceUnderPlayer();
+
             if ((fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING || setFloorType != GameState.Instance.currentSurface) && GetComponent<PhotonView>().IsMine)
             {
                 GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, true, GameState.Instance.currentSurface, playerTransform.name);
