@@ -41,16 +41,14 @@ public class PlayerAudioController : MonoBehaviour
         playerTransform = GetComponent<Transform>();
         playerRigidbody = GetComponentInChildren<Rigidbody>();
 
-        PlayBeamSound(playerTransform, playerRigidbody);
+        PlayBeamSound();
 
         PlayWalkingSound();
     }
 
     #region BeamSound
-    void PlayBeamSound(Transform playerTransform, Rigidbody playerRigidbody)
+    void PlayBeamSound()
     {
-        Debug.Log("Casting Ray? " + GameState.Instance.castingRay);
-
         if (GameState.Instance.currentTool == 1)
         {
             if (GameState.Instance.castingRay)
@@ -181,9 +179,7 @@ public class PlayerAudioController : MonoBehaviour
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(redBeamSoundEvent, originalTransform, originalRigidbody);
-
-        Debug.Log("Red Beam Sound " + originalTransform.position + " from " + originalPlayerName + " / active: " + play);
-
+        
         if (play)
         {
             redBeamSoundEvent.start();
@@ -204,9 +200,7 @@ public class PlayerAudioController : MonoBehaviour
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(greenBeamSoundEvent, originalTransform, originalRigidbody);
-
-        Debug.Log("Green Beam Sound " + originalTransform.position + " from " + originalPlayerName + " / active: " + play);
-
+        
         if (play)
         {
             greenBeamSoundEvent.start();
@@ -227,9 +221,7 @@ public class PlayerAudioController : MonoBehaviour
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(blueBeamSoundEvent, originalTransform, originalRigidbody);
-
-        Debug.Log("Blue Beam Sound " + originalTransform.position + " from " + originalPlayerName + " / active: " + play);
-
+        
         if (play)
         {
             blueBeamSoundEvent.start();
@@ -262,7 +254,6 @@ public class PlayerAudioController : MonoBehaviour
         {
             if(fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
             {
-                Debug.Log("Moving");
                 GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, true, playerTransform.name);
             }
         }
@@ -270,7 +261,6 @@ public class PlayerAudioController : MonoBehaviour
         {
             if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
             {
-                Debug.Log("STOP Moving");
                 GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, false, playerTransform.name);
             }
         }
@@ -284,9 +274,7 @@ public class PlayerAudioController : MonoBehaviour
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
-
-        Debug.Log("Moving Sound " + originalTransform.position + " from " + originalPlayerName + " / active: " + play);
-
+        
         if (playerTransform.name == "Player(Clone)")
         {
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEventPlayer1, originalTransform, originalRigidbody);
