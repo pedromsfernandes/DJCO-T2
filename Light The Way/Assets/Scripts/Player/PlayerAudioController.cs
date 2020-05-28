@@ -260,9 +260,6 @@ public class PlayerAudioController : MonoBehaviour
 
         if (GameState.Instance.moving)
         {
-            Debug.Log("CheckFloorType = " + setFloorType + "; CurrentSurface = " + GameState.Instance.currentSurface);
-
-
             if ((fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING || setFloorType != GameState.Instance.currentSurface) && GetComponent<PhotonView>().IsMine)
             {
                 GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, true, GameState.Instance.currentSurface, playerTransform.name);
@@ -293,7 +290,7 @@ public class PlayerAudioController : MonoBehaviour
             if (play)
             {
                 walkingSoundEventPlayer1.setParameterByName("Material", floorType);
-                Debug.Log("Player(Clone) playing floorType " + floorType);
+                
                 walkingSoundEventPlayer1.start();
             }
             else
@@ -308,7 +305,7 @@ public class PlayerAudioController : MonoBehaviour
             if (play)
             {
                 walkingSoundEventPlayer1.setParameterByName("Material", floorType);
-                Debug.Log("Player2(Clone) playing floorType " + floorType);
+                
                 walkingSoundEventPlayer2.start();
             }
             else
@@ -323,7 +320,7 @@ public class PlayerAudioController : MonoBehaviour
             if (play)
             {
                 walkingSoundEventPlayer1.setParameterByName("Material", floorType);
-                Debug.Log("Player3(Clone) playing floorType " + floorType);
+                
                 walkingSoundEventPlayer3.start();
             }
             else
@@ -341,17 +338,14 @@ public class PlayerAudioController : MonoBehaviour
 
         if (hit.transform.tag == "Grass")
         {
-            Debug.Log("Grass");
             GameState.Instance.currentSurface = 0;
         }
         else if (hit.transform.tag == "Sand")
         {
-            Debug.Log("Sand");
             GameState.Instance.currentSurface = 1;
         }
         else if (hit.transform.tag == "Stone")
         {
-            Debug.Log("Stone");
             GameState.Instance.currentSurface = 2;
         }
     }
