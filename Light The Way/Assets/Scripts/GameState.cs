@@ -13,6 +13,7 @@ public class GameState : MonoBehaviour
     public Vector3 lastBeamHit;
 
     // Movement
+    public bool moving = false;
     public bool running = false;
     public bool walkingSlow = false;
 

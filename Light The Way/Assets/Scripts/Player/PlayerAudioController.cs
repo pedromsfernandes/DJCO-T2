@@ -15,6 +15,10 @@ public class PlayerAudioController : MonoBehaviour
     FMOD.Studio.EventInstance greenBeamSoundEvent;
     FMOD.Studio.EventInstance blueBeamSoundEvent;
 
+    [FMODUnity.EventRef]
+    public string selectedWalkingSound;
+    FMOD.Studio.EventInstance walkingSoundEvent;
+
     Transform playerTransform;
     Rigidbody playerRigidbody;
 
@@ -24,6 +28,7 @@ public class PlayerAudioController : MonoBehaviour
         greenBeamSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedGreenBeamSound);
         blueBeamSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedBlueBeamSound);
 
+        walkingSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedWalkingSound);
     }
 
     void Update()
@@ -33,8 +38,11 @@ public class PlayerAudioController : MonoBehaviour
         playerRigidbody = GetComponentInChildren<Rigidbody>();
 
         PlayBeamSound(playerTransform, playerRigidbody);
+
+        PlayWalkingSound(playerTransform, playerRigidbody);
     }
 
+    #region BeamSound
     void PlayBeamSound(Transform playerTransform, Rigidbody playerRigidbody)
     {
         Debug.Log("Casting Ray? " + GameState.Instance.castingRay);
@@ -227,5 +235,34 @@ public class PlayerAudioController : MonoBehaviour
             blueBeamSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
+    #endregion
 
+    #region Footsteps
+    void PlayWalkingSound(Transform playerTransform, Rigidbody playerRigidbody)
+    {
+        FMOD.Studio.PLAYBACK_STATE fmodPBState;
+        walkingSoundEvent.getPlaybackState(out fmodPBState);
+
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEvent, playerTransform, playerRigidbody);
+
+        if (GameState.Instance.moving)
+        {
+            if(fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            {
+
+                Debug.Log("Moving");
+                walkingSoundEvent.start();
+            }
+        }
+        else
+        {
+            if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            {
+                Debug.Log("STOP Moving");
+                walkingSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
+
+        }
+    }
+    #endregion
 }
