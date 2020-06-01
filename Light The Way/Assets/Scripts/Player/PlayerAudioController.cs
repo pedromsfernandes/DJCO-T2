@@ -21,8 +21,12 @@ public class PlayerAudioController : MonoBehaviour
     FMOD.Studio.EventInstance walkingSoundEventPlayer2;
     FMOD.Studio.EventInstance walkingSoundEventPlayer3;
 
-    Transform playerTransform;
-    Rigidbody playerRigidbody;
+    [FMODUnity.EventRef]
+    public string selectedRunningSound;
+    FMOD.Studio.EventInstance runningSoundEventPlayer1;
+    FMOD.Studio.EventInstance runningSoundEventPlayer2;
+    FMOD.Studio.EventInstance runningSoundEventPlayer3;
+
 
     void Start()
     {
@@ -34,14 +38,15 @@ public class PlayerAudioController : MonoBehaviour
         walkingSoundEventPlayer2 = FMODUnity.RuntimeManager.CreateInstance(selectedWalkingSound);
         walkingSoundEventPlayer3 = FMODUnity.RuntimeManager.CreateInstance(selectedWalkingSound);
 
-        
+        runningSoundEventPlayer1 = FMODUnity.RuntimeManager.CreateInstance(selectedRunningSound);
+        runningSoundEventPlayer2 = FMODUnity.RuntimeManager.CreateInstance(selectedRunningSound);
+        runningSoundEventPlayer3 = FMODUnity.RuntimeManager.CreateInstance(selectedRunningSound);
     }
 
     void Update()
     {
-
-        playerTransform = GetComponent<Transform>();
-        playerRigidbody = GetComponentInChildren<Rigidbody>();
+        GameState.Instance.playerTransform = GetComponent<Transform>();
+        GameState.Instance.playerRigidbody = GetComponentInChildren<Rigidbody>();
 
         PlayBeamSound();
 
@@ -114,14 +119,14 @@ public class PlayerAudioController : MonoBehaviour
         {
             if (fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
             {
-                GetComponent<PhotonView>().RPC("PlayRedBeamSoundSelf", RpcTarget.All, true, playerTransform.name);
+                GetComponent<PhotonView>().RPC("PlayRedBeamSoundSelf", RpcTarget.All, true, GameState.Instance.playerTransform.name);
             }
         }
         else
         {
             if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
             {
-                GetComponent<PhotonView>().RPC("PlayRedBeamSoundSelf", RpcTarget.All, false, playerTransform.name);
+                GetComponent<PhotonView>().RPC("PlayRedBeamSoundSelf", RpcTarget.All, false, GameState.Instance.playerTransform.name);
             }
         }
     }
@@ -135,14 +140,14 @@ public class PlayerAudioController : MonoBehaviour
         {
             if (fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
             {
-                GetComponent<PhotonView>().RPC("PlayGreenBeamSoundSelf", RpcTarget.All, true, playerTransform.name);
+                GetComponent<PhotonView>().RPC("PlayGreenBeamSoundSelf", RpcTarget.All, true, GameState.Instance.playerTransform.name);
             }
         }
         else
         {
             if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
             {
-                GetComponent<PhotonView>().RPC("PlayGreenBeamSoundSelf", RpcTarget.All, false, playerTransform.name);
+                GetComponent<PhotonView>().RPC("PlayGreenBeamSoundSelf", RpcTarget.All, false, GameState.Instance.playerTransform.name);
             }
         }
     }
@@ -156,14 +161,14 @@ public class PlayerAudioController : MonoBehaviour
         {
             if (fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
             {
-                GetComponent<PhotonView>().RPC("PlayBlueBeamSoundSelf", RpcTarget.All, true, playerTransform.name);
+                GetComponent<PhotonView>().RPC("PlayBlueBeamSoundSelf", RpcTarget.All, true, GameState.Instance.playerTransform.name);
             }
         }
         else
         {
             if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
             {
-                GetComponent<PhotonView>().RPC("PlayBlueBeamSoundSelf", RpcTarget.All, false, playerTransform.name);
+                GetComponent<PhotonView>().RPC("PlayBlueBeamSoundSelf", RpcTarget.All, false, GameState.Instance.playerTransform.name);
             }
         }
     }
@@ -174,7 +179,7 @@ public class PlayerAudioController : MonoBehaviour
     [PunRPC]
     void PlayRedBeamSoundSelf(bool play, string originalPlayerName)
     {
-        if (playerTransform.name != originalPlayerName)
+        if (GameState.Instance.playerTransform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
@@ -195,7 +200,7 @@ public class PlayerAudioController : MonoBehaviour
     [PunRPC]
     void PlayGreenBeamSoundSelf(bool play, string originalPlayerName)
     {
-        if (playerTransform.name != originalPlayerName)
+        if (GameState.Instance.playerTransform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
@@ -216,7 +221,7 @@ public class PlayerAudioController : MonoBehaviour
     [PunRPC]
     void PlayBlueBeamSoundSelf(bool play, string originalPlayerName)
     {
-        if (playerTransform.name != originalPlayerName)
+        if (GameState.Instance.playerTransform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
@@ -240,20 +245,44 @@ public class PlayerAudioController : MonoBehaviour
     {
         float setFloorType;
         FMOD.Studio.PLAYBACK_STATE fmodPBState;
-        if(playerTransform.name == "Player(Clone)")
+        if (GameState.Instance.playerTransform.name == "Player(Clone)")
         {
-            walkingSoundEventPlayer1.getPlaybackState(out fmodPBState);
-            walkingSoundEventPlayer1.getParameterByName("Material", out setFloorType);
+            if (GameState.Instance.running)
+            {
+                runningSoundEventPlayer1.getPlaybackState(out fmodPBState);
+                runningSoundEventPlayer1.getParameterByName("Material", out setFloorType);
+            }
+            else
+            {
+                walkingSoundEventPlayer1.getPlaybackState(out fmodPBState);
+                walkingSoundEventPlayer1.getParameterByName("Material", out setFloorType);
+            }
         }
-        else if (playerTransform.name == "Player2(Clone)")
+        else if (GameState.Instance.playerTransform.name == "Player2(Clone)")
         {
-            walkingSoundEventPlayer2.getPlaybackState(out fmodPBState);
-            walkingSoundEventPlayer1.getParameterByName("Material", out setFloorType);
+            if (GameState.Instance.running)
+            {
+                runningSoundEventPlayer2.getPlaybackState(out fmodPBState);
+                runningSoundEventPlayer2.getParameterByName("Material", out setFloorType);
+            }
+            else
+            {
+                walkingSoundEventPlayer2.getPlaybackState(out fmodPBState);
+                walkingSoundEventPlayer2.getParameterByName("Material", out setFloorType);
+            }
         }
         else
         {
-            walkingSoundEventPlayer3.getPlaybackState(out fmodPBState);
-            walkingSoundEventPlayer1.getParameterByName("Material", out setFloorType);
+            if (GameState.Instance.running)
+            {
+                runningSoundEventPlayer3.getPlaybackState(out fmodPBState);
+                runningSoundEventPlayer3.getParameterByName("Material", out setFloorType);
+            }
+            else
+            {
+                walkingSoundEventPlayer3.getPlaybackState(out fmodPBState);
+                walkingSoundEventPlayer3.getParameterByName("Material", out setFloorType);
+            }
         }
 
         
@@ -264,69 +293,163 @@ public class PlayerAudioController : MonoBehaviour
 
             if ((fmodPBState != FMOD.Studio.PLAYBACK_STATE.PLAYING || setFloorType != GameState.Instance.currentSurface) && GetComponent<PhotonView>().IsMine)
             {
-                GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, true, GameState.Instance.currentSurface, playerTransform.name);
+                GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, true, GameState.Instance.running, GameState.Instance.currentSurface, GameState.Instance.playerTransform.name);
             }
         }
         else
         {
-            if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
+            FMOD.Studio.PLAYBACK_STATE otherFmodPBState1;
+            if (GameState.Instance.playerTransform.name == "Player(Clone)")
             {
-                GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, false, GameState.Instance.currentSurface, playerTransform.name);
+                if (GameState.Instance.running)
+                {
+                    walkingSoundEventPlayer1.getPlaybackState(out otherFmodPBState1);
+                }
+                else
+                {
+                    runningSoundEventPlayer1.getPlaybackState(out otherFmodPBState1);
+                }
+            }
+            else if (GameState.Instance.playerTransform.name == "Player2(Clone)")
+            {
+                if (GameState.Instance.running)
+                {
+                    walkingSoundEventPlayer2.getPlaybackState(out otherFmodPBState1);
+                }
+                else
+                {
+                    runningSoundEventPlayer2.getPlaybackState(out otherFmodPBState1);
+                }
+            }
+            else
+            {
+                if (GameState.Instance.running)
+                {
+                    walkingSoundEventPlayer3.getPlaybackState(out otherFmodPBState1);
+                }
+                else
+                {
+                    runningSoundEventPlayer3.getPlaybackState(out otherFmodPBState1);
+                }
+            }
+
+            if ((fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING || otherFmodPBState1 == FMOD.Studio.PLAYBACK_STATE.PLAYING) && GetComponent<PhotonView>().IsMine)
+            {
+                GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, false, GameState.Instance.running, GameState.Instance.currentSurface, GameState.Instance.playerTransform.name);
             }
         }
     }
 
     [PunRPC]
-    void PlayWalkingSoundSelf(bool play, float floorType, string originalPlayerName)
+    void PlayWalkingSoundSelf(bool play, bool running, float floorType, string originalPlayerName)
     {
-        if (playerTransform.name != originalPlayerName)
+        if (GameState.Instance.playerTransform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
-        
-        if (playerTransform.name == "Player(Clone)")
-        {
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEventPlayer1, originalTransform, originalRigidbody);
 
-            if (play)
+        Debug.Log("Sound active: " + play + " / running? " + running + " / floortype: " + floorType + " / Player: " + originalPlayerName);
+        
+        if (GameState.Instance.playerTransform.name == "Player(Clone)")
+        {
+            if (running)
             {
-                walkingSoundEventPlayer1.setParameterByName("Material", floorType);
-                
-                walkingSoundEventPlayer1.start();
+                FMODUnity.RuntimeManager.AttachInstanceToGameObject(runningSoundEventPlayer1, originalTransform, originalRigidbody);
             }
             else
             {
+                FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEventPlayer1, originalTransform, originalRigidbody);
+            }
+
+            if (play)
+            {
+                if (running)
+                {
+                    runningSoundEventPlayer1.setParameterByName("Material", floorType);
+                    runningSoundEventPlayer1.start();
+
+                    walkingSoundEventPlayer1.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                }
+                else
+                {
+                    walkingSoundEventPlayer1.setParameterByName("Material", floorType);
+                    walkingSoundEventPlayer1.start();
+
+                    runningSoundEventPlayer1.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                }
+            }
+            else
+            {
+                runningSoundEventPlayer1.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 walkingSoundEventPlayer1.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
         }
-        else if (playerTransform.name == "Player2(Clone)")
+        else if (GameState.Instance.playerTransform.name == "Player2(Clone)")
         {
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEventPlayer2, originalTransform, originalRigidbody);
-
-            if (play)
+            if (running)
             {
-                walkingSoundEventPlayer1.setParameterByName("Material", floorType);
-                
-                walkingSoundEventPlayer2.start();
+                FMODUnity.RuntimeManager.AttachInstanceToGameObject(runningSoundEventPlayer2, originalTransform, originalRigidbody);
             }
             else
             {
+                FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEventPlayer2, originalTransform, originalRigidbody);
+            }
+
+            if (play)
+            {
+                if (running)
+                {
+                    runningSoundEventPlayer2.setParameterByName("Material", floorType);
+                    runningSoundEventPlayer2.start();
+
+                    walkingSoundEventPlayer2.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                }
+                else
+                {
+                    walkingSoundEventPlayer2.setParameterByName("Material", floorType);
+                    walkingSoundEventPlayer2.start();
+
+                    runningSoundEventPlayer2.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                }
+            }
+            else
+            {
+                runningSoundEventPlayer2.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 walkingSoundEventPlayer2.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
         }
         else
         {
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEventPlayer3, originalTransform, originalRigidbody);
-
-            if (play)
+            if (running)
             {
-                walkingSoundEventPlayer1.setParameterByName("Material", floorType);
-                
-                walkingSoundEventPlayer3.start();
+                FMODUnity.RuntimeManager.AttachInstanceToGameObject(runningSoundEventPlayer3, originalTransform, originalRigidbody);
             }
             else
             {
+                FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSoundEventPlayer3, originalTransform, originalRigidbody);
+            }
+
+            if (play)
+            {
+                if (running)
+                {
+                    runningSoundEventPlayer3.setParameterByName("Material", floorType);
+                    runningSoundEventPlayer3.start();
+
+                    walkingSoundEventPlayer3.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                }
+                else
+                {
+                    walkingSoundEventPlayer3.setParameterByName("Material", floorType);
+                    walkingSoundEventPlayer3.start();
+
+                    runningSoundEventPlayer3.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                }
+            }
+            else
+            {
+                runningSoundEventPlayer3.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 walkingSoundEventPlayer3.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
         }
@@ -336,7 +459,7 @@ public class PlayerAudioController : MonoBehaviour
     {
         RaycastHit hit;
 
-        Physics.Raycast(playerTransform.position, Vector3.down, out hit);
+        Physics.Raycast(GameState.Instance.playerTransform.position, Vector3.down, out hit);
 
         if (hit.transform.tag == "Grass")
         {

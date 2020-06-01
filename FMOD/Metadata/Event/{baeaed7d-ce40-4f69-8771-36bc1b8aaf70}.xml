@@ -248,7 +248,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{932ced1f-9b1f-4f87-8f2b-3092809da3e5}">
 		<property name="volume">
-			<value>-2</value>
+			<value>-10</value>
 		</property>
 		<property name="name">
 			<value>Bushes</value>
@@ -319,7 +319,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{b5d95c35-4b73-4465-ba58-eb05d049e0a7}">
 		<property name="volume">
-			<value>-2</value>
+			<value>1</value>
 		</property>
 		<property name="name">
 			<value>Birds</value>
@@ -493,7 +493,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{7ec0917f-1098-4eb9-ae39-6192a2c82a49}">
 		<property name="volume">
-			<value>-39</value>
+			<value>-46</value>
 		</property>
 		<property name="name">
 			<value>Foliage</value>

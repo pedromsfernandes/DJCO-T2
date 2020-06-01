@@ -3,7 +3,11 @@ using UnityEngine;
 public class GameState : MonoBehaviour
 {
     public static GameState Instance { get; private set; }
-    
+
+    //Player Body
+    public Transform playerTransform;
+    public Rigidbody playerRigidbody;
+
     // Sun
     public Vector3 sunDirection;
     
