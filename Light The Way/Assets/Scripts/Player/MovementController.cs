@@ -10,7 +10,7 @@ public class MovementController : MonoBehaviourPun
     private float speedSmoothVelocity = 0f;
     private float speedSmoothTime = 0.1f;
     private float rotationSpeed = 0.1f;
-    private float gravity = 10f;
+    [SerializeField] private float gravity = 10f;
 
     private Transform mainCameraTransform;
 
