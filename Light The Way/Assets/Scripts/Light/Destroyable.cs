@@ -13,12 +13,15 @@ namespace Light
 
         public LightType toolColor;
 
-        protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
+        //sound
+        [FMODUnity.EventRef]
+        public string selectedExplosionSound;
+        FMOD.Studio.EventInstance explosionSoundEvent;
+
+        void Start()
         {
-            if (GameState.Instance.canDestroyObjects && beam.LightColor.Equals(toolColor))
-            {
-                _timeSinceLastHit = 0;
-            }
+            //sound
+            explosionSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedExplosionSound);
         }
 
         private void Update()
@@ -38,15 +41,31 @@ namespace Light
             if (_timeWithHit > timeToDestroy)
                 Destroy();
         }
+        protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
+        {
+            if (GameState.Instance.canDestroyObjects && beam.LightColor.Equals(toolColor))
+            {
+                _timeSinceLastHit = 0;
+            }
+        }
 
         private void Destroy()
         {
-            GetComponent<PhotonView>().RPC("DestroySelf", RpcTarget.All);
+            GetComponent<PhotonView>().RPC("DestroySelf", RpcTarget.All, GameState.Instance.playerTransform.name);
         }
 
         [PunRPC]
-        void DestroySelf()
+        void DestroySelf(string originalPlayerName)
         {
+            GameObject originalPlayer = GameObject.Find(originalPlayerName);
+            Transform originalTransform = originalPlayer.GetComponent<Transform>();
+            Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
+
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(explosionSoundEvent, originalTransform, originalRigidbody);
+
+            explosionSoundEvent.start();
+
+
             this.gameObject.SetActive(false);
         }
     }

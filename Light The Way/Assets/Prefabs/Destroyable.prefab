@@ -110,6 +110,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 5
   toolColor: 4
+  selectedExplosionSound: event:/FX/Interactables/Explosion
 --- !u!114 &6114907376554181158
 MonoBehaviour:
   m_ObjectHideFlags: 0
