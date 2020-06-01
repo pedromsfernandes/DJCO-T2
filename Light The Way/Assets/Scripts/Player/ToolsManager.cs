@@ -14,6 +14,11 @@ public class ToolsManager : MonoBehaviour
 
     private Transform mainCameraTransform;
 
+    //Sound
+    [FMODUnity.EventRef]
+    public string selectedSwapToolSound;
+    FMOD.Studio.EventInstance swapToolSoundEvent;
+
     void Start()
     {
         lightBeam = transform.Find("Laser").gameObject.GetComponent<PlayerBeam>();
@@ -31,6 +36,9 @@ public class ToolsManager : MonoBehaviour
         GameState.Instance.canCreateLightBridges = true;
         GameState.Instance.canRotateSun = true;
         GameState.Instance.canDestroyObjects = true;
+
+        //sound
+        swapToolSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedSwapToolSound);
     }
 
     void Update()
@@ -73,6 +81,11 @@ public class ToolsManager : MonoBehaviour
         else if (toolId == 3)
         {
             lightBeam.UpdateColor(LightColor.Of(Light.LightType.Blue));
+        }
+
+        if (GetComponent<PhotonView>().IsMine)
+        {
+            GetComponent<PhotonView>().RPC("takeOutToolSoundSelf", RpcTarget.All, GameState.Instance.playerTransform.name);
         }
     }
 
@@ -220,5 +233,22 @@ public class ToolsManager : MonoBehaviour
         //Debug.Log("Destroying Tool " + toolName);
         GameObject tool = GameObject.Find(toolName);
         Destroy(tool);
+    }
+
+
+    [PunRPC]
+    private void takeOutToolSoundSelf(string originalPlayerName)
+    {
+        Debug.Log("Self: " + originalPlayerName);
+        if (GameState.Instance.playerTransform.name != originalPlayerName)
+            return;
+        GameObject originalPlayer = GameObject.Find(originalPlayerName);
+        Transform originalTransform = originalPlayer.GetComponent<Transform>();
+        Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
+
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(swapToolSoundEvent, originalTransform, originalRigidbody);
+
+        swapToolSoundEvent.start();
+        Debug.Log("Started sound");
     }
 }

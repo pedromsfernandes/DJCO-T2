@@ -320,6 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightBeam: {fileID: 0}
+  selectedSwapToolSound: event:/FX/Player/Tools/Swap
 --- !u!114 &4234245922186530580
 MonoBehaviour:
   m_ObjectHideFlags: 0
