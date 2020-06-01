@@ -301,7 +301,42 @@ public class PlayerAudioController : MonoBehaviour
         }
         else
         {
-            if (fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING && GetComponent<PhotonView>().IsMine)
+            FMOD.Studio.PLAYBACK_STATE otherFmodPBState1;
+            if (playerTransform.name == "Player(Clone)")
+            {
+                if (GameState.Instance.running)
+                {
+                    walkingSoundEventPlayer1.getPlaybackState(out otherFmodPBState1);
+                }
+                else
+                {
+                    runningSoundEventPlayer1.getPlaybackState(out otherFmodPBState1);
+                }
+            }
+            else if (playerTransform.name == "Player2(Clone)")
+            {
+                if (GameState.Instance.running)
+                {
+                    walkingSoundEventPlayer2.getPlaybackState(out otherFmodPBState1);
+                }
+                else
+                {
+                    runningSoundEventPlayer2.getPlaybackState(out otherFmodPBState1);
+                }
+            }
+            else
+            {
+                if (GameState.Instance.running)
+                {
+                    walkingSoundEventPlayer3.getPlaybackState(out otherFmodPBState1);
+                }
+                else
+                {
+                    runningSoundEventPlayer3.getPlaybackState(out otherFmodPBState1);
+                }
+            }
+
+            if ((fmodPBState == FMOD.Studio.PLAYBACK_STATE.PLAYING || otherFmodPBState1 == FMOD.Studio.PLAYBACK_STATE.PLAYING) && GetComponent<PhotonView>().IsMine)
             {
                 GetComponent<PhotonView>().RPC("PlayWalkingSoundSelf", RpcTarget.All, false, GameState.Instance.running, GameState.Instance.currentSurface, playerTransform.name);
             }
@@ -316,6 +351,8 @@ public class PlayerAudioController : MonoBehaviour
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
+
+        Debug.Log("Sound active: " + play + " / running? " + running + " / floortype: " + floorType + " / Player: " + originalPlayerName);
         
         if (playerTransform.name == "Player(Clone)")
         {
