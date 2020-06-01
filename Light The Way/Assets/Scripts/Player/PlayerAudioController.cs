@@ -245,7 +245,7 @@ public class PlayerAudioController : MonoBehaviour
     {
         float setFloorType;
         FMOD.Studio.PLAYBACK_STATE fmodPBState;
-        if (GameState.Instance.playerTransform.name == "Player(Clone)")
+        if (GameState.Instance.playerTransform.name == "Captain(Clone)")
         {
             if (GameState.Instance.running)
             {
@@ -258,7 +258,7 @@ public class PlayerAudioController : MonoBehaviour
                 walkingSoundEventPlayer1.getParameterByName("Material", out setFloorType);
             }
         }
-        else if (GameState.Instance.playerTransform.name == "Player2(Clone)")
+        else if (GameState.Instance.playerTransform.name == "Archeologist(Clone)")
         {
             if (GameState.Instance.running)
             {
@@ -299,7 +299,7 @@ public class PlayerAudioController : MonoBehaviour
         else
         {
             FMOD.Studio.PLAYBACK_STATE otherFmodPBState1;
-            if (GameState.Instance.playerTransform.name == "Player(Clone)")
+            if (GameState.Instance.playerTransform.name == "Captain(Clone)")
             {
                 if (GameState.Instance.running)
                 {
@@ -310,7 +310,7 @@ public class PlayerAudioController : MonoBehaviour
                     runningSoundEventPlayer1.getPlaybackState(out otherFmodPBState1);
                 }
             }
-            else if (GameState.Instance.playerTransform.name == "Player2(Clone)")
+            else if (GameState.Instance.playerTransform.name == "Archeologist(Clone)")
             {
                 if (GameState.Instance.running)
                 {
@@ -351,7 +351,7 @@ public class PlayerAudioController : MonoBehaviour
 
         Debug.Log("Sound active: " + play + " / running? " + running + " / floortype: " + floorType + " / Player: " + originalPlayerName);
         
-        if (GameState.Instance.playerTransform.name == "Player(Clone)")
+        if (GameState.Instance.playerTransform.name == "Captain(Clone)")
         {
             if (running)
             {
@@ -385,7 +385,7 @@ public class PlayerAudioController : MonoBehaviour
                 walkingSoundEventPlayer1.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
         }
-        else if (GameState.Instance.playerTransform.name == "Player2(Clone)")
+        else if (GameState.Instance.playerTransform.name == "Archeologist(Clone)")
         {
             if (running)
             {
