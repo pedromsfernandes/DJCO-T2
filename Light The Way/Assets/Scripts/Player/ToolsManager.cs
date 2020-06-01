@@ -239,7 +239,6 @@ public class ToolsManager : MonoBehaviour
     [PunRPC]
     private void takeOutToolSoundSelf(string originalPlayerName)
     {
-        Debug.Log("Self: " + originalPlayerName);
         if (GameState.Instance.playerTransform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
@@ -249,6 +248,5 @@ public class ToolsManager : MonoBehaviour
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(swapToolSoundEvent, originalTransform, originalRigidbody);
 
         swapToolSoundEvent.start();
-        Debug.Log("Started sound");
     }
 }

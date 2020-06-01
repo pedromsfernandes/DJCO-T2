@@ -13,6 +13,17 @@ public class LightBridge : MonoBehaviour
 
     GameObject activeLightBridge;
 
+    //sound
+    [FMODUnity.EventRef]
+    public string selectedFixatePointSound;
+    FMOD.Studio.EventInstance fixatePointSoundEvent;
+
+    void Start()
+    {
+        //sound
+        fixatePointSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedFixatePointSound);
+    }
+
     void Update()
     {
         if (GameState.Instance.canCreateLightBridges && GameState.Instance.hasTool3 && GameState.Instance.currentTool == 3 && GameState.Instance.castingRay)
@@ -45,6 +56,8 @@ public class LightBridge : MonoBehaviour
     {
         LightBridgeFirstPointFixed = true;
         firstPoint = GameState.Instance.lastBeamHit;
+
+        fixatePointSoundEvent.start();
     }
 
     private bool isBridgePossible(Vector3 p1, Vector3 p2)

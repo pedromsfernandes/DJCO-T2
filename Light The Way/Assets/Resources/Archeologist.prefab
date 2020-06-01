@@ -633,6 +633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxBridgeLength: 10
   maxDistanceBetweenPlayerAndLightBridgePoint: 100
+  selectedFixatePointSound: event:/FX/Player/Bridge/BridgePoint
 --- !u!1 &7841573970210663685
 GameObject:
   m_ObjectHideFlags: 0
