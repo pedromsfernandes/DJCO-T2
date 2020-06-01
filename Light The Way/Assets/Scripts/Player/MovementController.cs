@@ -10,7 +10,7 @@ public class MovementController : MonoBehaviourPun
     private float speedSmoothVelocity = 0f;
     private float speedSmoothTime = 0.1f;
     private float rotationSpeed = 0.1f;
-    private float gravity = 10f;
+    [SerializeField] private float gravity = 10f;
 
     private Transform mainCameraTransform;
 
@@ -18,11 +18,19 @@ public class MovementController : MonoBehaviourPun
 
     private Rigidbody playerRigidbody;
 
+    private GameObject idle;
+    private GameObject walking;
+    private GameObject running;
+
     void Start()
     {
         playerRigidbody = GetComponentInChildren<Rigidbody>();
 
         controller = GetComponent<CharacterController>();
+
+        idle = transform.Find("Idle").gameObject;
+        walking = transform.Find("Walking").gameObject;
+        running = transform.Find("Running").gameObject;
 
         mainCameraTransform = Camera.main.transform;
         transform.Find("Laser").gameObject.GetComponent<PlayerBeam>().camera = transform.Find("Model").Find("CameraSource").gameObject;
@@ -50,6 +58,25 @@ public class MovementController : MonoBehaviourPun
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         Vector2 movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         float targetSpeed;
+
+        if(movementInput.x == 0 && movementInput.y == 0)
+        {
+            idle.SetActive(true);
+            walking.SetActive(false);
+            running.SetActive(false);
+        }
+        else if(isRunning)
+        {
+            idle.SetActive(false);
+            walking.SetActive(false);
+            running.SetActive(true);
+        }
+        else
+        {
+            idle.SetActive(false);
+            walking.SetActive(true);
+            running.SetActive(false);
+        }
 
         //Update GameState
         GameState.Instance.walkingSlow = isWalkingSlow;
