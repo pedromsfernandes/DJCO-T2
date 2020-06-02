@@ -22,6 +22,9 @@ public class MovementController : MonoBehaviourPun
     private GameObject walking;
     private GameObject running;
 
+    [SerializeField] private GameObject[] staffs;
+    [SerializeField] private GameObject mainStaff;
+
     void Start()
     {
         playerRigidbody = GetComponentInChildren<Rigidbody>();
@@ -142,5 +145,20 @@ public class MovementController : MonoBehaviourPun
             walking.SetActive(true);
             running.SetActive(false);
         }
+    }
+
+    public void SetStaffActive(bool op)
+    {
+        GetComponent<PhotonView>().RPC("SetStaffActiveSelf", RpcTarget.All, op);
+    }
+
+    [PunRPC]
+    public void SetStaffActiveSelf(bool op)
+    {
+        foreach (GameObject staff in staffs)
+        {
+            staff.SetActive(!op);
+        }
+        mainStaff.SetActive(op);
     }
 }

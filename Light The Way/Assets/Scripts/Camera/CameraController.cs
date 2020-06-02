@@ -59,9 +59,16 @@ public class CameraController : MonoBehaviourPun
 
     void GetMouseInputs()
     {
-        if (Input.GetMouseButtonDown(1)) SwitchCameraAim();
-
-        else if (Input.GetMouseButtonUp(1)) SwitchCameraNormal();
+        if (Input.GetMouseButtonDown(1))
+        {
+            SwitchCameraAim();
+            player.GetComponent<MovementController>().SetStaffActive(true);
+        } 
+        else if (Input.GetMouseButtonUp(1))
+        {
+            SwitchCameraNormal();
+            player.GetComponent<MovementController>().SetStaffActive(false);
+        }
 
         if (GameState.Instance.currentTool != 0 && GameState.Instance.aiming && Input.GetMouseButtonDown(0)) beam.Enable(true);
 
