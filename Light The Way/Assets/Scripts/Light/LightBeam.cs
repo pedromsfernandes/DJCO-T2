@@ -118,7 +118,14 @@ namespace Light
         {
             Active = op;
             gameObject.SetActive(op);
+        }
 
+        [PunRPC]
+        public void EnableSelf(bool op, Vector3 or)
+        {
+            Origin = or;
+            Active = op;
+            gameObject.SetActive(op);
         }
     }
 }

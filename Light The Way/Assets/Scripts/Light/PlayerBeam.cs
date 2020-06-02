@@ -94,7 +94,7 @@ namespace Light
 
             GameState.Instance.castingRay = op;
 
-            GetComponent<PhotonView>().RPC("EnableSelf", RpcTarget.All, op);
+            GetComponent<PhotonView>().RPC("EnableSelf", RpcTarget.All, op, Origin);
         }
     }
 }
