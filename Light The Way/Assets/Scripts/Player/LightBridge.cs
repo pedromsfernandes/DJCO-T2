@@ -18,10 +18,15 @@ public class LightBridge : MonoBehaviour
     public string selectedFixatePointSound;
     FMOD.Studio.EventInstance fixatePointSoundEvent;
 
+    [FMODUnity.EventRef]
+    public string selectedCreateSound;
+    FMOD.Studio.EventInstance createSoundEvent;
+
     void Start()
     {
         //sound
         fixatePointSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedFixatePointSound);
+        createSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedCreateSound);
     }
 
     void Update()
@@ -118,6 +123,11 @@ public class LightBridge : MonoBehaviour
         lightBridge.transform.rotation = Quaternion.Euler(xRotationAngle, yRotationAngle, 0);
 
         activeLightBridge = Instantiate(lightBridge);
+
+        Rigidbody originalRigidbody = new Rigidbody();
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(createSoundEvent, lightBridge.transform, originalRigidbody);
+
+        createSoundEvent.start();
     }
 
     public void deleteLightBridge()
