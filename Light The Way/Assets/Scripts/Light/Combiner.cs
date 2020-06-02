@@ -15,9 +15,9 @@ namespace Light
             _combinerBeam.gameObject.SetActive(true);
         }
 
-        protected override void OnBeamSense(LightColor beam, Vector3 point, Vector3 normal, Vector3 reflectedDirection)
+        protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
         {
-            _combinerBeam.StageAddColor(beam);
+            _combinerBeam.StageAddColor(beam.LightColor);
         }
     }
 }

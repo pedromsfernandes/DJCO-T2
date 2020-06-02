@@ -100,7 +100,7 @@ namespace Light
                     Lr.SetPosition(1, hit.point);
                     GameState.Instance.lastBeamHit = hit.point;
                     if (hit.transform.gameObject.layer == LayerMask.NameToLayer("LightHit"))
-                        hit.transform.gameObject.SendMessage("Hit", new object[] { (int)LightColor.Type, hit.point, hit.normal, Direction });
+                        hit.transform.gameObject.SendMessage("Hit", new object[] { this, hit, Direction });
                 }
             }
             else
