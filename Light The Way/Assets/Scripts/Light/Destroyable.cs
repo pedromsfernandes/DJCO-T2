@@ -55,11 +55,11 @@ namespace Light
         }
 
         [PunRPC]
-        void DestroySelf(string originalPlayerName)
+        void DestroySelf(string originalObjectName)
         {
-            GameObject originalPlayer = GameObject.Find(originalPlayerName);
-            Transform originalTransform = originalPlayer.GetComponent<Transform>();
-            Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
+            GameObject originalObject = GameObject.Find(originalObjectName);
+            Transform originalTransform = originalObject.GetComponent<Transform>();
+            Rigidbody originalRigidbody = originalObject.GetComponentInChildren<Rigidbody>();
 
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(explosionSoundEvent, originalTransform, originalRigidbody);
             explosionSoundEvent.start();
