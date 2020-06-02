@@ -60,7 +60,9 @@ namespace Light
             {
                 _sunLr.startColor = _sunLr.endColor = Color.white;
                 _sunLr.SetPositions(new[] { Origin, Origin - 1000 * GameState.Instance.sunDirection });
-                ProcessRayBeam();
+                if(GetComponent<PhotonView>().IsMine)
+                    ProcessRayBeam();
+                DrawRayBeamOther();
             }
         }
 
@@ -91,10 +93,21 @@ namespace Light
         // Enables the LightBeam for all Clients (Used when starting a chain of LightBeams
         public void Enable(bool op)
         {
-
             GameState.Instance.castingRay = op;
+            GetComponent<PhotonView>().RPC("EnableSelf", RpcTarget.All, op);
+        }
 
-            GetComponent<PhotonView>().RPC("EnableSelf", RpcTarget.All, op, Origin);
+        private void DrawRayBeamOther()
+        {
+            Vector3[] positions = new Vector3[2];
+            Lr.GetPositions(positions);
+            GetComponent<PhotonView>().RPC("DrawOthers", RpcTarget.All, positions);
+        }
+
+        [PunRPC]
+        private void DrawOthers(Vector3[] positions)
+        {
+            Lr.SetPositions(positions);
         }
     }
 }
