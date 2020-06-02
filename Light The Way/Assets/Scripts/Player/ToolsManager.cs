@@ -19,6 +19,10 @@ public class ToolsManager : MonoBehaviour
     public string selectedSwapToolSound;
     FMOD.Studio.EventInstance swapToolSoundEvent;
 
+    [FMODUnity.EventRef]
+    public string selectedPickUpToolSound;
+    FMOD.Studio.EventInstance pickUpToolSoundEvent;
+
     void Start()
     {
         lightBeam = transform.Find("Laser").gameObject.GetComponent<PlayerBeam>();
@@ -39,6 +43,7 @@ public class ToolsManager : MonoBehaviour
 
         //sound
         swapToolSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedSwapToolSound);
+        pickUpToolSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedPickUpToolSound);
     }
 
     void Update()
@@ -143,7 +148,6 @@ public class ToolsManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Collision");
         if (GetComponent<PhotonView>().IsMine && other.gameObject.CompareTag("Tool"))
         {
             string toolName = other.gameObject.name;
@@ -151,22 +155,23 @@ public class ToolsManager : MonoBehaviour
 
             if (toolName == "Tool1(Clone)" || toolName == "Tool1")
             {
-                //Debug.Log("Activating Tool 1 Power");
                 GameState.Instance.hasTool1 = true;
                 GameState.Instance.currentTool = 1;
             }
             else if (toolName == "Tool2(Clone)" || toolName == "Tool2")
             {
-                //Debug.Log("Activating Tool 2 Power");
                 GameState.Instance.hasTool2 = true;
                 GameState.Instance.currentTool = 2;
             }
             else if (toolName == "Tool3(Clone)" || toolName == "Tool3")
             {
-                //Debug.Log("Activating Tool 3 Power");
                 GameState.Instance.hasTool3 = true;
                 GameState.Instance.currentTool = 3;
             }
+
+            Debug.Log("Pick Up Sound");
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(pickUpToolSoundEvent, GameState.Instance.playerTransform, GameState.Instance.playerRigidbody);
+            pickUpToolSoundEvent.start();
 
             deletePickedUpTool(toolName);
             Invoke("UpdateColor", Time.deltaTime);
@@ -246,7 +251,6 @@ public class ToolsManager : MonoBehaviour
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(swapToolSoundEvent, originalTransform, originalRigidbody);
-
         swapToolSoundEvent.start();
     }
 }

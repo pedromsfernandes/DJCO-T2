@@ -62,9 +62,7 @@ namespace Light
             Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(explosionSoundEvent, originalTransform, originalRigidbody);
-
             explosionSoundEvent.start();
-
 
             this.gameObject.SetActive(false);
         }
