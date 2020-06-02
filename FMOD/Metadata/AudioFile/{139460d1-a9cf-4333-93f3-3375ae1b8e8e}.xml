@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{139460d1-a9cf-4333-93f3-3375ae1b8e8e}">
+		<property name="assetPath">
+			<value>FX/Sun/moving-sun.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.7967120181405898</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a8dec8fc-f55f-4b37-bc22-9050a356ad50}</destination>
+		</relationship>
+	</object>
+</objects>
