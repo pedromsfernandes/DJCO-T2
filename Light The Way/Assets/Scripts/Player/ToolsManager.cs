@@ -202,27 +202,26 @@ public class ToolsManager : MonoBehaviour
     [PunRPC]
     void createDroppedToolSelf(int toolId, Vector3 position)
     {
-        //Debug.Log("Going to create Droped Tool - " + toolId);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(swapToolSoundEvent, GameState.Instance.playerTransform, GameState.Instance.playerRigidbody);
+        swapToolSoundEvent.start();
+
         if (toolId == 1)
         {
             tool1 = Resources.Load<GameObject>("Tools/Tool1");
             tool1.transform.position = position;
             Instantiate(tool1);
-            //Debug.Log("Tool 1 set active on - " + position);
         }
         else if (toolId == 2)
         {
             tool2 = Resources.Load<GameObject>("Tools/Tool2");
             tool2.transform.position = position;
             Instantiate(tool2);
-            //Debug.Log("Tool 2 set active on - " + position);
         }
         else if (toolId == 3)
         {
             tool3 = Resources.Load<GameObject>("Tools/Tool3");
             tool3.transform.position = position;
             Instantiate(tool3);
-            //Debug.Log("Tool 3 set active on - " + position);
         }
     }
 
