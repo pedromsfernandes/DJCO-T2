@@ -51,7 +51,7 @@ namespace Light
 
         private void Destroy()
         {
-            GetComponent<PhotonView>().RPC("DestroySelf", RpcTarget.All, GameState.Instance.playerTransform.name);
+            GetComponent<PhotonView>().RPC("DestroySelf", RpcTarget.All, this.name);
         }
 
         [PunRPC]

@@ -31,6 +31,9 @@
 		<relationship name="timeline">
 			<destination>{bf4c3abd-9f12-441d-baf7-108fe9115ddb}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{940d9919-7a44-4371-9db8-89b4c5d694b4}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{afa75bfb-2e5f-411c-a9c3-fa16bdf8c768}">
 		<relationship name="masterBus">
@@ -103,6 +106,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{cd33e743-36c3-4a10-85d2-ac6961a34b18}">
+		<property name="volume">
+			<value>5</value>
+		</property>
 		<property name="name">
 			<value>Bridge Fail</value>
 		</property>
