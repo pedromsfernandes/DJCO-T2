@@ -14,6 +14,15 @@ public class ToolsManager : MonoBehaviour
 
     private Transform mainCameraTransform;
 
+    //Sound
+    [FMODUnity.EventRef]
+    public string selectedSwapToolSound;
+    FMOD.Studio.EventInstance swapToolSoundEvent;
+
+    [FMODUnity.EventRef]
+    public string selectedPickUpToolSound;
+    FMOD.Studio.EventInstance pickUpToolSoundEvent;
+
     void Start()
     {
         lightBeam = transform.Find("Laser").gameObject.GetComponent<PlayerBeam>();
@@ -31,6 +40,10 @@ public class ToolsManager : MonoBehaviour
         GameState.Instance.canCreateLightBridges = true;
         GameState.Instance.canRotateSun = true;
         GameState.Instance.canDestroyObjects = true;
+
+        //sound
+        swapToolSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedSwapToolSound);
+        pickUpToolSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedPickUpToolSound);
     }
 
     void Update()
@@ -73,6 +86,11 @@ public class ToolsManager : MonoBehaviour
         else if (toolId == 3)
         {
             lightBeam.UpdateColor(LightColor.Of(Light.LightType.Blue));
+        }
+
+        if (GetComponent<PhotonView>().IsMine)
+        {
+            GetComponent<PhotonView>().RPC("takeOutToolSoundSelf", RpcTarget.All, GameState.Instance.playerTransform.name);
         }
     }
 
@@ -130,7 +148,6 @@ public class ToolsManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Collision");
         if (GetComponent<PhotonView>().IsMine && other.gameObject.CompareTag("Tool"))
         {
             string toolName = other.gameObject.name;
@@ -138,22 +155,23 @@ public class ToolsManager : MonoBehaviour
 
             if (toolName == "Tool1(Clone)" || toolName == "Tool1")
             {
-                //Debug.Log("Activating Tool 1 Power");
                 GameState.Instance.hasTool1 = true;
                 GameState.Instance.currentTool = 1;
             }
             else if (toolName == "Tool2(Clone)" || toolName == "Tool2")
             {
-                //Debug.Log("Activating Tool 2 Power");
                 GameState.Instance.hasTool2 = true;
                 GameState.Instance.currentTool = 2;
             }
             else if (toolName == "Tool3(Clone)" || toolName == "Tool3")
             {
-                //Debug.Log("Activating Tool 3 Power");
                 GameState.Instance.hasTool3 = true;
                 GameState.Instance.currentTool = 3;
             }
+
+            Debug.Log("Pick Up Sound");
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(pickUpToolSoundEvent, GameState.Instance.playerTransform, GameState.Instance.playerRigidbody);
+            pickUpToolSoundEvent.start();
 
             deletePickedUpTool(toolName);
             Invoke("UpdateColor", Time.deltaTime);
@@ -184,27 +202,26 @@ public class ToolsManager : MonoBehaviour
     [PunRPC]
     void createDroppedToolSelf(int toolId, Vector3 position)
     {
-        //Debug.Log("Going to create Droped Tool - " + toolId);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(swapToolSoundEvent, GameState.Instance.playerTransform, GameState.Instance.playerRigidbody);
+        swapToolSoundEvent.start();
+
         if (toolId == 1)
         {
             tool1 = Resources.Load<GameObject>("Tools/Tool1");
             tool1.transform.position = position;
             Instantiate(tool1);
-            //Debug.Log("Tool 1 set active on - " + position);
         }
         else if (toolId == 2)
         {
             tool2 = Resources.Load<GameObject>("Tools/Tool2");
             tool2.transform.position = position;
             Instantiate(tool2);
-            //Debug.Log("Tool 2 set active on - " + position);
         }
         else if (toolId == 3)
         {
             tool3 = Resources.Load<GameObject>("Tools/Tool3");
             tool3.transform.position = position;
             Instantiate(tool3);
-            //Debug.Log("Tool 3 set active on - " + position);
         }
     }
 
@@ -220,5 +237,19 @@ public class ToolsManager : MonoBehaviour
         //Debug.Log("Destroying Tool " + toolName);
         GameObject tool = GameObject.Find(toolName);
         Destroy(tool);
+    }
+
+
+    [PunRPC]
+    private void takeOutToolSoundSelf(string originalPlayerName)
+    {
+        if (GameState.Instance.playerTransform.name != originalPlayerName)
+            return;
+        GameObject originalPlayer = GameObject.Find(originalPlayerName);
+        Transform originalTransform = originalPlayer.GetComponent<Transform>();
+        Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
+
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(swapToolSoundEvent, originalTransform, originalRigidbody);
+        swapToolSoundEvent.start();
     }
 }

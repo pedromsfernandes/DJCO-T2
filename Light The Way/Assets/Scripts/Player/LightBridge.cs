@@ -13,6 +13,22 @@ public class LightBridge : MonoBehaviour
 
     GameObject activeLightBridge;
 
+    //sound
+    [FMODUnity.EventRef]
+    public string selectedFixatePointSound;
+    FMOD.Studio.EventInstance fixatePointSoundEvent;
+
+    [FMODUnity.EventRef]
+    public string selectedCreateSound;
+    FMOD.Studio.EventInstance createSoundEvent;
+
+    void Start()
+    {
+        //sound
+        fixatePointSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedFixatePointSound);
+        createSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedCreateSound);
+    }
+
     void Update()
     {
         if (GameState.Instance.canCreateLightBridges && GameState.Instance.hasTool3 && GameState.Instance.currentTool == 3 && GameState.Instance.castingRay)
@@ -45,6 +61,8 @@ public class LightBridge : MonoBehaviour
     {
         LightBridgeFirstPointFixed = true;
         firstPoint = GameState.Instance.lastBeamHit;
+
+        fixatePointSoundEvent.start();
     }
 
     private bool isBridgePossible(Vector3 p1, Vector3 p2)
@@ -105,6 +123,11 @@ public class LightBridge : MonoBehaviour
         lightBridge.transform.rotation = Quaternion.Euler(xRotationAngle, yRotationAngle, 0);
 
         activeLightBridge = Instantiate(lightBridge);
+
+        Rigidbody originalRigidbody = new Rigidbody();
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(createSoundEvent, lightBridge.transform, originalRigidbody);
+
+        createSoundEvent.start();
     }
 
     public void deleteLightBridge()

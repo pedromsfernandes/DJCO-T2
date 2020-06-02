@@ -349,7 +349,7 @@ public class PlayerAudioController : MonoBehaviour
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
-        Debug.Log("Sound active: " + play + " / running? " + running + " / floortype: " + floorType + " / Player: " + originalPlayerName);
+        //Debug.Log("Sound active: " + play + " / running? " + running + " / floortype: " + floorType + " / Player: " + originalPlayerName);
         
         if (GameState.Instance.playerTransform.name == "Captain(Clone)")
         {

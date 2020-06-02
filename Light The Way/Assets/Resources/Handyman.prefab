@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52a6b4e56cb11d47a2536803b6cec1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  movementSpeed: 5
   gravity: 30
 --- !u!114 &5433141087288154195
 MonoBehaviour:
@@ -320,6 +320,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightBeam: {fileID: 0}
+  selectedSwapToolSound: event:/FX/Player/Tools/Swap
+  selectedPickUpToolSound: event:/FX/Player/Tools/PickUp
 --- !u!114 &4234245922186530580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,6 +634,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxBridgeLength: 10
   maxDistanceBetweenPlayerAndLightBridgePoint: 100
+  selectedFixatePointSound: event:/FX/Player/Bridge/BridgePoint
+  selectedCreateSound: event:/FX/Player/Bridge/BridgeCreate
 --- !u!1 &7841573970210663685
 GameObject:
   m_ObjectHideFlags: 0
