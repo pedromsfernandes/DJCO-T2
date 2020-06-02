@@ -48,6 +48,7 @@ MonoBehaviour:
   - RPC_ChangeReadyState
   - takeOutToolSoundSelf
   - UpdateColorSelf
+  - OnBeamSenseSoundSelf
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
