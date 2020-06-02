@@ -59,24 +59,7 @@ public class MovementController : MonoBehaviourPun
         Vector2 movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         float targetSpeed;
 
-        if(movementInput.x == 0 && movementInput.y == 0)
-        {
-            idle.SetActive(true);
-            walking.SetActive(false);
-            running.SetActive(false);
-        }
-        else if(isRunning)
-        {
-            idle.SetActive(false);
-            walking.SetActive(false);
-            running.SetActive(true);
-        }
-        else
-        {
-            idle.SetActive(false);
-            walking.SetActive(true);
-            running.SetActive(false);
-        }
+        GetComponent<PhotonView>().RPC("ChangeAnimSelf", RpcTarget.All, movementInput, isRunning);
 
         //Update GameState
         GameState.Instance.walkingSlow = isWalkingSlow;
@@ -105,7 +88,7 @@ public class MovementController : MonoBehaviourPun
         //Velocity
         targetSpeed = movementSpeed * movementInput.magnitude;
 
-        if(targetSpeed != 0)
+        if (targetSpeed != 0)
         {
             GameState.Instance.moving = true;
         }
@@ -136,5 +119,28 @@ public class MovementController : MonoBehaviourPun
 
         //Update Rigidbody Velocity
         playerRigidbody.velocity = desiredMove;
+    }
+
+    [PunRPC]
+    void ChangeAnimSelf(Vector2 movementInput, bool isRunning)
+    {
+        if (movementInput.x == 0 && movementInput.y == 0)
+        {
+            idle.SetActive(true);
+            walking.SetActive(false);
+            running.SetActive(false);
+        }
+        else if (isRunning)
+        {
+            idle.SetActive(false);
+            walking.SetActive(false);
+            running.SetActive(true);
+        }
+        else
+        {
+            idle.SetActive(false);
+            walking.SetActive(true);
+            running.SetActive(false);
+        }
     }
 }
