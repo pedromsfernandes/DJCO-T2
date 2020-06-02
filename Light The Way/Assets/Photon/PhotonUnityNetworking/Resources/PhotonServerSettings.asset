@@ -47,6 +47,7 @@ MonoBehaviour:
   - RPC_ChangeReadyState
   - UpdateColorSelf
   - PlayWalkingSoundSelf
+  - ChangeAnimSelf
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
