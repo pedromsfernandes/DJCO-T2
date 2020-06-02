@@ -41,16 +41,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Map.unity
     guid: 3f1e6c2121596b3429a547abadd52c4d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Final Map.unity
     guid: 1be35977244bdce4d989036455adbf32
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Intro Levels.unity
     guid: 6ea6c2bd56097094d87096fdb4677769
   - enabled: 0
     path: Assets/Scenes/Red Temple.unity
     guid: afb5b9feca8e25d45afb16d304a1f6f1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sound.unity
     guid: e6f5e725385944149a2b7a8d6b564071
   m_configObjects: {}

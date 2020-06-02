@@ -26,9 +26,10 @@ namespace Light
             foreach (var color in primaryColors)
             {
                 angle += angleDelta;
-                
-                var originDiff = Quaternion.AngleAxis(angle, transform.up) * diff;
-                var direction = Vector3.ProjectOnPlane(originDiff, transform.up);
+
+                var up = transform.up;
+                var originDiff = Quaternion.AngleAxis(angle, up) * diff;
+                var direction = Vector3.ProjectOnPlane(originDiff, up);
                 EmitBeam(color, transform.position + originDiff, direction);
             }
         }
