@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Photon.Pun;
 
 namespace Light
 {
@@ -9,7 +10,7 @@ namespace Light
     {
         protected void Hit(IReadOnlyList<object> args)
         {
-            GetComponent<PhotonView>().RPC("HitSelf", args);
+            GetComponent<PhotonView>().RPC("HitSelf", RpcTarget.All, args);
         }
 
         [PunRPC]
