@@ -30,9 +30,9 @@ namespace Light
 
         }
 
-        protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
+        protected override void OnBeamSense(LightColor beam, Vector3 point, Vector3 normal, Vector3 reflectedDirection)
         {
-            currentColor.AddColor(beam.LightColor);
+            currentColor.AddColor(beam);
         }
 
         void LateUpdate()

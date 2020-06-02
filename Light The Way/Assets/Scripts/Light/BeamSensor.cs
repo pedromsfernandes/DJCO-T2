@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Photon.Pun;
 
 namespace Light
 {
@@ -9,16 +10,23 @@ namespace Light
     {
         protected void Hit(IReadOnlyList<object> args)
         {
-            LightBeam beam = (LightBeam)args[0];
-            RaycastHit hit = (RaycastHit)args[1];
-            Vector3 direction = (Vector3)args[2];
+            GetComponent<PhotonView>().RPC("HitSelf", RpcTarget.All, args);
+        }
+
+        [PunRPC]
+        public void HitSelf(IReadOnlyList<object> args)
+        {
+            LightColor beam = LightColor.Of((LightType)args[0]);
+            Vector3 point = (Vector3)args[1];
+            Vector3 normal = (Vector3)args[2];
+            Vector3 direction = (Vector3)args[3];
             
-            OnBeamSense(beam, hit, direction);
+            OnBeamSense(beam, point, normal, direction);
         }
 
         /**
          * Called every frame while a beam is sensed
          */
-        protected abstract void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection);
+        protected abstract void OnBeamSense(LightColor beam, Vector3 point, Vector3 normal, Vector3 reflectedDirection);
     }
 }
