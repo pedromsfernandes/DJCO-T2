@@ -4,9 +4,9 @@ namespace Light
 {
     public class Mirror : BeamEmitter
     {
-        protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 direction)
+        protected override void OnBeamSense(LightColor beam, Vector3 point, Vector3 normal, Vector3 direction)
         {
-            EmitBeam(beam.LightColor, hit.point, Vector3.Reflect(direction, hit.normal));
+            EmitBeam(beam, point, Vector3.Reflect(direction, normal));
         }
     }
 }

@@ -13,9 +13,9 @@ namespace Light
 
         public LightType toolColor;
 
-        protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
+        protected override void OnBeamSense(LightColor beam, Vector3 point, Vector3 normal, Vector3 reflectedDirection)
         {
-            if (GameState.Instance.canDestroyObjects && beam.LightColor.Equals(toolColor))
+            if (GameState.Instance.canDestroyObjects && beam.Equals(toolColor))
             {
                 _timeSinceLastHit = 0;
             }
