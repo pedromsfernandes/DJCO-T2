@@ -49,11 +49,11 @@ public class PlayerAudioController : MonoBehaviour
         {
             GameState.Instance.playerTransform = GetComponent<Transform>();
             GameState.Instance.playerRigidbody = GetComponentInChildren<Rigidbody>();
+
+            PlayBeamSound();
+
+            PlayWalkingSound();
         }
-
-        PlayBeamSound();
-
-        PlayWalkingSound();
     }
 
     #region BeamSound

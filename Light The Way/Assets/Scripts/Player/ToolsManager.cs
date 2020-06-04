@@ -225,7 +225,6 @@ public class ToolsManager : MonoBehaviour
     [PunRPC]
     void deletePickedUpToolSelf(string toolName)
     {
-        //Debug.Log("Destroying Tool " + toolName);
         GameObject tool = GameObject.Find(toolName);
         Destroy(tool);
     }
@@ -234,7 +233,7 @@ public class ToolsManager : MonoBehaviour
     [PunRPC]
     private void takeOutToolSoundSelf(string originalPlayerName)
     {
-        if (GameState.Instance.playerTransform.name != originalPlayerName)
+        if (this.transform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
