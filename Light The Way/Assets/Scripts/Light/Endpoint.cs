@@ -95,8 +95,9 @@ namespace Light
             Transform originalTransform = originalObject.GetComponent<Transform>();
             Rigidbody originalRigidbody = originalObject.GetComponentInChildren<Rigidbody>();
 
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(hitEndpointSoundEvent, originalTransform, originalRigidbody);
-            hitEndpointSoundEvent.start();
+            FMODUnity.RuntimeManager.PlayOneShot(selectedHitEndpointSound, originalTransform.position);
+            //FMODUnity.RuntimeManager.AttachInstanceToGameObject(hitEndpointSoundEvent, originalTransform, originalRigidbody);
+            //hitEndpointSoundEvent.start();
         }
 
         public void Deactivate()
