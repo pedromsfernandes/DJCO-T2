@@ -7,6 +7,8 @@ using Photon.Realtime;
 
 public class CreateRoomMenu : MonoBehaviourPunCallbacks
 {
+    public MainMenuController menu;
+
     [SerializeField]
     private Text _roomName;
 
@@ -42,7 +44,7 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
     public override void OnCreatedRoom()
     {
         Debug.Log("Created room successfully");
-        _roomsCanvases.CurrentRoomCanvas.Show();
+        menu.CreateRoomSuccessful();
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)

@@ -90,12 +90,19 @@ public class MainMenuController : MonoBehaviour
         altCanvas[2].SetActive(true);
     }
 
+    public void CreateRoomSuccessful()
+    {
+        altCanvas[1].SetActive(false);
+        altCanvas[3].SetActive(true);
+    }
+
     public void Back()
     {
         canvas.SetActive(true);
         altCanvas[0].SetActive(false);
         altCanvas[1].SetActive(false);
         altCanvas[2].SetActive(false);
+        altCanvas[3].SetActive(false);
     }
 
     public void Exit()

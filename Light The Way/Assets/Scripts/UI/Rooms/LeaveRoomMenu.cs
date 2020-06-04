@@ -5,6 +5,8 @@ using Photon.Pun;
 
 public class LeaveRoomMenu : MonoBehaviour
 {
+    public MainMenuController menu;
+
     private RoomsCanvases _roomsCanvases;
 
     public void FirstInitialize(RoomsCanvases canvases)
@@ -15,6 +17,6 @@ public class LeaveRoomMenu : MonoBehaviour
     public void OnClick_LeaveRoom()
     {
         PhotonNetwork.LeaveRoom(true);
-        _roomsCanvases.CurrentRoomCanvas.Hide();
+        menu.Back();
     }
 }
