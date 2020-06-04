@@ -50,6 +50,7 @@ MonoBehaviour:
   - UpdateColorSelf
   - OnBeamSenseSoundSelf
   - OnOpenEndpointSoundSelf
+  - PlayMissfireSoundSelf
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

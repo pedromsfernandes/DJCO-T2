@@ -620,6 +620,9 @@ MonoBehaviour:
     type: 3}
   source: {fileID: 7841573969688292905}
   camera: {fileID: 0}
+  selectedRedMissfireSound: event:/FX/Player/Tools/Red/RedShadowMissfire
+  selectedGreenMissfireSound: event:/FX/Player/Tools/Green/GreenShadowMissfire
+  selectedBlueMissfireSound: event:/FX/Player/Tools/Blue/BlueShadowMissfire
 --- !u!114 &6804794064448822751
 MonoBehaviour:
   m_ObjectHideFlags: 0
