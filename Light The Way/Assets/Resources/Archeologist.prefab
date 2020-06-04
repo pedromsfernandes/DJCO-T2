@@ -232,9 +232,9 @@ Transform:
   m_Children:
   - {fileID: 7841573970049697345}
   - {fileID: 7841573971008295958}
-  - {fileID: 6129208340436215643}
-  - {fileID: 1714830500194347206}
-  - {fileID: 6842889520134196982}
+  - {fileID: 1186107293114453878}
+  - {fileID: 5960225552124035297}
+  - {fileID: 1985074845277103824}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -620,6 +620,9 @@ MonoBehaviour:
     type: 3}
   source: {fileID: 7841573969688292905}
   camera: {fileID: 0}
+  selectedRedMissfireSound: event:/FX/Player/Tools/Red/RedShadowMissfire
+  selectedGreenMissfireSound: event:/FX/Player/Tools/Green/GreenShadowMissfire
+  selectedBlueMissfireSound: event:/FX/Player/Tools/Blue/BlueShadowMissfire
 --- !u!114 &6804794064448822751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,6 +638,7 @@ MonoBehaviour:
   maxBridgeLength: 10
   maxDistanceBetweenPlayerAndLightBridgePoint: 100
   selectedFixatePointSound: event:/FX/Player/Bridge/BridgePoint
+  impossibleCreateSound: event:/FX/Player/Bridge/BridgeFail
   selectedCreateSound: event:/FX/Player/Bridge/BridgeCreate
 --- !u!1 &7841573970210663685
 GameObject:
@@ -774,7 +778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca2fda16b1a4da438d4bcd1dcdadad7, type: 3}
---- !u!4 &6129208340436215643 stripped
+--- !u!4 &1186107293114453878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 0ca2fda16b1a4da438d4bcd1dcdadad7,
     type: 3}
@@ -854,7 +858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67b62f2d643e4da49b102576feb3f741, type: 3}
---- !u!4 &6842889520134196982 stripped
+--- !u!4 &1985074845277103824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 67b62f2d643e4da49b102576feb3f741,
     type: 3}
@@ -934,7 +938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d13198b92a451344a3da0d2fd90777a, type: 3}
---- !u!4 &1714830500194347206 stripped
+--- !u!4 &5960225552124035297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 6d13198b92a451344a3da0d2fd90777a,
     type: 3}

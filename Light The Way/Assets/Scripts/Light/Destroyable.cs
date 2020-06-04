@@ -16,14 +16,6 @@ namespace Light
         //sound
         [FMODUnity.EventRef]
         public string selectedExplosionSound;
-        FMOD.Studio.EventInstance explosionSoundEvent;
-
-        void Start()
-        {
-            //sound
-            explosionSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedExplosionSound);
-        }
-
         private void Update()
         {
             if (_timeSinceLastHit > timeout)
@@ -51,18 +43,16 @@ namespace Light
 
         private void Destroy()
         {
-            GetComponent<PhotonView>().RPC("DestroySelf", RpcTarget.All, GameState.Instance.playerTransform.name);
+            GetComponent<PhotonView>().RPC("DestroySelf", RpcTarget.All, this.name);
         }
 
         [PunRPC]
-        void DestroySelf(string originalPlayerName)
+        void DestroySelf(string originalObjectName)
         {
-            GameObject originalPlayer = GameObject.Find(originalPlayerName);
-            Transform originalTransform = originalPlayer.GetComponent<Transform>();
-            Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
+            GameObject originalObject = GameObject.Find(originalObjectName);
+            Transform originalTransform = originalObject.GetComponent<Transform>();
 
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(explosionSoundEvent, originalTransform, originalRigidbody);
-            explosionSoundEvent.start();
+            FMODUnity.RuntimeManager.PlayOneShot(selectedExplosionSound, originalTransform.position);
 
             this.gameObject.SetActive(false);
         }

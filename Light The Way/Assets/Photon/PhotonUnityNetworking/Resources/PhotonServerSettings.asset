@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
   AppSettings:
-    AppIdRealtime: fd440c9a-329f-4c1f-8539-e7a399dd93d5
+    AppIdRealtime: ' fd440c9a-329f-4c1f-8539-e7a399dd93d5'
     AppIdChat: 
     AppIdVoice: 4ed42a03-17d7-4311-96df-e5dc580bf523
     AppVersion: 
@@ -32,22 +32,25 @@ MonoBehaviour:
   StartInOfflineMode: 0
   RpcList:
   - ClickRpc
-  - DestroyRpc
   - createDroppedToolSelf
   - createLightBridgeSelf
   - deleteLightBridgeSelf
   - deletePickedUpToolSelf
+  - DestroyRpc
   - DestroySelf
   - EnableSelf
   - OpenDoorSelf
   - PlayBlueBeamSoundSelf
   - PlayGreenBeamSoundSelf
   - PlayRedBeamSoundSelf
+  - PlayWalkingSoundSelf
   - RotateSelf
   - RPC_ChangeReadyState
-  - UpdateColorSelf
-  - PlayWalkingSoundSelf
   - takeOutToolSoundSelf
+  - UpdateColorSelf
+  - OnBeamSenseSoundSelf
+  - OnOpenEndpointSoundSelf
+  - PlayMissfireSoundSelf
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

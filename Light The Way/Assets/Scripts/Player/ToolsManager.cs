@@ -17,11 +17,9 @@ public class ToolsManager : MonoBehaviour
     //Sound
     [FMODUnity.EventRef]
     public string selectedSwapToolSound;
-    FMOD.Studio.EventInstance swapToolSoundEvent;
 
     [FMODUnity.EventRef]
     public string selectedPickUpToolSound;
-    FMOD.Studio.EventInstance pickUpToolSoundEvent;
 
     void Start()
     {
@@ -40,10 +38,6 @@ public class ToolsManager : MonoBehaviour
         GameState.Instance.canCreateLightBridges = true;
         GameState.Instance.canRotateSun = true;
         GameState.Instance.canDestroyObjects = true;
-
-        //sound
-        swapToolSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedSwapToolSound);
-        pickUpToolSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedPickUpToolSound);
     }
 
     void Update()
@@ -168,10 +162,8 @@ public class ToolsManager : MonoBehaviour
                 GameState.Instance.hasTool3 = true;
                 GameState.Instance.currentTool = 3;
             }
-
-            Debug.Log("Pick Up Sound");
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(pickUpToolSoundEvent, GameState.Instance.playerTransform, GameState.Instance.playerRigidbody);
-            pickUpToolSoundEvent.start();
+            
+            FMODUnity.RuntimeManager.PlayOneShot(selectedPickUpToolSound, GameState.Instance.playerTransform.position);
 
             deletePickedUpTool(toolName);
             Invoke("UpdateColor", Time.deltaTime);
@@ -202,8 +194,7 @@ public class ToolsManager : MonoBehaviour
     [PunRPC]
     void createDroppedToolSelf(int toolId, Vector3 position)
     {
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(swapToolSoundEvent, GameState.Instance.playerTransform, GameState.Instance.playerRigidbody);
-        swapToolSoundEvent.start();
+        FMODUnity.RuntimeManager.PlayOneShot(selectedSwapToolSound, position);
 
         if (toolId == 1)
         {
@@ -234,7 +225,6 @@ public class ToolsManager : MonoBehaviour
     [PunRPC]
     void deletePickedUpToolSelf(string toolName)
     {
-        //Debug.Log("Destroying Tool " + toolName);
         GameObject tool = GameObject.Find(toolName);
         Destroy(tool);
     }
@@ -243,13 +233,11 @@ public class ToolsManager : MonoBehaviour
     [PunRPC]
     private void takeOutToolSoundSelf(string originalPlayerName)
     {
-        if (GameState.Instance.playerTransform.name != originalPlayerName)
+        if (this.transform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
-        Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(swapToolSoundEvent, originalTransform, originalRigidbody);
-        swapToolSoundEvent.start();
+        FMODUnity.RuntimeManager.PlayOneShot(selectedSwapToolSound, originalTransform.position);
     }
 }

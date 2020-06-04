@@ -19,6 +19,10 @@ public class LightBridge : MonoBehaviour
     FMOD.Studio.EventInstance fixatePointSoundEvent;
 
     [FMODUnity.EventRef]
+    public string impossibleCreateSound;
+    FMOD.Studio.EventInstance impossibleCreateSoundEvent;
+
+    [FMODUnity.EventRef]
     public string selectedCreateSound;
     FMOD.Studio.EventInstance createSoundEvent;
 
@@ -26,6 +30,7 @@ public class LightBridge : MonoBehaviour
     {
         //sound
         fixatePointSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedFixatePointSound);
+        impossibleCreateSoundEvent = FMODUnity.RuntimeManager.CreateInstance(impossibleCreateSound);
         createSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedCreateSound);
     }
 
@@ -72,6 +77,10 @@ public class LightBridge : MonoBehaviour
         {
             return true;
         }
+
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(impossibleCreateSoundEvent, GameState.Instance.playerTransform, GameState.Instance.playerRigidbody);
+        impossibleCreateSoundEvent.start();
+
         return false;
     }
 

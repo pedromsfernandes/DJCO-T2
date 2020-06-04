@@ -45,12 +45,15 @@ public class PlayerAudioController : MonoBehaviour
 
     void Update()
     {
-        GameState.Instance.playerTransform = GetComponent<Transform>();
-        GameState.Instance.playerRigidbody = GetComponentInChildren<Rigidbody>();
+        if (GetComponent<PhotonView>().IsMine)
+        {
+            GameState.Instance.playerTransform = GetComponent<Transform>();
+            GameState.Instance.playerRigidbody = GetComponentInChildren<Rigidbody>();
 
-        PlayBeamSound();
+            PlayBeamSound();
 
-        PlayWalkingSound();
+            PlayWalkingSound();
+        }
     }
 
     #region BeamSound
@@ -179,14 +182,16 @@ public class PlayerAudioController : MonoBehaviour
     [PunRPC]
     void PlayRedBeamSoundSelf(bool play, string originalPlayerName)
     {
-        if (GameState.Instance.playerTransform.name != originalPlayerName)
+        if (this.transform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(redBeamSoundEvent, originalTransform, originalRigidbody);
-        
+
+        Debug.Log("Red Beam Sound: " + play + " By " + originalPlayerName);
+
         if (play)
         {
             redBeamSoundEvent.start();
@@ -200,14 +205,15 @@ public class PlayerAudioController : MonoBehaviour
     [PunRPC]
     void PlayGreenBeamSoundSelf(bool play, string originalPlayerName)
     {
-        if (GameState.Instance.playerTransform.name != originalPlayerName)
+        if (this.transform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(greenBeamSoundEvent, originalTransform, originalRigidbody);
-        
+        Debug.Log("Green Beam Sound: " + play + " By " + originalPlayerName);
+
         if (play)
         {
             greenBeamSoundEvent.start();
@@ -221,14 +227,15 @@ public class PlayerAudioController : MonoBehaviour
     [PunRPC]
     void PlayBlueBeamSoundSelf(bool play, string originalPlayerName)
     {
-        if (GameState.Instance.playerTransform.name != originalPlayerName)
+        if (this.transform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(blueBeamSoundEvent, originalTransform, originalRigidbody);
-        
+        Debug.Log("Blue Beam Sound: " + play + " By " + originalPlayerName);
+
         if (play)
         {
             blueBeamSoundEvent.start();
@@ -343,7 +350,7 @@ public class PlayerAudioController : MonoBehaviour
     [PunRPC]
     void PlayWalkingSoundSelf(bool play, bool running, float floorType, string originalPlayerName)
     {
-        if (GameState.Instance.playerTransform.name != originalPlayerName)
+        if (this.transform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
