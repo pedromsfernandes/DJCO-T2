@@ -5,18 +5,6 @@ namespace Light
 {
     public class Divider : BeamEmitter
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
-
         protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
         {
             Vector3 diff = hit.point - transform.position;
