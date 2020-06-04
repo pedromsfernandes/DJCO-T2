@@ -23,8 +23,10 @@ namespace Light
 
         //sound
         [FMODUnity.EventRef]
-        private string selectedHitEndpointSound = "event:/FX/Crystal/CrystalHit";
-        FMOD.Studio.EventInstance hitEndpointSoundEvent;
+        public string selectedHitEndpointSound = "event:/FX/Crystal/CrystalHit";
+
+        [FMODUnity.EventRef]
+        public string selectedOpenEndpointSound = "event:/FX/Crystal/CrystalReflect";
 
         private void Start()
         {
@@ -36,8 +38,6 @@ namespace Light
 
             _endpointBeam.gameObject.SetActive(true);
 
-            //sound
-            hitEndpointSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedHitEndpointSound);
         }
 
         protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
@@ -56,6 +56,8 @@ namespace Light
             {
                 _endpointBeam.gameObject.SetActive(false);
                 open = true;
+
+                GetComponent<PhotonView>().RPC("OnOpenEndpointSoundSelf", RpcTarget.All, this.name);
             }
             else
             {
@@ -82,7 +84,6 @@ namespace Light
             {
                 previousColor = currentColor;
                 GetComponent<PhotonView>().RPC("OnBeamSenseSoundSelf", RpcTarget.All, this.name);
-                Debug.Log("Play Hit Sound " + this.name);
             }
 
             currentColor = LightColor.Of(LightType.None);
@@ -93,11 +94,17 @@ namespace Light
         {
             GameObject originalObject = GameObject.Find(originalObjectName);
             Transform originalTransform = originalObject.GetComponent<Transform>();
-            Rigidbody originalRigidbody = originalObject.GetComponentInChildren<Rigidbody>();
 
             FMODUnity.RuntimeManager.PlayOneShot(selectedHitEndpointSound, originalTransform.position);
-            //FMODUnity.RuntimeManager.AttachInstanceToGameObject(hitEndpointSoundEvent, originalTransform, originalRigidbody);
-            //hitEndpointSoundEvent.start();
+        }
+
+        [PunRPC]
+        void OnOpenEndpointSoundSelf(string originalObjectName)
+        {
+            GameObject originalObject = GameObject.Find(originalObjectName);
+            Transform originalTransform = originalObject.GetComponent<Transform>();
+
+            FMODUnity.RuntimeManager.PlayOneShot(selectedOpenEndpointSound, originalTransform.position);
         }
 
         public void Deactivate()

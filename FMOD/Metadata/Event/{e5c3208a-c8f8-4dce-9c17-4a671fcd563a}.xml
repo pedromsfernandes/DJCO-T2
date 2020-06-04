@@ -8,7 +8,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{d54af10f-3ed3-4392-bc86-a8b473794018}</destination>
+			<destination>{732bb23f-b7c5-4eae-b8af-7f0ebe30d6ca}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{9131b6c9-ec78-47a6-8b0c-e015d61c9056}</destination>
@@ -90,7 +90,10 @@
 	<object class="MixerBusPanner" id="{49ffbb85-01a6-4da7-946e-3cc44926686f}" />
 	<object class="SingleSound" id="{3326227a-e033-45ec-9bbd-26924cef3984}">
 		<property name="length">
-			<value>1.8041043083900228</value>
+			<value>1.5341043083900225</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>0.27000000000000002</value>
 		</property>
 		<relationship name="fadeOutCurve">
 			<destination>{5fcae479-6ae9-444e-adb1-599995226b50}</destination>
@@ -153,7 +156,7 @@
 	</object>
 	<object class="AutomationPoint" id="{9b6e0602-f1e1-424f-9676-eb450d9bef48}">
 		<property name="position">
-			<value>0.85000000000000009</value>
+			<value>0.58000000000000052</value>
 		</property>
 		<property name="value">
 			<value>1</value>
@@ -164,7 +167,7 @@
 	</object>
 	<object class="AutomationPoint" id="{bf04e4d0-b68d-4239-8546-73baa1902d0f}">
 		<property name="position">
-			<value>1.8041043083900228</value>
+			<value>1.5341043083900223</value>
 		</property>
 		<property name="value">
 			<value>0</value>

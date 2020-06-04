@@ -16,14 +16,6 @@ namespace Light
         //sound
         [FMODUnity.EventRef]
         public string selectedExplosionSound;
-        FMOD.Studio.EventInstance explosionSoundEvent;
-
-        void Start()
-        {
-            //sound
-            explosionSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedExplosionSound);
-        }
-
         private void Update()
         {
             if (_timeSinceLastHit > timeout)
@@ -59,10 +51,8 @@ namespace Light
         {
             GameObject originalObject = GameObject.Find(originalObjectName);
             Transform originalTransform = originalObject.GetComponent<Transform>();
-            Rigidbody originalRigidbody = originalObject.GetComponentInChildren<Rigidbody>();
 
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(explosionSoundEvent, originalTransform, originalRigidbody);
-            explosionSoundEvent.start();
+            FMODUnity.RuntimeManager.PlayOneShot(selectedExplosionSound, originalTransform.position);
 
             this.gameObject.SetActive(false);
         }

@@ -10,13 +10,6 @@ public class Door : MonoBehaviour
     //sound
     [FMODUnity.EventRef]
     public string selectedOpenSound = "event:/FX/Door/DoorOpen";
-    FMOD.Studio.EventInstance openSoundEvent;
-
-    void Start()
-    {
-        //sound
-        openSoundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedOpenSound);
-    }
 
     void Update()
     {
@@ -39,10 +32,8 @@ public class Door : MonoBehaviour
 
         GameObject originalObject = GameObject.Find(originalObjectName);
         Transform originalTransform = originalObject.GetComponent<Transform>();
-        Rigidbody originalRigidbody = originalObject.GetComponentInChildren<Rigidbody>();
 
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(openSoundEvent, originalTransform, originalRigidbody);
-        openSoundEvent.start();
+        FMODUnity.RuntimeManager.PlayOneShot(selectedOpenSound, originalTransform.position);
 
         this.gameObject.SetActive(false);
     }

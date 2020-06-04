@@ -1118,10 +1118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc67709d20a0794693f684e4cf057e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: 7
+  targetColor: 1
   open: 0
   active: 1
-  selectedHitEndpointSound: 
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &1116603496
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1210,7 +1211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
+  ObservedComponentsFoldoutOpen: 0
   Group: 0
   prefixField: -1
   Synchronization: 0
