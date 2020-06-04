@@ -182,8 +182,6 @@ public class PlayerAudioController : MonoBehaviour
     [PunRPC]
     void PlayRedBeamSoundSelf(bool play, string originalPlayerName)
     {
-        Debug.Log(originalPlayerName);
-
         if (this.transform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
@@ -191,7 +189,9 @@ public class PlayerAudioController : MonoBehaviour
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(redBeamSoundEvent, originalTransform, originalRigidbody);
-        
+
+        Debug.Log("Red Beam Sound: " + play + " By " + originalPlayerName);
+
         if (play)
         {
             redBeamSoundEvent.start();
@@ -212,7 +212,8 @@ public class PlayerAudioController : MonoBehaviour
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(greenBeamSoundEvent, originalTransform, originalRigidbody);
-        
+        Debug.Log("Green Beam Sound: " + play + " By " + originalPlayerName);
+
         if (play)
         {
             greenBeamSoundEvent.start();
@@ -233,7 +234,8 @@ public class PlayerAudioController : MonoBehaviour
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(blueBeamSoundEvent, originalTransform, originalRigidbody);
-        
+        Debug.Log("Blue Beam Sound: " + play + " By " + originalPlayerName);
+
         if (play)
         {
             blueBeamSoundEvent.start();
