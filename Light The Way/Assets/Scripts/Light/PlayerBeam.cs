@@ -97,7 +97,7 @@ namespace Light
                     }
                 }
 
-                Debug.Log("In Shadow");
+                //Debug.Log("In Shadow");
             }
             else
             {
@@ -120,7 +120,7 @@ namespace Light
         [PunRPC]
         void PlayMissfireSoundSelf(int toolId, string originalPlayerName)
         {
-            Debug.Log(originalPlayerName);
+            //Debug.Log(originalPlayerName);
 
             if (transform.parent.transform.name != originalPlayerName)
                 return;
@@ -128,7 +128,7 @@ namespace Light
             Transform originalTransform = originalPlayer.GetComponent<Transform>();
             Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
-            Debug.Log("Missfire Here");
+            //Debug.Log("Missfire Here");
 
             if(toolId == 1)
             {
