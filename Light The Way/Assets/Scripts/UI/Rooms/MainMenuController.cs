@@ -7,11 +7,18 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
     static bool first = true;
+    static bool shading = false;
+
+    float counter = 0;
 
     public GameObject canvas;
     public GameObject[] altCanvas;
     public GameObject[] btns;
     public GameObject[] subBtns;
+
+    public Image logo;
+    public Image logo_hl;
+    public Image laser;
 
     Vector2 screenSize;
 
@@ -44,8 +51,24 @@ public class MainMenuController : MonoBehaviour
         }
         else
         {
+            logo.color = new Color(logo.color.r, logo.color.g, logo.color.b, 1f);
+            laser.rectTransform.offsetMax = new Vector2(0, laser.rectTransform.offsetMax.y);
+
             foreach (GameObject btn in btns)
                 btn.transform.localPosition = new Vector3(btn.transform.localPosition.x, btn.transform.localPosition.y + delta, btn.transform.localPosition.z);
+        }
+    }
+
+    void Update()
+    {
+        if (shading)
+        {
+            counter += Time.deltaTime;
+            if (counter >= 5f)
+            {
+                StartCoroutine("ShadingAnim");
+                counter = -10000f;
+            }
         }
     }
 
@@ -74,7 +97,7 @@ public class MainMenuController : MonoBehaviour
         altCanvas[1].SetActive(false);
         altCanvas[2].SetActive(false);
     }
-    
+
     public void Exit()
     {
         Application.Quit();
@@ -82,6 +105,22 @@ public class MainMenuController : MonoBehaviour
 
     IEnumerator FirstMenuAnim(float delta)
     {
+        yield return new WaitForSeconds(0.5f);
+
+        for (int i = 0; i < 20; i++)
+        {
+            logo.color = new Color(logo.color.r, logo.color.g, logo.color.b, logo.color.a + 0.05f);
+            yield return new WaitForSeconds(0.03f);
+        }
+
+        shading = true;
+
+        for (int i = 0; i < 20; i++)
+        {
+            laser.rectTransform.offsetMax = new Vector2(laser.rectTransform.offsetMax.x + 120.5f, laser.rectTransform.offsetMax.y);
+            yield return new WaitForSeconds(0.03f);
+        }
+
         yield return new WaitForSeconds(0.5f);
 
         for (int i = 0; i < btns.Length; i++)
@@ -100,5 +139,22 @@ public class MainMenuController : MonoBehaviour
             btn.transform.localPosition = new Vector3(btn.transform.localPosition.x, btn.transform.localPosition.y + step, btn.transform.localPosition.z);
             yield return new WaitForSeconds(0.02f);
         }
+    }
+
+    IEnumerator ShadingAnim()
+    {
+        for (int i = 0; i < 20; i++)
+        {
+            logo_hl.color = new Color(logo_hl.color.r, logo_hl.color.g, logo_hl.color.b, logo_hl.color.a + 0.05f);
+            yield return new WaitForSeconds(0.08f);
+        }
+
+        for (int i = 0; i < 20; i++)
+        {
+            logo_hl.color = new Color(logo_hl.color.r, logo_hl.color.g, logo_hl.color.b, logo_hl.color.a - 0.05f);
+            yield return new WaitForSeconds(0.08f);
+        }
+
+        counter = 0;
     }
 }

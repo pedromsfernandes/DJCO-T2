@@ -36,7 +36,6 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
 
     public void OnValueChanged_TogglePrivate(bool isPrivate)
     {  
-        Debug.Log("CARALHO:" + isPrivate);
         this._private = isPrivate;
     }
 
