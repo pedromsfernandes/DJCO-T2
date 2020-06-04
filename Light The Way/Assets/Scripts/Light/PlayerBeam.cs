@@ -122,7 +122,7 @@ namespace Light
         {
             Debug.Log(originalPlayerName);
 
-            if (GameState.Instance.playerTransform.name != originalPlayerName)
+            if (transform.parent.transform.name != originalPlayerName)
                 return;
             GameObject originalPlayer = GameObject.Find(originalPlayerName);
             Transform originalTransform = originalPlayer.GetComponent<Transform>();

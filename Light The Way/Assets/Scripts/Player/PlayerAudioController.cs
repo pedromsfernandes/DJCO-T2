@@ -45,8 +45,11 @@ public class PlayerAudioController : MonoBehaviour
 
     void Update()
     {
-        GameState.Instance.playerTransform = GetComponent<Transform>();
-        GameState.Instance.playerRigidbody = GetComponentInChildren<Rigidbody>();
+        if (GetComponent<PhotonView>().IsMine)
+        {
+            GameState.Instance.playerTransform = GetComponent<Transform>();
+            GameState.Instance.playerRigidbody = GetComponentInChildren<Rigidbody>();
+        }
 
         PlayBeamSound();
 
@@ -181,7 +184,7 @@ public class PlayerAudioController : MonoBehaviour
     {
         Debug.Log(originalPlayerName);
 
-        if (GameState.Instance.playerTransform.name != originalPlayerName)
+        if (this.transform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
@@ -202,7 +205,7 @@ public class PlayerAudioController : MonoBehaviour
     [PunRPC]
     void PlayGreenBeamSoundSelf(bool play, string originalPlayerName)
     {
-        if (GameState.Instance.playerTransform.name != originalPlayerName)
+        if (this.transform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
@@ -223,7 +226,7 @@ public class PlayerAudioController : MonoBehaviour
     [PunRPC]
     void PlayBlueBeamSoundSelf(bool play, string originalPlayerName)
     {
-        if (GameState.Instance.playerTransform.name != originalPlayerName)
+        if (this.transform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
@@ -345,7 +348,7 @@ public class PlayerAudioController : MonoBehaviour
     [PunRPC]
     void PlayWalkingSoundSelf(bool play, bool running, float floorType, string originalPlayerName)
     {
-        if (GameState.Instance.playerTransform.name != originalPlayerName)
+        if (this.transform.name != originalPlayerName)
             return;
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
