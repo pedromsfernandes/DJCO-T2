@@ -49,7 +49,6 @@ MonoBehaviour:
   - RPC_ChangeReadyState
   - SetStaffActiveSelf
   - UpdateColorSelf
-  - MoveOthers
   DisableAutoOpenWizard: 1
   ShowSettings: 1
-  DevRegionSetOnce: 1
+  DevRegionSetOnce: 0
