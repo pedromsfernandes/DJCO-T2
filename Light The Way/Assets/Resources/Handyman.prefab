@@ -636,7 +636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 293d7c7af6381f9449444a981f6acf60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBridgeLength: 10
+  maxBridgeLength: 100
   maxDistanceBetweenPlayerAndLightBridgePoint: 100
 --- !u!1 &7841573970210663685
 GameObject:
