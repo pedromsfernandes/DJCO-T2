@@ -10,6 +10,9 @@ namespace Lighting
 
         private Transform _transform;
 
+        [FMODUnity.EventRef]
+        public string selectedRotateSunSound = "event:/FX/Sun/Sun-Moving";
+
         // Start is called before the first frame update
         private void Start()
         {
@@ -38,6 +41,8 @@ namespace Lighting
         void RotateSelf(float axis, float delta, float speed)
         {
             _transform.Rotate(Math.Sign(axis) * delta * speed, 0, 0);
+
+            FMODUnity.RuntimeManager.PlayOneShot(selectedRotateSunSound, this.transform.position);
         }
     }
 }

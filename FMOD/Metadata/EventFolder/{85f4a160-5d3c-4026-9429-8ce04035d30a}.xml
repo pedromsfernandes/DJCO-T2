@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="EventFolder" id="{85f4a160-5d3c-4026-9429-8ce04035d30a}">
+		<property name="name">
+			<value>Splitter</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ea7494d3-ae62-4477-a1b4-71e1770e36da}</destination>
+		</relationship>
+	</object>
+</objects>

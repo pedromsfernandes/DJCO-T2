@@ -190,8 +190,6 @@ public class PlayerAudioController : MonoBehaviour
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(redBeamSoundEvent, originalTransform, originalRigidbody);
 
-        Debug.Log("Red Beam Sound: " + play + " By " + originalPlayerName);
-
         if (play)
         {
             redBeamSoundEvent.start();
@@ -212,7 +210,6 @@ public class PlayerAudioController : MonoBehaviour
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(greenBeamSoundEvent, originalTransform, originalRigidbody);
-        Debug.Log("Green Beam Sound: " + play + " By " + originalPlayerName);
 
         if (play)
         {
@@ -234,7 +231,6 @@ public class PlayerAudioController : MonoBehaviour
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(blueBeamSoundEvent, originalTransform, originalRigidbody);
-        Debug.Log("Blue Beam Sound: " + play + " By " + originalPlayerName);
 
         if (play)
         {
@@ -355,8 +351,6 @@ public class PlayerAudioController : MonoBehaviour
         GameObject originalPlayer = GameObject.Find(originalPlayerName);
         Transform originalTransform = originalPlayer.GetComponent<Transform>();
         Rigidbody originalRigidbody = originalPlayer.GetComponentInChildren<Rigidbody>();
-
-        //Debug.Log("Sound active: " + play + " / running? " + running + " / floortype: " + floorType + " / Player: " + originalPlayerName);
         
         if (GameState.Instance.playerTransform.name == "Captain(Clone)")
         {
