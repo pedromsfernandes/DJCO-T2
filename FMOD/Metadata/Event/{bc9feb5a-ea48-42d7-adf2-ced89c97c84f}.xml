@@ -128,9 +128,6 @@
 		<property name="looping">
 			<value>true</value>
 		</property>
-		<relationship name="fadeInCurve">
-			<destination>{6cf7f408-d3a5-4778-b56f-1b2eea7491bd}</destination>
-		</relationship>
 		<relationship name="fadeOutCurve">
 			<destination>{db74f20e-eb74-4977-a6c6-5fb0e88a3c71}</destination>
 		</relationship>
@@ -220,14 +217,6 @@
 			<destination>{1e3be758-a0a6-47d0-a819-66109c4965e9}</destination>
 		</relationship>
 	</object>
-	<object class="FadeCurve" id="{6cf7f408-d3a5-4778-b56f-1b2eea7491bd}">
-		<relationship name="startPoint">
-			<destination>{6638c06f-cda1-4001-bdd0-258637f40f89}</destination>
-		</relationship>
-		<relationship name="endPoint">
-			<destination>{933d34b4-2615-45f1-8941-240d58e3f363}</destination>
-		</relationship>
-	</object>
 	<object class="FadeCurve" id="{db74f20e-eb74-4977-a6c6-5fb0e88a3c71}">
 		<relationship name="startPoint">
 			<destination>{75835295-5ecd-4d51-baa4-6413b37db8e9}</destination>
@@ -301,25 +290,6 @@
 		</property>
 		<property name="value">
 			<value>0</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{6638c06f-cda1-4001-bdd0-258637f40f89}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="value">
-			<value>0</value>
-		</property>
-		<property name="curveShape">
-			<value>0.0345629714</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{933d34b4-2615-45f1-8941-240d58e3f363}">
-		<property name="position">
-			<value>0.20000000000000001</value>
-		</property>
-		<property name="value">
-			<value>1</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{75835295-5ecd-4d51-baa4-6413b37db8e9}">
