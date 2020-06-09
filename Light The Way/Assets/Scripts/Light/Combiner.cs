@@ -10,7 +10,7 @@ namespace Light
         {
             _combinerBeam = transform.GetChild(0).GetComponent<LightBeam>();
             LightBeam.UpdateLightBeam(_combinerBeam.gameObject, LightColor.Of(LightType.None), 
-                _combinerBeam.gameObject.transform.position, transform.forward);
+                transform.position, transform.forward);
             
             _combinerBeam.gameObject.SetActive(true);
         }
