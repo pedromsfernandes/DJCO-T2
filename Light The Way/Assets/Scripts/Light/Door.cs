@@ -6,16 +6,23 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public Light.Endpoint[] endpoints;
+    public float height;
+
+    bool open = false;
 
     void Update()
     {
-        for (int i = 0; i < endpoints.Length; i++)
+        if(!open)
         {
-            if (!endpoints[i].open)
-                return;
-        }
+            for (int i = 0; i < endpoints.Length; i++)
+            {
+                if (!endpoints[i].open)
+                    return;
+            }
 
-        GetComponent<PhotonView>().RPC("OpenDoorSelf", RpcTarget.All);
+            GetComponent<PhotonView>().RPC("OpenDoorSelf", RpcTarget.All);
+            open = true;
+        }
     }
 
     [PunRPC]
@@ -26,6 +33,17 @@ public class Door : MonoBehaviour
             ep.Deactivate();
         }
 
-        this.gameObject.SetActive(false);
+        StartCoroutine("DoorOpenAnim");
+    }
+
+    IEnumerator DoorOpenAnim()
+    {
+        float step = height / 330f;
+
+        for (int i = 0; i < 330; i++)
+        {
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - step, transform.localPosition.z);
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 }
