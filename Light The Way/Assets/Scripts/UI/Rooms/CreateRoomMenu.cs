@@ -37,13 +37,18 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
     }
 
     public void OnValueChanged_TogglePrivate(bool isPrivate)
-    {  
+    {
         this._private = isPrivate;
     }
 
     public override void OnCreatedRoom()
     {
         Debug.Log("Created room successfully");
+        menu.CreateRoomSuccessful();
+    }
+
+    public override void OnJoinedRoom()
+    {
         menu.CreateRoomSuccessful();
     }
 
