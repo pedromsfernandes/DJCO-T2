@@ -44,6 +44,27 @@ namespace Light
             }
         }
 
+        private void OnEnable()
+        {
+            InvokeRepeating(nameof(SyncDirection), 0.5f, 0.5f);
+        }
+
+        private void SyncDirection()
+        {
+            GetComponent<PhotonView>().RPC(nameof(SyncDirectionSelf), RpcTarget.All, camera.transform.forward);
+        }
+
+        [PunRPC]
+        public void SyncDirectionSelf(Vector3 direction)
+        {
+            Direction = direction;
+        }
+
+        private void OnDisable()
+        {
+            CancelInvoke(nameof(SyncDirection));
+        }
+
         protected override void Update()
         {
             if (!Active) return;
@@ -88,7 +109,7 @@ namespace Light
                 base.UpdateColor(LightColor.Of((LightType)colorType));
         }
 
-        // Enables the LightBeam for all Clients (Used when starting a chain of LightBeams
+        // Enables the LightBeam for all Clients (Used when starting a chain of LightBeams)
         public void Enable(bool op)
         {
 
