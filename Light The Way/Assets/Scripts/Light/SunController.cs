@@ -25,7 +25,6 @@ namespace Lighting
                 && Math.Abs(scrollAxis) > 0.01)
             {
                 Rotate(scrollAxis, Time.deltaTime, rotationSpeed);
-                GameState.Instance.sunDirection = _transform.forward;
             }
         }
 
@@ -38,6 +37,7 @@ namespace Lighting
         void RotateSelf(float axis, float delta, float speed)
         {
             _transform.Rotate(Math.Sign(axis) * delta * speed, 0, 0);
+            GameState.Instance.sunDirection = _transform.forward;
         }
     }
 }
