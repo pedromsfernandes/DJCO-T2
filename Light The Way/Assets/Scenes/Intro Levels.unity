@@ -27850,6 +27850,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.28
       objectReference: {fileID: 0}
+    - target: {fileID: 1017356594819377234, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -46.47
+      objectReference: {fileID: 0}
     - target: {fileID: 1626583452390705929, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -27954,6 +27959,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3521821887222094028, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 3547427348360423959, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
@@ -28069,6 +28079,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 68.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511358961760026130, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: targetColor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4543370467035777495, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
@@ -28340,6 +28355,11 @@ PrefabInstance:
       propertyPath: height
       value: 25.8
       objectReference: {fileID: 0}
+    - target: {fileID: 7988533675223983347, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -72.63
+      objectReference: {fileID: 0}
     - target: {fileID: 8770509830712237252, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
       propertyPath: angle
@@ -28374,6 +28394,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -6.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931695338433708612, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: targetColor
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8971877328168376970, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
@@ -42347,9 +42372,9 @@ MonoBehaviour:
   _prefab: {fileID: 7841573969275939898, guid: 20f3506190c57654c8c5e2dde512775d, type: 3}
   recorder: {fileID: 0}
   positions:
-  - {x: 314, y: 25, z: 1343}
-  - {x: 314, y: 25, z: 1343}
-  - {x: 316, y: 25, z: 1343}
+  - {x: 312, y: 30, z: 1343}
+  - {x: 314, y: 30, z: 1343}
+  - {x: 316, y: 30, z: 1343}
   - {x: 312, y: 25, z: 1343}
   prefabs:
   - {fileID: 7841573969275939898, guid: 20f3506190c57654c8c5e2dde512775d, type: 3}
