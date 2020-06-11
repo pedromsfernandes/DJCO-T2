@@ -16,9 +16,9 @@ namespace Light
         private void Start()
         {
             _combinerBeam = transform.GetChild(0).GetComponent<LightBeam>();
-            LightBeam.UpdateLightBeam(_combinerBeam.gameObject, LightColor.Of(LightType.None), 
-                _combinerBeam.gameObject.transform.position, transform.forward);
-            
+            LightBeam.UpdateLightBeam(_combinerBeam.gameObject, LightColor.Of(LightType.None),
+                    _combinerBeam.transform.position, transform.forward);
+
             _combinerBeam.gameObject.SetActive(true);
 
             //sound

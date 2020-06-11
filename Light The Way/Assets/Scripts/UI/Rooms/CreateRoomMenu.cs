@@ -7,6 +7,8 @@ using Photon.Realtime;
 
 public class CreateRoomMenu : MonoBehaviourPunCallbacks
 {
+    public MainMenuController menu;
+
     [SerializeField]
     private Text _roomName;
 
@@ -35,15 +37,19 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
     }
 
     public void OnValueChanged_TogglePrivate(bool isPrivate)
-    {  
-        Debug.Log("CARALHO:" + isPrivate);
+    {
         this._private = isPrivate;
     }
 
     public override void OnCreatedRoom()
     {
         Debug.Log("Created room successfully");
-        _roomsCanvases.CurrentRoomCanvas.Show();
+        menu.CreateRoomSuccessful();
+    }
+
+    public override void OnJoinedRoom()
+    {
+        menu.CreateRoomSuccessful();
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)

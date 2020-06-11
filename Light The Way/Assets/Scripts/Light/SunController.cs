@@ -28,7 +28,6 @@ namespace Lighting
                 && Math.Abs(scrollAxis) > 0.01)
             {
                 Rotate(scrollAxis, Time.deltaTime, rotationSpeed);
-                GameState.Instance.sunDirection = _transform.forward;
             }
         }
 
@@ -43,6 +42,7 @@ namespace Lighting
             _transform.Rotate(Math.Sign(axis) * delta * speed, 0, 0);
 
             FMODUnity.RuntimeManager.PlayOneShot(selectedRotateSunSound, this.transform.position);
+            GameState.Instance.sunDirection = _transform.forward;
         }
     }
 }
