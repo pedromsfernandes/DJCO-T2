@@ -5,18 +5,6 @@ namespace Light
 {
     public class Divider : BeamEmitter
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
-
         protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
         {
             Vector3 diff = hit.point - transform.position;
@@ -26,9 +14,10 @@ namespace Light
             foreach (var color in primaryColors)
             {
                 angle += angleDelta;
-                
-                var originDiff = Quaternion.AngleAxis(angle, transform.up) * diff;
-                var direction = Vector3.ProjectOnPlane(originDiff, transform.up);
+
+                var up = transform.up;
+                var originDiff = Quaternion.AngleAxis(angle, up) * diff;
+                var direction = Vector3.ProjectOnPlane(originDiff, up);
                 EmitBeam(color, transform.position + originDiff, direction);
             }
         }

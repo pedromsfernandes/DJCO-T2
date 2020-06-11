@@ -389,6 +389,7 @@
             <e p="Destroyable.cs" t="Include" />
             <e p="Divider.cs" t="Include" />
             <e p="Door.cs" t="Include" />
+            <e p="Emitter.cs" t="Include" />
             <e p="Endpoint.cs" t="Include" />
             <e p="LightBeam.cs" t="Include" />
             <e p="LightColor.cs" t="Include" />
