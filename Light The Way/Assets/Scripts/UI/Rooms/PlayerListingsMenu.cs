@@ -7,6 +7,8 @@ using Photon.Realtime;
 
 public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 {
+    public GameObject canvas;
+
     [SerializeField]
     private PlayerListing _playerListing;
 
@@ -32,6 +34,7 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
         base.OnEnable();
         SetReadyUp(false);
         GetCurrentRoomPlayers();
+        canvas.SetActive(false);
     }
 
     public override void OnDisable()

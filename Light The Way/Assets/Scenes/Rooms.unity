@@ -643,6 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd892786863a147ae8c03a23c6114ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 1936767474}
   _playerListing: {fileID: 6097996764519046988, guid: 688e25d1415561941ab5e34b1cd23a44,
     type: 3}
   _content: {fileID: 82013952}
@@ -8631,6 +8632,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 561409926051313022}
   - {fileID: 561409925562388731}
+  height: 0
 --- !u!33 &561409924179964346
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10980,6 +10982,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 5620849105815059746}
   - {fileID: 5620849105550724993}
+  height: 0
 --- !u!33 &561409924330764870
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15503,6 +15506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 561409925547025485}
+  height: 0
 --- !u!114 &561409924608362757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15744,6 +15748,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 561409924474150248}
   - {fileID: 561409925850140266}
+  height: 0
 --- !u!114 &561409924616428793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17977,6 +17982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 561409925246530598}
+  height: 0
 --- !u!33 &561409924741877806
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18273,6 +18279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 561409925963077547}
+  height: 0
 --- !u!33 &561409924766055732
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19217,6 +19224,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 5620849105561013117}
   - {fileID: 5620849105571937049}
+  height: 0
 --- !u!1 &561409924853227218
 GameObject:
   m_ObjectHideFlags: 0
@@ -20297,6 +20305,7 @@ MonoBehaviour:
   - {fileID: 561409925705167482}
   - {fileID: 561409926065868469}
   - {fileID: 561409924725926908}
+  height: 0
 --- !u!114 &561409924900538545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25575,6 +25584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 561409925675312983}
+  height: 0
 --- !u!33 &561409925251437032
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26376,6 +26386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 561409925300930018}
+  height: 0
 --- !u!33 &561409925301944690
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28511,6 +28522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 5620849106181967279}
+  height: 0
 --- !u!23 &561409925395779624
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28678,6 +28690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 5620849106274494599}
+  height: 0
 --- !u!114 &561409925402681097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31304,6 +31317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 561409925970944938}
+  height: 0
 --- !u!114 &561409925573955589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32640,6 +32654,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 561409925653361061}
   - {fileID: 561409925762446230}
+  height: 0
 --- !u!114 &561409925655833107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38135,6 +38150,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 0}
   - {fileID: 0}
+  height: 0
 --- !u!4 &561409926002163609
 Transform:
   m_ObjectHideFlags: 0
@@ -40267,6 +40283,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 5620849106543365466}
   - {fileID: 5620849105813680188}
+  height: 0
 --- !u!114 &561409926147955297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41175,6 +41192,7 @@ MonoBehaviour:
   - {fileID: 561409924578540973}
   - {fileID: 561409924543200965}
   - {fileID: 561409925828348962}
+  height: 0
 --- !u!4 &561409926195917969
 Transform:
   m_ObjectHideFlags: 0
@@ -49504,6 +49522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endpoints: []
+  height: 0
 --- !u!136 &6577688716098957967
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -49640,6 +49659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endpoints: []
+  height: 0
 --- !u!1 &6885090026679486120
 GameObject:
   m_ObjectHideFlags: 0
