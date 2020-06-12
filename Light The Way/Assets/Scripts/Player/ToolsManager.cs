@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
@@ -31,13 +32,31 @@ public class ToolsManager : MonoBehaviour
         tool2 = GameObject.Find("Tool2");
         tool3 = GameObject.Find("Tool3");
 
-        GameState.Instance.hasTool1 = false;
-        GameState.Instance.hasTool2 = false;
-        GameState.Instance.hasTool3 = false;
+        int index = Array.FindIndex(PhotonNetwork.PlayerList, x => x == PhotonNetwork.LocalPlayer);
 
-        GameState.Instance.canCreateLightBridges = true;
-        GameState.Instance.canRotateSun = true;
-        GameState.Instance.canDestroyObjects = true;
+        switch (index)
+        {
+            case 0:
+                GameState.Instance.hasTool1 = true;
+                GameState.Instance.currentTool = 1;
+                if (MasterManager.Checkpoint >= 1)
+                    GameState.Instance.canDestroyObjects = true;
+                break;
+            case 1:
+                GameState.Instance.hasTool2 = true;
+                GameState.Instance.currentTool = 2;
+                if (MasterManager.Checkpoint >= 3)
+                    GameState.Instance.canRotateSun = true;
+                break;
+            case 2:
+                GameState.Instance.hasTool3 = true;
+                GameState.Instance.currentTool = 3;
+                if (MasterManager.Checkpoint >= 2)
+                    GameState.Instance.canCreateLightBridges = true;
+                break;
+            default:
+                break;
+        }
     }
 
     void Update()
@@ -162,7 +181,7 @@ public class ToolsManager : MonoBehaviour
                 GameState.Instance.hasTool3 = true;
                 GameState.Instance.currentTool = 3;
             }
-            
+
             FMODUnity.RuntimeManager.PlayOneShot(selectedPickUpToolSound, GameState.Instance.playerTransform.position);
 
             deletePickedUpTool(toolName);

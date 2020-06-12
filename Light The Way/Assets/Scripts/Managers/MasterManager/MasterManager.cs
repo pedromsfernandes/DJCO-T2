@@ -21,9 +21,17 @@ public class MasterManager : SingletonScriptableObject<MasterManager>
 
     public static Dictionary<string, bool> TalkingPlayers { get { return Instance._talkingPlayers; } }
 
+    private int _checkpoint = 0;
+    public static int Checkpoint { get { return Instance._checkpoint;} }
+
     public static void UpdatePlayer(string player, bool talking)
     {
         Instance._talkingPlayers[player] = talking;
+    }
+
+    public static void SetLevel(int level)
+    {
+        Instance._checkpoint = level;
     }
 
     public static GameObject NetworkInstantiate(GameObject obj, Vector3 position, Quaternion rotation)

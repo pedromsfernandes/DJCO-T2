@@ -24,6 +24,9 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
     private bool _ready = false;
 
+    [SerializeField]
+    private Dropdown _checkpoint;
+
     public void FirstInitialize(RoomsCanvases canvases)
     {
         _roomsCanvases = canvases;
@@ -122,6 +125,7 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
+            base.photonView.RPC("RPC_SetCheckpoint", RpcTarget.All, _checkpoint.value);
             PhotonNetwork.LoadLevel(1);
         }
     }
@@ -140,5 +144,11 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
         if (index != -1)
             _listings[index].ready = ready;
+    }
+
+    [PunRPC]
+    private void RPC_SetCheckpoint(int value)
+    {
+        MasterManager.SetLevel(value);
     }
 }
