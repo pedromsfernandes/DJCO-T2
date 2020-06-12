@@ -547,6 +547,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 584671952}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &5494185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2574,6 +2575,7 @@ MonoBehaviour:
   - {fileID: 213223776}
   - {fileID: 256663091}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!65 &114078422
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3999,6 +4001,7 @@ MonoBehaviour:
   - {fileID: 1148189941}
   - {fileID: 1024715899}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!65 &145588034
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4947,6 +4950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 50
+  selectedRotateSunSound: event:/FX/Sun/Sun-Moving
 --- !u!108 &162649898
 Light:
   m_ObjectHideFlags: 0
@@ -5372,6 +5376,340 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 176854636}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &180942111
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1731559711034646399, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: viewIdField
+      value: 68
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775604008584421065, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: viewIdField
+      value: 67
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800728059503210105, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: viewIdField
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3120677809611086232, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.541636
+      objectReference: {fileID: 0}
+    - target: {fileID: 3120677809611086232, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 30.530005
+      objectReference: {fileID: 0}
+    - target: {fileID: 3120677809611086232, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.549927
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164199314436944061, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.009621414
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164199314436944061, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.20788643
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164199314436944061, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.055521764
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164199314436944061, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9765285
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164199314436944061, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164199314436944061, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -23.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553911830868582760, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -33.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553911830868582760, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 30.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553911830868582760, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556554065381948905, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056177750684050100, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1405
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056177750684050100, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056177750684050100, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1072
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056177750684050100, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.028483704
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056177750684050100, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.14691257
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056177750684050100, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.072407335
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056177750684050100, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9860845
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056177750684050100, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056177750684050100, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056177750684050100, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 17.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056177750684050100, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 8.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242822586497527721, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.028084194
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242822586497527721, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.8549042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242822586497527721, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.050603013
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242822586497527721, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.51554775
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242822586497527721, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242822586497527721, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -117.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6009242034091842644, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: viewIdField
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137838320595130574, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: targetColor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239178864811811014, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: viewIdField
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278778416942623638, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.1302925
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278778416942623638, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.2540402
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278778416942623638, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.068728715
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278778416942623638, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.95590997
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278778416942623638, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 16.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278778416942623638, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 29.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281766432035211055, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.048526324
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281766432035211055, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9430906
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281766432035211055, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.006745772
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281766432035211055, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.3289071
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281766432035211055, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281766432035211055, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -218.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760263075752007426, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.213835
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760263075752007426, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 30.530005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760263075752007426, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.275743
+      objectReference: {fileID: 0}
+    - target: {fileID: 7007588197519621747, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.3079526
+      objectReference: {fileID: 0}
+    - target: {fileID: 7007588197519621747, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5764709
+      objectReference: {fileID: 0}
+    - target: {fileID: 7007588197519621747, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.065785155
+      objectReference: {fileID: 0}
+    - target: {fileID: 7007588197519621747, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.75400186
+      objectReference: {fileID: 0}
+    - target: {fileID: 7007588197519621747, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -32.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7007588197519621747, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -80.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7007588197519621747, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 17.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307467637923987259, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.213835
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307467637923987259, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 30.530005
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307467637923987259, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1745181
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838492561909015053, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: viewIdField
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052339322618832285, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: viewIdField
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102115612183449767, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: m_Name
+      value: Green_Temple
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955795862665459912, guid: 89e1407e676a8d444b905d6b0d5f940c,
+        type: 3}
+      propertyPath: viewIdField
+      value: 66
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89e1407e676a8d444b905d6b0d5f940c, type: 3}
 --- !u!1 &181419876
 GameObject:
   m_ObjectHideFlags: 0
@@ -6911,6 +7249,8 @@ MonoBehaviour:
   targetColor: 5
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &213223777
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8043,6 +8383,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!65 &254518483
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8153,6 +8494,8 @@ MonoBehaviour:
   targetColor: 6
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &256663092
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8582,6 +8925,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!65 &264291547
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8993,6 +9337,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 1232769196}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!65 &270678284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9618,6 +9963,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 303355628}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &285710729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10112,6 +10458,8 @@ MonoBehaviour:
   targetColor: 2
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &297266764
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10316,6 +10664,8 @@ MonoBehaviour:
   targetColor: 7
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &303355629
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10449,6 +10799,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!65 &311042194
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10647,6 +10998,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 1085072562}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!65 &322546493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10966,6 +11318,7 @@ MonoBehaviour:
   - {fileID: 176854637}
   - {fileID: 1856910180}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!65 &327365089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12872,6 +13225,8 @@ MonoBehaviour:
   targetColor: 7
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &431329452
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14841,6 +15196,7 @@ MonoBehaviour:
   - {fileID: 1515305457}
   - {fileID: 1440209217}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!65 &482558865
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15438,6 +15794,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!114 &491711720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16464,6 +16821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!65 &522977444
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18500,6 +18858,8 @@ MonoBehaviour:
   targetColor: 7
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &584671953
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18717,7 +19077,7 @@ Transform:
   - {fileID: 1076271303}
   - {fileID: 2141630024}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: -314.3, z: 15.48}
 --- !u!1 &588314357
 GameObject:
@@ -19909,6 +20269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!65 &636477025
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20544,6 +20905,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 1166108169}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &646152999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21081,6 +21443,8 @@ MonoBehaviour:
   targetColor: 1
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &653074860
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21189,6 +21553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!65 &653219261
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21745,7 +22110,7 @@ Transform:
   - {fileID: 1519207207}
   - {fileID: 98085010}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &670374186
 GameObject:
@@ -22589,6 +22954,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 1925510535}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &710840319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23710,6 +24076,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!114 &741266627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25084,6 +25451,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 1409694877}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &771400485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25621,6 +25989,8 @@ MonoBehaviour:
   targetColor: 1
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &786646898
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26059,6 +26429,8 @@ MonoBehaviour:
   targetColor: 5
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &800295779
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27204,7 +27576,7 @@ Transform:
   - {fileID: 965796575}
   - {fileID: 739055541}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -406.69, z: 8.7}
 --- !u!1 &825880242
 GameObject:
@@ -27937,6 +28309,7 @@ MonoBehaviour:
   - {fileID: 1792130033}
   - {fileID: 653074859}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &844614064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29137,6 +29510,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!65 &890000701
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30691,6 +31065,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 1219197200}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!65 &975970378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32388,6 +32763,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!65 &1065676489
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32760,6 +33136,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 1742562226}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!65 &1082055378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33437,6 +33814,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!114 &1100162238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34736,6 +35114,7 @@ MonoBehaviour:
   - {fileID: 1980298460}
   - {fileID: 779615257}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!65 &1138013916
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35014,6 +35393,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 40.2
       objectReference: {fileID: 0}
+    - target: {fileID: 313480519883554374, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 59
+      objectReference: {fileID: 0}
     - target: {fileID: 362548732069878396, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
       propertyPath: m_IsActive
@@ -35068,6 +35452,11 @@ PrefabInstance:
         type: 3}
       propertyPath: height
       value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 714451661037840368, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 775766147216539208, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
@@ -35153,6 +35542,16 @@ PrefabInstance:
         type: 3}
       propertyPath: viewIdField
       value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719437094486430427, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 61
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773085662193186209, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2821642805138645599, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
@@ -35318,6 +35717,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 111.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829824082401606801, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 3952338145203832309, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 3961336676225065321, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
@@ -35504,10 +35913,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5183172853828041209, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 53
+      objectReference: {fileID: 0}
     - target: {fileID: 5292842078679251447, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
       propertyPath: targetColor
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5313972128731807303, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5334197426046664327, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
@@ -35594,6 +36013,16 @@ PrefabInstance:
       propertyPath: viewIdField
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 5996395335799484412, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189315697230491696, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 54
+      objectReference: {fileID: 0}
     - target: {fileID: 6248698080644038286, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
       propertyPath: m_IsActive
@@ -35634,6 +36063,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 63.6
       objectReference: {fileID: 0}
+    - target: {fileID: 6976210764343693526, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016216542238297807, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 52
+      objectReference: {fileID: 0}
     - target: {fileID: 7196428611430724506, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
       propertyPath: m_IsActive
@@ -35658,6 +36097,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -75.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 8336679809739946403, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 57
       objectReference: {fileID: 0}
     - target: {fileID: 8650293085823826720, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
@@ -35708,6 +36152,11 @@ PrefabInstance:
         type: 3}
       propertyPath: height
       value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9088416077515719925, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 9099483577591155385, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
@@ -36034,6 +36483,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!114 &1152290144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36424,6 +36874,7 @@ MonoBehaviour:
   - {fileID: 484658940}
   - {fileID: 1042482966}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!65 &1157909577
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36663,6 +37114,8 @@ MonoBehaviour:
   targetColor: 7
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &1166108170
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -37716,6 +38169,8 @@ MonoBehaviour:
   targetColor: 7
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &1219197201
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -37958,6 +38413,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!65 &1229261738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38415,7 +38871,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
+  serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
@@ -38469,6 +38925,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!65 &1235688926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39001,6 +39458,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!23 &1254248923
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39824,7 +40282,7 @@ Transform:
   - {fileID: 1185605556}
   - {fileID: 128673520}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: -14, y: 125.1, z: -0.72}
 --- !u!1 &1291555145
 GameObject:
@@ -40368,6 +40826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!65 &1308238090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42490,7 +42949,7 @@ Transform:
   - {fileID: 1010591768}
   - {fileID: 247044868}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: -74.179, z: 0}
 --- !u!1 &1384939883
 GameObject:
@@ -42565,6 +43024,7 @@ MonoBehaviour:
   - {fileID: 758299525}
   - {fileID: 1679034597}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!65 &1384939887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43098,6 +43558,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &1403288412
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -43313,6 +43775,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!114 &1405754164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43538,6 +44001,8 @@ MonoBehaviour:
   targetColor: 2
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &1409694878
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -44136,6 +44601,7 @@ MonoBehaviour:
   - {fileID: 1661514382}
   - {fileID: 297266763}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!65 &1427126545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45269,6 +45735,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!114 &1490614448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49083,6 +49550,7 @@ MonoBehaviour:
   - {fileID: 786646897}
   - {fileID: 2039668190}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &1633650064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49434,6 +49902,8 @@ MonoBehaviour:
   targetColor: 5
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &1661514383
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -50245,6 +50715,8 @@ MonoBehaviour:
   targetColor: 1
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &1690286106
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -50920,6 +51392,7 @@ MonoBehaviour:
   - {fileID: 285467985}
   - {fileID: 490392231}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!65 &1704019116
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52064,6 +52537,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!114 &1747184022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52937,6 +53411,8 @@ MonoBehaviour:
   targetColor: 2
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &1792130034
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -53106,7 +53582,7 @@ MonoBehaviour:
   _prefab: {fileID: 7841573969275939898, guid: 20f3506190c57654c8c5e2dde512775d, type: 3}
   recorder: {fileID: 0}
   positions:
-  - {x: 312, y: 30, z: 1343}
+  - {x: -1423.397, y: 60, z: -1086.252}
   - {x: 314, y: 30, z: 1343}
   - {x: 316, y: 30, z: 1343}
   - {x: 312, y: 25, z: 1343}
@@ -53122,7 +53598,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799754925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.991597, y: 42.77753, z: 0}
+  m_LocalPosition: {x: -1583.8, y: 53, z: -1050.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58466,6 +58942,8 @@ MonoBehaviour:
   targetColor: 2
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &2039668191
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -59080,6 +59558,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 1156896315}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!65 &2070231436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59280,6 +59759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!65 &2073022871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59847,7 +60327,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
+  serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3931546471491194837, guid: 3c78bf45493934141a59a1b52feee0f7, type: 3}
@@ -60684,6 +61164,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &2122701331
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -62139,6 +62621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 20
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!33 &5590934254551056297
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -62199,6 +62682,7 @@ MonoBehaviour:
   - {fileID: 1690286105}
   - {fileID: 2122701330}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!23 &6300621553735026580
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62250,6 +62734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!114 &6335750592944043327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62265,6 +62750,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 7486841435265610923}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!33 &6403679971142031762
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -64395,7 +64881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7486841435101167642
 Transform:
   m_ObjectHideFlags: 0
@@ -64412,7 +64898,7 @@ Transform:
   - {fileID: 7486841434430902792}
   - {fileID: 7486841434293490079}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 2, y: 17.1, z: 8.7}
 --- !u!4 &7486841435105664292
 Transform:
@@ -64711,6 +65197,8 @@ MonoBehaviour:
   targetColor: 2
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!1 &7486841435301401378
 GameObject:
   m_ObjectHideFlags: 0
@@ -65431,7 +65919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &8017559853375062997
 MonoBehaviour:
   m_ObjectHideFlags: 0
