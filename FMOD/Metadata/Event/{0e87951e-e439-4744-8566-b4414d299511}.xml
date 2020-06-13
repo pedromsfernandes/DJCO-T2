@@ -64,7 +64,7 @@
 	<object class="MarkerTrack" id="{40e8dfd1-112b-4b78-9b15-71302e3bb81a}" />
 	<object class="GroupTrack" id="{eb3695f9-5f56-4384-b7eb-7d2b076a351c}">
 		<relationship name="modules">
-			<destination>{a8c2ce00-8b18-4f13-a07d-4384de1b8456}</destination>
+			<destination>{ce1faaa9-293d-4e94-8551-882af4d33e63}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{f8512a9f-244e-4bf3-b0ad-8b9200a6e2ee}</destination>
@@ -72,7 +72,7 @@
 	</object>
 	<object class="Timeline" id="{6b5505c8-6937-4367-9e64-6df36e25e2ea}">
 		<relationship name="modules">
-			<destination>{a8c2ce00-8b18-4f13-a07d-4384de1b8456}</destination>
+			<destination>{ce1faaa9-293d-4e94-8551-882af4d33e63}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{ec141dad-e496-4974-ba47-86aeb4ac7a46}">
@@ -92,15 +92,15 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4d8b9d0d-cb0f-49d8-b090-04344abc9a3a}" />
-	<object class="SingleSound" id="{a8c2ce00-8b18-4f13-a07d-4384de1b8456}">
+	<object class="SingleSound" id="{ce1faaa9-293d-4e94-8551-882af4d33e63}">
 		<property name="length">
 			<value>0.036439909297052153</value>
 		</property>
 		<relationship name="modulators">
-			<destination>{52fc4575-68c2-4021-ba67-521143a4bf15}</destination>
+			<destination>{1b3a3911-b7ba-4181-b9fe-aab153b70725}</destination>
 		</relationship>
 		<relationship name="audioFile">
-			<destination>{709d6a78-9942-4e7f-b380-2fc2fe6ecaa5}</destination>
+			<destination>{dd9d2469-38bb-4588-a38d-028a0285f3ab}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{f8512a9f-244e-4bf3-b0ad-8b9200a6e2ee}">
@@ -127,7 +127,7 @@
 	</object>
 	<object class="MixerBusPanner" id="{5843e273-6414-4863-aa4c-30a691763e1a}" />
 	<object class="MixerBusFader" id="{0574b32c-64c2-400e-98fd-065de49a2464}" />
-	<object class="RandomizerModulator" id="{52fc4575-68c2-4021-ba67-521143a4bf15}">
+	<object class="RandomizerModulator" id="{1b3a3911-b7ba-4181-b9fe-aab153b70725}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
 		</property>
