@@ -4860,6 +4860,7 @@ MonoBehaviour:
   logo: {fileID: 1360201549}
   logo_hl: {fileID: 2070696026}
   laser: {fileID: 1601494482}
+  selectedPickOptionSound: event:/Misc/Menu/Menu Pick
 --- !u!4 &1796646364
 Transform:
   m_ObjectHideFlags: 0
@@ -5858,6 +5859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!23 &417402277895656330
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6057,6 +6059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402277993627807
 Transform:
   m_ObjectHideFlags: 0
@@ -6165,6 +6168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402278040252299
 Transform:
   m_ObjectHideFlags: 0
@@ -6193,6 +6197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402278085796433
 Transform:
   m_ObjectHideFlags: 0
@@ -6427,6 +6432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!1 &417402278202510598
 GameObject:
   m_ObjectHideFlags: 0
@@ -6535,6 +6541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!65 &417402278370786630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6627,6 +6634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402278370786635
 Transform:
   m_ObjectHideFlags: 0
@@ -6745,6 +6753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402278638445397
 Transform:
   m_ObjectHideFlags: 0
@@ -6990,6 +6999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402278831529351
 Transform:
   m_ObjectHideFlags: 0
@@ -7131,6 +7141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402279000124143
 Transform:
   m_ObjectHideFlags: 0
@@ -7255,6 +7266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!1 &417402279057987896
 GameObject:
   m_ObjectHideFlags: 0
@@ -7407,6 +7419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402279186286415
 Transform:
   m_ObjectHideFlags: 0
@@ -7465,6 +7478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402279223864401
 Transform:
   m_ObjectHideFlags: 0
@@ -7573,6 +7587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402279265508085
 Transform:
   m_ObjectHideFlags: 0
@@ -7697,6 +7712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!23 &417402279269631042
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7896,6 +7912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402279512166771
 Transform:
   m_ObjectHideFlags: 0
@@ -8020,6 +8037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402279621677049
 Transform:
   m_ObjectHideFlags: 0
@@ -8155,6 +8173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402279854628805
 Transform:
   m_ObjectHideFlags: 0
@@ -8356,6 +8375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!1 &417402279905010638
 GameObject:
   m_ObjectHideFlags: 0
@@ -8633,6 +8653,7 @@ MonoBehaviour:
   - {fileID: 561409926051313022}
   - {fileID: 561409925562388731}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!33 &561409924179964346
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9131,6 +9152,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!23 &561409924191374300
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10983,6 +11005,7 @@ MonoBehaviour:
   - {fileID: 5620849105815059746}
   - {fileID: 5620849105550724993}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!33 &561409924330764870
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12166,6 +12189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!33 &561409924432238236
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12749,6 +12773,8 @@ MonoBehaviour:
   targetColor: 5
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409924474150249
 Transform:
   m_ObjectHideFlags: 0
@@ -13281,6 +13307,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!114 &561409924501628677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14097,6 +14124,8 @@ MonoBehaviour:
   targetColor: 5
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409924543200966
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14974,6 +15003,8 @@ MonoBehaviour:
   targetColor: 5
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409924578540974
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15507,6 +15538,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 561409925547025485}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &561409924608362757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15690,6 +15722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 20
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!33 &561409924609002937
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15749,6 +15782,7 @@ MonoBehaviour:
   - {fileID: 561409924474150248}
   - {fileID: 561409925850140266}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &561409924616428793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16125,6 +16159,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!114 &561409924651033217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17377,6 +17412,8 @@ MonoBehaviour:
   targetColor: 2
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409924725926909
 Transform:
   m_ObjectHideFlags: 0
@@ -17983,6 +18020,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 561409925246530598}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!33 &561409924741877806
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18280,6 +18318,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 561409925963077547}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!33 &561409924766055732
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19225,6 +19264,7 @@ MonoBehaviour:
   - {fileID: 5620849105561013117}
   - {fileID: 5620849105571937049}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!1 &561409924853227218
 GameObject:
   m_ObjectHideFlags: 0
@@ -19260,6 +19300,8 @@ MonoBehaviour:
   targetColor: 7
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409924853227221
 Transform:
   m_ObjectHideFlags: 0
@@ -20306,6 +20348,7 @@ MonoBehaviour:
   - {fileID: 561409926065868469}
   - {fileID: 561409924725926908}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &561409924900538545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21382,6 +21425,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!33 &561409924950525785
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -23581,6 +23625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &561409925116377257
 Transform:
   m_ObjectHideFlags: 0
@@ -25188,6 +25233,8 @@ MonoBehaviour:
   targetColor: 7
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409925246530599
 Transform:
   m_ObjectHideFlags: 0
@@ -25585,6 +25632,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 561409925675312983}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!33 &561409925251437032
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26283,6 +26331,8 @@ MonoBehaviour:
   targetColor: 2
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409925300930019
 Transform:
   m_ObjectHideFlags: 0
@@ -26387,6 +26437,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 561409925300930018}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!33 &561409925301944690
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26925,6 +26976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &561409925334920865
 Transform:
   m_ObjectHideFlags: 0
@@ -28378,6 +28430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!4 &561409925384200326
 Transform:
   m_ObjectHideFlags: 0
@@ -28523,6 +28576,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 5620849106181967279}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!23 &561409925395779624
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28691,6 +28745,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 5620849106274494599}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &561409925402681097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30516,6 +30571,8 @@ MonoBehaviour:
   targetColor: 2
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409925547025486
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -30613,6 +30670,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!114 &561409925552834085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30946,6 +31004,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!33 &561409925562366612
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -31078,6 +31137,8 @@ MonoBehaviour:
   targetColor: 1
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409925562388732
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -31318,6 +31379,7 @@ MonoBehaviour:
   endpoints:
   - {fileID: 561409925970944938}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &561409925573955589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32425,6 +32487,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!33 &561409925638477668
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -32557,6 +32620,8 @@ MonoBehaviour:
   targetColor: 1
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409925653361062
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -32655,6 +32720,7 @@ MonoBehaviour:
   - {fileID: 561409925653361061}
   - {fileID: 561409925762446230}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &561409925655833107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32894,6 +32960,8 @@ MonoBehaviour:
   targetColor: 7
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409925675313000
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -33566,6 +33634,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409925705167483
 Transform:
   m_ObjectHideFlags: 0
@@ -34085,6 +34155,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409925762446231
 Transform:
   m_ObjectHideFlags: 0
@@ -35076,6 +35148,8 @@ MonoBehaviour:
   targetColor: 2
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!1 &561409925828348963
 GameObject:
   m_ObjectHideFlags: 0
@@ -35347,6 +35421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &561409925835156295
 Transform:
   m_ObjectHideFlags: 0
@@ -35693,6 +35768,8 @@ MonoBehaviour:
   targetColor: 6
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409925850140267
 Transform:
   m_ObjectHideFlags: 0
@@ -37399,6 +37476,8 @@ MonoBehaviour:
   targetColor: 7
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409925963077548
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -37760,6 +37839,8 @@ MonoBehaviour:
   targetColor: 7
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409925970944939
 Transform:
   m_ObjectHideFlags: 0
@@ -38151,6 +38232,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!4 &561409926002163609
 Transform:
   m_ObjectHideFlags: 0
@@ -38713,6 +38795,8 @@ MonoBehaviour:
   targetColor: 2
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409926051313023
 Transform:
   m_ObjectHideFlags: 0
@@ -38886,6 +38970,8 @@ MonoBehaviour:
   targetColor: 1
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409926065868470
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -38965,6 +39051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &561409926071441849
 Transform:
   m_ObjectHideFlags: 0
@@ -40284,6 +40371,7 @@ MonoBehaviour:
   - {fileID: 5620849106543365466}
   - {fileID: 5620849105813680188}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &561409926147955297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41193,6 +41281,7 @@ MonoBehaviour:
   - {fileID: 561409924543200965}
   - {fileID: 561409925828348962}
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!4 &561409926195917969
 Transform:
   m_ObjectHideFlags: 0
@@ -41884,6 +41973,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!114 &561409926232253607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45507,6 +45597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!1 &3577432955373005957
 GameObject:
   m_ObjectHideFlags: 0
@@ -45639,6 +45730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!1 &3577432955545620053
 GameObject:
   m_ObjectHideFlags: 0
@@ -45777,6 +45869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!1 &3577432955606651759
 GameObject:
   m_ObjectHideFlags: 0
@@ -45875,6 +45968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!136 &3577432955680129970
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -46013,6 +46107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!33 &3577432955839182482
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -46068,6 +46163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!136 &3577432956294019266
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -46232,6 +46328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!1 &3577432956420019959
 GameObject:
   m_ObjectHideFlags: 0
@@ -46337,6 +46434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!33 &3577432956517794834
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -46372,6 +46470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!1 &3577432956932288045
 GameObject:
   m_ObjectHideFlags: 0
@@ -47535,6 +47634,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &5620849105550724994
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47708,6 +47809,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &5620849105561013118
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47819,6 +47922,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &5620849105571937050
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47930,6 +48035,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &5620849105767755886
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -48041,6 +48148,8 @@ MonoBehaviour:
   targetColor: 5
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!1 &5620849105813680190
 GameObject:
   m_ObjectHideFlags: 0
@@ -48124,6 +48233,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &5620849105815059756
 Transform:
   m_ObjectHideFlags: 0
@@ -48297,6 +48408,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &5620849106274494596
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -48346,6 +48459,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &5620849106274494601
 Transform:
   m_ObjectHideFlags: 0
@@ -48519,6 +48634,8 @@ MonoBehaviour:
   targetColor: 6
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!23 &5871383141653127670
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49523,6 +49640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints: []
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!136 &6577688716098957967
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -49660,6 +49778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints: []
   height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!1 &6885090026679486120
 GameObject:
   m_ObjectHideFlags: 0
@@ -50130,7 +50249,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7165848223501073046}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &7165848223501073046
 GameObject:
   m_ObjectHideFlags: 0
@@ -50143,6 +50262,7 @@ GameObject:
   - component: {fileID: 7165848223501073044}
   - component: {fileID: 7165848223501073050}
   - component: {fileID: 7165848223501073045}
+  - component: {fileID: 7165848223501073047}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -50150,6 +50270,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7165848223501073047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7165848223501073046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!114 &7165848223501073050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53167,6 +53300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 102
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!114 &7894558194011085867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53180,6 +53314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 180
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!114 &7894558194208977451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53193,6 +53328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 180
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!114 &7894558194550899844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53206,6 +53342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 180
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!114 &7894558195071915037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53219,6 +53356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 100
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!114 &7894558195188237748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53232,6 +53370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 102
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!1 &7903125225963520086
 GameObject:
   m_ObjectHideFlags: 0

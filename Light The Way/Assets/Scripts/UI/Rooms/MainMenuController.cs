@@ -22,6 +22,10 @@ public class MainMenuController : MonoBehaviour
 
     Vector2 screenSize;
 
+    //Sound
+    [FMODUnity.EventRef]
+    public string selectedPickOptionSound = "event:/Misc/Menu/Menu Pick";
+
     void Start()
     {
         //Generate world space point information for position and scale calculations
@@ -76,24 +80,32 @@ public class MainMenuController : MonoBehaviour
     {
         canvas.SetActive(false);
         altCanvas[0].SetActive(true);
+        Debug.Log("JoinRoom: ACCEPT SOUND");
+        FMODUnity.RuntimeManager.PlayOneShot(selectedPickOptionSound);
     }
 
     public void CreateRoom()
     {
         canvas.SetActive(false);
         altCanvas[1].SetActive(true);
+        Debug.Log("CreateRoom: ACCEPT SOUND");
+        FMODUnity.RuntimeManager.PlayOneShot(selectedPickOptionSound);
     }
 
     public void Settings()
     {
         canvas.SetActive(false);
         altCanvas[2].SetActive(true);
+        Debug.Log("Settings: ACCEPT SOUND");
+        FMODUnity.RuntimeManager.PlayOneShot(selectedPickOptionSound);
     }
 
     public void CreateRoomSuccessful()
     {
         altCanvas[1].SetActive(false);
         altCanvas[3].SetActive(true);
+        Debug.Log("CreateRoomSuccessful: ACCEPT SOUND");
+        FMODUnity.RuntimeManager.PlayOneShot(selectedPickOptionSound);
     }
 
     public void Back()
@@ -103,6 +115,7 @@ public class MainMenuController : MonoBehaviour
         altCanvas[1].SetActive(false);
         altCanvas[2].SetActive(false);
         altCanvas[3].SetActive(false);
+        Debug.Log("Back: NEGATIVE SOUND");
     }
 
     public void Exit()
