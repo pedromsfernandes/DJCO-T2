@@ -39,7 +39,6 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
         bool creationSuccessful = PhotonNetwork.JoinOrCreateRoom(_roomName.text, roomOptions, TypedLobby.Default);
         if (!creationSuccessful)
         {
-            Debug.Log("FAILED TO CREATE ROOM");
             FMODUnity.RuntimeManager.PlayOneShot(selectedBackSound);
         }
     }
