@@ -27,13 +27,11 @@ public class RoomListing : MonoBehaviour
     public void OnClick_Button()
     {
         PhotonNetwork.JoinRoom(RoomInfo.Name);
-        Debug.Log("PLAY SELECT");
         FMODUnity.RuntimeManager.PlayOneShot(selectedPickOptionSound);
     }
 
     public void PlayHooverSound()
     {
-        Debug.Log("PLAY HOOVER");
         FMODUnity.RuntimeManager.PlayOneShot(selectedHooverSound);
     }
 }
