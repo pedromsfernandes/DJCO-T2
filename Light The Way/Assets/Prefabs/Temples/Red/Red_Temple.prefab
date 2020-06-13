@@ -747,6 +747,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7037310156548303157, guid: c712849490ecb394caab939bbe42b85c, type: 3}
+--- !u!114 &3764796513324076719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4182459460171354117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bcfc342ca181ac48c1fbfcd1620a74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeout: 1
+  timeToDestroy: 3
+  toolColor: 4
+  selectedExplosionSound: event:/FX/Interactables/Explosion
 --- !u!114 &8069001641727755381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -768,22 +784,6 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &3764796513324076719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4182459460171354117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25bcfc342ca181ac48c1fbfcd1620a74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeout: 1
-  timeToDestroy: 3
-  toolColor: 4
-  selectedExplosionSound: event:/FX/Interactables/Explosion
 --- !u!64 &1451440857825368509
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -798,6 +798,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4518436706911698259, guid: c712849490ecb394caab939bbe42b85c, type: 3}
+--- !u!114 &2670746275572619274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4698893125992869417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bcfc342ca181ac48c1fbfcd1620a74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeout: 1
+  timeToDestroy: 3
+  toolColor: 4
+  selectedExplosionSound: event:/FX/Interactables/Explosion
 --- !u!114 &2844529283448101299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,22 +835,6 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &2670746275572619274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4698893125992869417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25bcfc342ca181ac48c1fbfcd1620a74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeout: 1
-  timeToDestroy: 3
-  toolColor: 4
-  selectedExplosionSound: event:/FX/Interactables/Explosion
 --- !u!64 &4484107016006055816
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -973,6 +973,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4538902456354076084, guid: c712849490ecb394caab939bbe42b85c, type: 3}
+--- !u!114 &3257578630269630334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020926082230017958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bcfc342ca181ac48c1fbfcd1620a74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeout: 1
+  timeToDestroy: 3
+  toolColor: 4
+  selectedExplosionSound: event:/FX/Interactables/Explosion
 --- !u!114 &5516027870488978007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,22 +1010,6 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &3257578630269630334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7020926082230017958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25bcfc342ca181ac48c1fbfcd1620a74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeout: 1
-  timeToDestroy: 3
-  toolColor: 4
-  selectedExplosionSound: event:/FX/Interactables/Explosion
 --- !u!64 &3885232382726175817
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1820,10 +1820,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8da642c2f1b04404da38a681b1978e5e, type: 2}
+    - target: {fileID: -8554551787032521420, guid: c712849490ecb394caab939bbe42b85c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: -8247699413115213225, guid: c712849490ecb394caab939bbe42b85c,
         type: 3}
       propertyPath: m_LocalScale.y
       value: 2.78
+      objectReference: {fileID: 0}
+    - target: {fileID: -8076933762998691784, guid: c712849490ecb394caab939bbe42b85c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: -8020505627510790604, guid: c712849490ecb394caab939bbe42b85c,
         type: 3}
@@ -2075,6 +2085,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8da642c2f1b04404da38a681b1978e5e, type: 2}
+    - target: {fileID: 2502203975881118265, guid: c712849490ecb394caab939bbe42b85c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706790727220717145, guid: c712849490ecb394caab939bbe42b85c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 2794166573170061391, guid: c712849490ecb394caab939bbe42b85c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
