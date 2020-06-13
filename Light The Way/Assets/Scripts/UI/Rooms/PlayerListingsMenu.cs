@@ -24,6 +24,12 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
     private bool _ready = false;
 
+    //Sound
+    [FMODUnity.EventRef]
+    public string selectedPickOptionSound = "event:/Misc/Menu/Menu Pick";
+    [FMODUnity.EventRef]
+    public string selectedBackSound = "event:/Misc/Menu/Menu Back";
+
     public void FirstInitialize(RoomsCanvases canvases)
     {
         _roomsCanvases = canvases;
@@ -131,6 +137,16 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
         SetReadyUp(!_ready);
         base.photonView.RPC("RPC_ChangeReadyState", RpcTarget.MasterClient, PhotonNetwork.LocalPlayer, _ready);
+
+
+        if (_ready)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(selectedPickOptionSound);
+        }
+        else
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(selectedBackSound);
+        }
     }
 
     [PunRPC]
