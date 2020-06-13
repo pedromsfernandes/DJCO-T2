@@ -30,6 +30,10 @@ public class MainMenuController : MonoBehaviour
     [FMODUnity.EventRef]
     public string selectedHooverSound = "event:/Misc/Menu/Menu Hoover";
 
+
+    public static FMOD.Studio.EventInstance menuMusicEvent;
+
+
     void Start()
     {
         //Generate world space point information for position and scale calculations
@@ -65,6 +69,9 @@ public class MainMenuController : MonoBehaviour
             foreach (GameObject btn in btns)
                 btn.transform.localPosition = new Vector3(btn.transform.localPosition.x, btn.transform.localPosition.y + delta, btn.transform.localPosition.z);
         }
+
+        menuMusicEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Misc/Menu/Light the Way Menu Music");
+        menuMusicEvent.start();
     }
 
     void Update()

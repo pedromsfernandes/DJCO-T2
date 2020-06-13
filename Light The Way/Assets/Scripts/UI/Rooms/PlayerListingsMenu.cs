@@ -125,11 +125,21 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
             //     }
             // }
 
+            
 
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
             PhotonNetwork.LoadLevel(1);
+
+            GetComponent<PhotonView>().RPC("stopMainMenuMusicSelf", RpcTarget.All);
         }
+    }
+
+    [PunRPC]
+    void stopMainMenuMusicSelf()
+    {
+        Debug.Log("STOP MUSIC");
+        MainMenuController.menuMusicEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void OnClick_ReadyUp()
