@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 27186530}
   - component: {fileID: 27186533}
   - component: {fileID: 27186531}
+  - component: {fileID: 27186532}
   m_Layer: 0
   m_Name: SetNickNameButton
   m_TagString: Untagged
@@ -213,6 +214,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &27186532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27186529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!222 &27186533
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -648,6 +677,8 @@ MonoBehaviour:
     type: 3}
   _content: {fileID: 82013952}
   _readyUpText: {fileID: 1245374210}
+  selectedPickOptionSound: event:/Misc/Menu/Menu Pick
+  selectedBackSound: event:/Misc/Menu/Menu Back
 --- !u!114 &195222770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1273,6 +1304,7 @@ GameObject:
   - component: {fileID: 460492912}
   - component: {fileID: 460492915}
   - component: {fileID: 460492913}
+  - component: {fileID: 460492914}
   m_Layer: 0
   m_Name: CreateButton
   m_TagString: Untagged
@@ -1354,6 +1386,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &460492914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460492911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!222 &460492915
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1650,6 +1710,7 @@ GameObject:
   - component: {fileID: 562948762}
   - component: {fileID: 562948764}
   - component: {fileID: 562948763}
+  - component: {fileID: 562948765}
   m_Layer: 0
   m_Name: back
   m_TagString: Untagged
@@ -1739,6 +1800,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562948761}
   m_CullTransparentMesh: 0
+--- !u!114 &562948765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562948761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &623092534
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,6 +2171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nickName: {fileID: 1516062237}
+  selectedPickOptionSound: event:/Misc/Menu/Menu Pick
 --- !u!1 &648176969
 GameObject:
   m_ObjectHideFlags: 0
@@ -3080,6 +3170,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1796646363}
+        m_MethodName: PlayHooverSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &1245374209
 GameObject:
@@ -4043,6 +4144,7 @@ GameObject:
   - component: {fileID: 1579280146}
   - component: {fileID: 1579280145}
   - component: {fileID: 1579280144}
+  - component: {fileID: 1579280147}
   m_Layer: 0
   m_Name: back
   m_TagString: Untagged
@@ -4132,6 +4234,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -1000}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1579280147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579280143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1600801454
 GameObject:
   m_ObjectHideFlags: 0
@@ -4724,6 +4854,7 @@ GameObject:
   - component: {fileID: 1778205118}
   - component: {fileID: 1778205120}
   - component: {fileID: 1778205119}
+  - component: {fileID: 1778205121}
   m_Layer: 0
   m_Name: back
   m_TagString: Untagged
@@ -4813,6 +4944,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778205117}
   m_CullTransparentMesh: 0
+--- !u!114 &1778205121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778205117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1796646362
 GameObject:
   m_ObjectHideFlags: 0
@@ -4861,6 +5020,8 @@ MonoBehaviour:
   logo_hl: {fileID: 2070696026}
   laser: {fileID: 1601494482}
   selectedPickOptionSound: event:/Misc/Menu/Menu Pick
+  selectedBackSound: event:/Misc/Menu/Menu Back
+  selectedHooverSound: event:/Misc/Menu/Menu Hoover
 --- !u!4 &1796646364
 Transform:
   m_ObjectHideFlags: 0
@@ -5338,6 +5499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 1796646363}
   _roomName: {fileID: 1750906472}
+  selectedBackSound: event:/Misc/Menu/Menu Back
 --- !u!1 &2011851793
 GameObject:
   m_ObjectHideFlags: 0
@@ -50342,6 +50504,7 @@ GameObject:
   - component: {fileID: 7221723412976004320}
   - component: {fileID: 7221723412976004322}
   - component: {fileID: 7221723412976004323}
+  - component: {fileID: 7221723412976004324}
   m_Layer: 0
   m_Name: exit
   m_TagString: Untagged
@@ -50411,6 +50574,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7221723412976004324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221723412976004321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7221723413234134198
 GameObject:
   m_ObjectHideFlags: 0
@@ -50519,6 +50710,7 @@ GameObject:
   - component: {fileID: 7221723413539863270}
   - component: {fileID: 7221723413539863272}
   - component: {fileID: 7221723413539863273}
+  - component: {fileID: 7221723413539863274}
   m_Layer: 0
   m_Name: settings
   m_TagString: Untagged
@@ -50588,6 +50780,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7221723413539863274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221723413539863271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &7221723413582303480
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50873,6 +51093,7 @@ GameObject:
   - component: {fileID: 7221723414333722161}
   - component: {fileID: 7221723414333722163}
   - component: {fileID: 7221723414333722160}
+  - component: {fileID: 7221723414333722159}
   m_Layer: 0
   m_Name: create
   m_TagString: Untagged
@@ -50880,6 +51101,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7221723414333722159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221723414333722158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &7221723414333722160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50973,6 +51222,7 @@ GameObject:
   - component: {fileID: 7221723414837189885}
   - component: {fileID: 7221723414837189886}
   - component: {fileID: 7221723414837189884}
+  - component: {fileID: 7221723414837189883}
   m_Layer: 0
   m_Name: join
   m_TagString: Untagged
@@ -50980,6 +51230,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7221723414837189883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221723414837189882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &7221723414837189884
 MonoBehaviour:
   m_ObjectHideFlags: 0

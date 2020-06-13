@@ -27,6 +27,8 @@ public class MainMenuController : MonoBehaviour
     public string selectedPickOptionSound = "event:/Misc/Menu/Menu Pick";
     [FMODUnity.EventRef]
     public string selectedBackSound = "event:/Misc/Menu/Menu Back";
+    [FMODUnity.EventRef]
+    public string selectedHooverSound = "event:/Misc/Menu/Menu Hoover";
 
     void Start()
     {
@@ -119,6 +121,12 @@ public class MainMenuController : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void PlayHooverSound()
+    {
+        Debug.Log("HOOVER");
+        FMODUnity.RuntimeManager.PlayOneShot(selectedHooverSound);
     }
 
     IEnumerator FirstMenuAnim(float delta)
