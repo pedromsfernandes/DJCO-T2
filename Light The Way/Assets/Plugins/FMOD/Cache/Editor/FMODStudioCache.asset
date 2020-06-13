@@ -1,5 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8992160782572117050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Misc/Menu/Menu Pick
+  m_EditorClassIdentifier: 
+  Path: event:/Misc/Menu/Menu Pick
+  guid: c2ccf44c52d1834cb7604e91091fadda
+  Banks:
+  - {fileID: 7813012997364952021}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1744
 --- !u!114 &-8547839743341140229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,14 +78,31 @@ MonoBehaviour:
   Path: event:/FX/Crystal/CrystalHit
   guid: c351f08e29ae09419d720f7cb2e21b3e
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3500
+  MinDistance: 10
+  MaxDistance: 100
+  Length: 3040
+--- !u!114 &-8099978448141707440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &-8000892163499036625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +118,7 @@ MonoBehaviour:
   Path: event:/FX/Player/Tools/Swap
   guid: d013fd3fdc22e94583f37ddc1c2e711c
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -100,11 +140,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637270822583672058
+  lastModified: 637275767826887336
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1890
+    Value: 2230
   Exists: 1
 --- !u!114 &-7315796088966124757
 MonoBehaviour:
@@ -123,6 +163,29 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &-7236724804104040300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Crystal/Splitter/SplitterReflect
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Crystal/Splitter/SplitterReflect
+  guid: ecca7c03e4e6b54099c0c90f35958bb8
+  Banks:
+  - {fileID: 7813012997364952021}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 14500
 --- !u!114 &-6625565498556435388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,14 +201,37 @@ MonoBehaviour:
   Path: event:/FX/Player/Bridge/BridgeCreate
   guid: ab04105dd6fd714480cc557496d03dfc
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
+  MinDistance: 50
+  MaxDistance: 100
+  Length: 3040
+--- !u!114 &-6149128669995824785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Crystal/Combiner/CombinerReflect
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Crystal/Combiner/CombinerReflect
+  guid: cc96883725ca254191d947a46fad34e3
+  Banks:
+  - {fileID: 7813012997364952021}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
   MinDistance: 1
-  MaxDistance: 20
-  Length: 3500
+  MaxDistance: 50
+  Length: 3400
 --- !u!114 &-3410770822755173145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,12 +247,12 @@ MonoBehaviour:
   Path: event:/Ambient/Forest/Forest
   guid: 7dedeaba40ce694f877136bc1b8aaf70
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -7315796088966124757}
+  - {fileID: 5433328762377617839}
   MinDistance: 1
   MaxDistance: 20
   Length: 16000
@@ -188,6 +274,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-3086856365527428292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Sun/Sun-Moving
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Sun/Sun-Moving
+  guid: 80dd324f97ba204fab75845b5833b4d4
+  Banks:
+  - {fileID: 7813012997364952021}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 10000
+  MaxDistance: 10000
+  Length: 1774
 --- !u!114 &-2200545837050171959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,13 +312,13 @@ MonoBehaviour:
   Path: event:/FX/Player/Tools/Green/GreenFireBeam
   guid: eafd7b889e7df043b529ce86573020a8
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 3
-  MaxDistance: 20
+  MinDistance: 1
+  MaxDistance: 50
   Length: 11500
 --- !u!114 &-2001316612925232490
 MonoBehaviour:
@@ -226,15 +335,38 @@ MonoBehaviour:
   Path: event:/FX/Player/Footsteps/Run
   guid: c3e59f6c7532dd4cbca35edf7dea3981
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -8547839743341140229}
+  - {fileID: 5397328494478755676}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1846036514598438195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Player/Tools/Red/RedShadowMissfire
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Player/Tools/Red/RedShadowMissfire
+  guid: 95a8649a0f6c664ba7687d4b0a8e2bef
+  Banks:
+  - {fileID: 7813012997364952021}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 500
 --- !u!114 &-1480996607822837774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,7 +405,7 @@ MonoBehaviour:
   Path: event:/FX/Player/Bridge/BridgePoint
   guid: c2215322ac447d41be61e26a35dcb890
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -296,7 +428,7 @@ MonoBehaviour:
   Path: event:/Ambient/Beach/Beach
   guid: 05fa5dd7b8fb8e4cbf69ae4a7ffbdb75
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -318,15 +450,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -7658449700199843043}
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   EditorEvents:
   - {fileID: -342691563409416076}
   - {fileID: 5905030208154701171}
-  - {fileID: -8476155668339693079}
   - {fileID: 7446167495679069291}
   - {fileID: -3410770822755173145}
-  - {fileID: 4131618144120491550}
-  - {fileID: -1480996607822837774}
   - {fileID: 1015931618495449216}
   - {fileID: 888358278086747584}
   - {fileID: 2265158195728560067}
@@ -340,13 +469,46 @@ MonoBehaviour:
   - {fileID: 7390070065814703233}
   - {fileID: -2200545837050171959}
   - {fileID: 2842807480386207754}
+  - {fileID: 1956842753936776007}
+  - {fileID: 9128346360561425615}
+  - {fileID: 6796792664590656799}
+  - {fileID: 348548366660353906}
+  - {fileID: -3086856365527428292}
+  - {fileID: 4665676355269529653}
+  - {fileID: -1846036514598438195}
+  - {fileID: -8992160782572117050}
+  - {fileID: -6149128669995824785}
+  - {fileID: -7236724804104040300}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   StringsBanks:
   - {fileID: -7658449700199843043}
-  stringsBankWriteTime: 637270822583672058
+  stringsBankWriteTime: 637275767826887336
   cacheVersion: 3
+--- !u!114 &348548366660353906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Player/Tools/Blue/BlueShadowMissfire
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Player/Tools/Blue/BlueShadowMissfire
+  guid: 779994ddff1bfa4b972ae59a5f9c5331
+  Banks:
+  - {fileID: 7813012997364952021}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 500
 --- !u!114 &888358278086747584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,7 +524,7 @@ MonoBehaviour:
   Path: event:/Ambient/Mountain/Mountain
   guid: 99a0ae118c8f2640931801385906aae2
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -385,14 +547,37 @@ MonoBehaviour:
   Path: event:/FX/Player/Tools/Blue/BlueFireBeam
   guid: 9939333fd356fa439094ab9185123d4c
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 3
-  MaxDistance: 20
+  MinDistance: 1
+  MaxDistance: 50
   Length: 14000
+--- !u!114 &1956842753936776007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Misc/Original Theme Song/Light The Way Theme
+  m_EditorClassIdentifier: 
+  Path: event:/Misc/Original Theme Song/Light The Way Theme
+  guid: 06ed8908fa27664cb84691e69b6a1759
+  Banks:
+  - {fileID: 7813012997364952021}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 63879
 --- !u!114 &2265158195728560067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,12 +593,12 @@ MonoBehaviour:
   Path: event:/FX/Player/Footsteps/Walk
   guid: 9a3677bebb8a734ca8eb852fad47c14f
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 8549558228826771220}
+  - {fileID: -8099978448141707440}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -432,13 +617,13 @@ MonoBehaviour:
   Path: event:/FX/Crystal/CrystalReflect
   guid: f484f497bdcc0e458c50368037942207
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 50
   Length: 12000
 --- !u!114 &2988494303672698471
 MonoBehaviour:
@@ -455,7 +640,7 @@ MonoBehaviour:
   Path: event:/FX/Player/Tools/PickUp
   guid: e9ad820f4807a646a12fcf8b9c8bff3f
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -486,6 +671,63 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 600
   Length: 1804
+--- !u!114 &4665676355269529653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Player/Tools/Green/GreenShadowMissfire
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Player/Tools/Green/GreenShadowMissfire
+  guid: 8a20c3e5f8c8ce4d9c174a671fcd563a
+  Banks:
+  - {fileID: 7813012997364952021}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 500
+--- !u!114 &5397328494478755676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Run/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
+--- !u!114 &5433328762377617839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Forest/PitchUp
+  m_EditorClassIdentifier: 
+  Name: PitchUp
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &5905030208154701171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,14 +743,37 @@ MonoBehaviour:
   Path: event:/FX/Door/DoorOpen
   guid: 595a22288833814eae3c510badc8c877
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 600
+  MaxDistance: 100
   Length: 3500
+--- !u!114 &6796792664590656799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Crystal/Mirror/MirrorReflect
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Crystal/Mirror/MirrorReflect
+  guid: 5aeb9fbc48ead742adf2ced89c97c84f
+  Banks:
+  - {fileID: 7813012997364952021}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 4650
 --- !u!114 &7181661140962331386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,13 +789,13 @@ MonoBehaviour:
   Path: event:/FX/Interactables/Explosion
   guid: dc8df99841a3894cbae110723b198c33
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 10
+  MaxDistance: 100
   Length: 2739
 --- !u!114 &7390070065814703233
 MonoBehaviour:
@@ -547,13 +812,13 @@ MonoBehaviour:
   Path: event:/FX/Player/Tools/Red/RedFireBeam
   guid: ea1b3968ddc26e4887249fbbf909a4f3
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 3
-  MaxDistance: 20
+  MinDistance: 1
+  MaxDistance: 50
   Length: 20500
 --- !u!114 &7446167495679069291
 MonoBehaviour:
@@ -570,7 +835,7 @@ MonoBehaviour:
   Path: event:/FX/Sun/Sun-Focus
   guid: 79792a7caadc8f49b1a665867ce3bb59
   Banks:
-  - {fileID: -3289856345072047583}
+  - {fileID: 7813012997364952021}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -578,6 +843,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2739
+--- !u!114 &7813012997364952021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637275767826877363
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &8549558228826771220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,3 +878,26 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 1
+--- !u!114 &9128346360561425615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Player/Bridge/BridgeFail
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Player/Bridge/BridgeFail
+  guid: 0c87a4f79c2d044496b810b296134464
+  Banks:
+  - {fileID: 7813012997364952021}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 50
+  MaxDistance: 100
+  Length: 1381
