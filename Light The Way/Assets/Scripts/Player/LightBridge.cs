@@ -128,7 +128,7 @@ public class LightBridge : MonoBehaviour
         GameObject lightBridge = Resources.Load<GameObject>("Light Bridge");
         
         lightBridge.transform.position = (p1 + p2) / 2;
-        lightBridge.transform.localScale = new Vector3(lightBridge.transform.localScale.x, lightBridge.transform.localScale.y, distance);
+        lightBridge.transform.localScale = new Vector3(lightBridge.transform.localScale.x, lightBridge.transform.localScale.y, distance * 1.15f);
         lightBridge.transform.rotation = Quaternion.Euler(xRotationAngle, yRotationAngle, 0);
 
         activeLightBridge = Instantiate(lightBridge);
