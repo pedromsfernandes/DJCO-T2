@@ -25,6 +25,8 @@ public class MainMenuController : MonoBehaviour
     //Sound
     [FMODUnity.EventRef]
     public string selectedPickOptionSound = "event:/Misc/Menu/Menu Pick";
+    [FMODUnity.EventRef]
+    public string selectedBackSound = "event:/Misc/Menu/Menu Back";
 
     void Start()
     {
@@ -116,6 +118,7 @@ public class MainMenuController : MonoBehaviour
         altCanvas[2].SetActive(false);
         altCanvas[3].SetActive(false);
         Debug.Log("Back: NEGATIVE SOUND");
+        FMODUnity.RuntimeManager.PlayOneShot(selectedBackSound);
     }
 
     public void Exit()
