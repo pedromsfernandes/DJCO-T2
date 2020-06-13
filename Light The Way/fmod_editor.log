@@ -21,3 +21,4 @@
 [WRN] OutputWASAPI::mixerThread                : Starvation detected in WASAPI output buffer!
 [WRN] OutputWASAPI::mixerThread                : Starvation detected in WASAPI output buffer!
 [WRN] OutputWASAPI::mixerThread                : Starvation detected in WASAPI output buffer!
+[WRN] OutputWASAPI::mixerThread                : Starvation detected in WASAPI output buffer!
