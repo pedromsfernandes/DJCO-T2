@@ -10,7 +10,7 @@ namespace Light
             Vector3 diff = hit.point - transform.position;
 
             var primaryColors = new List<LightColor>(beam.LightColor.DivideColors());
-            int angle = 90, angleDelta = 180 / (primaryColors.Count + 1);
+            int angle = -90, angleDelta = -180 / (primaryColors.Count + 1);
             foreach (var color in primaryColors)
             {
                 angle += angleDelta;
