@@ -15651,7 +15651,7 @@ MonoBehaviour:
   _prefab: {fileID: 7841573969275939898, guid: 20f3506190c57654c8c5e2dde512775d, type: 3}
   recorder: {fileID: 0}
   positions:
-  - {x: -157.6, y: 25.57, z: 365.2}
+  - {x: -236.9, y: 100, z: 110}
   - {x: -157.6, y: 25.57, z: 381.48}
   - {x: 316, y: 30, z: 1343}
   - {x: 312, y: 25, z: 1343}
