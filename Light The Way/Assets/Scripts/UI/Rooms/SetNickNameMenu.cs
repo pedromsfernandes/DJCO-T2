@@ -11,6 +11,10 @@ public class SetNickNameMenu : MonoBehaviour
 
     private RoomsCanvases _roomsCanvases;
 
+    //Sound
+    [FMODUnity.EventRef]
+    public string selectedPickOptionSound = "event:/Misc/Menu/Menu Pick";
+
     public void FirstInitialize(RoomsCanvases canvases)
     {
         _roomsCanvases = canvases;
@@ -19,5 +23,6 @@ public class SetNickNameMenu : MonoBehaviour
     public void OnClick_SetNickName()
     {
         MasterManager.GameSettings.SetNickName(_nickName.text);
+        FMODUnity.RuntimeManager.PlayOneShot(selectedPickOptionSound);
     }
 }

@@ -16,6 +16,9 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
 
     private bool _private = false;
 
+    [FMODUnity.EventRef]
+    public string selectedBackSound = "event:/Misc/Menu/Menu Back";
+
     public void FirstInitialize(RoomsCanvases canvases)
     {
         _roomsCanvases = canvases;
@@ -33,7 +36,11 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
         roomOptions.BroadcastPropsChangeToAll = true;
         roomOptions.IsVisible = !_private;
 
-        PhotonNetwork.JoinOrCreateRoom(_roomName.text, roomOptions, TypedLobby.Default);
+        bool creationSuccessful = PhotonNetwork.JoinOrCreateRoom(_roomName.text, roomOptions, TypedLobby.Default);
+        if (!creationSuccessful)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(selectedBackSound);
+        }
     }
 
     public void OnValueChanged_TogglePrivate(bool isPrivate)

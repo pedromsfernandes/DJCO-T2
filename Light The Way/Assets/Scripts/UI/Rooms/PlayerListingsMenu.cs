@@ -24,6 +24,12 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
     private bool _ready = false;
 
+    //Sound
+    [FMODUnity.EventRef]
+    public string selectedPickOptionSound = "event:/Misc/Menu/Menu Pick";
+    [FMODUnity.EventRef]
+    public string selectedBackSound = "event:/Misc/Menu/Menu Back";
+
     public void FirstInitialize(RoomsCanvases canvases)
     {
         _roomsCanvases = canvases;
@@ -120,10 +126,20 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
             // }
 
 
+            GetComponent<PhotonView>().RPC("stopMainMenuMusicSelf", RpcTarget.All);
+
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
             PhotonNetwork.LoadLevel(1);
+
         }
+    }
+
+    [PunRPC]
+    void stopMainMenuMusicSelf()
+    {
+        Debug.Log("STOP MUSIC");
+        MainMenuController.menuMusicEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void OnClick_ReadyUp()
@@ -131,6 +147,16 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
         SetReadyUp(!_ready);
         base.photonView.RPC("RPC_ChangeReadyState", RpcTarget.MasterClient, PhotonNetwork.LocalPlayer, _ready);
+
+
+        if (_ready)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(selectedPickOptionSound);
+        }
+        else
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(selectedBackSound);
+        }
     }
 
     [PunRPC]
