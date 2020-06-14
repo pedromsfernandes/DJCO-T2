@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class RoomsCanvases : MonoBehaviour
+public class RoomsCanvases : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     private CreateOrJoinRoomCanvas _createOrJoinRoomCanvas;
@@ -23,5 +25,10 @@ public class RoomsCanvases : MonoBehaviour
     {   
         CurrentRoomCanvas.FirstInitialize(this);
         CreateOrJoinRoomCanvas.FirstInitialize(this);
+    }
+
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+       this.CreateOrJoinRoomCanvas._roomListingsMenu.OnRoomListUpdate(roomList);
     }
 }
