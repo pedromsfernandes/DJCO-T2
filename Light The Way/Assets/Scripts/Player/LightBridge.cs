@@ -36,7 +36,7 @@ public class LightBridge : MonoBehaviour
 
     void Update()
     {
-        if (GameState.Instance.canCreateLightBridges && GameState.Instance.hasTool3 && GameState.Instance.currentTool == 3 && GameState.Instance.castingRay)
+        if (GameState.Instance.canCreateLightBridges && GameState.Instance.hasTool3 && GameState.Instance.currentTool == 3)
         {
             bool isFixatingPoint = Input.GetKeyDown("e");
 
