@@ -4918,6 +4918,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Stone
       objectReference: {fileID: 0}
+    - target: {fileID: 4220911168347224223, guid: e2a726e666d32a04a83c0a5911531b1a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4296408110896026093, guid: e2a726e666d32a04a83c0a5911531b1a,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6160,7 +6165,7 @@ PrefabInstance:
     - target: {fileID: 5055551912585543373, guid: afb718871e65d384ca536a952396ac9b,
         type: 3}
       propertyPath: color
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6466197819633440900, guid: afb718871e65d384ca536a952396ac9b,
         type: 3}
