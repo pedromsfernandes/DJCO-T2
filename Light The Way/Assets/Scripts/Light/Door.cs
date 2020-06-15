@@ -26,12 +26,10 @@ public class Door : MonoBehaviour
             GetComponent<PhotonView>().RPC("OpenDoorSelf", RpcTarget.All);
             open = true;
         }
-
-        GetComponent<PhotonView>().RPC("OpenDoorSelf", RpcTarget.All);
     }
 
     [PunRPC]
-    public void OpenDoorSelf(string originalObjectName)
+    public void OpenDoorSelf()
     {
         foreach (var ep in endpoints)
         {
@@ -39,12 +37,8 @@ public class Door : MonoBehaviour
         }
 
         StartCoroutine("DoorOpenAnim");
-        GameObject originalObject = GameObject.Find(originalObjectName);
-        Transform originalTransform = originalObject.GetComponent<Transform>();
 
-        FMODUnity.RuntimeManager.PlayOneShot(selectedOpenSound, originalTransform.position);
-
-        this.gameObject.SetActive(false);
+        FMODUnity.RuntimeManager.PlayOneShot(selectedOpenSound, this.transform.position);
     }
 
     IEnumerator DoorOpenAnim()
