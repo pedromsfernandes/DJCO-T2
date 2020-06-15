@@ -44,7 +44,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Final Map.unity
     guid: 1be35977244bdce4d989036455adbf32
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Intro Levels.unity
     guid: 6ea6c2bd56097094d87096fdb4677769
   - enabled: 0
