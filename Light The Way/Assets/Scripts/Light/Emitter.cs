@@ -25,6 +25,8 @@ namespace Light
         private void Update()
         {
             _beam.StageAddColor(_color);
+            LightBeam.UpdateLightBeam(_beam.gameObject, _color, 
+                _beam.transform.position, transform.forward);
         }
     }
 }

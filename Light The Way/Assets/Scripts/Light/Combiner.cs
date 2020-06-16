@@ -26,7 +26,7 @@ namespace Light
         }
 
         private void Update()
-        {
+        {                 
             FMOD.Studio.PLAYBACK_STATE fmodPBState;
             combinerReflectSoundEvent.getPlaybackState(out fmodPBState);
 
@@ -47,6 +47,9 @@ namespace Light
         protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
         {
             _combinerBeam.StageAddColor(beam.LightColor);
+
+            LightBeam.UpdateLightBeam(_combinerBeam.gameObject, _combinerBeam.LightColor,
+                    _combinerBeam.transform.position, transform.forward);
 
             numHits++;
         }

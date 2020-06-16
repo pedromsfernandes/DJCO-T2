@@ -4,8 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class RoomListingsMenu : MonoBehaviourPunCallbacks
-{
+public class RoomListingsMenu : MonoBehaviourPunCallbacks {
     [SerializeField]
     private RoomListing _roomListing;
 
@@ -27,7 +26,7 @@ public class RoomListingsMenu : MonoBehaviourPunCallbacks
         _listings.Clear();
     }
 
-    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    public void OnRoomListUpdate(List<RoomInfo> roomList)
     {
         foreach (RoomInfo info in roomList)
         {

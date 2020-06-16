@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2642828674119845412
 Transform:
@@ -142,7 +142,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2428562534633411343
 Transform:
@@ -233,3 +233,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect

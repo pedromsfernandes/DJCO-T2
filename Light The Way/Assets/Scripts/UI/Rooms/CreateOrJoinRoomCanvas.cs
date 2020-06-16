@@ -8,7 +8,7 @@ public class CreateOrJoinRoomCanvas : MonoBehaviour
     private CreateRoomMenu _createRoomMenu;
 
     [SerializeField]
-    private RoomListingsMenu _roomListingsMenu;
+    public RoomListingsMenu _roomListingsMenu;
     private RoomsCanvases _roomsCanvases;
 
     public void FirstInitialize(RoomsCanvases canvases)

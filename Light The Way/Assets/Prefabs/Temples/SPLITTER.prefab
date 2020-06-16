@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3996319218462528695
 Transform:
@@ -110,7 +110,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4185592267867807108
 Transform:
@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 120
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!136 &2528799141092884023
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -203,7 +204,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1952519736373086207
 Transform:
@@ -279,3 +280,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 120
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect

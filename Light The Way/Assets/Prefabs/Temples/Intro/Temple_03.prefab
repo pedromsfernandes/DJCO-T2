@@ -392,6 +392,8 @@ MonoBehaviour:
   endpoints:
   - {fileID: 8931695338433708612}
   - {fileID: 4511358961760026130}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!1 &182907267766970454
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,7 +502,7 @@ GameObject:
   - component: {fileID: 3659459040007708996}
   m_Layer: 0
   m_Name: Cube_2_2
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1129,6 +1131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endpoints: []
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &2922658658539520880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1729,7 +1733,7 @@ GameObject:
   - component: {fileID: 1408789679101918296}
   m_Layer: 0
   m_Name: Cube_4_2
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2445,7 +2449,7 @@ GameObject:
   - component: {fileID: 3063401057256154611}
   m_Layer: 0
   m_Name: Cube_24
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3184,7 +3188,7 @@ GameObject:
   - component: {fileID: 6718094522413178372}
   m_Layer: 0
   m_Name: Floor (1)
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4032,7 +4036,7 @@ GameObject:
   - component: {fileID: 2710096054034491547}
   m_Layer: 0
   m_Name: Cube_1
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4810,6 +4814,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 3677977762456748868}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &2555982864930828418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4977,7 +4983,7 @@ GameObject:
   - component: {fileID: 315333659045006678}
   m_Layer: 0
   m_Name: Floor (4)
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5164,7 +5170,7 @@ GameObject:
   - component: {fileID: 6368975334536405942}
   m_Layer: 0
   m_Name: Floor (5)
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5257,7 +5263,7 @@ GameObject:
   - component: {fileID: 2240199988119479727}
   m_Layer: 0
   m_Name: Cube_3_2
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5351,7 +5357,7 @@ GameObject:
   - component: {fileID: 4413899024542083674}
   m_Layer: 0
   m_Name: Floor (3)
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5888,7 +5894,7 @@ GameObject:
   - component: {fileID: 6231525939805525441}
   m_Layer: 0
   m_Name: Floor (2)
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8681,6 +8687,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568732732222371444, guid: 2209554749053ab489a5f86a3976e52c,
+        type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2209554749053ab489a5f86a3976e52c, type: 3}
