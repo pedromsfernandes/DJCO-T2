@@ -112,7 +112,10 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
     [PunRPC]
     private void LoadCutscene()
     {
-        SceneManager.LoadScene(2);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     public void OnClick_ReadyUp()
