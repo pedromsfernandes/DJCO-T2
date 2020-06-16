@@ -114,6 +114,9 @@ public class SceneController : MonoBehaviour
         yield return StartCoroutine("ShowSplash");
         yield return new WaitForSeconds(2f);
 
+        Debug.Log("STOP MUSIC");
+        MainMenuController.menuMusicEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
         if (PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.CurrentRoom.IsOpen = false;

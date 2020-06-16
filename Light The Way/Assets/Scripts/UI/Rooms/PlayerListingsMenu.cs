@@ -124,8 +124,6 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
     [PunRPC]
     private void LoadCutscene()
     {
-        Debug.Log("STOP MUSIC");
-        MainMenuController.menuMusicEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         SceneManager.LoadScene(2);   
     }
 
