@@ -10,7 +10,8 @@ public enum TempleName
     Tutorial,
     Red,
     Green,
-    Blue
+    Blue,
+    Final
 }
 
 public class Temple : MonoBehaviour
