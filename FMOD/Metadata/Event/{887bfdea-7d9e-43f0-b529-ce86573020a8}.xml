@@ -60,7 +60,7 @@
 	<object class="MarkerTrack" id="{30d8eeff-1986-4142-bb51-971e249533da}" />
 	<object class="GroupTrack" id="{9dcdd20f-f456-4b26-9216-2ca39f1efdc7}">
 		<relationship name="modules">
-			<destination>{2102eb65-23a5-499f-b085-8188371b20c3}</destination>
+			<destination>{d0e6ec57-9083-4b42-a1b2-30a81f63c5c0}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{f8ddab35-7d50-4c3e-946b-aeb05626ac5d}</destination>
@@ -68,7 +68,7 @@
 	</object>
 	<object class="Timeline" id="{f4290a20-4627-479c-a1d3-60c9d5d4510b}">
 		<relationship name="modules">
-			<destination>{2102eb65-23a5-499f-b085-8188371b20c3}</destination>
+			<destination>{d0e6ec57-9083-4b42-a1b2-30a81f63c5c0}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{cfddfddb-90e9-46f6-83a1-afe4ed5db8ac}</destination>
@@ -91,7 +91,7 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{f252fa6d-6350-43f0-9133-dd18fbf6aa8f}" />
-	<object class="SingleSound" id="{2102eb65-23a5-499f-b085-8188371b20c3}">
+	<object class="SingleSound" id="{d0e6ec57-9083-4b42-a1b2-30a81f63c5c0}">
 		<property name="isAsync">
 			<value>true</value>
 		</property>
@@ -102,10 +102,10 @@
 			<value>true</value>
 		</property>
 		<relationship name="modulators">
-			<destination>{aba712c9-f9d9-4ffb-8ac4-a5b176b6b5c6}</destination>
+			<destination>{c4232d5c-3529-4ea6-968d-845bccd49b14}</destination>
 		</relationship>
 		<relationship name="audioFile">
-			<destination>{fd6d684e-ecb5-4864-a00b-22aa847207eb}</destination>
+			<destination>{4c5319bf-9cc4-4bea-af80-0b2132b218d1}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{f8ddab35-7d50-4c3e-946b-aeb05626ac5d}">
@@ -154,7 +154,7 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{a773ca03-ce90-4b9b-bb46-264b6d2f0ee9}" />
-	<object class="RandomizerModulator" id="{aba712c9-f9d9-4ffb-8ac4-a5b176b6b5c6}">
+	<object class="RandomizerModulator" id="{c4232d5c-3529-4ea6-968d-845bccd49b14}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>startOffset</value>
 		</property>
@@ -187,8 +187,8 @@
 	<object class="MixerBusPanner" id="{19e2d230-0998-46d9-9191-15053ea1cfe8}" />
 	<object class="MixerBusFader" id="{52a91e33-d296-4a12-8a54-f5c704f6f8bd}" />
 	<object class="SpatialiserEffect" id="{3e12d94c-9ff9-471f-ab59-5d4768808f7f}">
-		<property name="minimumDistance">
-			<value>3</value>
+		<property name="maximumDistance">
+			<value>50</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{348d6ce9-01df-497f-aa1d-b663ffefae78}" />

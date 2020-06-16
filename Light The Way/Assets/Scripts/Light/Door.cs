@@ -7,6 +7,9 @@ public class Door : MonoBehaviour
 {
     public Light.Endpoint[] endpoints;
     public float height;
+    //sound
+    [FMODUnity.EventRef]
+    public string selectedOpenSound = "event:/FX/Door/DoorOpen";
 
     bool open = false;
 
@@ -23,10 +26,12 @@ public class Door : MonoBehaviour
             GetComponent<PhotonView>().RPC("OpenDoorSelf", RpcTarget.All);
             open = true;
         }
+
+        GetComponent<PhotonView>().RPC("OpenDoorSelf", RpcTarget.All);
     }
 
     [PunRPC]
-    public void OpenDoorSelf()
+    public void OpenDoorSelf(string originalObjectName)
     {
         foreach (var ep in endpoints)
         {
@@ -34,6 +39,12 @@ public class Door : MonoBehaviour
         }
 
         StartCoroutine("DoorOpenAnim");
+        GameObject originalObject = GameObject.Find(originalObjectName);
+        Transform originalTransform = originalObject.GetComponent<Transform>();
+
+        FMODUnity.RuntimeManager.PlayOneShot(selectedOpenSound, originalTransform.position);
+
+        this.gameObject.SetActive(false);
     }
 
     IEnumerator DoorOpenAnim()

@@ -40,15 +40,21 @@ MonoBehaviour:
   - DestroyRpc
   - DestroySelf
   - EnableSelf
+  - OnBeamSenseSoundSelf
+  - OnOpenEndpointSoundSelf
   - OpenDoorSelf
   - PlayBlueBeamSoundSelf
   - PlayGreenBeamSoundSelf
+  - PlayMissfireSoundSelf
   - PlayRedBeamSoundSelf
   - PlayWalkingSoundSelf
   - RotateSelf
   - RPC_ChangeReadyState
   - SetStaffActiveSelf
+  - SyncDirectionSelf
+  - takeOutToolSoundSelf
   - UpdateColorSelf
+  - stopMainMenuMusicSelf
   DisableAutoOpenWizard: 1
   ShowSettings: 1
-  DevRegionSetOnce: 0
+  DevRegionSetOnce: 1

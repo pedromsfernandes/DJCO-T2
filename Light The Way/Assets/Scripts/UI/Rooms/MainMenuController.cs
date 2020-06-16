@@ -22,6 +22,18 @@ public class MainMenuController : MonoBehaviour
 
     Vector2 screenSize;
 
+    //Sound
+    [FMODUnity.EventRef]
+    public string selectedPickOptionSound = "event:/Misc/Menu/Menu Pick";
+    [FMODUnity.EventRef]
+    public string selectedBackSound = "event:/Misc/Menu/Menu Back";
+    [FMODUnity.EventRef]
+    public string selectedHooverSound = "event:/Misc/Menu/Menu Hoover";
+
+
+    public static FMOD.Studio.EventInstance menuMusicEvent;
+
+
     void Start()
     {
         //Generate world space point information for position and scale calculations
@@ -57,6 +69,9 @@ public class MainMenuController : MonoBehaviour
             foreach (GameObject btn in btns)
                 btn.transform.localPosition = new Vector3(btn.transform.localPosition.x, btn.transform.localPosition.y + delta, btn.transform.localPosition.z);
         }
+
+        menuMusicEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Misc/Menu/Light the Way Menu Music");
+        menuMusicEvent.start();
     }
 
     void Update()
@@ -76,24 +91,28 @@ public class MainMenuController : MonoBehaviour
     {
         canvas.SetActive(false);
         altCanvas[0].SetActive(true);
+        FMODUnity.RuntimeManager.PlayOneShot(selectedPickOptionSound);
     }
 
     public void CreateRoom()
     {
         canvas.SetActive(false);
         altCanvas[1].SetActive(true);
+        FMODUnity.RuntimeManager.PlayOneShot(selectedPickOptionSound);
     }
 
     public void Settings()
     {
         canvas.SetActive(false);
         altCanvas[2].SetActive(true);
+        FMODUnity.RuntimeManager.PlayOneShot(selectedPickOptionSound);
     }
 
     public void CreateRoomSuccessful()
     {
         altCanvas[1].SetActive(false);
         altCanvas[3].SetActive(true);
+        FMODUnity.RuntimeManager.PlayOneShot(selectedPickOptionSound);
     }
 
     public void Back()
@@ -103,11 +122,18 @@ public class MainMenuController : MonoBehaviour
         altCanvas[1].SetActive(false);
         altCanvas[2].SetActive(false);
         altCanvas[3].SetActive(false);
+        FMODUnity.RuntimeManager.PlayOneShot(selectedBackSound);
     }
 
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void PlayHooverSound()
+    {
+        Debug.Log("HOOVER");
+        FMODUnity.RuntimeManager.PlayOneShot(selectedHooverSound);
     }
 
     IEnumerator FirstMenuAnim(float delta)

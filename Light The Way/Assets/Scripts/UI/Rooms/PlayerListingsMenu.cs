@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 {
+    public GameObject canvas;
+
     [SerializeField]
     private PlayerListing _playerListing;
 
@@ -23,6 +25,12 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
     private bool _ready = false;
 
+    //Sound
+    [FMODUnity.EventRef]
+    public string selectedPickOptionSound = "event:/Misc/Menu/Menu Pick";
+    [FMODUnity.EventRef]
+    public string selectedBackSound = "event:/Misc/Menu/Menu Back";
+
     public void FirstInitialize(RoomsCanvases canvases)
     {
         _roomsCanvases = canvases;
@@ -33,6 +41,7 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
         base.OnEnable();
         SetReadyUp(false);
         GetCurrentRoomPlayers();
+        canvas.SetActive(false);
     }
 
     public override void OnDisable()
@@ -106,22 +115,34 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
     public void OnClick_StartGame()
     {
-        base.photonView.RPC("LoadCutscene", RpcTarget.All);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            base.photonView.RPC("LoadCutscene", RpcTarget.All);
+        }
     }
 
     [PunRPC]
     private void LoadCutscene()
     {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            SceneManager.LoadScene(2);
-        }
+        Debug.Log("STOP MUSIC");
+        MainMenuController.menuMusicEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        SceneManager.LoadScene(2);   
     }
 
     public void OnClick_ReadyUp()
     {
         SetReadyUp(!_ready);
         base.photonView.RPC("RPC_ChangeReadyState", RpcTarget.MasterClient, PhotonNetwork.LocalPlayer, _ready);
+
+
+        if (_ready)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(selectedPickOptionSound);
+        }
+        else
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(selectedBackSound);
+        }
     }
 
     [PunRPC]

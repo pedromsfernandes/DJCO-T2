@@ -121,7 +121,7 @@ public class MovementController : MonoBehaviourPun
         controller.Move(gravityMove);
 
         //Update Rigidbody Velocity
-        playerRigidbody.velocity = desiredMove;
+        //playerRigidbody.velocity = desiredMove;
     }
 
     [PunRPC]

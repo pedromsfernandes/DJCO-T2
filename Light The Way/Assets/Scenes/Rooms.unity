@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 27186530}
   - component: {fileID: 27186533}
   - component: {fileID: 27186531}
+  - component: {fileID: 27186532}
   m_Layer: 0
   m_Name: SetNickNameButton
   m_TagString: Untagged
@@ -213,6 +214,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &27186532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27186529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!222 &27186533
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -643,10 +672,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd892786863a147ae8c03a23c6114ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 1936767474}
   _playerListing: {fileID: 6097996764519046988, guid: 688e25d1415561941ab5e34b1cd23a44,
     type: 3}
   _content: {fileID: 82013952}
   _readyUpText: {fileID: 1245374210}
+  selectedPickOptionSound: event:/Misc/Menu/Menu Pick
+  selectedBackSound: event:/Misc/Menu/Menu Back
 --- !u!114 &195222770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1272,6 +1304,7 @@ GameObject:
   - component: {fileID: 460492912}
   - component: {fileID: 460492915}
   - component: {fileID: 460492913}
+  - component: {fileID: 460492914}
   m_Layer: 0
   m_Name: CreateButton
   m_TagString: Untagged
@@ -1353,6 +1386,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &460492914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460492911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!222 &460492915
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1649,6 +1710,7 @@ GameObject:
   - component: {fileID: 562948762}
   - component: {fileID: 562948764}
   - component: {fileID: 562948763}
+  - component: {fileID: 562948765}
   m_Layer: 0
   m_Name: back
   m_TagString: Untagged
@@ -1738,6 +1800,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562948761}
   m_CullTransparentMesh: 0
+--- !u!114 &562948765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562948761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &623092534
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,6 +2171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nickName: {fileID: 1516062237}
+  selectedPickOptionSound: event:/Misc/Menu/Menu Pick
 --- !u!1 &648176969
 GameObject:
   m_ObjectHideFlags: 0
@@ -3079,6 +3170,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1796646363}
+        m_MethodName: PlayHooverSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &1245374209
 GameObject:
@@ -4042,6 +4144,7 @@ GameObject:
   - component: {fileID: 1579280146}
   - component: {fileID: 1579280145}
   - component: {fileID: 1579280144}
+  - component: {fileID: 1579280147}
   m_Layer: 0
   m_Name: back
   m_TagString: Untagged
@@ -4131,6 +4234,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -1000}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1579280147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579280143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1600801454
 GameObject:
   m_ObjectHideFlags: 0
@@ -4723,6 +4854,7 @@ GameObject:
   - component: {fileID: 1778205118}
   - component: {fileID: 1778205120}
   - component: {fileID: 1778205119}
+  - component: {fileID: 1778205121}
   m_Layer: 0
   m_Name: back
   m_TagString: Untagged
@@ -4812,6 +4944,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778205117}
   m_CullTransparentMesh: 0
+--- !u!114 &1778205121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778205117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1796646362
 GameObject:
   m_ObjectHideFlags: 0
@@ -4859,6 +5019,9 @@ MonoBehaviour:
   logo: {fileID: 1360201549}
   logo_hl: {fileID: 2070696026}
   laser: {fileID: 1601494482}
+  selectedPickOptionSound: event:/Misc/Menu/Menu Pick
+  selectedBackSound: event:/Misc/Menu/Menu Back
+  selectedHooverSound: event:/Misc/Menu/Menu Hoover
 --- !u!4 &1796646364
 Transform:
   m_ObjectHideFlags: 0
@@ -5336,6 +5499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 1796646363}
   _roomName: {fileID: 1750906472}
+  selectedBackSound: event:/Misc/Menu/Menu Back
 --- !u!1 &2011851793
 GameObject:
   m_ObjectHideFlags: 0
@@ -5857,6 +6021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!23 &417402277895656330
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6056,6 +6221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402277993627807
 Transform:
   m_ObjectHideFlags: 0
@@ -6164,6 +6330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402278040252299
 Transform:
   m_ObjectHideFlags: 0
@@ -6192,6 +6359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402278085796433
 Transform:
   m_ObjectHideFlags: 0
@@ -6426,6 +6594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!1 &417402278202510598
 GameObject:
   m_ObjectHideFlags: 0
@@ -6534,6 +6703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!65 &417402278370786630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6626,6 +6796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402278370786635
 Transform:
   m_ObjectHideFlags: 0
@@ -6744,6 +6915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402278638445397
 Transform:
   m_ObjectHideFlags: 0
@@ -6989,6 +7161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402278831529351
 Transform:
   m_ObjectHideFlags: 0
@@ -7130,6 +7303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402279000124143
 Transform:
   m_ObjectHideFlags: 0
@@ -7254,6 +7428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!1 &417402279057987896
 GameObject:
   m_ObjectHideFlags: 0
@@ -7406,6 +7581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402279186286415
 Transform:
   m_ObjectHideFlags: 0
@@ -7464,6 +7640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402279223864401
 Transform:
   m_ObjectHideFlags: 0
@@ -7572,6 +7749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402279265508085
 Transform:
   m_ObjectHideFlags: 0
@@ -7696,6 +7874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!23 &417402279269631042
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7895,6 +8074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402279512166771
 Transform:
   m_ObjectHideFlags: 0
@@ -8019,6 +8199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402279621677049
 Transform:
   m_ObjectHideFlags: 0
@@ -8154,6 +8335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &417402279854628805
 Transform:
   m_ObjectHideFlags: 0
@@ -8355,6 +8537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!1 &417402279905010638
 GameObject:
   m_ObjectHideFlags: 0
@@ -8631,6 +8814,8 @@ MonoBehaviour:
   endpoints:
   - {fileID: 561409926051313022}
   - {fileID: 561409925562388731}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!33 &561409924179964346
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9129,6 +9314,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!23 &561409924191374300
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10980,6 +11166,8 @@ MonoBehaviour:
   endpoints:
   - {fileID: 5620849105815059746}
   - {fileID: 5620849105550724993}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!33 &561409924330764870
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12163,6 +12351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!33 &561409924432238236
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12746,6 +12935,8 @@ MonoBehaviour:
   targetColor: 5
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409924474150249
 Transform:
   m_ObjectHideFlags: 0
@@ -13278,6 +13469,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!114 &561409924501628677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14094,6 +14286,8 @@ MonoBehaviour:
   targetColor: 5
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409924543200966
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14971,6 +15165,8 @@ MonoBehaviour:
   targetColor: 5
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409924578540974
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15503,6 +15699,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 561409925547025485}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &561409924608362757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15686,6 +15884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 20
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!33 &561409924609002937
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15744,6 +15943,8 @@ MonoBehaviour:
   endpoints:
   - {fileID: 561409924474150248}
   - {fileID: 561409925850140266}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &561409924616428793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16120,6 +16321,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!114 &561409924651033217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17372,6 +17574,8 @@ MonoBehaviour:
   targetColor: 2
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409924725926909
 Transform:
   m_ObjectHideFlags: 0
@@ -17977,6 +18181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 561409925246530598}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!33 &561409924741877806
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18273,6 +18479,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 561409925963077547}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!33 &561409924766055732
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19217,6 +19425,8 @@ MonoBehaviour:
   endpoints:
   - {fileID: 5620849105561013117}
   - {fileID: 5620849105571937049}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!1 &561409924853227218
 GameObject:
   m_ObjectHideFlags: 0
@@ -19252,6 +19462,8 @@ MonoBehaviour:
   targetColor: 7
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409924853227221
 Transform:
   m_ObjectHideFlags: 0
@@ -20297,6 +20509,8 @@ MonoBehaviour:
   - {fileID: 561409925705167482}
   - {fileID: 561409926065868469}
   - {fileID: 561409924725926908}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &561409924900538545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21373,6 +21587,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!33 &561409924950525785
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -23572,6 +23787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &561409925116377257
 Transform:
   m_ObjectHideFlags: 0
@@ -25179,6 +25395,8 @@ MonoBehaviour:
   targetColor: 7
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409925246530599
 Transform:
   m_ObjectHideFlags: 0
@@ -25575,6 +25793,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 561409925675312983}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!33 &561409925251437032
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26273,6 +26493,8 @@ MonoBehaviour:
   targetColor: 2
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409925300930019
 Transform:
   m_ObjectHideFlags: 0
@@ -26376,6 +26598,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 561409925300930018}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!33 &561409925301944690
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26914,6 +27138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &561409925334920865
 Transform:
   m_ObjectHideFlags: 0
@@ -28367,6 +28592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!4 &561409925384200326
 Transform:
   m_ObjectHideFlags: 0
@@ -28511,6 +28737,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 5620849106181967279}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!23 &561409925395779624
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28678,6 +28906,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 5620849106274494599}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &561409925402681097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30503,6 +30733,8 @@ MonoBehaviour:
   targetColor: 2
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409925547025486
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -30600,6 +30832,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!114 &561409925552834085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30933,6 +31166,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!33 &561409925562366612
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -31065,6 +31299,8 @@ MonoBehaviour:
   targetColor: 1
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409925562388732
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -31304,6 +31540,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 561409925970944938}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &561409925573955589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32411,6 +32649,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!33 &561409925638477668
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -32543,6 +32782,8 @@ MonoBehaviour:
   targetColor: 1
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409925653361062
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -32640,6 +32881,8 @@ MonoBehaviour:
   endpoints:
   - {fileID: 561409925653361061}
   - {fileID: 561409925762446230}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &561409925655833107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32879,6 +33122,8 @@ MonoBehaviour:
   targetColor: 7
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409925675313000
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -33551,6 +33796,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409925705167483
 Transform:
   m_ObjectHideFlags: 0
@@ -34070,6 +34317,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409925762446231
 Transform:
   m_ObjectHideFlags: 0
@@ -35061,6 +35310,8 @@ MonoBehaviour:
   targetColor: 2
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!1 &561409925828348963
 GameObject:
   m_ObjectHideFlags: 0
@@ -35332,6 +35583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &561409925835156295
 Transform:
   m_ObjectHideFlags: 0
@@ -35678,6 +35930,8 @@ MonoBehaviour:
   targetColor: 6
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409925850140267
 Transform:
   m_ObjectHideFlags: 0
@@ -37384,6 +37638,8 @@ MonoBehaviour:
   targetColor: 7
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409925963077548
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -37745,6 +38001,8 @@ MonoBehaviour:
   targetColor: 7
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409925970944939
 Transform:
   m_ObjectHideFlags: 0
@@ -38135,6 +38393,8 @@ MonoBehaviour:
   endpoints:
   - {fileID: 0}
   - {fileID: 0}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!4 &561409926002163609
 Transform:
   m_ObjectHideFlags: 0
@@ -38697,6 +38957,8 @@ MonoBehaviour:
   targetColor: 2
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &561409926051313023
 Transform:
   m_ObjectHideFlags: 0
@@ -38870,6 +39132,8 @@ MonoBehaviour:
   targetColor: 1
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!33 &561409926065868470
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -38949,6 +39213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832ea9fb059bd6498c09990abe64292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedMirrorReflectSound: event:/FX/Crystal/Mirror/MirrorReflect
 --- !u!4 &561409926071441849
 Transform:
   m_ObjectHideFlags: 0
@@ -40267,6 +40532,8 @@ MonoBehaviour:
   endpoints:
   - {fileID: 5620849106543365466}
   - {fileID: 5620849105813680188}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &561409926147955297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41175,6 +41442,8 @@ MonoBehaviour:
   - {fileID: 561409924578540973}
   - {fileID: 561409924543200965}
   - {fileID: 561409925828348962}
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!4 &561409926195917969
 Transform:
   m_ObjectHideFlags: 0
@@ -41866,6 +42135,7 @@ MonoBehaviour:
   timeout: 1
   timeToDestroy: 3
   toolColor: 4
+  selectedExplosionSound: 
 --- !u!114 &561409926232253607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45489,6 +45759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!1 &3577432955373005957
 GameObject:
   m_ObjectHideFlags: 0
@@ -45621,6 +45892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!1 &3577432955545620053
 GameObject:
   m_ObjectHideFlags: 0
@@ -45759,6 +46031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!1 &3577432955606651759
 GameObject:
   m_ObjectHideFlags: 0
@@ -45857,6 +46130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!136 &3577432955680129970
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -45995,6 +46269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!33 &3577432955839182482
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -46050,6 +46325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!136 &3577432956294019266
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -46214,6 +46490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!1 &3577432956420019959
 GameObject:
   m_ObjectHideFlags: 0
@@ -46319,6 +46596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!33 &3577432956517794834
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -46354,6 +46632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc484c12f5f444a8031c9ba554f738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCombinerReflectSound: event:/FX/Crystal/Combiner/CombinerReflect
 --- !u!1 &3577432956932288045
 GameObject:
   m_ObjectHideFlags: 0
@@ -47517,6 +47796,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &5620849105550724994
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47690,6 +47971,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &5620849105561013118
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47801,6 +48084,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &5620849105571937050
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47912,6 +48197,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &5620849105767755886
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -48023,6 +48310,8 @@ MonoBehaviour:
   targetColor: 5
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!1 &5620849105813680190
 GameObject:
   m_ObjectHideFlags: 0
@@ -48106,6 +48395,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &5620849105815059756
 Transform:
   m_ObjectHideFlags: 0
@@ -48279,6 +48570,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!136 &5620849106274494596
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -48328,6 +48621,8 @@ MonoBehaviour:
   targetColor: 4
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!4 &5620849106274494601
 Transform:
   m_ObjectHideFlags: 0
@@ -48501,6 +48796,8 @@ MonoBehaviour:
   targetColor: 6
   open: 0
   active: 1
+  selectedHitEndpointSound: event:/FX/Crystal/CrystalHit
+  selectedOpenEndpointSound: event:/FX/Crystal/CrystalReflect
 --- !u!23 &5871383141653127670
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49504,6 +49801,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endpoints: []
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!136 &6577688716098957967
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -49640,6 +49939,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endpoints: []
+  height: 0
+  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!1 &6885090026679486120
 GameObject:
   m_ObjectHideFlags: 0
@@ -50110,7 +50411,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7165848223501073046}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &7165848223501073046
 GameObject:
   m_ObjectHideFlags: 0
@@ -50123,6 +50424,7 @@ GameObject:
   - component: {fileID: 7165848223501073044}
   - component: {fileID: 7165848223501073050}
   - component: {fileID: 7165848223501073045}
+  - component: {fileID: 7165848223501073047}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -50130,6 +50432,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7165848223501073047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7165848223501073046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!114 &7165848223501073050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50189,6 +50504,7 @@ GameObject:
   - component: {fileID: 7221723412976004320}
   - component: {fileID: 7221723412976004322}
   - component: {fileID: 7221723412976004323}
+  - component: {fileID: 7221723412976004324}
   m_Layer: 0
   m_Name: exit
   m_TagString: Untagged
@@ -50258,6 +50574,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7221723412976004324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221723412976004321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7221723413234134198
 GameObject:
   m_ObjectHideFlags: 0
@@ -50366,6 +50710,7 @@ GameObject:
   - component: {fileID: 7221723413539863270}
   - component: {fileID: 7221723413539863272}
   - component: {fileID: 7221723413539863273}
+  - component: {fileID: 7221723413539863274}
   m_Layer: 0
   m_Name: settings
   m_TagString: Untagged
@@ -50435,6 +50780,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7221723413539863274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221723413539863271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &7221723413582303480
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50720,6 +51093,7 @@ GameObject:
   - component: {fileID: 7221723414333722161}
   - component: {fileID: 7221723414333722163}
   - component: {fileID: 7221723414333722160}
+  - component: {fileID: 7221723414333722159}
   m_Layer: 0
   m_Name: create
   m_TagString: Untagged
@@ -50727,6 +51101,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7221723414333722159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221723414333722158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &7221723414333722160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50820,6 +51222,7 @@ GameObject:
   - component: {fileID: 7221723414837189885}
   - component: {fileID: 7221723414837189886}
   - component: {fileID: 7221723414837189884}
+  - component: {fileID: 7221723414837189883}
   m_Layer: 0
   m_Name: join
   m_TagString: Untagged
@@ -50827,6 +51230,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7221723414837189883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221723414837189882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1796646363}
+          m_MethodName: PlayHooverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &7221723414837189884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53147,6 +53578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 102
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!114 &7894558194011085867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53160,6 +53592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 180
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!114 &7894558194208977451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53173,6 +53606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 180
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!114 &7894558194550899844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53186,6 +53620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 180
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!114 &7894558195071915037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53199,6 +53634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 100
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!114 &7894558195188237748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53212,6 +53648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 102
+  selectedSplitterReflectSound: event:/FX/Crystal/Splitter/SplitterReflect
 --- !u!1 &7903125225963520086
 GameObject:
   m_ObjectHideFlags: 0

@@ -114,6 +114,7 @@
 		<relationship name="effects">
 			<destination>{bc25b636-0006-4863-9159-2872b9abc623}</destination>
 			<destination>{aeb15c28-872b-4679-a444-c9568131b2a6}</destination>
+			<destination>{082fd4be-1a44-44b6-b002-b680017be0b0}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{f371d1cd-444e-45d5-8bdd-37914920e41e}">
@@ -132,6 +133,27 @@
 	</object>
 	<object class="MixerBusPanner" id="{7aa2bb31-8f8e-4485-8a57-1eb0bf27cec2}" />
 	<object class="MixerBusFader" id="{bc25b636-0006-4863-9159-2872b9abc623}" />
-	<object class="SpatialiserEffect" id="{aeb15c28-872b-4679-a444-c9568131b2a6}" />
+	<object class="SpatialiserEffect" id="{aeb15c28-872b-4679-a444-c9568131b2a6}">
+		<property name="minimumDistance">
+			<value>10</value>
+		</property>
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+	</object>
+	<object class="MultibandEqEffect" id="{082fd4be-1a44-44b6-b002-b680017be0b0}">
+		<property name="filterTypeA">
+			<value>8</value>
+		</property>
+		<property name="frequencyA">
+			<value>102.775131</value>
+		</property>
+		<property name="qualityA">
+			<value>6.72413826</value>
+		</property>
+		<property name="gainA">
+			<value>13.965519</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{e08194b1-e2a3-497c-9793-3a2a9583a121}" />
 </objects>

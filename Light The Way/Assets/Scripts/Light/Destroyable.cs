@@ -13,14 +13,9 @@ namespace Light
 
         public LightType toolColor;
 
-        protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
-        {
-            if (GameState.Instance.canDestroyObjects && beam.LightColor.Equals(toolColor))
-            {
-                _timeSinceLastHit = 0;
-            }
-        }
-
+        //sound
+        [FMODUnity.EventRef]
+        public string selectedExplosionSound;
         private void Update()
         {
             if (_timeSinceLastHit > timeout)
@@ -38,15 +33,27 @@ namespace Light
             if (_timeWithHit > timeToDestroy)
                 Destroy();
         }
+        protected override void OnBeamSense(LightBeam beam, RaycastHit hit, Vector3 reflectedDirection)
+        {
+            if (GameState.Instance.canDestroyObjects && beam.LightColor.Equals(toolColor))
+            {
+                _timeSinceLastHit = 0;
+            }
+        }
 
         private void Destroy()
         {
-            GetComponent<PhotonView>().RPC("DestroySelf", RpcTarget.All);
+            GetComponent<PhotonView>().RPC("DestroySelf", RpcTarget.All, this.name);
         }
 
         [PunRPC]
-        void DestroySelf()
+        void DestroySelf(string originalObjectName)
         {
+            GameObject originalObject = GameObject.Find(originalObjectName);
+            Transform originalTransform = originalObject.GetComponent<Transform>();
+
+            FMODUnity.RuntimeManager.PlayOneShot(selectedExplosionSound, originalTransform.position);
+
             this.gameObject.SetActive(false);
         }
     }
