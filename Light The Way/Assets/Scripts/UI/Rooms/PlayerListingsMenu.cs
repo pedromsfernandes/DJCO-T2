@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 {
@@ -105,27 +106,17 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
     public void OnClick_StartGame()
     {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            // for (int i = 0; i < _listings.Count; i++)
-            // {
-            //     if (_listings[i].Player != PhotonNetwork.LocalPlayer)
-            //     {
-            //         if (!_listings[i].ready)
-            //             return;
-            //     }
-            // }
+        base.photonView.RPC("LoadCutscene", RpcTarget.All);
+    }
 
-
-            PhotonNetwork.CurrentRoom.IsOpen = false;
-            PhotonNetwork.CurrentRoom.IsVisible = false;
-            PhotonNetwork.LoadLevel(1);
-        }
+    [PunRPC]
+    private void LoadCutscene()
+    {
+        SceneManager.LoadScene(2);
     }
 
     public void OnClick_ReadyUp()
     {
-
         SetReadyUp(!_ready);
         base.photonView.RPC("RPC_ChangeReadyState", RpcTarget.MasterClient, PhotonNetwork.LocalPlayer, _ready);
     }
