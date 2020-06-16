@@ -64,8 +64,8 @@ public class Temple : MonoBehaviour
     IEnumerator ShowMessage()
     {
         text.text = message;
-        text.enabled = true;
+        text.gameObject.SetActive(true);
         yield return new WaitForSeconds(delay);
-        text.enabled = false;
+        text.gameObject.SetActive(false);
     }
 }
