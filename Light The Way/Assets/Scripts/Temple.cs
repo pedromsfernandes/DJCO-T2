@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
+
 public enum TempleName
 {
 
@@ -61,8 +63,11 @@ public class Temple : MonoBehaviour
                         GameState.Instance.canRotateSun = true;
                     laser.SetPosition(1, new Vector3(-289.8f, 144.5f, -80.1f));
                     break;
-                 case TempleName.Green:
+                case TempleName.Green:
                     laser.SetPosition(1, new Vector3(-289.8f, 144.5f, -80.1f));
+                    break;
+                case TempleName.Final:
+                    SceneManager.LoadScene(3);
                     break;
                 default:
                     break;

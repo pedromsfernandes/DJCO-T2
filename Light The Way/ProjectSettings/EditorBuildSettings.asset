@@ -14,15 +14,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscene.unity
     guid: 6ea6c2bd56097094d87096fdb4677769
+  - enabled: 1
+    path: Assets/Scenes/Final Cutscene.unity
+    guid: d6d95f3ac12c5dc43801e9010235d539
   - enabled: 0
-    path: Assets/Scenes/LightBridges.unity
-    guid: 17d583411043fbb4e9f8bab073d63437
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Mirrors and Endpoints.unity
-    guid: 0c731708af543ed489a527db25d9e498
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Game.unity
-    guid: 1757e520867eede8f9275fc99947dec7
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -30,23 +33,23 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro Levels.unity
     guid: 77070cf56cbe1974abb5d280c71ad318
   - enabled: 0
-    path: Assets/Scenes/Mirrors and Endpoints.unity
-    guid: 0c731708af543ed489a527db25d9e498
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Endpoints.unity
-    guid: bf6ffa71af4ffb8469af923951b27109
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Lighting.unity
-    guid: c07eac827f89aa340a359a69b097af66
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Level Design.unity
-    guid: b779158f2dd753e498b2ab2647619372
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Fixes.unity
-    guid: 1e56c3f011e2e33188d80c52116a74d2
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Splitters.unity
-    guid: e2df521211b67de4e90175458d82b816
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Scenes/Map.unity
     guid: 3f1e6c2121596b3429a547abadd52c4d
@@ -54,12 +57,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Map.unity
     guid: 1be35977244bdce4d989036455adbf32
   - enabled: 0
-    path: Assets/Scenes/Red Temple.unity
-    guid: afb5b9feca8e25d45afb16d304a1f6f1
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/Sound.unity
     guid: e6f5e725385944149a2b7a8d6b564071
   - enabled: 0
-    path: Assets/Scenes/Blue Temple.unity
-    guid: 280d03bdba2a1549696f8cbc6db8bf68
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

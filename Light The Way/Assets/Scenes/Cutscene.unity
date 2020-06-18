@@ -2706,6 +2706,7 @@ MonoBehaviour:
   set3: {fileID: 1199728739}
   set4: {fileID: 1039112402}
   staff: {fileID: 1197806546}
+  cutsceneMusic: event:/Misc/Original Theme Song/Light The Way Theme
 --- !u!1 &210507502
 GameObject:
   m_ObjectHideFlags: 0
@@ -14122,6 +14123,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 40.2
       objectReference: {fileID: 0}
+    - target: {fileID: 313480519883554374, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 362548732069878396, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
       propertyPath: m_IsActive
@@ -14176,6 +14182,11 @@ PrefabInstance:
         type: 3}
       propertyPath: height
       value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 714451661037840368, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 775766147216539208, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
@@ -14251,6 +14262,16 @@ PrefabInstance:
         type: 3}
       propertyPath: viewIdField
       value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719437094486430427, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773085662193186209, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2821642805138645599, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
@@ -14406,6 +14427,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 111.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829824082401606801, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3952338145203832309, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3961336676225065321, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
@@ -14582,10 +14613,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5183172853828041209, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5292842078679251447, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
       propertyPath: targetColor
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5313972128731807303, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5334197426046664327, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
@@ -14672,6 +14713,16 @@ PrefabInstance:
       propertyPath: viewIdField
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 5996395335799484412, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189315697230491696, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6248698080644038286, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
       propertyPath: m_IsActive
@@ -14712,6 +14763,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 63.6
       objectReference: {fileID: 0}
+    - target: {fileID: 6976210764343693526, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016216542238297807, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7196428611430724506, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
       propertyPath: m_IsActive
@@ -14731,6 +14792,11 @@ PrefabInstance:
         type: 3}
       propertyPath: height
       value: 25.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8336679809739946403, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8770509830712237252, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
@@ -14771,6 +14837,11 @@ PrefabInstance:
         type: 3}
       propertyPath: height
       value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9088416077515719925, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: viewIdField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9099483577591155385, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
