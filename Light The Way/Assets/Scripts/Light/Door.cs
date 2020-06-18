@@ -19,6 +19,9 @@ public class Door : MonoBehaviour
     {
         if(!open)
         {
+            if(endpoints.Length == 0)
+                return;
+
             for (int i = 0; i < endpoints.Length; i++)
             {
                 if (!endpoints[i].open)
