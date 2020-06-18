@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Photon.Pun;
 
@@ -9,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     public void MainMenu()
     {
         PhotonNetwork.LeaveRoom(true);
-        PhotonNetwork.LoadLevel(0);
+        SceneManager.LoadScene("Rooms");
     }
 
     public void Continue()
