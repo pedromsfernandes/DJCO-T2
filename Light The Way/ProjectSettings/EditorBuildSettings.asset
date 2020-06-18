@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Rooms.unity
     guid: 333345a692231efd6b02d4cc8ff20bbf
   - enabled: 1
-    path: Assets/Scenes/Intro Levels.unity
-    guid: 77070cf56cbe1974abb5d280c71ad318
+    path: Assets/Scenes/Checkpoints.unity
+    guid: b8a846cc30b1cfa55a8a247ab57a8ae0
   - enabled: 1
     path: Assets/Scenes/Cutscene.unity
     guid: 6ea6c2bd56097094d87096fdb4677769
@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/Intro Levels.unity
+    guid: 77070cf56cbe1974abb5d280c71ad318
   - enabled: 0
     path: Assets/Scenes/Mirrors and Endpoints.unity
     guid: 0c731708af543ed489a527db25d9e498
@@ -59,7 +62,4 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Blue Temple.unity
     guid: 280d03bdba2a1549696f8cbc6db8bf68
-  - enabled: 1
-    path: Assets/Scenes/Checkpoints.unity
-    guid: b8a846cc30b1cfa55a8a247ab57a8ae0
   m_configObjects: {}

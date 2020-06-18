@@ -764,6 +764,7 @@ MonoBehaviour:
     type: 3}
   _content: {fileID: 82013952}
   _readyUpText: {fileID: 1245374210}
+  _checkpoint: {fileID: 448740151}
   selectedPickOptionSound: event:/Misc/Menu/Menu Pick
   selectedBackSound: event:/Misc/Menu/Menu Back
 --- !u!114 &195222770

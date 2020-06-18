@@ -5856,9 +5856,9 @@ MonoBehaviour:
   _prefab: {fileID: 7841573969275939898, guid: 20f3506190c57654c8c5e2dde512775d, type: 3}
   recorder: {fileID: 0}
   startPositions:
-  - {x: 312, y: 30, z: 1343}
-  - {x: 314, y: 30, z: 1343}
-  - {x: 316, y: 30, z: 1343}
+  - {x: 184.3, y: -6.7, z: 1537.7}
+  - {x: 166.8, y: -6.2, z: 1527.3}
+  - {x: 146.3, y: -6.2, z: 1532.5}
   bluePositions:
   - {x: -1283, y: 55, z: 1240}
   - {x: -1281, y: 55, z: 1240}
