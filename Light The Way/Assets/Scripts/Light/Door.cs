@@ -6,6 +6,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public Light.Endpoint[] endpoints;
+    public Door[] doors;
     public float height;
     //sound
     [FMODUnity.EventRef]
@@ -34,6 +35,11 @@ public class Door : MonoBehaviour
         foreach (var ep in endpoints)
         {
             ep.Deactivate();
+        }
+
+        foreach (var door in doors)
+        {
+            door.OpenDoorSelf();
         }
 
         StartCoroutine("DoorOpenAnim");

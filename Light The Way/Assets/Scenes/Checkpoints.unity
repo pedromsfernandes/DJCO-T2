@@ -871,6 +871,7 @@ MonoBehaviour:
   - {fileID: 551829314}
   - {fileID: 551829313}
   - {fileID: 551829312}
+  doors: []
   height: 16.5
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!1 &180942115 stripped
@@ -2375,6 +2376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 1162416506}
+  doors: []
   height: 16.5
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!1 &551829318 stripped
@@ -3338,10 +3340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1467d4ccae3d54db1f6860414cfa06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endpoints:
-  - {fileID: 1147866708}
-  - {fileID: 1147866707}
-  - {fileID: 1147866706}
+  endpoints: []
+  doors: []
   height: 38.5
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!1 &1075715989 stripped
@@ -3390,10 +3390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1467d4ccae3d54db1f6860414cfa06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endpoints:
-  - {fileID: 1147866708}
-  - {fileID: 1147866707}
-  - {fileID: 1147866706}
+  endpoints: []
+  doors: []
   height: 35
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &1075715993
@@ -3430,8 +3428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1467d4ccae3d54db1f6860414cfa06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endpoints:
-  - {fileID: 180942117}
+  endpoints: []
+  doors: []
   height: 40
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!1 &1075715995 stripped
@@ -3454,6 +3452,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 180942117}
+  doors:
+  - {fileID: 1075715994}
   height: 16.5
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &1075715997
@@ -3532,6 +3532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 1075715998}
+  doors: []
   height: 38
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!1 &1075716002 stripped
@@ -3820,6 +3821,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 681042796074035654, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
+      propertyPath: doors.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 681042796074035654, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
       propertyPath: endpoints.Array.data[0]
       value: 
       objectReference: {fileID: 1147866708}
@@ -3838,6 +3844,21 @@ PrefabInstance:
       propertyPath: height
       value: 7.5
       objectReference: {fileID: 0}
+    - target: {fileID: 681042796074035654, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: doors.Array.data[0]
+      value: 
+      objectReference: {fileID: 1075715988}
+    - target: {fileID: 681042796074035654, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: doors.Array.data[1]
+      value: 
+      objectReference: {fileID: 1075715992}
+    - target: {fileID: 681042796074035654, guid: db779c0b7886ccf46bbcee16ffe0df25,
+        type: 3}
+      propertyPath: doors.Array.data[2]
+      value: 
+      objectReference: {fileID: 1162416505}
     - target: {fileID: 714451661037840368, guid: db779c0b7886ccf46bbcee16ffe0df25,
         type: 3}
       propertyPath: viewIdField
@@ -5424,10 +5445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1467d4ccae3d54db1f6860414cfa06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endpoints:
-  - {fileID: 1147866708}
-  - {fileID: 1147866707}
-  - {fileID: 1147866706}
+  endpoints: []
+  doors: []
   height: 16.5
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &1162416506 stripped
@@ -10563,7 +10582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4301467071813201644}
   m_LocalRotation: {x: 0.17780806, y: 0.78546643, z: -0.026199117, w: -0.5922334}
-  m_LocalPosition: {x: -106.4, y: -3.7, z: 65.8}
+  m_LocalPosition: {x: -107.2, y: -2.7, z: 68.9}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 5228692999391893152}
