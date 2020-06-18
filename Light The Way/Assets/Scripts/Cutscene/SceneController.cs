@@ -19,6 +19,9 @@ public class SceneController : MonoBehaviour
     public GameObject set4;
     public GameObject staff;
 
+    [FMODUnity.EventRef]
+    public string cutsceneMusic = "event:/Misc/Original Theme Song/Light The Way Theme";
+
     void Start()
     {
         int level = MasterManager.Checkpoint;
@@ -35,6 +38,8 @@ public class SceneController : MonoBehaviour
 
     IEnumerator PlayScene()
     {
+        FMODUnity.RuntimeManager.PlayOneShot(cutsceneMusic);
+        
         Coroutine cm = StartCoroutine("CameraZoom");
         yield return new WaitForSeconds(1f);
         yield return StartCoroutine("HideSplash");

@@ -33,8 +33,6 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
     public string selectedPickOptionSound = "event:/Misc/Menu/Menu Pick";
     [FMODUnity.EventRef]
     public string selectedBackSound = "event:/Misc/Menu/Menu Back";
-    [FMODUnity.EventRef]
-    public string cutsceneMusic = "event:/Misc/Original Theme Song/Light The Way Theme";
 
     public void FirstInitialize(RoomsCanvases canvases)
     {
@@ -132,8 +130,6 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
     {
         Debug.Log("STOP MUSIC");
         MainMenuController.menuMusicEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-
-        FMODUnity.RuntimeManager.PlayOneShot(cutsceneMusic);
 
         SceneManager.LoadScene(2);   
     }
