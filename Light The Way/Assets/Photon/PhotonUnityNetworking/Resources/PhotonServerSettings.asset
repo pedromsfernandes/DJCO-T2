@@ -15,7 +15,7 @@ MonoBehaviour:
   AppSettings:
     AppIdRealtime: fd440c9a-329f-4c1f-8539-e7a399dd93d5
     AppIdChat: 
-    AppIdVoice: 
+    AppIdVoice: 4ed42a03-17d7-4311-96df-e5dc580bf523
     AppVersion: 
     UseNameServer: 1
     FixedRegion: 
@@ -25,7 +25,7 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: 
+  DevRegion: eu
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
@@ -39,10 +39,7 @@ MonoBehaviour:
   - DestroyRpc
   - DestroySelf
   - EnableSelf
-<<<<<<< HEAD
   - LoadCutscene
-=======
->>>>>>> intro-map-design
   - OnBeamSenseSoundSelf
   - OnOpenEndpointSoundSelf
   - OpenDoorSelf
@@ -53,19 +50,11 @@ MonoBehaviour:
   - PlayWalkingSoundSelf
   - RotateSelf
   - RPC_ChangeReadyState
-<<<<<<< HEAD
   - RPC_SetCheckpoint
-=======
->>>>>>> intro-map-design
   - SetStaffActiveSelf
   - SyncDirectionSelf
   - takeOutToolSoundSelf
   - UpdateColorSelf
   DisableAutoOpenWizard: 1
-<<<<<<< HEAD
   ShowSettings: 1
-  DevRegionSetOnce: 1
-=======
-  ShowSettings: 0
   DevRegionSetOnce: 0
->>>>>>> intro-map-design
