@@ -57,7 +57,7 @@ namespace Light
                 _endpointBeam.gameObject.SetActive(false);
                 open = true;
 
-                GetComponent<PhotonView>().RPC("OnOpenEndpointSoundSelf", RpcTarget.All, this.name);
+                // GetComponent<PhotonView>().RPC("OnOpenEndpointSoundSelf", RpcTarget.All, this.name);
             }
             else
             {
@@ -83,7 +83,7 @@ namespace Light
             if (!currentColor.ToString().Equals(previousColor.ToString()))
             {
                 previousColor = currentColor;
-                GetComponent<PhotonView>().RPC("OnBeamSenseSoundSelf", RpcTarget.All, this.name);
+                // GetComponent<PhotonView>().RPC("OnBeamSenseSoundSelf", RpcTarget.All, this.name);
             }
 
             currentColor = LightColor.Of(LightType.None);
