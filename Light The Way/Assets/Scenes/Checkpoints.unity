@@ -843,6 +843,7 @@ MonoBehaviour:
   message: Where are all these beacons pointing at?\nMaybe you should look into it...
   delay: 7
   text: {fileID: 1670064580}
+  laser: {fileID: 2128359824}
 --- !u!114 &180942117 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2492145357859430956, guid: 89e1407e676a8d444b905d6b0d5f940c,
@@ -2294,6 +2295,7 @@ MonoBehaviour:
     the sun's position.\nMaybe you should follow the green beacon.
   delay: 7
   text: {fileID: 1670064580}
+  laser: {fileID: 1421074896}
 --- !u!1 &580454678
 GameObject:
   m_ObjectHideFlags: 0
@@ -3355,6 +3357,7 @@ MonoBehaviour:
   message: Congratulations!\nYou've beaten the game!
   delay: 1000
   text: {fileID: 0}
+  laser: {fileID: 0}
 --- !u!1 &1129173138
 GameObject:
   m_ObjectHideFlags: 0
@@ -4437,6 +4440,7 @@ MonoBehaviour:
     color.\nMaybe you should follow the red beacon.
   delay: 7
   text: {fileID: 1670064580}
+  laser: {fileID: 0}
 --- !u!1001 &1162416498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5256,6 +5260,7 @@ MonoBehaviour:
     to mark the edges of a light bridge.\nMaybe you should follow the blue beacon.
   delay: 7
   text: {fileID: 1670064580}
+  laser: {fileID: 820376032}
 --- !u!1 &1265224880
 GameObject:
   m_ObjectHideFlags: 0

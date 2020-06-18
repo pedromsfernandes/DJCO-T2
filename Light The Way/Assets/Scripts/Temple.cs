@@ -27,6 +27,8 @@ public class Temple : MonoBehaviour
 
     public Text text;
 
+    public LineRenderer laser;
+
     // Update is called once per frame
     void Update()
     {
@@ -41,6 +43,7 @@ public class Temple : MonoBehaviour
             completed = true;
             int index = Array.FindIndex(PhotonNetwork.PlayerList, x => x == PhotonNetwork.LocalPlayer);
 
+            StartCoroutine(ShowMessage());
 
             switch (templeName)
             {
@@ -51,10 +54,15 @@ public class Temple : MonoBehaviour
                 case TempleName.Red:
                     if (index == 2)
                         GameState.Instance.canCreateLightBridges = true;
+                    laser.SetPosition(1, new Vector3(-289.8f, 144.5f, -80.1f));
                     break;
                 case TempleName.Blue:
                     if (index == 1)
                         GameState.Instance.canRotateSun = true;
+                    laser.SetPosition(1, new Vector3(-289.8f, 144.5f, -80.1f));
+                    break;
+                 case TempleName.Green:
+                    laser.SetPosition(1, new Vector3(-289.8f, 144.5f, -80.1f));
                     break;
                 default:
                     break;
