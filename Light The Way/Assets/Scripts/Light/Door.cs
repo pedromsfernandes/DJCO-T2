@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
 {
     public Light.Endpoint[] endpoints;
     public Door[] doors;
+    public Temple temple;
     public float height;
     //sound
     [FMODUnity.EventRef]
@@ -41,6 +42,9 @@ public class Door : MonoBehaviour
         {
             door.OpenDoorSelf();
         }
+
+        if(temple != null)
+            temple.Complete();
 
         StartCoroutine("DoorOpenAnim");
 
