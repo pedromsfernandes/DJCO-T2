@@ -29,43 +29,66 @@ public class MovieController : MonoBehaviour
 
     IEnumerator PlayScene()
     {
-        speed = 10f;
+        // speed = 10f;
+        // Coroutine cm = StartCoroutine("CameraZoom");
+        // yield return StartCoroutine("HideSplash");
+        // yield return new WaitForSeconds(3.5f);
+        // splash.color = new Color(splash.color.r, splash.color.g, splash.color.b, 1f);
+        // StopCoroutine(cm);
+        // yield return new WaitForSeconds(1.5f);
+
+        // speed = 2f;
+        // camera.transform.localPosition = new Vector3(-8f, 94f, 2076f);
+        // camera.transform.localEulerAngles = new Vector3(5f, -201f, 0f);
+        // cm = StartCoroutine("CameraZoom");
+        // yield return StartCoroutine("HideSplash");
+        // yield return new WaitForSeconds(3.5f);
+        // splash.color = new Color(splash.color.r, splash.color.g, splash.color.b, 1f);
+        // StopCoroutine(cm);
+        // yield return new WaitForSeconds(1.5f);
+
+        // speed = 0.01f;
+        // camera.transform.localPosition = new Vector3(13.9f, 0f, 1489.8f);
+        // camera.transform.localEulerAngles = new Vector3(79.82f, -138.9f, 0f);
+        // set1.SetActive(true);
+        // cm = StartCoroutine("CameraZoom");
+        // yield return StartCoroutine("HideSplash");
+        // yield return new WaitForSeconds(3.5f);
+        // splash.color = new Color(splash.color.r, splash.color.g, splash.color.b, 1f);
+        // StopCoroutine(cm);
+        // yield return new WaitForSeconds(1.5f);
+
+        // camera.transform.localPosition = new Vector3(10.21f, -4.345f, 1476.87f);
+        // camera.transform.localEulerAngles = new Vector3(8.35f, -329.97f, 0f);
+        // set1.SetActive(false);
+        // set3.SetActive(true);
+        // yield return StartCoroutine("HideSplash");
+        // yield return new WaitForSeconds(1.5f);
+        // yield return StartCoroutine("ShowSplash");
+        // yield return StartCoroutine("MenuAnim");
+
+        speed = 0.03f;
+        camera.transform.localPosition = new Vector3(289f, 66f, 1230.6f);
+        camera.transform.localEulerAngles = new Vector3(32.7f, -295.7f, 0f);
+        set3.SetActive(false);
         Coroutine cm = StartCoroutine("CameraZoom");
-        yield return StartCoroutine("HideSplash");
-        yield return new WaitForSeconds(3.5f);
-        splash.color = new Color(splash.color.r, splash.color.g, splash.color.b, 1f);
+        splash.color = new Color(splash.color.r, splash.color.g, splash.color.b, 0f);
+        yield return new WaitForSeconds(3f);
         StopCoroutine(cm);
-        yield return new WaitForSeconds(1.5f);
 
-        speed = 2f;
-        camera.transform.localPosition = new Vector3(-8f, 94f, 2076f);
-        camera.transform.localEulerAngles = new Vector3(5f, -201f, 0f);
+        camera.transform.localPosition = new Vector3(-1388f, 100.9f, -1126f);
+        camera.transform.localEulerAngles = new Vector3(20.94f, -295.7f, 0f);
         cm = StartCoroutine("CameraZoom");
-        yield return StartCoroutine("HideSplash");
-        yield return new WaitForSeconds(3.5f);
-        splash.color = new Color(splash.color.r, splash.color.g, splash.color.b, 1f);
+        splash.color = new Color(splash.color.r, splash.color.g, splash.color.b, 0f);
+        yield return new WaitForSeconds(3f);
         StopCoroutine(cm);
-        yield return new WaitForSeconds(1.5f);
 
-        speed = 0.01f;
-        camera.transform.localPosition = new Vector3(13.9f, 0f, 1489.8f);
-        camera.transform.localEulerAngles = new Vector3(79.82f, -138.9f, 0f);
-        set1.SetActive(true);
+        camera.transform.localPosition = new Vector3(-1477f, 76f, -1039f);
+        camera.transform.localEulerAngles = new Vector3(30.4f, -242.9f, 0f);
         cm = StartCoroutine("CameraZoom");
-        yield return StartCoroutine("HideSplash");
-        yield return new WaitForSeconds(3.5f);
-        splash.color = new Color(splash.color.r, splash.color.g, splash.color.b, 1f);
+        splash.color = new Color(splash.color.r, splash.color.g, splash.color.b, 0f);
+        yield return new WaitForSeconds(3f);
         StopCoroutine(cm);
-        yield return new WaitForSeconds(1.5f);
-
-        camera.transform.localPosition = new Vector3(10.21f, -4.345f, 1476.87f);
-        camera.transform.localEulerAngles = new Vector3(8.35f, -329.97f, 0f);
-        set1.SetActive(false);
-        set3.SetActive(true);
-        yield return StartCoroutine("HideSplash");
-        yield return new WaitForSeconds(1.5f);
-        yield return StartCoroutine("ShowSplash");
-        yield return StartCoroutine("MenuAnim");
     }
 
     IEnumerator CameraZoom()
