@@ -29,13 +29,14 @@ public class Door : MonoBehaviour
             }
 
             GetComponent<PhotonView>().RPC("OpenDoorSelf", RpcTarget.All);
-            open = true;
         }
     }
 
     [PunRPC]
     public void OpenDoorSelf()
     {
+        open = true;
+
         foreach (var ep in endpoints)
         {
             ep.Deactivate();
