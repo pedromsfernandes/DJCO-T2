@@ -98,7 +98,6 @@ namespace Light
                 if (hit.collider)
                 {
                     Lr.SetPosition(1, hit.point);
-                    GameState.Instance.lastBeamHit = hit.point;
                     if (hit.transform.gameObject.layer == LayerMask.NameToLayer("LightHit"))
                         hit.transform.gameObject.SendMessage("Hit", new object[] { this, hit, Direction });
                 }
@@ -106,7 +105,6 @@ namespace Light
             else
             {
                 Lr.SetPosition(1, Origin + Direction * 5000);
-                GameState.Instance.lastBeamHit = Direction * 5000;
             }
 
 
