@@ -27,7 +27,7 @@ public class SceneController : MonoBehaviour
     {
         int level = MasterManager.Checkpoint;
 
-        if (level == 0)
+        if (level == -1)
             StartCoroutine("PlayScene");
         else if (PhotonNetwork.IsMasterClient)
         {
