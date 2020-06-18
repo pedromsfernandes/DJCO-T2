@@ -65,7 +65,8 @@ public class Temple : MonoBehaviour
 
     IEnumerator ShowMessage()
     {
-        text.text = message;
+        String t = message.Replace("$", "\n");
+        text.text = t;
         text.gameObject.SetActive(true);
         yield return new WaitForSeconds(delay);
         text.gameObject.SetActive(false);
