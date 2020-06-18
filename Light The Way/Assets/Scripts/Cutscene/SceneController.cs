@@ -39,7 +39,7 @@ public class SceneController : MonoBehaviour
     IEnumerator PlayScene()
     {
         FMODUnity.RuntimeManager.PlayOneShot(cutsceneMusic);
-        
+
         Coroutine cm = StartCoroutine("CameraZoom");
         yield return new WaitForSeconds(1f);
         yield return StartCoroutine("HideSplash");
@@ -51,9 +51,9 @@ public class SceneController : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         upperLeftText.text = "";
-        yield return StartCoroutine(AddText(upperLeftText, "Aukland Captaincy Traffic Control recieved a distrss signal from an unidentified mid-class ship. "));
+        yield return StartCoroutine(AddText(upperLeftText, "Auckland Captaincy Traffic Control received a distress signal from an unidentified mid-class ship. "));
         yield return new WaitForSeconds(0.5f);
-        yield return StartCoroutine(AddText(upperLeftText, "Heavy interference was caused by a cathegory 4 storm 120 kilometers east of the new zelander coast. "));
+        yield return StartCoroutine(AddText(upperLeftText, "Heavy interference was caused by a cathegory 4 storm 120 kilometers east of the new zealander coast. "));
         yield return new WaitForSeconds(0.5f);
         yield return StartCoroutine(AddText(upperLeftText, "No further communication was established."));
         yield return new WaitForSeconds(4f);
@@ -94,11 +94,12 @@ public class SceneController : MonoBehaviour
         leftText.text = "";
         yield return StartCoroutine(AddText(rightText, "Wait, what are those?"));
         yield return new WaitForSeconds(1.5f);
+        rightText.text = "";
+        leftText.text = "";
         yield return StartCoroutine("ShowSplash");
 
         yield return new WaitForSeconds(0.5f);
-        rightText.text = "";
-        leftText.text = "";
+
         set2.SetActive(false);
         set3.SetActive(true);
         staff.SetActive(true);
@@ -112,10 +113,11 @@ public class SceneController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         yield return StartCoroutine(AddText(rightText, "\nWhat is that?"));
         yield return new WaitForSeconds(1f);
+        rightText.text = "";
         yield return StartCoroutine("ShowSplash");
 
         yield return new WaitForSeconds(0.5f);
-        rightText.text = "";
+
         set3.SetActive(false);
         staff.SetActive(false);
         set4.SetActive(true);
