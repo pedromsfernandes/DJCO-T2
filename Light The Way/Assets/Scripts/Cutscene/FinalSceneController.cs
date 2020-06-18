@@ -83,7 +83,7 @@ public class FinalSceneController : MonoBehaviour
         yield return new WaitForSeconds(3f);
         yield return StartCoroutine("ShowSplash");
 
-        SceneManager.LoadScene(0);
+        Application.Quit();
     }
 
     IEnumerator HideSplash()
