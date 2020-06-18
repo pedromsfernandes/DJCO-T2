@@ -86,8 +86,7 @@ namespace Light
             if (!currentColor.ToString().Equals(previousColor.ToString()))
             {
                 previousColor = currentColor;
-                // GetComponent<PhotonView>().RPC("OnBeamSenseSoundSelf", RpcTarget.All, this.name);
-                Debug.Log("CHANGING ENDPOINT SOUND");
+                GetComponent<PhotonView>().RPC("OnBeamSenseSoundSelf", RpcTarget.All, this.name);
             }
 
             currentColor = LightColor.Of(LightType.None);
