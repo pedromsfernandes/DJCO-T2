@@ -12,6 +12,7 @@ public class SceneController : MonoBehaviour
     public Text upperLeftText;
     public Text rightText;
     public Text leftText;
+    public Text topRightText;
 
     public GameObject set1;
     public GameObject set2;
@@ -109,11 +110,11 @@ public class SceneController : MonoBehaviour
 
         yield return StartCoroutine("CameraPanDown");
         yield return new WaitForSeconds(1f);
-        yield return StartCoroutine(AddText(rightText, "And, more importantly..."));
+        yield return StartCoroutine(AddText(topRightText, "And, more importantly..."));
         yield return new WaitForSeconds(0.5f);
-        yield return StartCoroutine(AddText(rightText, "\nWhat is that?"));
+        yield return StartCoroutine(AddText(topRightText, "\nWhat is that?"));
         yield return new WaitForSeconds(1f);
-        rightText.text = "";
+        topRightText.text = "";
         yield return StartCoroutine("ShowSplash");
 
         yield return new WaitForSeconds(0.5f);
@@ -127,6 +128,7 @@ public class SceneController : MonoBehaviour
         yield return new WaitForSeconds(3f);
         yield return StartCoroutine(AddText(rightText, "Where are we?"));
         yield return new WaitForSeconds(3f);
+        rightText.text = "";
         yield return StartCoroutine("ShowSplash");
         yield return new WaitForSeconds(2f);
 
