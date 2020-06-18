@@ -28,6 +28,9 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
     [SerializeField]
     private Dropdown _checkpoint;
 
+    [SerializeField]
+    private Button _startGame;
+
     //Sound
     [FMODUnity.EventRef]
     public string selectedPickOptionSound = "event:/Misc/Menu/Menu Pick";
@@ -45,6 +48,11 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
         SetReadyUp(false);
         GetCurrentRoomPlayers();
         canvas.SetActive(false);
+
+        if(!PhotonNetwork.IsMasterClient){
+            _startGame.gameObject.SetActive(false);
+            _checkpoint.gameObject.SetActive(false);
+        }
     }
 
     public override void OnDisable()
@@ -120,6 +128,15 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.IsMasterClient)
         {
+            for (int i = 0; i < _listings.Count; i++)
+            {
+                if (_listings[i].Player != PhotonNetwork.LocalPlayer)
+                {
+                    if (!_listings[i].ready)
+                        return;
+                }
+            }
+
             base.photonView.RPC("RPC_SetCheckpoint", RpcTarget.All, _checkpoint.value);
             base.photonView.RPC("LoadCutscene", RpcTarget.All);
         }
@@ -131,7 +148,7 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
         Debug.Log("STOP MUSIC");
         MainMenuController.menuMusicEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
-        SceneManager.LoadScene(2);   
+        SceneManager.LoadScene(2);
     }
 
     public void OnClick_ReadyUp()
