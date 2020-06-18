@@ -33,6 +33,8 @@ public class QuickInstantiate : MonoBehaviour
     [SerializeField]
     private Vector3[] finalPositions;
 
+    public Door[] templeDoors; // red - blue - green - final
+
     [SerializeField]
     private GameObject[] prefabs;
 
@@ -41,20 +43,30 @@ public class QuickInstantiate : MonoBehaviour
         int index = Array.FindIndex(PhotonNetwork.PlayerList, x => x == PhotonNetwork.LocalPlayer);
         int level = MasterManager.Checkpoint;
         Vector3 position = startPositions[index];
-        
+
+        if (level >= 1)
+        {
+            templeDoors[3].gameObject.SetActive(false);
+            templeDoors[4].gameObject.SetActive(false);
+        }
+
         switch (level)
         {
             case 1:
                 position = redPositions[index];
+                templeDoors[0].gameObject.SetActive(false);
                 break;
             case 2:
                 position = bluePositions[index];
+                templeDoors[1].gameObject.SetActive(false);
                 break;
             case 3:
                 position = greenPositions[index];
+                templeDoors[2].gameObject.SetActive(false);
                 break;
             case 4:
                 position = finalPositions[index];
+                templeDoors[5].gameObject.SetActive(false);
                 break;
             default:
                 break;

@@ -21,7 +21,16 @@ public class SceneController : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine("PlayScene");
+        int level = MasterManager.Checkpoint;
+
+        if (level == 0)
+            StartCoroutine("PlayScene");
+        else if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.CurrentRoom.IsOpen = false;
+            PhotonNetwork.CurrentRoom.IsVisible = false;
+            PhotonNetwork.LoadLevel(1);
+        }
     }
 
     IEnumerator PlayScene()
@@ -81,7 +90,7 @@ public class SceneController : MonoBehaviour
         yield return StartCoroutine(AddText(rightText, "Wait, what are those?"));
         yield return new WaitForSeconds(1.5f);
         yield return StartCoroutine("ShowSplash");
-       
+
         yield return new WaitForSeconds(0.5f);
         rightText.text = "";
         leftText.text = "";
@@ -124,7 +133,7 @@ public class SceneController : MonoBehaviour
 
     IEnumerator CameraZoom()
     {
-        while(true)
+        while (true)
         {
             camera.transform.localPosition += camera.transform.forward.normalized;
             yield return new WaitForSeconds(0.01f);
