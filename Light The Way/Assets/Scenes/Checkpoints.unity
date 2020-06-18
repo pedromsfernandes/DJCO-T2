@@ -5887,6 +5887,10 @@ MonoBehaviour:
   - {fileID: 1075715988}
   - {fileID: 1075715992}
   - {fileID: 1075715996}
+  lasers:
+  - {fileID: 820376032}
+  - {fileID: 1421074896}
+  - {fileID: 2128359824}
   prefabs:
   - {fileID: 7841573969275939898, guid: 20f3506190c57654c8c5e2dde512775d, type: 3}
   - {fileID: 7841573969275939898, guid: 43af83ca9bd609844935b263940d9afc, type: 3}
