@@ -44571,23 +44571,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4511575689722364207, guid: fba8d49197080bd4ca4f2cd1f99479f3, type: 3}
---- !u!114 &5228693000285809173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5228693000285809176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd1467d4ccae3d54db1f6860414cfa06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endpoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  height: 25.8
-  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &5228693000285809174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44636,7 +44619,6 @@ GameObject:
   - component: {fileID: 5228693000285809170}
   - component: {fileID: 5228693000285809171}
   - component: {fileID: 5228693000285809172}
-  - component: {fileID: 5228693000285809173}
   - component: {fileID: 5228693000285809174}
   - component: {fileID: 5228693000285809177}
   m_Layer: 0
@@ -44674,23 +44656,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4511575689722364207, guid: fba8d49197080bd4ca4f2cd1f99479f3, type: 3}
---- !u!114 &5228693000316283233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5228693000316283236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd1467d4ccae3d54db1f6860414cfa06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endpoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  height: 25.8
-  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &5228693000316283234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44739,7 +44704,6 @@ GameObject:
   - component: {fileID: 5228693000316283262}
   - component: {fileID: 5228693000316283263}
   - component: {fileID: 5228693000316283232}
-  - component: {fileID: 5228693000316283233}
   - component: {fileID: 5228693000316283234}
   - component: {fileID: 5228693000316283237}
   m_Layer: 0
@@ -45846,23 +45810,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4511575689722364207, guid: fba8d49197080bd4ca4f2cd1f99479f3, type: 3}
---- !u!114 &5228693001182417127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5228693001182417130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd1467d4ccae3d54db1f6860414cfa06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endpoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  height: 25.8
-  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &5228693001182417128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45911,7 +45858,6 @@ GameObject:
   - component: {fileID: 5228693001182417124}
   - component: {fileID: 5228693001182417125}
   - component: {fileID: 5228693001182417126}
-  - component: {fileID: 5228693001182417127}
   - component: {fileID: 5228693001182417128}
   - component: {fileID: 5228693001182417131}
   m_Layer: 0
@@ -45983,7 +45929,6 @@ GameObject:
   - component: {fileID: 5228693001189816540}
   - component: {fileID: 5228693001189816541}
   - component: {fileID: 5228693001189816542}
-  - component: {fileID: 5228693001189816543}
   - component: {fileID: 5228693001189816512}
   - component: {fileID: 5228693001189816515}
   m_Layer: 0
@@ -46068,23 +46013,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4511575689722364207, guid: fba8d49197080bd4ca4f2cd1f99479f3, type: 3}
---- !u!114 &5228693001189816543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5228693001189816514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd1467d4ccae3d54db1f6860414cfa06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endpoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  height: 25.8
-  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!4 &5228693001194314362
 Transform:
   m_ObjectHideFlags: 0
@@ -46213,23 +46141,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4511575689722364207, guid: fba8d49197080bd4ca4f2cd1f99479f3, type: 3}
---- !u!114 &5228693001249727812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5228693001249727815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd1467d4ccae3d54db1f6860414cfa06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endpoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  height: 25.8
-  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &5228693001249727813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46278,7 +46189,6 @@ GameObject:
   - component: {fileID: 5228693001249727809}
   - component: {fileID: 5228693001249727810}
   - component: {fileID: 5228693001249727811}
-  - component: {fileID: 5228693001249727812}
   - component: {fileID: 5228693001249727813}
   - component: {fileID: 5228693001249727816}
   m_Layer: 0
@@ -46856,24 +46766,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5002846120870488629}
   m_Mesh: {fileID: 3891178016670741245, guid: 15e263a892e5c9a449dc9084b6e2f6f3, type: 3}
---- !u!114 &6070763672550998682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7871893043241458442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd1467d4ccae3d54db1f6860414cfa06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endpoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  height: 11.5
-  selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!33 &6422626025654841269
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -56273,7 +56165,6 @@ GameObject:
   - component: {fileID: 5392338512957322175}
   - component: {fileID: 7452143769755263635}
   - component: {fileID: 2014869127309141945}
-  - component: {fileID: 6070763672550998682}
   - component: {fileID: 2421114456820260955}
   - component: {fileID: 7871893043241458443}
   m_Layer: 0
