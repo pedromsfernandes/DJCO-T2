@@ -895,7 +895,8 @@ MonoBehaviour:
   - {fileID: 180942117}
   completed: 0
   templeName: 2
-  message: Where are all these beacons pointing at?\nMaybe you should look into it...
+  message: Where are all these beacons pointing at?\\nMaybe you should look into
+    it...
   delay: 7
   text: {fileID: 1670064580}
   laser: {fileID: 2128359824}
@@ -2400,8 +2401,8 @@ MonoBehaviour:
   - {fileID: 551829312}
   completed: 0
   templeName: 3
-  message: The green beam can now control the sun!\nUse the mouse wheel to change
-    the sun's position.\nMaybe you should follow the green beacon.
+  message: The green beam can now control the sun!\\nUse the mouse wheel to change
+    the sun's position.\\nMaybe you should follow the green beacon.
   delay: 7
   text: {fileID: 1670064580}
   laser: {fileID: 1421074896}
@@ -4637,8 +4638,8 @@ MonoBehaviour:
   - {fileID: 1147866706}
   completed: 0
   templeName: 0
-  message: The red beam can now destroy certain objects!\nLook for walls with a different
-    color.\nMaybe you should follow the red beacon.
+  message: The red beam can now destroy certain objects!\\nLook for walls with a
+    different color.\\nMaybe you should follow the red beacon.
   delay: 7
   text: {fileID: 1670064580}
   laser: {fileID: 0}
@@ -5457,8 +5458,8 @@ MonoBehaviour:
   - {fileID: 1162416506}
   completed: 0
   templeName: 1
-  message: The blue beam can now create light bridges!\nFire the beam and press E
-    to mark the edges of a light bridge.\nMaybe you should follow the blue beacon.
+  message: The blue beam can now create light bridges!\\nFire the beam and press
+    E to mark the edges of a light bridge.\\nMaybe you should follow the blue beacon.
   delay: 7
   text: {fileID: 1670064580}
   laser: {fileID: 820376032}
