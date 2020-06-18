@@ -124,8 +124,31 @@ namespace Light
             {
                 _sunLr.startColor = _sunLr.endColor = Color.white;
                 _sunLr.SetPositions(new[] { Origin, Origin - 1000 * GameState.Instance.sunDirection });
-                ProcessRayBeam();
+                ProcessRayPlayerBeam();
             }
+        }
+
+        private void ProcessRayPlayerBeam()
+        {
+            Lr.SetPosition(0, Origin);
+            if (Physics.Raycast(Origin, Direction, out RaycastHit hit))
+            {
+                if (hit.collider)
+                {
+                    Lr.SetPosition(1, hit.point);
+                    if (GetComponent<PhotonView>().IsMine)
+                        GameState.Instance.lastBeamHit = hit.point;
+                    if (hit.transform.gameObject.layer == LayerMask.NameToLayer("LightHit"))
+                        hit.transform.gameObject.SendMessage("Hit", new object[] { this, hit, Direction });
+                }
+            }
+            else
+            {
+                Lr.SetPosition(1, Origin + Direction * 5000);
+                if (GetComponent<PhotonView>().IsMine)
+                    GameState.Instance.lastBeamHit = Direction * 5000;
+            }
+
         }
 
         private bool InShadow()
@@ -151,7 +174,7 @@ namespace Light
 
             //Debug.Log("Missfire Here");
 
-            if(toolId == 1)
+            if (toolId == 1)
             {
 
                 FMODUnity.RuntimeManager.AttachInstanceToGameObject(redMissfireSoundEvent, originalTransform, originalRigidbody);
