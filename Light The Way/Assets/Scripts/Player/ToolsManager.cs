@@ -61,12 +61,13 @@ public class ToolsManager : MonoBehaviour
 
     void Update()
     {
-        chooseTool();
+        // Currently not used
+        // chooseTool();
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            dropCurrentTool();
-        }
+        // if (Input.GetKeyDown(KeyCode.Q))
+        // {
+        //     dropCurrentTool();
+        // }
     }
 
     private void chooseTool()
