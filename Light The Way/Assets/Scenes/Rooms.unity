@@ -7534,7 +7534,6 @@ MonoBehaviour:
   - {fileID: 256494513}
   - {fileID: 256494512}
   - {fileID: 256494509}
-  completed: 0
   templeName: 0
   message: The red beam can now destroy certain objects!\\nLook for walls with a
     different color.\\nMaybe you should follow the red beacon.
@@ -10086,7 +10085,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 334140113}
-  completed: 0
   templeName: 1
   message: The blue beam can now create light bridges!\\nFire the beam and press
     E to mark the edges of a light bridge.\\nMaybe you should follow the blue beacon.
@@ -10169,6 +10167,8 @@ MonoBehaviour:
   - {fileID: 256494513}
   - {fileID: 256494512}
   - {fileID: 256494509}
+  doors: []
+  temple: {fileID: 0}
   height: 16.5
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!1 &336804725
@@ -27189,6 +27189,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 1291859433}
+  doors: []
+  temple: {fileID: 0}
   height: 16.5
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &960922090
@@ -27251,6 +27253,8 @@ MonoBehaviour:
   - {fileID: 256494513}
   - {fileID: 256494512}
   - {fileID: 256494509}
+  doors: []
+  temple: {fileID: 0}
   height: 35
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &960922093
@@ -27289,6 +27293,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 1291859433}
+  doors: []
+  temple: {fileID: 0}
   height: 40
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &960922095
@@ -27329,6 +27335,8 @@ MonoBehaviour:
   - {fileID: 256494513}
   - {fileID: 256494512}
   - {fileID: 256494509}
+  doors: []
+  temple: {fileID: 0}
   height: 38.5
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &960922097
@@ -27367,6 +27375,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 960922082}
+  doors: []
+  temple: {fileID: 0}
   height: 38
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &960922099
@@ -27383,7 +27393,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 960922082}
-  completed: 0
   templeName: 4
   message: Congratulations!\nYou've beaten the game!
   delay: 1000
@@ -30904,6 +30913,41 @@ PrefabInstance:
       propertyPath: viewIdField
       value: 111
       objectReference: {fileID: 0}
+    - target: {fileID: 1846780360670371811, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846780360670371811, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.50701195
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846780360670371811, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846780360670371811, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.861939
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846780360670371811, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -60.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846780360670371811, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846780360670371811, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.12
+      objectReference: {fileID: 0}
     - target: {fileID: 1850538184749480325, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
         type: 3}
       propertyPath: viewIdField
@@ -31053,6 +31097,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559119842319448330, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559119842319448330, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.50701195
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559119842319448330, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559119842319448330, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.861939
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559119842319448330, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 60.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559119842319448330, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559119842319448330, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.49
       objectReference: {fileID: 0}
     - target: {fileID: 5823799402068218858, guid: 163a9c7b5f6ec394fae52d3e36673dc9,
         type: 3}
@@ -31506,6 +31585,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 334140113}
+  doors: []
+  temple: {fileID: 0}
   height: 16.5
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!114 &1106921240
@@ -31524,7 +31605,6 @@ MonoBehaviour:
   - {fileID: 1106921235}
   - {fileID: 1106921234}
   - {fileID: 1106921233}
-  completed: 0
   templeName: 3
   message: The green beam can now control the sun!\\nUse the mouse wheel to change
     the sun's position.\\nMaybe you should follow the green beacon.
@@ -35900,7 +35980,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpoints:
   - {fileID: 1291859433}
-  completed: 0
   templeName: 2
   message: Where are all these beacons pointing at?\\nMaybe you should look into
     it...
@@ -35945,6 +36024,8 @@ MonoBehaviour:
   - {fileID: 1106921235}
   - {fileID: 1106921234}
   - {fileID: 1106921233}
+  doors: []
+  temple: {fileID: 0}
   height: 16.5
   selectedOpenSound: event:/FX/Door/DoorOpen
 --- !u!1 &1292039350
