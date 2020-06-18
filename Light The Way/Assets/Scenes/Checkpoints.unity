@@ -837,7 +837,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8bf1f801b6b31beb705ee94bdbf797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endpoints: []
+  endpoints:
+  - {fileID: 180942117}
   completed: 0
   templeName: 2
   message: Where are all these beacons pointing at?\nMaybe you should look into it...
