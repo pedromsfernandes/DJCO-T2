@@ -25,6 +25,9 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
     private bool _ready = false;
 
+    [SerializeField]
+    private Dropdown _checkpoint;
+
     //Sound
     [FMODUnity.EventRef]
     public string selectedPickOptionSound = "event:/Misc/Menu/Menu Pick";
@@ -117,6 +120,7 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.IsMasterClient)
         {
+            base.photonView.RPC("RPC_SetCheckpoint", RpcTarget.All, _checkpoint.value);
             base.photonView.RPC("LoadCutscene", RpcTarget.All);
         }
     }
@@ -150,5 +154,11 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
         if (index != -1)
             _listings[index].ready = ready;
+    }
+
+    [PunRPC]
+    private void RPC_SetCheckpoint(int value)
+    {
+        MasterManager.SetLevel(value);
     }
 }

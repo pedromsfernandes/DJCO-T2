@@ -642,7 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxBridgeLength: 100
-  maxDistanceBetweenPlayerAndLightBridgePoint: 100
+  maxDistanceBetweenPlayerAndLightBridgePoint: 1000
   selectedFixatePointSound: event:/FX/Player/Bridge/BridgePoint
   impossibleCreateSound: event:/FX/Player/Bridge/BridgeFail
   selectedCreateSound: event:/FX/Player/Bridge/BridgeCreate

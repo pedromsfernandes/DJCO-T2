@@ -46,7 +46,6 @@ public class LightBridge : MonoBehaviour
                 {
                     if (isBridgePossible(firstPoint, GameState.Instance.lastBeamHit))
                     {
-                        deleteLightBridge();
                         createLightBridge(firstPoint, GameState.Instance.lastBeamHit);
                     }
 
@@ -108,6 +107,11 @@ public class LightBridge : MonoBehaviour
     [PunRPC]
     void createLightBridgeSelf(Vector3 p1, Vector3 p2)
     {
+        if (activeLightBridge != null)
+        {
+            Destroy(activeLightBridge);
+        }
+
         float distance = Vector3.Distance(p1, p2);
         Vector3 direction = p2 - p1;
         Vector2 dirYX = new Vector2(direction.y, direction.x);
@@ -128,7 +132,7 @@ public class LightBridge : MonoBehaviour
         GameObject lightBridge = Resources.Load<GameObject>("Light Bridge");
         
         lightBridge.transform.position = (p1 + p2) / 2;
-        lightBridge.transform.localScale = new Vector3(lightBridge.transform.localScale.x, lightBridge.transform.localScale.y, distance);
+        lightBridge.transform.localScale = new Vector3(lightBridge.transform.localScale.x, lightBridge.transform.localScale.y, distance * 1.15f);
         lightBridge.transform.rotation = Quaternion.Euler(xRotationAngle, yRotationAngle, 0);
 
         activeLightBridge = Instantiate(lightBridge);
@@ -137,20 +141,5 @@ public class LightBridge : MonoBehaviour
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(createSoundEvent, lightBridge.transform, originalRigidbody);
 
         createSoundEvent.start();
-    }
-
-    public void deleteLightBridge()
-    {
-        this.GetComponent<PhotonView>().RPC("deleteLightBridgeSelf", RpcTarget.All);
-    }
-
-    [PunRPC]
-    void deleteLightBridgeSelf()
-    {
-        if (activeLightBridge != null)
-        {
-            activeLightBridge.SetActive(false);
-            Destroy(activeLightBridge);
-        }
     }
 }

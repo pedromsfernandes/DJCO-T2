@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Light;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon.Pun;
 
 public class CameraController : MonoBehaviourPun
@@ -19,6 +20,8 @@ public class CameraController : MonoBehaviourPun
     public GameObject player;
     public PlayerBeam beam;
 
+    public Text text;
+
     void Start()
     {
         Vector3 rot = transform.localRotation.eulerAngles;
@@ -26,6 +29,8 @@ public class CameraController : MonoBehaviourPun
         rotY = rot.y;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        StartCoroutine("ShowStartMessages");
     }
 
     void Update()
@@ -105,5 +110,17 @@ public class CameraController : MonoBehaviourPun
 
         if (!aiming)
             GameState.Instance.aiming = aiming;
+    }
+
+    IEnumerator ShowStartMessages()
+    {
+        text.text = "Walk with WASD\nRun with SHIFT";
+        text.gameObject.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        text.text = "Aim with RMB\nFire with LMB";
+        yield return new WaitForSeconds(5f);
+        text.text = "It doesn't seem to work every time\nMaybe you can figure out why...";
+        yield return new WaitForSeconds(5f);
+        text.gameObject.SetActive(false);
     }
 }

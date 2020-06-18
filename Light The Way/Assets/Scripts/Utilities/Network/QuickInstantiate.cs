@@ -16,7 +16,22 @@ public class QuickInstantiate : MonoBehaviour
     private float volumeBeforeMute;
 
     [SerializeField]
-    private Vector3[] positions;
+    private Vector3[] startPositions;
+
+
+    [SerializeField]
+    private Vector3[] bluePositions;
+
+
+    [SerializeField]
+    private Vector3[] redPositions;
+
+
+    [SerializeField]
+    private Vector3[] greenPositions;
+
+    [SerializeField]
+    private Vector3[] finalPositions;
 
     [SerializeField]
     private GameObject[] prefabs;
@@ -24,8 +39,27 @@ public class QuickInstantiate : MonoBehaviour
     private void Awake()
     {
         int index = Array.FindIndex(PhotonNetwork.PlayerList, x => x == PhotonNetwork.LocalPlayer);
+        int level = MasterManager.Checkpoint;
+        Vector3 position = startPositions[index];
+        
+        switch (level)
+        {
+            case 1:
+                position = redPositions[index];
+                break;
+            case 2:
+                position = bluePositions[index];
+                break;
+            case 3:
+                position = greenPositions[index];
+                break;
+            case 4:
+                position = finalPositions[index];
+                break;
+            default:
+                break;
+        }
 
-        Vector3 position = positions[index];
         GameObject prefab = prefabs[index];
 
         MasterManager.NetworkInstantiate(prefab, position, Quaternion.identity);
