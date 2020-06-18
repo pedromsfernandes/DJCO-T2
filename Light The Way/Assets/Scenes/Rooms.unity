@@ -5168,6 +5168,7 @@ MonoBehaviour:
   _content: {fileID: 82013952}
   _readyUpText: {fileID: 1245374210}
   _checkpoint: {fileID: 448740151}
+  _startGame: {fileID: 189143225}
   selectedPickOptionSound: event:/Misc/Menu/Menu Pick
   selectedBackSound: event:/Misc/Menu/Menu Back
 --- !u!114 &195222770
@@ -11343,7 +11344,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 45
   m_Viewport: {fileID: 309507616}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1418036131}
